@@ -1,0 +1,86 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
+
+This is the Dovindustries landing experience - a Next.js application showcasing current projects, operating metrics, and focus areas. The build leans on modern React Server Components, Tailwind CSS v4, and Tremor for rich data visuals.
+
+## Development Commands
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server with Turbopack
+pnpm dev
+
+# Build for production with Turbopack
+pnpm build
+
+# Start production server
+pnpm start
+
+# Run linting
+pnpm lint
+```
+
+## Architecture
+
+  - **Framework**: Next.js 16.x (App Router)
+  - **Core Philosophy**: **Server-First.** We leverage React Server Components (RSCs) by default. Client-side interactivity (`"use client"`) is an *opt-in* for specific, minimal components.
+  - **Language**: TypeScript
+  - **Styling**: Tailwind CSS (v4+). Tokens live in `globals.css` - Tailwind 4 inline theme API is used instead of a traditional `tailwind.config.ts`.
+  - **Data Visualization**: Tremor (`@tremor/react`) for charts and metric boards.
+  - **Build & Dev**: Turbopack (via `pnpm dev` and `pnpm build`)
+  - **Package Manager**: pnpm
+
+## Code Patterns
+
+Embrace Modern Next.js (15+) & React (19+) Patterns.
+
+  - **RSCs by Default:** Components are Server Components unless they require interactivity (state, effects, event handlers), at which point they must use `"use client"`.
+  - **Keep Client Components Small:** Isolate interactivity. A `"use client"` directive makes the component and *all its children* client components. Push state and interactivity as deep into the component tree (to "leaf" components) as possible.
+  - **Server Actions for Mutations:** Use Server Actions (`"use server"`) in `/actions` for data mutations (form submissions, database writes). They run on the server and can be called from Client Components.
+  - **Fetch Data on the Server:** Prefer server-side data fetching (in Server Components, Layouts, or Pages) and passing data down as props. Avoid client-side data fetching (e.g., in a `useEffect`) unless absolutely necessary (e.g., for data that is user-specific and changes frequently on the client).
+  - **Colocate Logic:** Avoid premature abstraction. Business logic should live in `/utils` and be framework-agnostic (plain TS functions).
+  - **No Custom Hooks Directory:** Do not create a `/hooks` directory. If you need a custom hook, colocate it with the component using it. Reserve custom hooks *only* for logic that genuinely manages reusable, complex *React state or lifecycles* (e.g., `useLocalStorage`, `useMediaQuery`). Most "hooks" are just utilities that belong in `/utils`.
+  - **Favor Simplicity:** Don't Repeat Yourself (DRY) is not an absolute rule. Duplicating code 2-3 times is often *better* than introducing a complex, premature abstraction. Favor simplicity and readability over absolute dryness.
+
+## Repository Structure
+
+  - `src/app/` - App Router routes, pages, layouts, and route-specific components.
+  - `src/components/` - Shared, reusable UI components. Client Components live here when they need interactivity (e.g., Tremor chart boards).
+  - `src/actions/` - Next.js Server Actions (`"use server"`) for mutations like form submissions and database operations.
+  - `src/utils/` - Framework-agnostic utility functions (e.g., `formatDate`, `isBusinessOpen`). Pure TypeScript, no React.
+  - `public/` - Static assets (images, fonts, etc.).
+
+## Configuration Files
+
+  - `next.config.ts` - Next.js configuration
+  - `tailwind.config.ts` - _Not present_. Tailwind 4 inline theme API inside `src/app/globals.css` controls tokens.
+  - `tsconfig.json` - TypeScript configuration
+  - `eslint.config.mjs` - ESLint configuration
+  - `postcss.config.mjs` - PostCSS configuration
+
+## PR Review Standards
+
+### Blocking Reviews (Request Changes):
+
+  - Build, test, or linting failures.
+  - Obvious bugs or regressions.
+  - Architectural misalignment (e.g., unnecessary client-side fetching, premature abstraction).
+  - Breaking changes without a clear migration path or documentation.
+
+### Non-Blocking Feedback (Comments):
+
+  - Suggestions, questions, or alternative approaches.
+  - For minor, non-blocking suggestions (style, wording, a small simplification), prefix your comment with **"nit:"** (nitpick). This signals the author can address it at their discretion.
+
+### Communication:
+
+Direct and technical. State: problem, location, what needs fixing. No emojis. No fluff.
+
+## Commit Messages:
+
+Keep commits professional, technical, and emoji-free.
