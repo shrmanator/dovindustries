@@ -29,6 +29,15 @@ const projects: Project[] = [
     stack: "Virtual Reality",
   },
   {
+    name: "Urban Transportation",
+    summary:
+      "Fits under a desk. 0-15mph in 2.8 seconds. Currently in development.",
+    focus: ["Hardware", "Mobility", "Engineering"],
+    status: "R&D",
+    highlight: "Specs and details to be announced.",
+    stack: "Hardware",
+  },
+  {
     name: "SuperMint",
     logo: "/images/supermint-logo-transparent-grey.png",
     url: "https://supermint.ca",

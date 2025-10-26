@@ -15,11 +15,8 @@ export function HeroSection() {
             &gt; FORWARD_THINKING<br/>
             &gt; BACKWARD_COMPATIBLE
           </p>
-          <p className="text-xl md:text-2xl mb-6">
-            Crypto platforms. VR locomotion research.
-          </p>
-          <p className="text-lg md:text-xl text-accent">
-            Currently developing our next product.
+          <p className="text-xl md:text-2xl">
+            Crypto platforms. VR locomotion research. Hardware and transportation.
           </p>
         </div>
       </div>
