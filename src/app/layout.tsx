@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   description:
     "Building crypto donation platforms and VR locomotion systems. DigiDov simplifies crypto donations with automated tax compliance. Headset-only VR locomotion research.",
   metadataBase: new URL("https://dovindustries.com"),
+  alternates: {
+    canonical: "https://dovindustries.com",
+  },
   keywords: [
     "crypto platform",
     "blockchain development",
@@ -32,6 +35,7 @@ export const metadata: Metadata = {
     "DigiDov",
   ],
   authors: [{ name: "Dovindustries" }],
+  category: "Technology",
   appleWebApp: {
     title: "dovindustries",
     statusBarStyle: "black",
@@ -44,6 +48,14 @@ export const metadata: Metadata = {
     siteName: "Dovindustries",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://dovindustries.com/images/dovindustries-bear-white-transparent.png",
+        width: 1200,
+        height: 630,
+        alt: "Dovindustries - Crypto Platforms & VR Research",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -63,7 +75,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
+  const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Dovindustries",
@@ -78,12 +90,37 @@ export default function RootLayout({
       "crypto platform, blockchain development, VR locomotion, Web3, Ethereum",
   };
 
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "DigiDov",
+    applicationCategory: "FinanceTechnologyApplication",
+    description:
+      "Crypto donation platform for nonprofits with automated tax compliance and IRS form generation.",
+    url: "https://digidov.com",
+    operatingSystem: "Web",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    provider: {
+      "@type": "Organization",
+      name: "Dovindustries",
+    },
+  };
+
   return (
     <html lang="en" className="bg-slate-950 text-slate-50">
       <head>
+        <meta name="theme-color" content="#000000" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
         />
       </head>
       <body
