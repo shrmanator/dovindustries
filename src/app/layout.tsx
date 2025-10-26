@@ -15,24 +15,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dovindustries - Crypto Platforms & VR Locomotion Research",
+  title: "Dovindustries - Technology Company",
   description:
-    "Building crypto donation platforms and VR locomotion systems. DigiDov simplifies crypto donations with automated tax compliance. Headset-only VR locomotion research.",
+    "Tech company. Built DigiDov for crypto donations. VR locomotion research. Currently developing our next product.",
   metadataBase: new URL("https://dovindustries.com"),
   alternates: {
     canonical: "https://dovindustries.com",
   },
   keywords: [
+    "technology company",
+    "product development",
     "crypto platform",
-    "blockchain development",
-    "crypto donations",
-    "tax compliance",
-    "VR locomotion",
-    "virtual reality",
-    "Web3 development",
-    "Ethereum",
-    "NFT platform",
+    "VR research",
     "DigiDov",
+    "Web3",
+    "R&D",
   ],
   authors: [{ name: "Dovindustries" }],
   category: "Technology",
@@ -41,9 +38,9 @@ export const metadata: Metadata = {
     statusBarStyle: "black",
   },
   openGraph: {
-    title: "Dovindustries - Crypto Platforms & VR Locomotion Research",
+    title: "Dovindustries - Technology Company",
     description:
-      "Building crypto donation platforms and VR locomotion systems. DigiDov simplifies crypto donations with automated tax compliance.",
+      "Tech company. Built DigiDov for crypto donations. VR locomotion research. Currently developing our next product.",
     url: "https://dovindustries.com",
     siteName: "Dovindustries",
     locale: "en_US",
@@ -53,7 +50,7 @@ export const metadata: Metadata = {
         url: "https://dovindustries.com/images/dovindustries-bear-white-transparent.png",
         width: 1200,
         height: 630,
-        alt: "Dovindustries - Crypto Platforms & VR Research",
+        alt: "Dovindustries - Technology Company",
       },
     ],
   },
@@ -82,12 +79,12 @@ export default function RootLayout({
     url: "https://dovindustries.com",
     logo: "https://dovindustries.com/images/dovindustries-bear-white-transparent.png",
     description:
-      "Building crypto donation platforms and VR locomotion systems.",
+      "Technology company. Built DigiDov crypto donation platform, VR locomotion systems, and other products.",
     email: "contact@dovindustries.com",
     sameAs: ["https://github.com/shrmanator"],
     foundingDate: "2024",
     keywords:
-      "crypto platform, blockchain development, VR locomotion, Web3, Ethereum",
+      "technology company, product development, crypto platform, VR research",
   };
 
   const productSchema = {

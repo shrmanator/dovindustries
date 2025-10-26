@@ -37,7 +37,7 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
               <div className="flex gap-4 text-xs uppercase">
                 <span className="flex items-center gap-2 border-2 border-current px-3 py-1">
                   {project.status === 'Live' && (
-                    <span className="beacon h-2 w-2 rounded-full bg-accent" />
+                    <span className="beacon h-2 w-2 rounded-full bg-accent inline-block" />
                   )}
                   {project.status}
                 </span>
