@@ -25,7 +25,7 @@ export function SiteFooter() {
             >
               → GITHUB
             </a>
-          </nav>
+mo          </nav>
         </div>
       </div>
       <div className="mt-16 border-t-4 border-white pt-8">

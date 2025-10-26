@@ -6,17 +6,15 @@ export function HeroSection() {
         <div className="mb-12">
           <h1 className="text-[12vw] md:text-[8vw] leading-[0.85] font-black uppercase tracking-tighter">
             WEB3<br/>
-            <span className="text-accent">VR</span>
+            <span className="text-accent">VR</span><br/>
+            TRANSPORT
           </h1>
         </div>
 
         <div className="border-4 border-white p-8 md:p-12 max-w-4xl">
-          <p className="text-accent text-2xl md:text-4xl font-bold uppercase mb-4">
+          <p className="text-accent text-2xl md:text-4xl font-bold uppercase">
             &gt; FORWARD_THINKING<br/>
             &gt; BACKWARD_COMPATIBLE
-          </p>
-          <p className="text-xl md:text-2xl">
-            Crypto platforms. VR locomotion research.
           </p>
         </div>
       </div>
