@@ -2,12 +2,12 @@ const capabilities = [
   {
     title: "WEB3_BLOCKCHAIN",
     description:
-      "Smart contracts on Ethereum. DeFi protocols. NFT platforms. Tax compliance automation. On-chain everything.",
+      "Ethereum smart contracts. NFT minting. Tax compliance automation. Built DigiDov for nonprofit crypto donations.",
   },
   {
     title: "IMMERSIVE_VR_AR",
     description:
-      "Custom locomotion systems. Sensor fusion. Motion tracking without external hardware.",
+      "Walk-in-place locomotion. Headset-only sensor fusion. No external trackers or controllers required.",
   },
 ];
 

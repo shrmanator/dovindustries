@@ -17,7 +17,7 @@ export function HeroSection() {
             &gt; BACKWARD_COMPATIBLE
           </p>
           <p className="text-xl md:text-2xl">
-            Web3 compliance platforms. VR locomotion systems. Whatever needs building.
+            Crypto platforms. VR locomotion research.
           </p>
         </div>
       </div>
