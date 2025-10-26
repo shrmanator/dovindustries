@@ -31,10 +31,10 @@ const projects: Project[] = [
   {
     name: "Urban Transportation",
     summary:
-      "Fits under a desk. 0-15mph in 2.8 seconds. Currently in development.",
-    focus: ["Hardware", "Mobility", "Engineering"],
+      "Fits under a desk. 0-15mph in 2.8 seconds.",
+    focus: ["Hardware", "Battery Tech", "Engineering"],
     status: "R&D",
-    highlight: "Specs and details to be announced.",
+    highlight: "Coming soon.",
     stack: "Hardware",
   },
   {
