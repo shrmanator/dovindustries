@@ -4,7 +4,6 @@ export function HeroSection() {
       <div className="w-full px-6 py-20">
         {/* Brutalist asymmetric layout */}
         <div className="mb-12">
-          <div className="text-accent text-sm mb-4">[DOVINDUSTRIES]</div>
           <h1 className="text-[12vw] md:text-[8vw] leading-[0.85] font-black uppercase tracking-tighter">
             WEB3<br/>
             <span className="text-accent">VR</span>

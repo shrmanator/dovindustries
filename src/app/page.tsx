@@ -16,16 +16,16 @@ const projects: Project[] = [
       "Crypto donations for nonprofits. Ethereum in, tax receipts out. IRS forms auto-generated.",
     focus: ["Ethereum", "Tax Compliance", "Web3"],
     status: "Live",
-    highlight: "You get donations. We handle the blockchain.",
+    highlight: "Accepts crypto donations. Automated tax receipts. No crypto knowledge needed.",
     stack: "Crypto Platform",
   },
   {
     name: "VR Walk-in-Place Locomotion",
     summary:
-      "Walk in place, move in VR. Headset sensors track motion and body lean. Look anywhere.",
+      "Walk in place to move in VR. Natural movement without external trackers.",
     focus: ["VR", "Sensor Fusion"],
     status: "R&D",
-    highlight: "Your brain thinks you're walking.",
+    highlight: "Headset-only locomotion. No external hardware.",
     stack: "Virtual Reality",
   },
   {
@@ -33,10 +33,10 @@ const projects: Project[] = [
     logo: "/images/supermint-logo-transparent-grey.png",
     url: "https://supermint.ca",
     summary:
-      "NFT rewards for donations. Explored new ways to engage donors. Foundation for DigiDov.",
+      "NFT platform connecting charitable organizations with donors.",
     focus: ["NFTs", "Web3"],
     status: "Archived",
-    highlight: "First iteration. Validated the model.",
+    highlight: "NFT rewards for donations.",
     stack: "Web3 Platform",
   },
 ];

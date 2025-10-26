@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   description:
     "Explore the latest Dovindustries experiments, prototypes, and production work across design, code, and emerging interfaces.",
   metadataBase: new URL("https://dovindustries.com"),
+  appleWebApp: {
+    title: "dovindustries",
+  },
   openGraph: {
     title: "Dovindustries",
     description:
