@@ -13,7 +13,7 @@ export function HeroSection() {
           {/* Company statement - editorial rhythm */}
           <div className="max-w-3xl stack-block">
             <p className="type-body-lg text-paper-muted">
-              We build products in crypto, VR, and hardware.
+              Product studio. Crypto donations without blockchain knowledge. VR movement without external hardware. Compact electric transport. Some live, some in R&D.
             </p>
           </div>
 
