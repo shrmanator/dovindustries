@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ConsoleMessage } from "@/components/console-message";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -122,7 +123,9 @@ export default function RootLayout({
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 text-slate-50`}
+        suppressHydrationWarning
       >
+        <ConsoleMessage />
         {children}
       </body>
     </html>
