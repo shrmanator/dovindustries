@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dovindustries - Technology Company",
+  title: "Dovindustries — Technology company & R&D",
   description:
-    "Tech company. Built DigiDov for crypto donations. VR locomotion research. Currently developing our next product.",
+    "Dovindustries — Toronto-based technology company building DigiDov (crypto donations), VR locomotion systems, and compact electric transport. R&D and product development.",
   metadataBase: new URL("https://dovindustries.com"),
   alternates: {
     canonical: "https://dovindustries.com",
@@ -38,10 +38,17 @@ export const metadata: Metadata = {
     title: "dovindustries",
     statusBarStyle: "black",
   },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    other: [
+      { rel: "manifest", url: "/manifest.json" },
+    ],
+  },
   openGraph: {
-    title: "Dovindustries - Technology Company",
+  title: "Dovindustries — Technology company & R&D",
     description:
-      "Tech company. Built DigiDov for crypto donations. VR locomotion research. Currently developing our next product.",
+      "Dovindustries — Toronto-based technology company building DigiDov (crypto donations), VR locomotion systems, and compact electric transport.",
     url: "https://dovindustries.com",
     siteName: "Dovindustries",
     locale: "en_US",
@@ -55,6 +62,7 @@ export const metadata: Metadata = {
       },
     ],
   },
+  // No Twitter metadata included (no Twitter account configured)
   robots: {
     index: true,
     follow: true,
@@ -111,7 +119,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-slate-950 text-slate-50">
       <head>
-        <meta name="theme-color" content="#000000" />
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#000000" />
+          <link rel="canonical" href="https://dovindustries.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -119,6 +130,22 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Dovindustries",
+              url: "https://dovindustries.com",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://dovindustries.com/?s={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
         />
       </head>
       <body
