@@ -22,6 +22,7 @@ export function DigiDovSection() {
             width={160}
             height={80}
             className="h-16 w-auto object-contain brightness-0 invert md:h-20"
+            style={{ width: 'auto' }}
           />
         </div>
 
