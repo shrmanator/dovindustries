@@ -1,26 +1,35 @@
+import Image from "next/image";
 import Link from "next/link";
 
-const navItems = [
-  { label: "[WORK]", href: "#work" },
-  { label: "[CAPABILITIES]", href: "#capabilities" },
+const productNav = [
+  { label: "DigiDov", href: "#digidov" },
+  { label: "VR", href: "#vr" },
+  { label: "Transport", href: "#transport" },
+  { label: "SuperMint", href: "#supermint" },
 ];
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b-4 border-white bg-black">
-      <div className="flex items-center justify-between px-6 py-4">
+    <header className="sticky top-0 z-50 bg-ink backdrop-blur-sm">
+      <div className="grid-margin flex items-center justify-between py-4 md:py-6">
         <Link
           href="/"
-          className="text-xl font-black uppercase hover:text-accent"
+          className="hover:opacity-70 transition-opacity duration-200"
         >
-          DOVINDUSTRIES
+          <Image
+            src="/images/dovindustries-bear-white-transparent.png"
+            alt="Dovindustries"
+            width={80}
+            height={80}
+            className="h-12 w-auto object-contain md:h-16"
+          />
         </Link>
-        <nav className="flex items-center gap-6 text-sm uppercase">
-          {navItems.map((item) => (
+        <nav className="flex items-center gap-2 text-[0.65rem] md:text-[0.75rem] md:gap-8">
+          {productNav.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="hover:text-accent"
+              className="hover:text-accent transition-colors duration-200 uppercase tracking-wider font-semibold"
             >
               {item.label}
             </Link>

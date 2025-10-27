@@ -1,79 +1,278 @@
 @import "tailwindcss";
 
+/* ===================================
+   OKLCH Color System
+   2025 perceptual color model
+   =================================== */
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
-  --accent: #00ff00;
-  --accent-alt: #0000ff;
+  /* Base palette - OKLCH for perceptual consistency */
+  --color-ink: oklch(20% 0.01 0);           /* Deep charcoal, slight warmth */
+  --color-surface: oklch(18% 0.01 0);        /* Slightly darker for sections */
+  --color-paper: oklch(98% 0.005 90);        /* Off-white with warm tint */
+  --color-paper-muted: oklch(92% 0.005 90);  /* Subtle contrast */
+
+  /* Accent - electric green, perceptually tuned */
+  --color-accent: oklch(78% 0.25 142);       /* Neon green, OKLCH-balanced */
+  --color-accent-dim: oklch(65% 0.20 142);   /* Dimmed for hover states */
+
+  /* Neutrals */
+  --color-border: oklch(35% 0.01 0);         /* Visible but restrained */
+  --color-border-emphasis: oklch(50% 0.01 0); /* For punctuation */
+
+  /* Typography scale - editorial rhythm, mobile-safe */
+  --type-display-xl: clamp(2.5rem, 12vw, 12rem);    /* Hero titles - intentional sizing */
+  --type-display-lg: clamp(2rem, 8vw, 8rem);      /* Section headers */
+  --type-display-md: clamp(1.5rem, 5vw, 5rem);    /* Sub-headers */
+  --type-body-lg: clamp(1.125rem, 2vw, 1.5rem);   /* Lead copy */
+  --type-body: 1rem;                               /* Body text */
+  --type-label: 0.75rem;                           /* Labels, meta */
+
+  /* Spacing - Swiss grid discipline with generous breathing room */
+  --space-section: clamp(4rem, 15vw, 16rem);
+  --space-block: clamp(2rem, 8vw, 8rem);
+  --space-stack: clamp(1.5rem, 4vw, 4rem);
+
+  /* Grid - tighter on mobile */
+  --grid-gutter: clamp(1rem, 4vw, 3rem);
+  --grid-margin: clamp(1rem, 6vw, 6rem);
+
+  /* Motion - minimal, purposeful */
+  --duration-instant: 150ms;
+  --duration-quick: 250ms;
+  --duration-smooth: 400ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
+/* ===================================
+   Tailwind Theme Inline API
+   =================================== */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
-  --color-accent-alt: var(--accent-alt);
+  --color-ink: var(--color-ink);
+  --color-surface: var(--color-surface);
+  --color-paper: var(--color-paper);
+  --color-paper-muted: var(--color-paper-muted);
+  --color-accent: var(--color-accent);
+  --color-accent-dim: var(--color-accent-dim);
+  --color-border: var(--color-border);
+  --color-border-emphasis: var(--color-border-emphasis);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* ===================================
+   Base Reset
+   =================================== */
 * {
   box-sizing: border-box;
 }
 
+/* Reset margin/padding only on specific elements, not universally */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Prevent horizontal scroll */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
-  background: #000;
-  color: #fff;
-  font-family: var(--font-geist-mono), 'Courier New', monospace;
-  -webkit-font-smoothing: none;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: var(--type-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  position: relative;
 }
 
+/* Subtle film grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
 
-@keyframes float {
+/* ===================================
+   Typography Styles
+   =================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-family: var(--font-geist-sans);
+}
+
+/* Display type - big, intentional */
+.type-display-xl {
+  font-size: var(--type-display-xl);
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.type-display-lg {
+  font-size: var(--type-display-lg);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.type-display-md {
+  font-size: var(--type-display-md);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Body type - editorial rhythm */
+.type-body-lg {
+  font-size: var(--type-body-lg);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.type-label {
+  font-size: var(--type-label);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-family: var(--font-geist-mono);
+}
+
+/* ===================================
+   Layout Primitives
+   =================================== */
+.section-padding {
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
+}
+
+.grid-margin {
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
+}
+
+.stack-block {
+  margin-bottom: var(--space-block);
+}
+
+.stack {
+  margin-bottom: var(--space-stack);
+}
+
+/* ===================================
+   Selective Neo-Brutalism
+   Used as punctuation, not everywhere
+   =================================== */
+.brutalist-border {
+  border: 2px solid var(--color-border-emphasis);
+  transition: border-color var(--duration-quick) var(--ease-out);
+}
+
+.brutalist-border:hover {
+  border-color: var(--color-accent);
+}
+
+.brutalist-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--color-border-emphasis);
+  font-size: var(--type-label);
+  background: var(--color-ink);
+}
+
+/* ===================================
+   Minimal Motion - kinetic type
+   =================================== */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes status-pulse {
   0%, 100% {
-    transform: translateY(0px);
+    opacity: 1;
   }
   50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes glow-pulse {
-  0%, 100% {
     opacity: 0.5;
   }
-  50% {
-    opacity: 1;
+}
+
+/* Apply motion with respect for prefers-reduced-motion */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-reveal {
+    animation: reveal-up var(--duration-smooth) var(--ease-out) forwards;
+  }
+
+  .animate-fade {
+    animation: reveal-fade var(--duration-smooth) var(--ease-out) forwards;
+  }
+
+  .status-indicator {
+    animation: status-pulse 2s ease-in-out infinite;
   }
 }
 
-@keyframes beacon-pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.2);
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
-.beacon {
-  animation: beacon-pulse 2s ease-in-out infinite;
+/* ===================================
+   Utility Classes
+   =================================== */
+.accent-text {
+  color: var(--color-accent);
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.accent-border {
+  border-color: var(--color-accent);
 }
 
-.glass-strong {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+.mono {
+  font-family: var(--font-geist-mono), monospace;
 }
