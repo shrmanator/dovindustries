@@ -287,6 +287,23 @@ export default function RootLayout({
             `,
           }}
         />
+        <Script
+          id="suppress-radix-warnings"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined') {
+                const originalWarn = console.warn;
+                console.warn = (...args) => {
+                  if (args[0]?.includes?.('DialogContent') || args[0]?.includes?.('DialogTitle')) {
+                    return;
+                  }
+                  originalWarn.apply(console, args);
+                };
+              }
+            `,
+          }}
+        />
         <ConsoleMessage />
         {children}
       </body>
