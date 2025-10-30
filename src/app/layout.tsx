@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ConsoleMessage } from "@/components/console-message";
 import "./globals.css";
@@ -41,12 +42,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
-    other: [
-      { rel: "manifest", url: "/manifest.json" },
-    ],
+    other: [{ rel: "manifest", url: "/manifest.json" }],
   },
   openGraph: {
-  title: "Dovindustries — Technology company & R&D",
+    title: "Dovindustries — Technology company & R&D",
     description:
       "Dovindustries — Toronto-based technology company building DigiDov (crypto donations), VR locomotion systems, and compact electric transport.",
     url: "https://dovindustries.com",
@@ -119,13 +118,31 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-slate-950 text-slate-50">
       <head>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="theme-color" content="#000000" />
-          <link rel="canonical" href="https://dovindustries.com" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta
+          name="description"
+          content="Dovindustries — Toronto-based technology company building DigiDov (crypto donations), VR locomotion systems, and compact electric transport. R&D and product development."
+        />
+        {/* Preconnect common font origins and preload the main social/OG image used in metadata */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/dovindustries-bear-white-transparent.png"
+        />
+        <link rel="canonical" href="https://dovindustries.com" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
         />
         <script
           type="application/ld+json"
@@ -152,6 +169,19 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 text-slate-50`}
         suppressHydrationWarning
       >
+        <Script
+          id="clarity-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "tydx5dffoa");
+            `,
+          }}
+        />
         <ConsoleMessage />
         {children}
       </body>

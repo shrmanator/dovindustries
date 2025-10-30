@@ -120,6 +120,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Display type - big, intentional */
 .type-display-xl {
+  /* use a fast system fallback first to avoid waiting on webfonts for the hero
+     (keeps visible text rendering immediately; webfont will swap in when ready) */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, var(--font-geist-sans);
   font-size: var(--type-display-xl);
   font-weight: 800;
   line-height: 0.85;
@@ -150,6 +153,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Body type - editorial rhythm */
 .type-body-lg {
+  /* a modest fallback stack for lead copy to remain visible while webfonts load */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, var(--font-geist-sans);
   font-size: var(--type-body-lg);
   line-height: 1.5;
   letter-spacing: -0.01em;

@@ -21,6 +21,7 @@ export function SiteHeader() {
             alt="Dovindustries"
             width={80}
             height={80}
+            priority
             className="h-12 w-auto object-contain md:h-16"
           />
         </Link>

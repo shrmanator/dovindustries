@@ -6,6 +6,12 @@ import { SuperMintSection } from "@/components/supermint-section";
 import { TransportSection } from "@/components/transport-section";
 import { VRSection } from "@/components/vr-section";
 
+export const metadata = {
+  title: "Dovindustries — Technology company & R&D",
+  description:
+    "Dovindustries — Toronto-based technology company building DigiDov (crypto donations), VR locomotion systems, and compact electric transport. R&D and product development.",
+};
+
 export default function Home() {
   return (
     <div className="relative min-h-screen">
