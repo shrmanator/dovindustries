@@ -1,10 +1,14 @@
 export function VRSection() {
   return (
-    <section id="vr" className="section-padding grid-margin border-t border-border">
+    <section
+      id="vr"
+      className="section-padding grid-margin border-t border-border"
+      aria-labelledby="vr-heading"
+    >
       <div className="max-w-7xl">
         {/* Status */}
         <div className="flex items-center justify-between stack">
-          <div className="brutalist-chip">
+          <div className="brutalist-chip" role="status" aria-label="Development status">
             <span>R&D</span>
           </div>
           <span className="type-label text-paper-muted">VIRTUAL REALITY</span>
@@ -12,7 +16,7 @@ export function VRSection() {
 
         {/* Product statement */}
         <div className="stack-block">
-          <h2 className="type-display-lg max-w-4xl">
+          <h2 id="vr-heading" className="type-display-lg max-w-4xl">
             VR WALK-IN-PLACE LOCOMOTION
           </h2>
         </div>
@@ -20,30 +24,34 @@ export function VRSection() {
         {/* Lead description */}
         <div className="max-w-3xl stack-block">
           <p className="type-body-lg text-paper-muted">
-            Walk in place to move in VR. Natural movement without external trackers.
+            Walk in place to move in VR. Natural movement without external
+            trackers.
           </p>
         </div>
 
         {/* Feature grid - editorial rhythm */}
         <div className="grid gap-12 md:grid-cols-3 md:gap-16 stack-block">
-          <div>
+          <article>
             <h3 className="type-label mb-4 accent-text">HEADSET-ONLY</h3>
             <p className="text-paper-muted leading-relaxed">
-              No external hardware required. All sensors built into the VR headset.
+              No external hardware required. All sensors built into the VR
+              headset.
             </p>
-          </div>
-          <div>
+          </article>
+          <article>
             <h3 className="type-label mb-4 accent-text">SENSOR FUSION</h3>
             <p className="text-paper-muted leading-relaxed">
-              Combines IMU data, head tracking, and custom algorithms to detect walking motion.
+              Combines IMU data, head tracking, and custom algorithms to detect
+              walking motion.
             </p>
-          </div>
-          <div>
+          </article>
+          <article>
             <h3 className="type-label mb-4 accent-text">NATURAL MOVEMENT</h3>
             <p className="text-paper-muted leading-relaxed">
-              Intuitive locomotion that matches physical walking without treadmills or external trackers.
+              Intuitive locomotion that matches physical walking without
+              treadmills or external trackers.
             </p>
-          </div>
+          </article>
         </div>
 
         {/* Tech stack - subtle detail */}

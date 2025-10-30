@@ -7,9 +7,9 @@ import { TransportSection } from "@/components/transport-section";
 import { VRSection } from "@/components/vr-section";
 
 export const metadata = {
-  title: "Dovindustries — Technology company & R&D",
+  title: "Dovindustries | Crypto Donations, VR Locomotion & Electric Transport | Toronto Tech",
   description:
-    "Dovindustries — Toronto-based technology company building DigiDov (crypto donations), VR locomotion systems, and compact electric transport. R&D and product development.",
+    "Toronto technology company building DigiDov (IRS-compliant crypto donation platform for nonprofits), headset-only VR locomotion systems, and compact electric transport. Innovation in Web3, virtual reality, and sustainable mobility.",
 };
 
 export default function Home() {
