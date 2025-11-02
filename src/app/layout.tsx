@@ -99,8 +99,16 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Dovindustries",
-    url: "https://dovindustries.com",
-    logo: "https://dovindustries.com/images/dovindustries-bear-white-transparent.png",
+    alternateName: "Dov Industries",
+    url: "https://www.dovindustries.com",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://www.dovindustries.com/images/dovindustries-bear-white-transparent.png",
+      width: "800",
+      height: "800",
+      caption: "Dovindustries Logo",
+    },
+    image: "https://www.dovindustries.com/images/dovindustries-bear-white-transparent.png",
     description:
       "Technology company building DigiDov crypto donation platform, VR locomotion systems, and electric transport solutions. Based in Toronto, focused on innovation in Web3, virtual reality, and sustainable mobility.",
     email: "contact@dovindustries.com",
