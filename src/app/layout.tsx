@@ -48,9 +48,11 @@ export const metadata: Metadata = {
     statusBarStyle: "black",
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-    other: [{ rel: "manifest", url: "/manifest.json" }],
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon1.png", sizes: "any", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
   },
   openGraph: {
     title: "Dovindustries | Crypto Donations, VR Locomotion & Electric Transport",
