@@ -170,10 +170,16 @@ export default function RootLayout({
     brand: {
       "@type": "Organization",
       name: "Dovindustries",
+      url: "https://www.dovindustries.com",
     },
+    image: "https://www.dovindustries.com/images/dovindustries-bear-white-transparent.png",
     offers: {
       "@type": "Offer",
-      availability: "https://schema.org/InDevelopment",
+      availability: "https://schema.org/PreOrder",
+      price: "0",
+      priceCurrency: "USD",
+      priceValidUntil: "2026-12-31",
+      url: "https://www.dovindustries.com#vr",
     },
   };
 
