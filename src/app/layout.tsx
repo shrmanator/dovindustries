@@ -103,12 +103,12 @@ export default function RootLayout({
     url: "https://www.dovindustries.com",
     logo: {
       "@type": "ImageObject",
-      url: "https://www.dovindustries.com/web-app-manifest-512x512.png",
-      width: "512",
-      height: "512",
+      url: "https://www.dovindustries.com/images/dovindustries-bear-black-transparent.png",
+      width: "800",
+      height: "800",
       caption: "Dovindustries Logo",
     },
-    image: "https://www.dovindustries.com/web-app-manifest-512x512.png",
+    image: "https://www.dovindustries.com/images/dovindustries-bear-black-transparent.png",
     description:
       "Technology company building DigiDov crypto donation platform, VR locomotion systems, and electric transport solutions. Based in Toronto, focused on innovation in Web3, virtual reality, and sustainable mobility.",
     email: "contact@dovindustries.com",
@@ -172,7 +172,7 @@ export default function RootLayout({
       name: "Dovindustries",
       url: "https://www.dovindustries.com",
     },
-    image: "https://www.dovindustries.com/images/dovindustries-bear-white-transparent.png",
+    image: "https://www.dovindustries.com/images/dovindustries-bear-black-transparent.png",
     offers: {
       "@type": "Offer",
       availability: "https://schema.org/PreOrder",
