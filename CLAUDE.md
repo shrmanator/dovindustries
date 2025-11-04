@@ -63,24 +63,48 @@ Embrace Modern Next.js (15+) & React (19+) Patterns.
   - `eslint.config.mjs` - ESLint configuration
   - `postcss.config.mjs` - PostCSS configuration
 
+## Commit & Branch Strategy
+
+**Cadence (commit early, commit clean):**
+- Commit every 30–90 minutes of active work **or** at each cohesive change that compiles and passes checks.
+- Aim for small, atomic commits (typically 10–150 changed lines, 3–7 files). One idea per commit.
+- Push your branch at least daily; open a Draft PR if a branch will live > 1 day.
+- Avoid mixing refactors with feature code in the same commit.
+
+**Branching:**
+- Short-lived branches from `main`: `feat/<kebab-case>`, `fix/<kebab-case>`, `refactor/<kebab-case>`, `chore/<kebab-case>`.
+- Keep branches focused; prefer multiple small PRs over a mega PR.
+- Use **squash-and-merge**; set the PR title to a Conventional Commit so history stays clean.
+
+**Message Convention (Conventional Commits):**
+- Format: `<type>(<optional-scope>): <subject>` on one line (≤72 chars), blank line, then body (why/change/risk).
+- Types: `feat`, `fix`, `refactor`, `chore`, `test`, `docs`, `ci`, `perf`.
+- Scope = top-level folder or feature area (e.g., `app/actions`, `api`, `lib/bridge`, `prisma`, `utils`).
+- Use `BREAKING CHANGE:` in the body if applicable.
+
+**Pre-commit checks (run locally):**
+```bash
+pnpm type-check && pnpm lint && pnpm test -i
+```
+Recommended pre-push hook to prevent broken commits from landing.
+
+**PR Size & Review:**
+- Target ≤300 lines net diff (excluding snapshots/generated). Larger changes should be split.
+- Describe intent, risks, rollout/flags. Link to any relevant contract addresses or webhook specs.
+
 ## PR Review Standards
 
 ### Blocking Reviews (Request Changes):
-
-  - Build, test, or linting failures.
-  - Obvious bugs or regressions.
-  - Architectural misalignment (e.g., unnecessary client-side fetching, premature abstraction).
-  - Breaking changes without a clear migration path or documentation.
+- Build, test, or linting failures
+- Breaking changes without migration path
+- Security issues (exposed API keys, vulnerable patterns)
+- Smart contract interaction bugs
 
 ### Non-Blocking Feedback (Comments):
-
-  - Suggestions, questions, or alternative approaches.
-  - For minor, non-blocking suggestions (style, wording, a small simplification), prefix your comment with **"nit:"** (nitpick). This signals the author can address it at their discretion.
+- Suggestions, questions, alternative approaches
 
 ### Communication:
-
 Direct and technical. State: problem, location, what needs fixing. No emojis. No fluff.
 
-## Commit Messages:
-
-Keep commits professional, technical, and emoji-free.
+### Commit Messages:
+No emojis. No Claude mentions.
