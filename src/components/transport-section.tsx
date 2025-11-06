@@ -41,11 +41,11 @@ export function TransportSection() {
                     <p className="type-label text-paper-muted mt-2">MPH / 2.8s</p>
                   </div>
                   <div>
-                    <p className="type-label text-accent mb-2">FORM FACTOR</p>
+                    <p className="type-label text-accent mb-2">FOOTPRINT</p>
                     <div className="text-3xl md:text-4xl font-bold text-paper leading-tight">
-                      DESK-<br/>SIZED
+                      UNDER-<br/>DESK
                     </div>
-                    <p className="type-label text-paper-muted mt-2">COMPACT</p>
+                    <p className="type-label text-paper-muted mt-2">FITS ANYWHERE</p>
                   </div>
                 </div>
               </div>
