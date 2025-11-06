@@ -77,10 +77,8 @@ export function DigiDovSection() {
                   private keys. Platform handles all blockchain complexity.
                 </p>
                 <div className="flex flex-wrap gap-2 mt-auto relative z-10">
-                  <span className="liquid-glass-clear px-2 py-1 text-xs">BTC</span>
-                  <span className="liquid-glass-clear px-2 py-1 text-xs">ETH</span>
-                  <span className="liquid-glass-clear px-2 py-1 text-xs">USDC</span>
-                  <span className="liquid-glass-clear px-2 py-1 text-xs">+20 MORE</span>
+                  <span className="liquid-glass-clear px-3 py-1 text-xs font-semibold">USDC</span>
+                  <span className="liquid-glass-clear px-3 py-1 text-xs font-semibold">ETH</span>
                 </div>
               </article>
             </InteractiveCard>

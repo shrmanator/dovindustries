@@ -11,8 +11,8 @@ export function TransportSection() {
         {/* Status */}
         <FadeIn>
           <div className="flex items-center justify-between stack">
-            <div className="glass-dark px-4 py-2">
-              <span className="type-label text-paper-muted">R&D</span>
+            <div className="liquid-glass-clear px-4 py-2">
+              <span className="type-label text-paper-muted relative z-10">R&D</span>
             </div>
             <span className="type-label text-paper-muted">HARDWARE</span>
           </div>
@@ -31,21 +31,21 @@ export function TransportSection() {
         <FadeIn delay={200} slideFrom="left" withScale withDepth>
           <div className="max-w-4xl stack-block">
             <InteractiveCard>
-              <div className="glass-accent p-10 md:p-12 card-3d">
+              <div className="liquid-glass-regular vibrancy-accent p-10 md:p-12 card-3d glass-refraction">
                 <div className="grid grid-cols-2 gap-8">
                   <div>
-                    <p className="type-label text-accent mb-2">ACCELERATION</p>
-                    <div className="text-5xl md:text-6xl font-bold text-accent mono">
+                    <p className="type-label text-accent mb-2 relative z-10">ACCELERATION</p>
+                    <div className="text-5xl md:text-6xl font-bold text-accent mono relative z-10">
                       0–15
                     </div>
-                    <p className="type-label text-paper-muted mt-2">MPH / 2.8s</p>
+                    <p className="type-label text-paper-muted mt-2 relative z-10">MPH / 2.8s</p>
                   </div>
                   <div>
-                    <p className="type-label text-accent mb-2">FOOTPRINT</p>
-                    <div className="text-3xl md:text-4xl font-bold text-paper leading-tight">
+                    <p className="type-label text-accent mb-2 relative z-10">FOOTPRINT</p>
+                    <div className="text-3xl md:text-4xl font-bold text-paper leading-tight relative z-10">
                       UNDER-<br/>DESK
                     </div>
-                    <p className="type-label text-paper-muted mt-2">FITS ANYWHERE</p>
+                    <p className="type-label text-paper-muted mt-2 relative z-10">FITS ANYWHERE</p>
                   </div>
                 </div>
               </div>
@@ -65,16 +65,16 @@ export function TransportSection() {
         {/* Specs grid */}
         <FadeIn delay={400} slideFrom="right" withDepth>
           <div className="grid md:grid-cols-2 gap-6 stack-block">
-            <div className="glass-card p-6 spring-hover">
-              <p className="type-label text-accent mb-4">BATTERY SYSTEM</p>
-              <p className="text-paper-muted leading-relaxed">
+            <div className="liquid-glass-regular p-6 spring-hover glass-refraction">
+              <p className="type-label accent-text mb-4 relative z-10">BATTERY SYSTEM</p>
+              <p className="text-paper-muted leading-relaxed relative z-10">
                 Custom lithium-ion pack with intelligent power management for optimal
                 range and longevity.
               </p>
             </div>
-            <div className="glass-card p-6 spring-hover">
-              <p className="type-label text-accent mb-4">FORM FACTOR</p>
-              <p className="text-paper-muted leading-relaxed">
+            <div className="liquid-glass-regular p-6 spring-hover glass-refraction">
+              <p className="type-label accent-text mb-4 relative z-10">FORM FACTOR</p>
+              <p className="text-paper-muted leading-relaxed relative z-10">
                 Folding design engineered for portability without compromising
                 structural integrity.
               </p>
@@ -84,21 +84,21 @@ export function TransportSection() {
 
         {/* Tech focus */}
         <FadeIn delay={450} slideFrom="right" withDepth>
-          <div className="glass-card-subtle p-6 border-l-2 border-accent/30 stack-block">
-            <p className="type-label text-paper-muted mb-4">FOCUS AREAS</p>
-            <div className="flex flex-wrap gap-3">
-              <span className="glass-chip">MOTOR CONTROL</span>
-              <span className="glass-chip">BATTERY DENSITY</span>
-              <span className="glass-chip">MECHANICAL DESIGN</span>
-              <span className="glass-chip">SAFETY SYSTEMS</span>
+          <div className="liquid-glass-clear p-6 border-l-2 border-accent/30 stack-block">
+            <p className="type-label text-paper-muted mb-4 relative z-10">FOCUS AREAS</p>
+            <div className="flex flex-wrap gap-3 relative z-10">
+              <span className="liquid-glass-clear px-3 py-1 text-xs">MOTOR CONTROL</span>
+              <span className="liquid-glass-clear px-3 py-1 text-xs">BATTERY DENSITY</span>
+              <span className="liquid-glass-clear px-3 py-1 text-xs">MECHANICAL DESIGN</span>
+              <span className="liquid-glass-clear px-3 py-1 text-xs">SAFETY SYSTEMS</span>
             </div>
           </div>
         </FadeIn>
 
         {/* Coming soon - Premium badge */}
         <FadeIn delay={500}>
-          <div className="glass-accent px-6 py-3 inline-flex">
-            <p className="type-label text-accent">
+          <div className="liquid-glass-regular vibrancy-accent px-6 py-3 inline-flex glass-refraction">
+            <p className="type-label text-accent relative z-10">
               COMING 2026
             </p>
           </div>

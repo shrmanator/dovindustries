@@ -274,6 +274,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(var(--glass-regular)) saturate(180%);
   -webkit-backdrop-filter: blur(var(--glass-regular)) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px; /* macOS 26 Tahoe rounded corners */
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
@@ -318,6 +319,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(var(--glass-thin)) saturate(150%);
   -webkit-backdrop-filter: blur(var(--glass-thin)) saturate(150%);
   border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px; /* macOS 26 Tahoe subtle rounded corners */
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   transition: all var(--duration-smooth) var(--ease-out);
 }
@@ -338,6 +340,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(var(--glass-thick)) saturate(200%);
   -webkit-backdrop-filter: blur(var(--glass-thick)) saturate(200%);
   border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px; /* macOS 26 Tahoe rounded corners */
   box-shadow:
     0 12px 48px rgba(0, 0, 0, 0.4),
     inset 0 2px 0 rgba(255, 255, 255, 0.2),
@@ -470,6 +473,90 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow:
     0 12px 48px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* ===================================
+   macOS 26 Tahoe Design Elements
+   Desktop-optimized glass patterns
+   =================================== */
+
+/* Toolbar/Sidebar Glass - macOS signature rounded corners */
+.macos-toolbar {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  backdrop-filter: blur(var(--glass-thick)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--glass-thick)) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px; /* macOS signature rounded corners */
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Tinted Mode - Better readability option (macOS preference) */
+.macos-tinted {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  backdrop-filter: blur(var(--glass-thick)) saturate(200%);
+  -webkit-backdrop-filter: blur(var(--glass-thick)) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Window Chrome - Desktop frame inspiration */
+.macos-chrome {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Top chrome highlight - subtle macOS window bar effect */
+.macos-chrome::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Sidebar-inspired card variant - vertical emphasis */
+.macos-sidebar-card {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  backdrop-filter: blur(var(--glass-regular)) saturate(170%);
+  -webkit-backdrop-filter: blur(var(--glass-regular)) saturate(170%);
+  border-left: 2px solid rgba(var(--accent-rgb), 0.3);
+  border-radius: 8px;
+  padding-left: 1rem;
+}
+
+/* Rounded corners utility - macOS default */
+.macos-rounded {
+  border-radius: 12px;
+}
+
+.macos-rounded-sm {
+  border-radius: 8px;
+}
+
+.macos-rounded-lg {
+  border-radius: 16px;
 }
 
 /* Legacy aliases - backward compatibility */

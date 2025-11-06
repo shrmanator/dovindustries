@@ -13,8 +13,8 @@ export function SuperMintSection() {
         {/* Status + Logo */}
         <FadeIn>
           <div className="flex items-center justify-between stack">
-            <div className="glass-dark px-4 py-2 border border-white/5">
-              <span className="type-label text-paper-muted/60">ARCHIVED</span>
+            <div className="liquid-glass-clear px-4 py-2 border border-white/5">
+              <span className="type-label text-paper-muted/60 relative z-10">ARCHIVED</span>
             </div>
             <span className="type-label text-paper-muted/60">WEB3 PLATFORM</span>
           </div>
@@ -23,13 +23,13 @@ export function SuperMintSection() {
         {/* Logo + Name */}
         <FadeIn delay={100} slideFrom="left" withScale>
           <div className="stack-block flex items-center gap-6">
-            <div className="glass-card-subtle p-4 opacity-70">
+            <div className="liquid-glass-clear p-4 opacity-70">
               <Image
                 src="/images/supermint-logo-transparent-grey.png"
                 alt="SuperMint"
                 width={160}
                 height={80}
-                className="h-16 w-auto object-contain brightness-0 invert md:h-20 opacity-60"
+                className="h-16 w-auto object-contain brightness-0 invert md:h-20 opacity-60 relative z-10"
                 style={{ width: 'auto' }}
               />
             </div>
@@ -48,8 +48,8 @@ export function SuperMintSection() {
         {/* Lead description */}
         <FadeIn delay={300}>
           <div className="max-w-3xl stack-block">
-            <div className="glass-dark p-6">
-              <p className="type-body-lg text-paper-muted/70">
+            <div className="liquid-glass-clear p-6">
+              <p className="type-body-lg text-paper-muted/70 relative z-10">
                 Charities gave NFTs as gifts when donors contributed. Platform evolved into DigiDov.
               </p>
             </div>
@@ -60,27 +60,27 @@ export function SuperMintSection() {
         <FadeIn delay={400} slideFrom="right">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 stack-block">
             <InteractiveCard>
-              <article className="glass-card p-6 opacity-70 h-full">
-                <h3 className="type-label mb-4 text-accent/70">NFT REWARDS</h3>
-                <p className="text-paper-muted/70 leading-relaxed text-sm">
+              <article className="liquid-glass-regular p-6 opacity-70 h-full glass-refraction">
+                <h3 className="type-label mb-4 text-accent/70 relative z-10">NFT REWARDS</h3>
+                <p className="text-paper-muted/70 leading-relaxed text-sm relative z-10">
                   Unique digital collectibles minted on-chain for donor recognition and engagement.
                 </p>
               </article>
             </InteractiveCard>
 
             <InteractiveCard>
-              <article className="glass-card p-6 opacity-70 h-full">
-                <h3 className="type-label mb-4 text-accent/70">NO-CODE MINTING</h3>
-                <p className="text-paper-muted/70 leading-relaxed text-sm">
+              <article className="liquid-glass-regular p-6 opacity-70 h-full glass-refraction">
+                <h3 className="type-label mb-4 text-accent/70 relative z-10">NO-CODE MINTING</h3>
+                <p className="text-paper-muted/70 leading-relaxed text-sm relative z-10">
                   Charities created and distributed NFTs without blockchain knowledge or technical expertise.
                 </p>
               </article>
             </InteractiveCard>
 
             <InteractiveCard>
-              <article className="glass-card p-6 opacity-70 h-full">
-                <h3 className="type-label mb-4 text-accent/70">ENGAGEMENT</h3>
-                <p className="text-paper-muted/70 leading-relaxed text-sm">
+              <article className="liquid-glass-regular p-6 opacity-70 h-full glass-refraction">
+                <h3 className="type-label mb-4 text-accent/70 relative z-10">ENGAGEMENT</h3>
+                <p className="text-paper-muted/70 leading-relaxed text-sm relative z-10">
                   Digital assets as thank-you gifts to recognize and build lasting donor relationships.
                 </p>
               </article>
@@ -90,9 +90,9 @@ export function SuperMintSection() {
 
         {/* Evolution note */}
         <FadeIn delay={450}>
-          <div className="glass-accent p-6 opacity-80">
-            <p className="type-label text-accent/80 mb-2">EVOLUTION</p>
-            <p className="text-paper-muted/70">
+          <div className="liquid-glass-regular vibrancy-accent p-6 opacity-80 glass-refraction">
+            <p className="type-label text-accent/80 mb-2 relative z-10">EVOLUTION</p>
+            <p className="text-paper-muted/70 relative z-10">
               SuperMint's crypto donation technology evolved into DigiDov, focusing on tax compliance
               and broader cryptocurrency acceptance for nonprofits.
             </p>
