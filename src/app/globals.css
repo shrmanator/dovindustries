@@ -565,6 +565,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px; /* macOS 26 Tahoe rounded corners */
   box-shadow: var(--shadow-md);
   transition: all var(--duration-smooth) var(--ease-out);
 }
@@ -581,6 +582,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px; /* macOS 26 Tahoe rounded corners */
   box-shadow: var(--shadow-sm);
 }
 
@@ -589,6 +591,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px; /* macOS 26 Tahoe rounded corners */
   box-shadow: var(--shadow-lg);
 }
 
@@ -599,6 +602,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px; /* macOS 26 Tahoe rounded corners */
   padding: 1rem 2rem;
   font-size: var(--type-label);
   font-weight: 600;
@@ -640,6 +644,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px; /* macOS 26 Tahoe rounded corners (subtle for chips) */
   font-size: var(--type-label);
   box-shadow: var(--shadow-sm);
   transition: all var(--duration-quick) var(--ease-out);
@@ -699,6 +704,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid oklch(78% 0.25 142 / 0.2);
+  border-radius: 12px; /* macOS 26 Tahoe rounded corners */
   box-shadow: var(--shadow-md), inset 0 1px 0 oklch(78% 0.25 142 / 0.1);
   transition: all var(--duration-smooth) var(--ease-out);
 }
@@ -719,6 +725,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px; /* macOS 26 Tahoe rounded corners */
   box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 

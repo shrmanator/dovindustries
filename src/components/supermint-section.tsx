@@ -90,7 +90,7 @@ export function SuperMintSection() {
 
         {/* Evolution note */}
         <FadeIn delay={450}>
-          <div className="liquid-glass-regular vibrancy-accent p-6 opacity-80 glass-refraction">
+          <div className="liquid-glass-regular vibrancy-accent p-6 opacity-80 glass-refraction stack-block">
             <p className="type-label text-accent/80 mb-2 relative z-10">EVOLUTION</p>
             <p className="text-paper-muted/70 relative z-10">
               SuperMint's crypto donation technology evolved into DigiDov, focusing on tax compliance
@@ -101,7 +101,7 @@ export function SuperMintSection() {
 
         {/* CTA - Subtle for archived */}
         <FadeIn delay={500} withDepth>
-          <div>
+          <div className="stack-block">
             <Link
               href="https://supermint.ca"
               target="_blank"

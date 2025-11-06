@@ -110,7 +110,7 @@ export function DigiDovSection() {
 
         {/* CTA - Premium glass button */}
         <FadeIn delay={500} withDepth>
-          <div>
+          <div className="stack-block">
             <Link
               href="https://digidov.com/login"
               target="_blank"

@@ -79,7 +79,7 @@ export function VRSection() {
 
         {/* Tech stack - liquid glass */}
         <FadeIn delay={400} slideFrom="right" withDepth>
-          <div className="liquid-glass-clear p-6 border-l-2 border-accent/30">
+          <div className="liquid-glass-clear p-6 border-l-2 border-accent/30 stack-block">
             <p className="type-label text-paper-muted mb-4 relative z-10">FOCUS AREAS</p>
             <div className="flex flex-wrap gap-3 relative z-10">
               <span className="liquid-glass-clear px-3 py-1 text-xs">VR HEADSETS</span>

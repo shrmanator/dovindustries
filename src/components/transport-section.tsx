@@ -97,10 +97,12 @@ export function TransportSection() {
 
         {/* Coming soon - Premium badge */}
         <FadeIn delay={500}>
-          <div className="liquid-glass-regular vibrancy-accent px-6 py-3 inline-flex glass-refraction">
-            <p className="type-label text-accent relative z-10">
-              COMING 2026
-            </p>
+          <div className="stack-block">
+            <div className="liquid-glass-regular vibrancy-accent px-6 py-3 inline-flex glass-refraction">
+              <p className="type-label text-accent relative z-10">
+                COMING 2026
+              </p>
+            </div>
           </div>
         </FadeIn>
       </div>
