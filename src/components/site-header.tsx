@@ -21,14 +21,14 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-ink backdrop-blur-sm">
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-ink/80 border-b border-white/5">
       <div className="grid-margin flex items-center justify-between py-4 md:py-6">
         <Link
           href="/"
-          className={`hover:opacity-70 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          className={`hover:opacity-70 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             isLoaded
-              ? "translate-x-0 opacity-100"
-              : "md:translate-x-[50vw] md:-translate-y-2 opacity-0"
+              ? "translate-y-0 opacity-100 blur-0"
+              : "translate-y-2 opacity-0 blur-sm"
           }`}
         >
           <Image
@@ -45,16 +45,17 @@ export function SiteHeader() {
             <Link
               key={item.label}
               href={item.href}
-              className={`hover:text-accent transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] uppercase tracking-wider font-semibold ${
+              className={`relative hover:text-accent transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] uppercase tracking-wider font-semibold group ${
                 isLoaded
-                  ? "translate-x-0 opacity-100"
-                  : "md:-translate-x-[50vw] md:-translate-y-2 opacity-0"
+                  ? "translate-y-0 opacity-100 blur-0"
+                  : "translate-y-2 opacity-0 blur-sm"
               }`}
               style={{
                 transitionDelay: `${100 + index * 50}ms`,
               }}
             >
               {item.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </nav>

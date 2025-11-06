@@ -4,14 +4,14 @@ export function VRSection() {
   return (
     <section
       id="vr"
-      className="section-padding grid-margin border-t border-border"
+      className="section-padding grid-margin border-t border-white/5"
       aria-labelledby="vr-heading"
     >
       <div className="max-w-7xl">
         {/* Status */}
         <FadeIn>
           <div className="flex items-center justify-between stack">
-            <div className="brutalist-chip" role="status" aria-label="Development status">
+            <div className="glass-chip" role="status" aria-label="Development status">
               <span>R&D</span>
             </div>
             <span className="type-label text-paper-muted">VIRTUAL REALITY</span>
@@ -37,24 +37,26 @@ export function VRSection() {
           </div>
         </FadeIn>
 
-        {/* Feature grid - editorial rhythm */}
+        {/* Feature bento grid - varied layout */}
         <FadeIn delay={300} slideFrom="left">
-          <div className="grid gap-12 md:grid-cols-3 md:gap-16 stack-block">
-            <article>
+          <div className="bento-grid-asymmetric stack-block">
+            <article className="glass-card p-8 hover-lift">
               <h3 className="type-label mb-4 accent-text">HEADSET-ONLY</h3>
               <p className="text-paper-muted leading-relaxed">
                 No external hardware required. All sensors built into the VR
                 headset.
               </p>
             </article>
-            <article>
+
+            <article className="glass-card p-8 bento-span-2 hover-lift">
               <h3 className="type-label mb-4 accent-text">SENSOR FUSION</h3>
               <p className="text-paper-muted leading-relaxed">
                 Combines IMU data, head tracking, and custom algorithms to detect
-                walking motion.
+                walking motion. Real-time processing for natural locomotion.
               </p>
             </article>
-            <article>
+
+            <article className="glass-card p-8 hover-lift">
               <h3 className="type-label mb-4 accent-text">NATURAL MOVEMENT</h3>
               <p className="text-paper-muted leading-relaxed">
                 Intuitive locomotion that matches physical walking without
@@ -64,13 +66,13 @@ export function VRSection() {
           </div>
         </FadeIn>
 
-        {/* Tech stack - subtle detail */}
-        <FadeIn delay={400} slideFrom="right">
-          <div className="border-l-2 border-border pl-6">
+        {/* Tech stack - glass card detail */}
+        <FadeIn delay={400} slideFrom="right" withDepth>
+          <div className="glass-card-subtle p-6 border-l-2 border-accent/30">
             <p className="type-label text-paper-muted mb-4">FOCUS AREAS</p>
             <div className="flex flex-wrap gap-3">
-              <span className="brutalist-chip">VR</span>
-              <span className="brutalist-chip">SENSOR FUSION</span>
+              <span className="glass-chip">VR</span>
+              <span className="glass-chip">SENSOR FUSION</span>
             </div>
           </div>
         </FadeIn>

@@ -6,7 +6,7 @@ export function DigiDovSection() {
   return (
     <section
       id="digidov"
-      className="section-padding grid-margin border-t border-border"
+      className="section-padding grid-margin border-t border-white/5"
       aria-labelledby="digidov-heading"
     >
       <div className="max-w-7xl">
@@ -14,7 +14,7 @@ export function DigiDovSection() {
         <FadeIn>
           <div className="flex items-center justify-between stack">
             <div
-              className="brutalist-chip"
+              className="glass-chip"
               role="status"
               aria-label="Product status"
             >
@@ -26,7 +26,7 @@ export function DigiDovSection() {
         </FadeIn>
 
         {/* Logo + Name */}
-        <FadeIn delay={100}>
+        <FadeIn delay={100} withScale>
           <div className="stack-block flex items-center gap-6">
             <Image
               src="/images/digidov-logo-transparent-white.png"
@@ -59,24 +59,28 @@ export function DigiDovSection() {
           </div>
         </FadeIn>
 
-        {/* Feature grid - editorial rhythm */}
+        {/* Feature bento grid - 2026 asymmetric layout */}
         <FadeIn delay={400} slideFrom="left">
-          <div className="grid gap-12 md:grid-cols-3 md:gap-16 stack-block">
-            <article>
+          <div className="bento-grid-asymmetric stack-block">
+            {/* Featured card - spans 2 columns */}
+            <article className="glass-card p-8 bento-span-2 hover-lift">
               <h3 className="type-label mb-4 accent-text">ACCEPTS CRYPTO</h3>
               <p className="text-paper-muted leading-relaxed">
                 Nonprofits accept crypto donations without managing wallets or
-                private keys.
+                private keys. Platform handles all blockchain complexity.
               </p>
             </article>
-            <article>
+
+            {/* Standard cards */}
+            <article className="glass-card p-8 hover-lift">
               <h3 className="type-label mb-4 accent-text">TAX COMPLIANCE</h3>
               <p className="text-paper-muted leading-relaxed">
                 Automated 8283 forms and tax receipts. IRS-compliant documentation
                 generated instantly.
               </p>
             </article>
-            <article>
+
+            <article className="glass-card p-8 hover-lift">
               <h3 className="type-label mb-4 accent-text">
                 ZERO CRYPTO KNOWLEDGE
               </h3>
@@ -88,14 +92,14 @@ export function DigiDovSection() {
           </div>
         </FadeIn>
 
-        {/* CTA */}
-        <FadeIn delay={500}>
+        {/* CTA - Glass button */}
+        <FadeIn delay={500} withDepth>
           <div>
             <Link
               href="https://digidov.com/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="brutalist-border inline-block px-8 py-4 type-label hover:bg-accent hover:text-ink transition-all"
+              className="glass-button inline-block"
               aria-label="Visit DigiDov crypto donation platform"
             >
               VISIT DIGIDOV →

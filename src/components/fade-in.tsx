@@ -8,6 +8,8 @@ interface FadeInProps {
   delay?: number;
   blur?: boolean;
   slideFrom?: "bottom" | "left" | "right";
+  withDepth?: boolean;
+  withScale?: boolean;
 }
 
 export function FadeIn({
@@ -16,6 +18,8 @@ export function FadeIn({
   delay = 0,
   blur = true,
   slideFrom = "bottom",
+  withDepth = false,
+  withScale = false,
 }: FadeInProps) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -53,23 +57,31 @@ export function FadeIn({
   }, [delay]);
 
   const getTransform = () => {
-    if (isVisible) return "translate-y-0 translate-x-0";
+    const scale = withScale && !isVisible ? "scale-95" : "scale-100";
+    if (isVisible) return `translate-y-0 translate-x-0 ${scale}`;
+
     switch (slideFrom) {
       case "left":
-        return "-translate-x-8 translate-y-0";
+        return `-translate-x-8 translate-y-0 ${scale}`;
       case "right":
-        return "translate-x-8 translate-y-0";
+        return `translate-x-8 translate-y-0 ${scale}`;
       default:
-        return "translate-y-8 translate-x-0";
+        return `translate-y-8 translate-x-0 ${scale}`;
     }
   };
+
+  const depthStyle = withDepth && !isVisible
+    ? "shadow-none"
+    : withDepth
+    ? "shadow-md"
+    : "";
 
   return (
     <div
       ref={ref}
       className={`transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
         isVisible ? "opacity-100" : "opacity-0"
-      } ${getTransform()} ${blur && !isVisible ? "blur-sm" : "blur-0"} ${className}`}
+      } ${getTransform()} ${blur && !isVisible ? "blur-sm" : "blur-0"} ${depthStyle} ${className}`}
     >
       {children}
     </div>
