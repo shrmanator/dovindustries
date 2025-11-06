@@ -14,6 +14,7 @@
   /* Accent - electric green, perceptually tuned */
   --color-accent: oklch(78% 0.25 142);       /* Neon green, OKLCH-balanced */
   --color-accent-dim: oklch(65% 0.20 142);   /* Dimmed for hover states */
+  --accent-rgb: 124, 252, 0;                  /* RGB for glow effects */
 
   /* Neutrals */
   --color-border: oklch(35% 0.01 0);         /* Visible but restrained */
@@ -93,7 +94,32 @@ body {
   position: relative;
 }
 
-/* Subtle film grain texture overlay */
+/* Gradient mesh background - Apple/Linear style */
+body::after {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 30%, oklch(78% 0.25 142 / 0.15), transparent 40%),
+    radial-gradient(circle at 80% 70%, oklch(65% 0.20 142 / 0.1), transparent 40%),
+    radial-gradient(circle at 40% 80%, oklch(78% 0.25 142 / 0.08), transparent 50%);
+  animation: mesh-shift 20s ease-in-out infinite;
+  filter: blur(60px);
+}
+
+@keyframes mesh-shift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(5%, 5%) rotate(1deg); }
+  66% { transform: translate(-5%, 3%) rotate(-1deg); }
+}
+
+/* Animated film grain texture overlay */
 body::before {
   content: '';
   position: fixed;
@@ -101,11 +127,25 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.03;
+  opacity: 0.04;
   z-index: 9999;
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   mix-blend-mode: overlay;
+  animation: grain-shift 8s steps(10) infinite;
+}
+
+@keyframes grain-shift {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -5%); }
+  20% { transform: translate(5%, -10%); }
+  30% { transform: translate(-10%, 5%); }
+  40% { transform: translate(10%, -5%); }
+  50% { transform: translate(-5%, 10%); }
+  60% { transform: translate(5%, 5%); }
+  70% { transform: translate(-10%, -10%); }
+  80% { transform: translate(10%, 10%); }
+  90% { transform: translate(-5%, 0%); }
 }
 
 /* ===================================
@@ -190,9 +230,197 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===================================
-   Selective Neo-Brutalism
-   Used as punctuation, not everywhere
+   2026 Liquid Glass System
+   Spatial depth via transparency & blur
    =================================== */
+
+/* Shadow system - layered depth */
+:root {
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
+
+  /* Glass effect glow */
+  --glow-accent: 0 0 20px rgba(var(--accent-rgb), 0.15);
+}
+
+/* Primary glass card - Apple-inspired liquid glass */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-md);
+  transition: all var(--duration-smooth) var(--ease-out);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Glass card variants */
+.glass-card-subtle {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: var(--shadow-sm);
+}
+
+.glass-card-emphasis {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Glass button - refined CTA */
+.glass-button {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem;
+  font-size: var(--type-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all var(--duration-smooth) var(--ease-out);
+  overflow: hidden;
+}
+
+.glass-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left var(--duration-smooth) var(--ease-out);
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md), var(--glow-accent);
+  transform: translateY(-2px);
+}
+
+.glass-button:hover::before {
+  left: 100%;
+}
+
+/* Glass chip - status indicators */
+.glass-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: var(--type-label);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-quick) var(--ease-out);
+}
+
+.glass-chip:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+/* Depth elevation classes */
+.depth-1 {
+  box-shadow: var(--shadow-sm);
+}
+
+.depth-2 {
+  box-shadow: var(--shadow-md);
+}
+
+.depth-3 {
+  box-shadow: var(--shadow-lg);
+}
+
+.depth-4 {
+  box-shadow: var(--shadow-xl);
+}
+
+/* Hover depth enhancement */
+.hover-lift {
+  transition: transform var(--duration-smooth) var(--ease-out),
+              box-shadow var(--duration-smooth) var(--ease-out);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* 3D Perspective card tilt */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform var(--duration-smooth) cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-3d:hover {
+  transform: translateY(-8px) rotateX(2deg);
+}
+
+/* Gradient-tinted glass variants */
+.glass-accent {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.04),
+    oklch(78% 0.25 142 / 0.08)
+  );
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid oklch(78% 0.25 142 / 0.2);
+  box-shadow: var(--shadow-md), inset 0 1px 0 oklch(78% 0.25 142 / 0.1);
+  transition: all var(--duration-smooth) var(--ease-out);
+}
+
+.glass-accent:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06),
+    oklch(78% 0.25 142 / 0.12)
+  );
+  border-color: oklch(78% 0.25 142 / 0.3);
+  box-shadow: var(--shadow-lg), var(--glow-accent), inset 0 1px 0 oklch(78% 0.25 142 / 0.15);
+  transform: translateY(-2px);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Premium hover effects with spring physics */
+.spring-hover {
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow var(--duration-smooth) var(--ease-out);
+}
+
+.spring-hover:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Legacy brutalist - keep for selective use */
 .brutalist-border {
   border: 2px solid var(--color-border-emphasis);
   transition: border-color var(--duration-quick) var(--ease-out);
@@ -202,14 +430,64 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--color-accent);
 }
 
-.brutalist-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid var(--color-border-emphasis);
-  font-size: var(--type-label);
-  background: var(--color-ink);
+/* ===================================
+   Bento Grid System - 2026 Layout
+   Asymmetric, Apple-inspired
+   =================================== */
+.bento-grid {
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Bento variants for different layouts */
+.bento-grid-2x2 {
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+}
+
+.bento-grid-asymmetric {
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(150px, auto);
+}
+
+/* Bento cell sizing */
+.bento-span-2 {
+  grid-column: span 2;
+}
+
+.bento-span-3 {
+  grid-column: span 3;
+}
+
+.bento-span-4 {
+  grid-column: span 4;
+}
+
+.bento-row-span-2 {
+  grid-row: span 2;
+}
+
+/* Responsive bento adjustments */
+@media (max-width: 768px) {
+  .bento-grid-2x2,
+  .bento-grid-asymmetric {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-span-2,
+  .bento-span-3,
+  .bento-span-4 {
+    grid-column: span 1;
+  }
+
+  .bento-row-span-2 {
+    grid-row: span 1;
+  }
 }
 
 /* ===================================
@@ -238,9 +516,20 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes status-pulse {
   0%, 100% {
     opacity: 1;
+    transform: scale(1);
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes status-glow {
+  0%, 100% {
+    box-shadow: 0 0 8px var(--color-accent), 0 0 16px var(--color-accent);
+  }
+  50% {
+    box-shadow: 0 0 12px var(--color-accent), 0 0 24px var(--color-accent);
   }
 }
 
@@ -255,7 +544,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .status-indicator {
-    animation: status-pulse 2s ease-in-out infinite;
+    animation: status-pulse 2s ease-in-out infinite, status-glow 2s ease-in-out infinite;
+  }
+
+  body::after {
+    animation: mesh-shift 20s ease-in-out infinite;
+  }
+
+  body::before {
+    animation: grain-shift 8s steps(10) infinite;
   }
 }
 

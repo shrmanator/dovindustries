@@ -1,39 +1,45 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "./fade-in";
+import { InteractiveCard } from "./interactive-card";
 
 export function SuperMintSection() {
   return (
-    <section id="supermint" className="section-padding grid-margin border-t border-border">
-      <div className="max-w-7xl">
+    <section id="supermint" className="section-padding grid-margin border-t border-white/5 relative">
+      {/* Dimmed overlay for archived state */}
+      <div className="absolute inset-0 bg-ink/30 pointer-events-none" />
+
+      <div className="max-w-7xl relative z-10">
         {/* Status + Logo */}
         <FadeIn>
           <div className="flex items-center justify-between stack">
-            <div className="brutalist-chip">
-              <span>ARCHIVED</span>
+            <div className="glass-dark px-4 py-2 border border-white/5">
+              <span className="type-label text-paper-muted/60">ARCHIVED</span>
             </div>
-            <span className="type-label text-paper-muted">WEB3 PLATFORM</span>
+            <span className="type-label text-paper-muted/60">WEB3 PLATFORM</span>
           </div>
         </FadeIn>
 
         {/* Logo + Name */}
-        <FadeIn delay={100} slideFrom="left">
+        <FadeIn delay={100} slideFrom="left" withScale>
           <div className="stack-block flex items-center gap-6">
-            <Image
-              src="/images/supermint-logo-transparent-grey.png"
-              alt="SuperMint"
-              width={160}
-              height={80}
-              className="h-16 w-auto object-contain brightness-0 invert md:h-20"
-              style={{ width: 'auto' }}
-            />
+            <div className="glass-card-subtle p-4 opacity-70">
+              <Image
+                src="/images/supermint-logo-transparent-grey.png"
+                alt="SuperMint"
+                width={160}
+                height={80}
+                className="h-16 w-auto object-contain brightness-0 invert md:h-20 opacity-60"
+                style={{ width: 'auto' }}
+              />
+            </div>
           </div>
         </FadeIn>
 
         {/* Product statement */}
         <FadeIn delay={200}>
           <div className="stack-block">
-            <h2 className="type-display-lg max-w-4xl">
+            <h2 className="type-display-lg max-w-4xl opacity-60">
               NFT GIFTS FOR DONATIONS
             </h2>
           </div>
@@ -42,46 +48,67 @@ export function SuperMintSection() {
         {/* Lead description */}
         <FadeIn delay={300}>
           <div className="max-w-3xl stack-block">
-            <p className="type-body-lg text-paper-muted">
-              Charities give NFTs as gifts when donors contribute.
+            <div className="glass-dark p-6">
+              <p className="type-body-lg text-paper-muted/70">
+                Charities gave NFTs as gifts when donors contributed. Platform evolved into DigiDov.
+              </p>
+            </div>
+          </div>
+        </FadeIn>
+
+        {/* Feature bento grid - subtle for archived */}
+        <FadeIn delay={400} slideFrom="right">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 stack-block">
+            <InteractiveCard>
+              <article className="glass-card p-6 opacity-70 h-full">
+                <h3 className="type-label mb-4 text-accent/70">NFT REWARDS</h3>
+                <p className="text-paper-muted/70 leading-relaxed text-sm">
+                  Unique digital collectibles minted on-chain for donor recognition and engagement.
+                </p>
+              </article>
+            </InteractiveCard>
+
+            <InteractiveCard>
+              <article className="glass-card p-6 opacity-70 h-full">
+                <h3 className="type-label mb-4 text-accent/70">NO-CODE MINTING</h3>
+                <p className="text-paper-muted/70 leading-relaxed text-sm">
+                  Charities created and distributed NFTs without blockchain knowledge or technical expertise.
+                </p>
+              </article>
+            </InteractiveCard>
+
+            <InteractiveCard>
+              <article className="glass-card p-6 opacity-70 h-full">
+                <h3 className="type-label mb-4 text-accent/70">ENGAGEMENT</h3>
+                <p className="text-paper-muted/70 leading-relaxed text-sm">
+                  Digital assets as thank-you gifts to recognize and build lasting donor relationships.
+                </p>
+              </article>
+            </InteractiveCard>
+          </div>
+        </FadeIn>
+
+        {/* Evolution note */}
+        <FadeIn delay={450}>
+          <div className="glass-accent p-6 opacity-80">
+            <p className="type-label text-accent/80 mb-2">EVOLUTION</p>
+            <p className="text-paper-muted/70">
+              SuperMint's crypto donation technology evolved into DigiDov, focusing on tax compliance
+              and broader cryptocurrency acceptance for nonprofits.
             </p>
           </div>
         </FadeIn>
 
-        {/* Feature grid - editorial rhythm */}
-        <FadeIn delay={400} slideFrom="right">
-          <div className="grid gap-12 md:grid-cols-3 md:gap-16 stack-block">
-            <div>
-              <h3 className="type-label mb-4 accent-text">NFT GIFTS</h3>
-              <p className="text-paper-muted leading-relaxed">
-                Charities reward donors with unique NFT gifts for their contributions.
-              </p>
-            </div>
-            <div>
-              <h3 className="type-label mb-4 accent-text">SIMPLE MINTING</h3>
-              <p className="text-paper-muted leading-relaxed">
-                Platform handled NFT creation and distribution. Charities managed campaigns without blockchain expertise.
-              </p>
-            </div>
-            <div>
-              <h3 className="type-label mb-4 accent-text">DONOR ENGAGEMENT</h3>
-              <p className="text-paper-muted leading-relaxed">
-                Digital collectibles as thank-you gifts to recognize and engage supporters.
-              </p>
-            </div>
-          </div>
-        </FadeIn>
-
-        {/* CTA */}
-        <FadeIn delay={500}>
+        {/* CTA - Subtle for archived */}
+        <FadeIn delay={500} withDepth>
           <div>
             <Link
               href="https://supermint.ca"
               target="_blank"
               rel="noopener noreferrer"
-              className="brutalist-border inline-block px-8 py-4 type-label hover:bg-accent hover:text-ink transition-all"
+              className="glass-button inline-block opacity-60 hover:opacity-80"
             >
-              VISIT SUPERMINT →
+              VIEW ARCHIVE →
             </Link>
           </div>
         </FadeIn>
