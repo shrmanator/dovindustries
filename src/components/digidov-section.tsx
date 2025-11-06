@@ -59,8 +59,8 @@ export function DigiDovSection() {
         <FadeIn delay={300}>
           <div className="max-w-3xl stack-block">
             <p className="type-body-lg text-paper-muted">
-              Crypto in, tax receipts out. IRS forms auto-generated. No crypto
-              knowledge needed.
+              Crypto in, tax receipts automatically sent to donors. IRS forms
+              auto-generated. No crypto knowledge needed.
             </p>
           </div>
         </FadeIn>
@@ -86,10 +86,10 @@ export function DigiDovSection() {
             {/* Standard cards - liquid glass regular */}
             <InteractiveCard className="md:col-span-2">
               <article className="liquid-glass-regular p-6 md:p-8 h-full spring-hover glass-refraction">
-                <h3 className="type-label mb-4 accent-text relative z-10">TAX COMPLIANCE</h3>
+                <h3 className="type-label mb-4 accent-text relative z-10">IRS COMPLIANCE</h3>
                 <p className="text-paper-muted leading-relaxed relative z-10">
-                  Automated 8283 forms and tax receipts. IRS-compliant documentation
-                  generated instantly.
+                  Automated 8283 forms and tax receipts automatically sent to donors.
+                  IRS-compliant documentation generated instantly.
                 </p>
               </article>
             </InteractiveCard>
@@ -97,11 +97,11 @@ export function DigiDovSection() {
             <InteractiveCard className="md:col-span-2">
               <article className="liquid-glass-regular p-6 md:p-8 h-full spring-hover glass-refraction">
                 <h3 className="type-label mb-4 accent-text relative z-10">
-                  ZERO CRYPTO KNOWLEDGE
+                  DIGIDOV CASH
                 </h3>
                 <p className="text-paper-muted leading-relaxed relative z-10">
-                  Platform handles conversion, compliance, and reporting. Nonprofits
-                  get USD deposits.
+                  New offramping feature allowing creators, nonprofits, and bloggers to
+                  instantly receive U.S. dollars from crypto donations.
                 </p>
               </article>
             </InteractiveCard>
