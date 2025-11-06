@@ -28,11 +28,11 @@ export function HeroSection() {
             </div>
           </FadeIn>
 
-          {/* Company statement - glass card */}
+          {/* Company statement - liquid glass with vibrancy */}
           <FadeIn delay={300} withDepth>
             <div className="max-w-3xl stack-block">
-              <div className="glass-card p-6 md:p-8 hover-lift">
-                <p className="type-body-lg text-paper">
+              <div className="liquid-glass-regular vibrancy-warm p-6 md:p-8 hover-lift glass-refraction">
+                <p className="type-body-lg text-paper relative z-10">
                   Crypto without blockchain knowledge. VR movement without
                   external hardware. Compact electric transport. Some live, some
                   in R&D.
@@ -41,17 +41,17 @@ export function HeroSection() {
             </div>
           </FadeIn>
 
-          {/* Meta badges - glass chips */}
+          {/* Meta badges - liquid glass chips */}
           <FadeIn delay={500} slideFrom="left">
             <div className="flex flex-wrap gap-4">
-              <div className="glass-chip">
-                <span>EST. 2025</span>
+              <div className="liquid-glass-clear px-4 py-2">
+                <span className="type-label relative z-10">EST. 2025</span>
               </div>
-              <div className="glass-chip">
-                <span>TORONTO / REMOTE</span>
+              <div className="liquid-glass-clear px-4 py-2">
+                <span className="type-label relative z-10">TORONTO / REMOTE</span>
               </div>
-              <div className="glass-accent px-4 py-2">
-                <span className="type-label text-accent">3 LIVE PROJECTS</span>
+              <div className="liquid-glass-regular vibrancy-accent px-4 py-2">
+                <span className="type-label text-accent relative z-10">3 LIVE PROJECTS</span>
               </div>
             </div>
           </FadeIn>
