@@ -7,7 +7,7 @@ export function DigiDovSection() {
   return (
     <section
       id="digidov"
-      className="section-padding grid-margin border-t border-white/5 relative overflow-hidden"
+      className="section-padding grid-margin border-t border-white/5 relative overflow-x-hidden"
       aria-labelledby="digidov-heading"
     >
       {/* Background accent gradient */}

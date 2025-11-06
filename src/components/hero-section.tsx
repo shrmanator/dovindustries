@@ -3,9 +3,9 @@ import { Parallax } from "./parallax";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center grid-margin overflow-hidden">
+    <section className="relative min-h-screen flex items-center grid-margin overflow-x-hidden">
       {/* Floating accent orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-x-hidden pointer-events-none">
         <Parallax speed={0.3}>
           <div className="absolute top-20 right-[10%] w-96 h-96 rounded-full bg-accent/5 blur-3xl" />
         </Parallax>

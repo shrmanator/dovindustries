@@ -397,7 +397,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Physical Refraction - Real-time lensing effect */
 .glass-refraction {
   position: relative;
-  overflow: hidden;
+  /* overflow removed to prevent clipping card content on hover transforms */
 }
 
 .glass-refraction::after {

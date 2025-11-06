@@ -3,7 +3,7 @@ import { InteractiveCard } from "./interactive-card";
 
 export function TransportSection() {
   return (
-    <section id="transport" className="section-padding grid-margin border-t border-white/5 relative overflow-hidden">
+    <section id="transport" className="section-padding grid-margin border-t border-white/5 relative overflow-x-hidden">
       {/* Accent orb */}
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/3 rounded-full blur-3xl pointer-events-none" />
 

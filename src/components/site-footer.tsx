@@ -6,7 +6,7 @@ export function SiteFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/5 grid-margin section-padding relative overflow-hidden">
+    <footer className="border-t border-white/5 grid-margin section-padding relative overflow-x-hidden">
       {/* Background gradient */}
       <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-accent/5 to-transparent pointer-events-none" />
 

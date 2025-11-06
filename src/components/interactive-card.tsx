@@ -43,7 +43,7 @@ export function InteractiveCard({
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative overflow-hidden ${className}`}
+      className={`relative ${className}`}
     >
       {/* Cursor glow effect */}
       <div
