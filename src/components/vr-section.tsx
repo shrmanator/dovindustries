@@ -1,4 +1,5 @@
 import { FadeIn } from "./fade-in";
+import { InteractiveCard } from "./interactive-card";
 
 export function VRSection() {
   return (
@@ -11,8 +12,8 @@ export function VRSection() {
         {/* Status */}
         <FadeIn>
           <div className="flex items-center justify-between stack">
-            <div className="glass-chip" role="status" aria-label="Development status">
-              <span>R&D</span>
+            <div className="glass-dark px-4 py-2">
+              <span className="type-label text-paper-muted">R&D</span>
             </div>
             <span className="type-label text-paper-muted">VIRTUAL REALITY</span>
           </div>
@@ -22,7 +23,7 @@ export function VRSection() {
         <FadeIn delay={100}>
           <div className="stack-block">
             <h2 id="vr-heading" className="type-display-lg max-w-4xl">
-              VR WALK-IN-PLACE LOCOMOTION
+              VR WALK-IN-PLACE <span className="text-accent">LOCOMOTION</span>
             </h2>
           </div>
         </FadeIn>
@@ -37,42 +38,54 @@ export function VRSection() {
           </div>
         </FadeIn>
 
-        {/* Feature bento grid - varied layout */}
+        {/* Feature bento grid - dramatic asymmetry */}
         <FadeIn delay={300} slideFrom="left">
-          <div className="bento-grid-asymmetric stack-block">
-            <article className="glass-card p-8 hover-lift">
-              <h3 className="type-label mb-4 accent-text">HEADSET-ONLY</h3>
-              <p className="text-paper-muted leading-relaxed">
-                No external hardware required. All sensors built into the VR
-                headset.
-              </p>
-            </article>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 stack-block">
+            <InteractiveCard className="md:col-span-2">
+              <article className="glass-card p-8 h-full spring-hover">
+                <h3 className="type-label mb-4 accent-text">HEADSET-ONLY</h3>
+                <p className="text-paper-muted leading-relaxed">
+                  No external hardware required. All sensors built into the VR
+                  headset.
+                </p>
+              </article>
+            </InteractiveCard>
 
-            <article className="glass-card p-8 bento-span-2 hover-lift">
-              <h3 className="type-label mb-4 accent-text">SENSOR FUSION</h3>
-              <p className="text-paper-muted leading-relaxed">
-                Combines IMU data, head tracking, and custom algorithms to detect
-                walking motion. Real-time processing for natural locomotion.
-              </p>
-            </article>
+            <InteractiveCard className="md:col-span-3 md:row-span-2">
+              <article className="glass-accent p-10 h-full card-3d flex flex-col">
+                <h3 className="type-label mb-6 text-accent">SENSOR FUSION</h3>
+                <p className="text-paper leading-relaxed text-lg mb-8 flex-grow">
+                  Combines IMU data, head tracking, and custom algorithms to detect
+                  walking motion. Real-time processing for natural locomotion.
+                </p>
+                <div className="glass-dark p-4">
+                  <p className="type-label text-accent mb-2">LATENCY</p>
+                  <p className="text-3xl font-bold text-accent mono">&lt;16ms</p>
+                </div>
+              </article>
+            </InteractiveCard>
 
-            <article className="glass-card p-8 hover-lift">
-              <h3 className="type-label mb-4 accent-text">NATURAL MOVEMENT</h3>
-              <p className="text-paper-muted leading-relaxed">
-                Intuitive locomotion that matches physical walking without
-                treadmills or external trackers.
-              </p>
-            </article>
+            <InteractiveCard className="md:col-span-2">
+              <article className="glass-card p-8 h-full spring-hover">
+                <h3 className="type-label mb-4 accent-text">NATURAL MOVEMENT</h3>
+                <p className="text-paper-muted leading-relaxed">
+                  Intuitive locomotion that matches physical walking without
+                  treadmills or external trackers.
+                </p>
+              </article>
+            </InteractiveCard>
           </div>
         </FadeIn>
 
-        {/* Tech stack - glass card detail */}
+        {/* Tech stack - enhanced */}
         <FadeIn delay={400} slideFrom="right" withDepth>
           <div className="glass-card-subtle p-6 border-l-2 border-accent/30">
             <p className="type-label text-paper-muted mb-4">FOCUS AREAS</p>
             <div className="flex flex-wrap gap-3">
-              <span className="glass-chip">VR</span>
-              <span className="glass-chip">SENSOR FUSION</span>
+              <span className="glass-chip">VR HEADSETS</span>
+              <span className="glass-chip">IMU SENSORS</span>
+              <span className="glass-chip">MACHINE LEARNING</span>
+              <span className="glass-chip">REAL-TIME PROCESSING</span>
             </div>
           </div>
         </FadeIn>
