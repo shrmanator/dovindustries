@@ -6,7 +6,7 @@ export function SiteFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/5 grid-margin section-padding relative overflow-hidden">
+    <footer className="border-t border-white/5 grid-margin section-padding relative overflow-x-hidden">
       {/* Background gradient */}
       <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-accent/5 to-transparent pointer-events-none" />
 
@@ -27,11 +27,11 @@ export function SiteFooter() {
 
           {/* Contact - Premium glass card */}
           <InteractiveCard>
-            <div className="glass-accent p-8 spring-hover h-full">
-              <p className="type-label text-accent mb-6">
+            <div className="liquid-glass-regular vibrancy-accent p-8 spring-hover h-full glass-refraction">
+              <p className="type-label text-accent mb-6 relative z-10">
                 CONNECT
               </p>
-              <nav className="flex flex-col gap-4">
+              <nav className="flex flex-col gap-4 relative z-10">
                 <a
                   href="mailto:contact@dovindustries.com"
                   className="type-body-lg hover:text-accent transition-all duration-300 relative group inline-block w-fit"
@@ -59,8 +59,8 @@ export function SiteFooter() {
             © {currentYear} DOVINDUSTRIES
           </p>
           <div className="flex gap-3">
-            <span className="glass-chip text-xs">TORONTO</span>
-            <span className="glass-chip text-xs">REMOTE-FIRST</span>
+            <span className="liquid-glass-clear px-3 py-1 text-xs">TORONTO</span>
+            <span className="liquid-glass-clear px-3 py-1 text-xs">REMOTE-FIRST</span>
           </div>
         </div>
       </div>

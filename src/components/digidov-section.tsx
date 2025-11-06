@@ -7,7 +7,7 @@ export function DigiDovSection() {
   return (
     <section
       id="digidov"
-      className="section-padding grid-margin border-t border-white/5 relative overflow-hidden"
+      className="section-padding grid-margin border-t border-white/5 relative overflow-x-hidden"
       aria-labelledby="digidov-heading"
     >
       {/* Background accent gradient */}
@@ -32,13 +32,13 @@ export function DigiDovSection() {
         {/* Logo + Name */}
         <FadeIn delay={100} withScale>
           <div className="stack-block flex items-center gap-6">
-            <div className="glass-card-subtle p-4 hover:scale-105 transition-transform duration-500">
+            <div className="liquid-glass-clear p-4 hover:scale-105 transition-transform duration-500 glass-refraction">
               <Image
                 src="/images/digidov-logo-transparent-white.png"
                 alt="DigiDov - Crypto Donation Platform Logo"
                 width={160}
                 height={80}
-                className="h-16 w-auto object-contain brightness-0 invert md:h-20"
+                className="h-16 w-auto object-contain brightness-0 invert md:h-20 relative z-10"
                 style={{ width: "auto" }}
                 priority
               />
@@ -65,31 +65,29 @@ export function DigiDovSection() {
           </div>
         </FadeIn>
 
-        {/* Feature bento grid - premium asymmetric layout */}
+        {/* Feature bento grid - iOS 26 liquid glass */}
         <FadeIn delay={400} slideFrom="left">
           <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-6 stack-block">
-            {/* Featured card - spans 4 columns, taller */}
+            {/* Featured card - spans 4 columns with vibrancy */}
             <InteractiveCard className="md:col-span-4 md:row-span-2">
-              <article className="glass-accent p-8 md:p-10 h-full card-3d">
-                <h3 className="type-label mb-6 text-accent">ACCEPTS CRYPTO</h3>
-                <p className="text-paper leading-relaxed text-lg mb-6">
+              <article className="liquid-glass-regular vibrancy-accent p-8 md:p-10 h-full card-3d glass-refraction">
+                <h3 className="type-label mb-6 text-accent relative z-10">ACCEPTS CRYPTO</h3>
+                <p className="text-paper leading-relaxed text-lg mb-6 relative z-10">
                   Nonprofits accept crypto donations without managing wallets or
                   private keys. Platform handles all blockchain complexity.
                 </p>
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  <span className="glass-chip text-xs">BTC</span>
-                  <span className="glass-chip text-xs">ETH</span>
-                  <span className="glass-chip text-xs">USDC</span>
-                  <span className="glass-chip text-xs">+20 MORE</span>
+                <div className="flex flex-wrap gap-2 mt-auto relative z-10">
+                  <span className="liquid-glass-clear px-3 py-1 text-xs font-semibold">USDC</span>
+                  <span className="liquid-glass-clear px-3 py-1 text-xs font-semibold">ETH</span>
                 </div>
               </article>
             </InteractiveCard>
 
-            {/* Stacked cards */}
+            {/* Standard cards - liquid glass regular */}
             <InteractiveCard className="md:col-span-2">
-              <article className="glass-card p-6 md:p-8 h-full spring-hover">
-                <h3 className="type-label mb-4 accent-text">TAX COMPLIANCE</h3>
-                <p className="text-paper-muted leading-relaxed">
+              <article className="liquid-glass-regular p-6 md:p-8 h-full spring-hover glass-refraction">
+                <h3 className="type-label mb-4 accent-text relative z-10">TAX COMPLIANCE</h3>
+                <p className="text-paper-muted leading-relaxed relative z-10">
                   Automated 8283 forms and tax receipts. IRS-compliant documentation
                   generated instantly.
                 </p>
@@ -97,11 +95,11 @@ export function DigiDovSection() {
             </InteractiveCard>
 
             <InteractiveCard className="md:col-span-2">
-              <article className="glass-card p-6 md:p-8 h-full spring-hover">
-                <h3 className="type-label mb-4 accent-text">
+              <article className="liquid-glass-regular p-6 md:p-8 h-full spring-hover glass-refraction">
+                <h3 className="type-label mb-4 accent-text relative z-10">
                   ZERO CRYPTO KNOWLEDGE
                 </h3>
-                <p className="text-paper-muted leading-relaxed">
+                <p className="text-paper-muted leading-relaxed relative z-10">
                   Platform handles conversion, compliance, and reporting. Nonprofits
                   get USD deposits.
                 </p>
@@ -112,7 +110,7 @@ export function DigiDovSection() {
 
         {/* CTA - Premium glass button */}
         <FadeIn delay={500} withDepth>
-          <div>
+          <div className="stack-block">
             <Link
               href="https://digidov.com/login"
               target="_blank"

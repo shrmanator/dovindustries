@@ -21,7 +21,7 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-ink/80 border-b border-white/5">
+    <header className="navigation-layer sticky top-0 liquid-glass-thick border-b border-white/5 macos-rounded-sm">
       <div className="grid-margin flex items-center justify-between py-4 md:py-6">
         <Link
           href="/"

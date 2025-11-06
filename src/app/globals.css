@@ -230,8 +230,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===================================
-   2026 Liquid Glass System
-   Spatial depth via transparency & blur
+   iOS 26 Liquid Glass System
+   Apple's physical material design
    =================================== */
 
 /* Shadow system - layered depth */
@@ -243,14 +243,329 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Glass effect glow */
   --glow-accent: 0 0 20px rgba(var(--accent-rgb), 0.15);
+
+  /* Material thickness variants */
+  --glass-thin: 12px;
+  --glass-regular: 20px;
+  --glass-thick: 32px;
+  --glass-ultra: 48px;
+
+  /* Vibrancy intensity */
+  --vibrancy-subtle: 0.03;
+  --vibrancy-regular: 0.06;
+  --vibrancy-strong: 0.12;
+
+  /* Material tints */
+  --glass-tint-neutral: rgba(255, 255, 255, 0.08);
+  --glass-tint-warm: rgba(255, 245, 235, 0.1);
+  --glass-tint-cool: rgba(235, 245, 255, 0.08);
+  --glass-tint-accent: oklch(78% 0.25 142 / 0.08);
 }
 
-/* Primary glass card - Apple-inspired liquid glass */
+/* Regular Material - Apple's primary glass (most versatile) */
+.liquid-glass-regular {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.09) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0.07) 100%
+  );
+  backdrop-filter: blur(var(--glass-regular)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--glass-regular)) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px; /* macOS 26 Tahoe rounded corners */
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  transition: all var(--duration-smooth) var(--ease-out);
+}
+
+/* Shine effect - physical highlight */
+.liquid-glass-regular::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+.liquid-glass-regular:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.07) 50%,
+    rgba(255, 255, 255, 0.09) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Clear Material - Minimal variant for subtle hierarchy */
+.liquid-glass-clear {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(var(--glass-thin)) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--glass-thin)) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px; /* macOS 26 Tahoe subtle rounded corners */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: all var(--duration-smooth) var(--ease-out);
+}
+
+.liquid-glass-clear:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Thick Material - Navigation & modals */
+.liquid-glass-thick {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0.09) 100%
+  );
+  backdrop-filter: blur(var(--glass-thick)) saturate(200%);
+  -webkit-backdrop-filter: blur(var(--glass-thick)) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px; /* macOS 26 Tahoe rounded corners */
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Vibrancy Layers - Apple's colored overlays integrated into materials */
+.vibrancy-accent {
+  position: relative;
+}
+
+.vibrancy-accent::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    var(--glass-tint-accent),
+    transparent 60%
+  );
+  mix-blend-mode: plus-lighter;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vibrancy-neutral {
+  position: relative;
+}
+
+.vibrancy-neutral::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--glass-tint-neutral);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vibrancy-warm {
+  position: relative;
+}
+
+.vibrancy-warm::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--glass-tint-warm);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Physical Refraction - Real-time lensing effect */
+.glass-refraction {
+  position: relative;
+  /* overflow removed to prevent clipping card content on hover transforms */
+}
+
+.glass-refraction::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 40%
+  );
+  transform: translateZ(0);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--duration-smooth) var(--ease-out);
+}
+
+.glass-refraction:hover::after {
+  opacity: 1;
+  animation: refraction-pulse 2s ease-in-out infinite;
+}
+
+@keyframes refraction-pulse {
+  0%, 100% { transform: scale(1) translateZ(0); }
+  50% { transform: scale(1.05) translateZ(0); }
+}
+
+/* Material thickness utilities */
+.material-thin {
+  backdrop-filter: blur(var(--glass-thin)) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--glass-thin)) saturate(150%);
+}
+
+.material-regular {
+  backdrop-filter: blur(var(--glass-regular)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--glass-regular)) saturate(180%);
+}
+
+.material-thick {
+  backdrop-filter: blur(var(--glass-thick)) saturate(200%);
+  -webkit-backdrop-filter: blur(var(--glass-thick)) saturate(200%);
+}
+
+.material-ultra {
+  backdrop-filter: blur(var(--glass-ultra)) saturate(220%);
+  -webkit-backdrop-filter: blur(var(--glass-ultra)) saturate(220%);
+}
+
+/* Navigation Layer - Floats above content (iOS 26 hierarchy) */
+.navigation-layer {
+  position: relative;
+  z-index: 100;
+}
+
+/* Content Layer - Below navigation (never glass-on-glass) */
+.content-layer {
+  position: relative;
+  z-index: 10;
+  background: var(--color-ink);
+}
+
+/* Dynamic Contrast - Auto-adjusts for readability */
+.glass-dynamic-contrast {
+  border-color: rgba(255, 255, 255, 0.12);
+  transition: border-color var(--duration-smooth) var(--ease-out);
+}
+
+.glass-dynamic-contrast:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* ===================================
+   macOS 26 Tahoe Design Elements
+   Desktop-optimized glass patterns
+   =================================== */
+
+/* Toolbar/Sidebar Glass - macOS signature rounded corners */
+.macos-toolbar {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  backdrop-filter: blur(var(--glass-thick)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--glass-thick)) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px; /* macOS signature rounded corners */
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Tinted Mode - Better readability option (macOS preference) */
+.macos-tinted {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  backdrop-filter: blur(var(--glass-thick)) saturate(200%);
+  -webkit-backdrop-filter: blur(var(--glass-thick)) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Window Chrome - Desktop frame inspiration */
+.macos-chrome {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Top chrome highlight - subtle macOS window bar effect */
+.macos-chrome::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Sidebar-inspired card variant - vertical emphasis */
+.macos-sidebar-card {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  backdrop-filter: blur(var(--glass-regular)) saturate(170%);
+  -webkit-backdrop-filter: blur(var(--glass-regular)) saturate(170%);
+  border-left: 2px solid rgba(var(--accent-rgb), 0.3);
+  border-radius: 8px;
+  padding-left: 1rem;
+}
+
+/* Rounded corners utility - macOS default */
+.macos-rounded {
+  border-radius: 12px;
+}
+
+.macos-rounded-sm {
+  border-radius: 8px;
+}
+
+.macos-rounded-lg {
+  border-radius: 16px;
+}
+
+/* Legacy aliases - backward compatibility */
 .glass-card {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px; /* macOS 26 Tahoe rounded corners */
   box-shadow: var(--shadow-md);
   transition: all var(--duration-smooth) var(--ease-out);
 }
@@ -262,12 +577,12 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
 }
 
-/* Glass card variants */
 .glass-card-subtle {
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px; /* macOS 26 Tahoe rounded corners */
   box-shadow: var(--shadow-sm);
 }
 
@@ -276,6 +591,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px; /* macOS 26 Tahoe rounded corners */
   box-shadow: var(--shadow-lg);
 }
 
@@ -286,6 +602,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px; /* macOS 26 Tahoe rounded corners */
   padding: 1rem 2rem;
   font-size: var(--type-label);
   font-weight: 600;
@@ -327,6 +644,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px; /* macOS 26 Tahoe rounded corners (subtle for chips) */
   font-size: var(--type-label);
   box-shadow: var(--shadow-sm);
   transition: all var(--duration-quick) var(--ease-out);
@@ -386,6 +704,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid oklch(78% 0.25 142 / 0.2);
+  border-radius: 12px; /* macOS 26 Tahoe rounded corners */
   box-shadow: var(--shadow-md), inset 0 1px 0 oklch(78% 0.25 142 / 0.1);
   transition: all var(--duration-smooth) var(--ease-out);
 }
@@ -406,6 +725,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px; /* macOS 26 Tahoe rounded corners */
   box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
