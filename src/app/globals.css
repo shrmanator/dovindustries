@@ -898,3 +898,449 @@ h1, h2, h3, h4, h5, h6 {
 .mono {
   font-family: var(--font-geist-mono), monospace;
 }
+
+/* ===================================
+   BLEEDING EDGE 2026 DESIGN SYSTEM
+   Next-gen patterns and interactions
+   =================================== */
+
+/* ===================================
+   Kinetic Typography - Variable Font System
+   Text that morphs, stretches, and reacts
+   =================================== */
+:root {
+  /* Variable font animation ranges */
+  --font-weight-min: 300;
+  --font-weight-max: 900;
+  --font-stretch-min: 75%;
+  --font-stretch-max: 125%;
+
+  /* Kinetic animation speeds */
+  --kinetic-slow: 2s;
+  --kinetic-medium: 1s;
+  --kinetic-fast: 0.5s;
+}
+
+/* Scroll-reactive text weight */
+.kinetic-text {
+  font-variation-settings: 'wght' var(--font-weight-min);
+  transition: font-variation-settings var(--kinetic-medium) var(--ease-out);
+  will-change: font-variation-settings;
+}
+
+/* Weight morphing on hover */
+.kinetic-text:hover {
+  font-variation-settings: 'wght' var(--font-weight-max);
+}
+
+/* Scroll-activated kinetic headers */
+.scroll-morph {
+  font-variation-settings: 'wght' 400;
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform, font-variation-settings;
+}
+
+.scroll-morph.in-view {
+  font-variation-settings: 'wght' 700;
+  transform: scale(1.02);
+}
+
+/* Text that stretches on interaction */
+.text-stretch {
+  display: inline-block;
+  transition: transform var(--kinetic-fast) var(--ease-out);
+}
+
+.text-stretch:hover {
+  transform: scaleX(1.08) scaleY(0.95);
+  letter-spacing: 0.05em;
+}
+
+/* Gradient text with animation */
+.gradient-text {
+  background: linear-gradient(
+    120deg,
+    var(--color-accent),
+    var(--color-paper),
+    var(--color-accent)
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ===================================
+   Liquid Glass 3.0 - Gesture Responsive
+   Next-gen glassmorphism with physics
+   =================================== */
+
+/* Specular highlights - visionOS spatial anchoring */
+.glass-specular {
+  position: relative;
+  overflow: visible;
+}
+
+.glass-specular::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 100%
+  );
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.6;
+  mix-blend-mode: overlay;
+}
+
+/* Liquid blob that follows cursor */
+.liquid-blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle at center,
+    oklch(78% 0.25 142 / 0.15) 0%,
+    oklch(78% 0.25 142 / 0.05) 40%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* Context-aware transparency - AI-native pattern */
+.glass-adaptive {
+  backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(255, 255, 255, 0.06);
+  transition: all 0.4s var(--ease-out);
+}
+
+.glass-adaptive:hover {
+  backdrop-filter: blur(32px) saturate(200%);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* Multi-layer depth glass */
+.glass-layered {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* ===================================
+   visionOS Spatial Depth System
+   Material thickness with specular highlights
+   =================================== */
+
+/* Thin material - highlights and interactive elements */
+.material-depth-thin {
+  backdrop-filter: blur(12px) saturate(150%);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Regular material - main content separation */
+.material-depth-regular {
+  backdrop-filter: blur(20px) saturate(180%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.09) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Thick material - appears recessed for input areas */
+.material-depth-thick {
+  backdrop-filter: blur(32px) saturate(200%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    inset 0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(0, 0, 0, 0.15),
+    0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Spatial anchoring shadow - makes content feel grounded */
+.spatial-shadow {
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.35),
+    0 4px 12px rgba(0, 0, 0, 0.25),
+    0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* ===================================
+   Micro-Delight Interactions
+   Gaming UI influence + tactile feedback
+   =================================== */
+
+/* Tactile button with bounce */
+.tactile-button {
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.tactile-button:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.tactile-button:active {
+  transform: translateY(1px) scale(0.98);
+  transition-duration: 0.1s;
+}
+
+/* Gentle bounce on interaction */
+.bounce-gentle {
+  animation: bounce-gentle 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Gaming UI HUD-style indicator */
+.hud-indicator {
+  position: relative;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+  border-radius: 4px;
+  box-shadow:
+    0 0 20px rgba(var(--accent-rgb), 0.2),
+    inset 0 1px 0 rgba(var(--accent-rgb), 0.2);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hud-indicator::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-accent) 50%,
+    transparent 100%
+  );
+  animation: hud-scan 2s ease-in-out infinite;
+}
+
+@keyframes hud-scan {
+  0%, 100% { opacity: 0.3; transform: translateX(-100%); }
+  50% { opacity: 1; transform: translateX(100%); }
+}
+
+/* Intricate microinteraction - form field reaction */
+.field-reactive {
+  transition: all 0.3s var(--ease-out);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.field-reactive:focus {
+  border-color: var(--color-accent);
+  box-shadow:
+    0 0 0 4px rgba(var(--accent-rgb), 0.1),
+    0 2px 8px rgba(var(--accent-rgb), 0.2);
+  transform: scale(1.01);
+}
+
+/* Pulse effect for attention */
+.pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.02); opacity: 0.95; }
+}
+
+/* ===================================
+   Advanced Scroll Mechanics
+   Diagonal reveals and scroll storytelling
+   =================================== */
+
+/* Diagonal slide reveal */
+.diagonal-reveal {
+  opacity: 0;
+  transform: translate(-50px, 50px) rotate(-2deg);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.diagonal-reveal.in-view {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0deg);
+}
+
+/* Scroll-jacking (controlled) - for key moments */
+.scroll-anchor {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.scroll-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+/* Parallax depth layers */
+.parallax-layer-1 {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.parallax-layer-2 {
+  transform: translateZ(-10px) scale(1.1);
+  will-change: transform;
+}
+
+.parallax-layer-3 {
+  transform: translateZ(-20px) scale(1.2);
+  will-change: transform;
+}
+
+/* ===================================
+   AI-Native & Machine Experience (MX)
+   Optimized for LLMs and AI agents
+   =================================== */
+
+/* Semantic emphasis for AI readers */
+[data-ai-context="important"] {
+  /* Visual emphasis for humans */
+  font-weight: 600;
+  /* Semantic marker for machines - no visual change */
+}
+
+[data-ai-intent="action"] {
+  /* Signals clickable intent to AI */
+  cursor: pointer;
+}
+
+/* Performance optimization for WebGPU */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* ===================================
+   Experimental Anti-Design Elements
+   Intentional grid breaking (when appropriate)
+   =================================== */
+
+/* Asymmetric offset */
+.break-grid {
+  margin-left: clamp(-2rem, -5vw, -4rem);
+}
+
+.break-grid-right {
+  margin-right: clamp(-2rem, -5vw, -4rem);
+}
+
+/* Intentional rotation for emphasis */
+.tilt-emphasis {
+  transform: rotate(-1deg);
+  transition: transform 0.4s var(--ease-out);
+}
+
+.tilt-emphasis:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+/* ===================================
+   Performance & Accessibility
+   Respecting user preferences
+   =================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Enable kinetic effects */
+  .kinetic-text,
+  .scroll-morph,
+  .text-stretch,
+  .gradient-text,
+  .diagonal-reveal,
+  .bounce-gentle,
+  .pulse-subtle {
+    /* Animations enabled */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Disable kinetic effects */
+  .kinetic-text,
+  .scroll-morph,
+  .text-stretch,
+  .diagonal-reveal,
+  .bounce-gentle,
+  .pulse-subtle {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .gradient-text {
+    background-position: 0% 50% !important;
+    animation: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .liquid-glass-regular,
+  .liquid-glass-clear,
+  .liquid-glass-thick,
+  .glass-adaptive,
+  .glass-layered {
+    border-width: 2px;
+    border-color: currentColor;
+  }
+}
+

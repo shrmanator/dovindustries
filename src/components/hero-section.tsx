@@ -16,23 +16,23 @@ export function HeroSection() {
 
       <div className="w-full section-padding relative z-10">
         <div className="max-w-7xl">
-          {/* Company name - dramatic scale */}
+          {/* Company name - dramatic scale with kinetic typography */}
           <FadeIn delay={100} withScale>
             <div className="stack-block">
               <h1 className="text-[11vw] md:text-[12vw] lg:text-[clamp(8rem,12vw,12rem)] font-extrabold leading-[0.85] tracking-tighter uppercase">
-                <span className="inline-block hover:text-accent transition-colors duration-700">
+                <span className="inline-block kinetic-text text-stretch gradient-text transition-colors duration-700">
                   DOV
                 </span>
-                <span className="inline-block opacity-90">INDUSTRIES</span>
+                <span className="inline-block opacity-90 kinetic-text">INDUSTRIES</span>
               </h1>
             </div>
           </FadeIn>
 
-          {/* Company motto - liquid glass with vibrancy */}
+          {/* Company motto - liquid glass 3.0 with specular highlights */}
           <FadeIn delay={300} withDepth>
             <div className="max-w-3xl stack-block">
-              <div className="liquid-glass-regular vibrancy-accent p-6 md:p-8 hover-lift glass-refraction">
-                <p className="text-2xl md:text-3xl font-bold text-accent relative z-10 mb-4 leading-tight">
+              <div className="glass-layered glass-specular vibrancy-accent p-6 md:p-8 hover-lift glass-refraction spatial-shadow gpu-accelerated">
+                <p className="text-2xl md:text-3xl font-bold text-accent relative z-10 mb-4 leading-tight kinetic-text">
                   Forward thinking,<br/>backwards compatible
                 </p>
                 <p className="type-body-lg text-paper relative z-10">
@@ -44,17 +44,17 @@ export function HeroSection() {
             </div>
           </FadeIn>
 
-          {/* Meta badges - liquid glass chips */}
+          {/* Meta badges - HUD-style gaming indicators */}
           <FadeIn delay={500} slideFrom="left">
             <div className="flex flex-wrap gap-4">
-              <div className="liquid-glass-clear px-4 py-2">
+              <div className="material-depth-thin px-4 py-2 glass-specular">
                 <span className="type-label relative z-10">EST. 2025</span>
               </div>
-              <div className="liquid-glass-clear px-4 py-2">
+              <div className="material-depth-thin px-4 py-2 glass-specular">
                 <span className="type-label relative z-10">TORONTO / REMOTE</span>
               </div>
-              <div className="liquid-glass-regular vibrancy-accent px-4 py-2">
-                <span className="type-label text-accent relative z-10">2 LIVE PROJECTS</span>
+              <div className="hud-indicator pulse-subtle">
+                <span className="relative z-10">2 LIVE PROJECTS</span>
               </div>
             </div>
           </FadeIn>

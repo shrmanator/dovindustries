@@ -18,7 +18,7 @@ export function DigiDovSection() {
         <FadeIn>
           <div className="flex items-center justify-between stack">
             <div
-              className="glass-chip"
+              className="hud-indicator"
               role="status"
               aria-label="Product status"
             >
@@ -70,23 +70,23 @@ export function DigiDovSection() {
           <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-6 stack-block">
             {/* Featured card - spans 4 columns with vibrancy */}
             <InteractiveCard className="md:col-span-4 md:row-span-2">
-              <article className="liquid-glass-regular vibrancy-accent p-8 md:p-10 h-full card-3d glass-refraction">
-                <h3 className="type-label mb-6 text-accent relative z-10">ACCEPTS CRYPTO</h3>
+              <article className="glass-layered glass-specular vibrancy-accent p-8 md:p-10 h-full card-3d glass-refraction spatial-shadow gpu-accelerated diagonal-reveal">
+                <h3 className="type-label mb-6 text-accent relative z-10 scroll-morph">ACCEPTS CRYPTO</h3>
                 <p className="text-paper leading-relaxed text-lg mb-6 relative z-10">
                   Nonprofits accept crypto donations without managing wallets or
                   private keys. Platform handles all blockchain complexity.
                 </p>
                 <div className="flex flex-wrap gap-2 mt-auto relative z-10">
-                  <span className="liquid-glass-clear px-3 py-1 text-xs font-semibold">USDC</span>
-                  <span className="liquid-glass-clear px-3 py-1 text-xs font-semibold">ETH</span>
+                  <span className="material-depth-thin px-3 py-1 text-xs font-semibold">USDC</span>
+                  <span className="material-depth-thin px-3 py-1 text-xs font-semibold">ETH</span>
                 </div>
               </article>
             </InteractiveCard>
 
-            {/* Standard cards - liquid glass regular */}
+            {/* Standard cards - liquid glass with specular highlights */}
             <InteractiveCard className="md:col-span-2">
-              <article className="liquid-glass-regular p-6 md:p-8 h-full spring-hover glass-refraction">
-                <h3 className="type-label mb-4 accent-text relative z-10">IRS COMPLIANCE</h3>
+              <article className="glass-layered glass-specular p-6 md:p-8 h-full spring-hover glass-refraction spatial-shadow gpu-accelerated">
+                <h3 className="type-label mb-4 accent-text relative z-10 scroll-morph">IRS COMPLIANCE</h3>
                 <p className="text-paper-muted leading-relaxed relative z-10">
                   Automated 8283 forms and tax receipts automatically sent to donors.
                   IRS-compliant documentation generated instantly.
@@ -95,8 +95,8 @@ export function DigiDovSection() {
             </InteractiveCard>
 
             <InteractiveCard className="md:col-span-2">
-              <article className="liquid-glass-regular p-6 md:p-8 h-full spring-hover glass-refraction">
-                <h3 className="type-label mb-4 accent-text relative z-10">
+              <article className="glass-layered glass-specular p-6 md:p-8 h-full spring-hover glass-refraction spatial-shadow gpu-accelerated">
+                <h3 className="type-label mb-4 accent-text relative z-10 scroll-morph">
                   DIGIDOV CASH
                 </h3>
                 <p className="text-paper-muted leading-relaxed relative z-10">
@@ -108,15 +108,16 @@ export function DigiDovSection() {
           </div>
         </FadeIn>
 
-        {/* CTA - Premium glass button */}
+        {/* CTA - Tactile glass button with micro-delight */}
         <FadeIn delay={500} withDepth>
           <div className="stack-block">
             <Link
               href="https://digidov.com/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="glass-button inline-block group"
+              className="glass-button tactile-button inline-block group gpu-accelerated"
               aria-label="Visit DigiDov crypto donation platform"
+              data-ai-intent="action"
             >
               <span className="relative z-10">VISIT DIGIDOV →</span>
             </Link>
