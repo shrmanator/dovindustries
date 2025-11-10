@@ -65,13 +65,13 @@ export function DigiDovSection() {
           </div>
         </FadeIn>
 
-        {/* Feature bento grid - iOS 26 liquid glass */}
+        {/* Feature cards - clean 3-column layout */}
         <FadeIn delay={400} slideFrom="left">
-          <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-6 stack-block">
-            {/* Featured card - spans 4 columns with vibrancy */}
-            <InteractiveCard className="md:col-span-4 md:row-span-2">
-              <article className="glass-layered glass-specular vibrancy-accent p-8 md:p-10 h-full card-3d glass-refraction spatial-shadow gpu-accelerated diagonal-reveal">
-                <h3 className="type-label mb-6 text-accent relative z-10 scroll-morph">ACCEPTS CRYPTO</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 stack-block">
+            {/* Featured card - spans full row */}
+            <InteractiveCard className="md:col-span-3">
+              <article className="glass-layered glass-specular vibrancy-accent p-8 md:p-10 h-full glass-refraction spatial-shadow gpu-accelerated">
+                <h3 className="type-label mb-6 text-accent relative z-10">ACCEPTS CRYPTO</h3>
                 <p className="text-paper leading-relaxed text-lg mb-6 relative z-10">
                   Nonprofits accept crypto donations without managing wallets or
                   private keys. Platform handles all blockchain complexity.
@@ -83,10 +83,10 @@ export function DigiDovSection() {
               </article>
             </InteractiveCard>
 
-            {/* Standard cards - liquid glass with specular highlights */}
-            <InteractiveCard className="md:col-span-2">
-              <article className="glass-layered glass-specular p-6 md:p-8 h-full spring-hover glass-refraction spatial-shadow gpu-accelerated">
-                <h3 className="type-label mb-4 accent-text relative z-10 scroll-morph">IRS COMPLIANCE</h3>
+            {/* Standard cards - equal columns */}
+            <InteractiveCard className="md:col-span-1">
+              <article className="glass-layered glass-specular p-6 md:p-8 h-full glass-refraction spatial-shadow gpu-accelerated">
+                <h3 className="type-label mb-4 accent-text relative z-10">IRS COMPLIANCE</h3>
                 <p className="text-paper-muted leading-relaxed relative z-10">
                   Automated 8283 forms and tax receipts automatically sent to donors.
                   IRS-compliant documentation generated instantly.
@@ -95,8 +95,8 @@ export function DigiDovSection() {
             </InteractiveCard>
 
             <InteractiveCard className="md:col-span-2">
-              <article className="glass-layered glass-specular p-6 md:p-8 h-full spring-hover glass-refraction spatial-shadow gpu-accelerated">
-                <h3 className="type-label mb-4 accent-text relative z-10 scroll-morph">
+              <article className="glass-layered glass-specular p-6 md:p-8 h-full glass-refraction spatial-shadow gpu-accelerated">
+                <h3 className="type-label mb-4 accent-text relative z-10">
                   DIGIDOV CASH
                 </h3>
                 <p className="text-paper-muted leading-relaxed relative z-10">
