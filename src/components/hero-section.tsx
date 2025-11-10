@@ -20,10 +20,8 @@ export function HeroSection() {
           <FadeIn delay={100}>
             <div className="stack-block">
               <h1 className="text-[11vw] md:text-[12vw] lg:text-[clamp(8rem,12vw,12rem)] font-extrabold leading-[0.85] tracking-tighter uppercase">
-                <span className="inline-block text-paper">
-                  DOV
-                </span>
-                <span className="inline-block text-accent" style={{ transform: 'scale(1.15)', display: 'inline-block', marginLeft: '0.1em' }}>INDUSTRIES</span>
+                <span className="inline-block text-paper">DOV</span>
+                <span className="inline-block text-accent" style={{ transform: 'scale(1.15)', transformOrigin: 'left center', marginLeft: '0.15em' }}>INDUSTRIES</span>
               </h1>
             </div>
           </FadeIn>

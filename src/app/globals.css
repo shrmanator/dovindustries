@@ -11,10 +11,18 @@
   --color-paper: #f5f5f5;                        /* Off-white text */
   --color-paper-muted: #a0a0a0;                  /* Muted text */
 
-  /* Accent - Desaturated blue (Linear-inspired) */
-  --color-accent: #5b8def;                       /* Subtle desaturated blue */
-  --color-accent-dim: #4a7ad1;                   /* Dimmed for hover states */
-  --accent-rgb: 91, 141, 239;                     /* RGB for glow effects */
+  /* Accent - Multi-color system for warmth and variety */
+  --color-accent: #6b9eff;                       /* Warmer blue - primary */
+  --color-accent-dim: #5a8de8;                   /* Dimmed for hover states */
+  --accent-rgb: 107, 158, 255;                   /* RGB for glow effects */
+
+  --color-accent-warm: #ff9466;                  /* Coral orange - secondary */
+  --color-accent-warm-dim: #e8804d;              /* Dimmed warm */
+  --accent-warm-rgb: 255, 148, 102;              /* RGB for warm glows */
+
+  --color-accent-amber: #ffb84d;                 /* Amber yellow - tertiary */
+  --color-accent-amber-dim: #e8a744;             /* Dimmed amber */
+  --accent-amber-rgb: 255, 184, 77;              /* RGB for amber glows */
 
   /* Neutrals - True monochrome grays */
   --color-border: #1f1f1f;                       /* Subtle borders */
@@ -55,6 +63,10 @@
   --color-paper-muted: var(--color-paper-muted);
   --color-accent: var(--color-accent);
   --color-accent-dim: var(--color-accent-dim);
+  --color-accent-warm: var(--color-accent-warm);
+  --color-accent-warm-dim: var(--color-accent-warm-dim);
+  --color-accent-amber: var(--color-accent-amber);
+  --color-accent-amber-dim: var(--color-accent-amber-dim);
   --color-border: var(--color-border);
   --color-border-emphasis: var(--color-border-emphasis);
 
@@ -106,17 +118,12 @@ body::after {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 20% 30%, oklch(78% 0.25 142 / 0.15), transparent 40%),
-    radial-gradient(circle at 80% 70%, oklch(65% 0.20 142 / 0.1), transparent 40%),
-    radial-gradient(circle at 40% 80%, oklch(78% 0.25 142 / 0.08), transparent 50%);
-  animation: mesh-shift 20s ease-in-out infinite;
+    radial-gradient(circle at 20% 30%, rgba(var(--accent-rgb), 0.2), transparent 40%),
+    radial-gradient(circle at 70% 20%, rgba(var(--accent-warm-rgb), 0.15), transparent 35%),
+    radial-gradient(circle at 80% 70%, rgba(var(--accent-amber-rgb), 0.12), transparent 40%),
+    radial-gradient(circle at 40% 80%, rgba(var(--accent-rgb), 0.1), transparent 50%),
+    radial-gradient(circle at 90% 50%, rgba(var(--accent-warm-rgb), 0.08), transparent 45%);
   filter: blur(60px);
-}
-
-@keyframes mesh-shift {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(5%, 5%) rotate(1deg); }
-  66% { transform: translate(-5%, 3%) rotate(-1deg); }
 }
 
 /* Animated film grain texture overlay */
@@ -132,20 +139,6 @@ body::before {
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   mix-blend-mode: overlay;
-  animation: grain-shift 8s steps(10) infinite;
-}
-
-@keyframes grain-shift {
-  0%, 100% { transform: translate(0, 0); }
-  10% { transform: translate(-5%, -5%); }
-  20% { transform: translate(5%, -10%); }
-  30% { transform: translate(-10%, 5%); }
-  40% { transform: translate(10%, -5%); }
-  50% { transform: translate(-5%, 10%); }
-  60% { transform: translate(5%, 5%); }
-  70% { transform: translate(-10%, -10%); }
-  80% { transform: translate(10%, 10%); }
-  90% { transform: translate(-5%, 0%); }
 }
 
 /* ===================================
@@ -359,6 +352,42 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(
     135deg,
     var(--glass-tint-accent),
+    transparent 60%
+  );
+  mix-blend-mode: plus-lighter;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vibrancy-warm {
+  position: relative;
+}
+
+.vibrancy-warm::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--accent-warm-rgb), 0.08),
+    transparent 60%
+  );
+  mix-blend-mode: plus-lighter;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vibrancy-amber {
+  position: relative;
+}
+
+.vibrancy-amber::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--accent-amber-rgb), 0.08),
     transparent 60%
   );
   mix-blend-mode: plus-lighter;
@@ -893,6 +922,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .accent-border {
   border-color: var(--color-accent);
+}
+
+.accent-warm-text {
+  color: var(--color-accent-warm);
+}
+
+.accent-warm-border {
+  border-color: var(--color-accent-warm);
+}
+
+.accent-amber-text {
+  color: var(--color-accent-amber);
+}
+
+.accent-amber-border {
+  border-color: var(--color-accent-amber);
 }
 
 .mono {

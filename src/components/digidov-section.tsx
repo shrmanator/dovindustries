@@ -11,7 +11,7 @@ export function DigiDovSection() {
       aria-labelledby="digidov-heading"
     >
       {/* Background accent gradient */}
-      <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-accent/5 to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-accent-warm/5 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl relative z-10">
         {/* Status + Logo */}
@@ -22,7 +22,7 @@ export function DigiDovSection() {
               role="status"
               aria-label="Product status"
             >
-              <span className="status-indicator h-2 w-2 rounded-full bg-accent" />
+              <span className="status-indicator h-2 w-2 rounded-full bg-accent-amber" />
               <span>LIVE</span>
             </div>
             <span className="type-label text-paper-muted">CRYPTO PLATFORM</span>
@@ -70,8 +70,8 @@ export function DigiDovSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 stack-block">
             {/* Featured card - spans full row */}
             <InteractiveCard className="md:col-span-3">
-              <article className="glass-layered glass-specular vibrancy-accent p-8 md:p-10 h-full glass-refraction spatial-shadow gpu-accelerated">
-                <h3 className="type-label mb-6 text-accent relative z-10">ACCEPTS CRYPTO</h3>
+              <article className="glass-layered glass-specular vibrancy-warm p-8 md:p-10 h-full glass-refraction spatial-shadow gpu-accelerated">
+                <h3 className="type-label mb-6 accent-warm-text relative z-10">ACCEPTS CRYPTO</h3>
                 <p className="text-paper leading-relaxed text-lg mb-6 relative z-10">
                   Nonprofits accept crypto donations without managing wallets or
                   private keys. Platform handles all blockchain complexity.
@@ -85,7 +85,7 @@ export function DigiDovSection() {
 
             {/* Standard cards - equal columns */}
             <InteractiveCard className="md:col-span-1">
-              <article className="glass-layered glass-specular p-6 md:p-8 h-full glass-refraction spatial-shadow gpu-accelerated">
+              <article className="glass-layered glass-specular vibrancy-accent p-6 md:p-8 h-full glass-refraction spatial-shadow gpu-accelerated">
                 <h3 className="type-label mb-4 accent-text relative z-10">IRS COMPLIANCE</h3>
                 <p className="text-paper-muted leading-relaxed relative z-10">
                   Automated 8283 forms and tax receipts automatically sent to donors.
@@ -95,8 +95,8 @@ export function DigiDovSection() {
             </InteractiveCard>
 
             <InteractiveCard className="md:col-span-2">
-              <article className="glass-layered glass-specular p-6 md:p-8 h-full glass-refraction spatial-shadow gpu-accelerated">
-                <h3 className="type-label mb-4 accent-text relative z-10">
+              <article className="glass-layered glass-specular vibrancy-amber p-6 md:p-8 h-full glass-refraction spatial-shadow gpu-accelerated">
+                <h3 className="type-label mb-4 accent-amber-text relative z-10">
                   DIGIDOV CASH
                 </h3>
                 <p className="text-paper-muted leading-relaxed relative z-10">

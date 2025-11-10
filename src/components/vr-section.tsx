@@ -23,7 +23,7 @@ export function VRSection() {
         <FadeIn delay={100}>
           <div className="stack-block">
             <h2 id="vr-heading" className="type-display-lg max-w-4xl">
-              VR WALK-IN-PLACE <span className="text-accent">LOCOMOTION</span>
+              VR WALK-IN-PLACE <span className="accent-warm-text">LOCOMOTION</span>
             </h2>
           </div>
         </FadeIn>
@@ -43,7 +43,7 @@ export function VRSection() {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 stack-block">
             <InteractiveCard className="md:col-span-2">
               <article className="liquid-glass-regular p-8 h-full spring-hover glass-refraction">
-                <h3 className="type-label mb-4 accent-text relative z-10">HEADSET-ONLY</h3>
+                <h3 className="type-label mb-4 accent-warm-text relative z-10">HEADSET-ONLY</h3>
                 <p className="text-paper-muted leading-relaxed relative z-10">
                   No external hardware required. All sensors built into the VR
                   headset.
@@ -52,22 +52,22 @@ export function VRSection() {
             </InteractiveCard>
 
             <InteractiveCard className="md:col-span-3 md:row-span-2">
-              <article className="liquid-glass-regular vibrancy-accent p-10 h-full card-3d flex flex-col glass-refraction">
-                <h3 className="type-label mb-6 text-accent relative z-10">SENSOR FUSION</h3>
+              <article className="liquid-glass-regular vibrancy-warm p-10 h-full card-3d flex flex-col glass-refraction">
+                <h3 className="type-label mb-6 accent-warm-text relative z-10">SENSOR FUSION</h3>
                 <p className="text-paper leading-relaxed text-lg mb-8 flex-grow relative z-10">
                   Combines IMU data, head tracking, and custom algorithms to detect
                   walking motion. Real-time processing for natural locomotion.
                 </p>
                 <div className="liquid-glass-clear p-4 relative z-10">
-                  <p className="type-label text-accent mb-2">LATENCY</p>
-                  <p className="text-3xl font-bold text-accent mono">&lt;16ms</p>
+                  <p className="type-label accent-warm-text mb-2">LATENCY</p>
+                  <p className="text-3xl font-bold accent-warm-text mono">&lt;16ms</p>
                 </div>
               </article>
             </InteractiveCard>
 
             <InteractiveCard className="md:col-span-2">
               <article className="liquid-glass-regular p-8 h-full spring-hover glass-refraction">
-                <h3 className="type-label mb-4 accent-text relative z-10">NATURAL MOVEMENT</h3>
+                <h3 className="type-label mb-4 accent-amber-text relative z-10">NATURAL MOVEMENT</h3>
                 <p className="text-paper-muted leading-relaxed relative z-10">
                   Intuitive locomotion that matches physical walking without
                   treadmills or external trackers.
@@ -79,7 +79,7 @@ export function VRSection() {
 
         {/* Tech stack - liquid glass */}
         <FadeIn delay={400} slideFrom="right" withDepth>
-          <div className="liquid-glass-clear p-6 border-l-2 border-accent/30 stack-block">
+          <div className="liquid-glass-clear p-6 border-l-2 border-accent-warm/30 stack-block">
             <p className="type-label text-paper-muted mb-4 relative z-10">FOCUS AREAS</p>
             <div className="flex flex-wrap gap-3 relative z-10">
               <span className="liquid-glass-clear px-3 py-1 text-xs">VR HEADSETS</span>
