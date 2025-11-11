@@ -21,7 +21,7 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="navigation-layer sticky top-0 liquid-glass-thick border-b border-white/5 macos-rounded-sm">
+    <header className="sticky top-0 bg-ink/95 backdrop-blur-sm border-b border-subtle z-50">
       <div className="grid-margin flex items-center justify-between py-4 md:py-6">
         <Link
           href="/"
@@ -45,7 +45,7 @@ export function SiteHeader() {
             <Link
               key={item.label}
               href={item.href}
-              className={`relative hover:text-accent transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] uppercase tracking-wider font-semibold group ${
+              className={`relative text-paper hover:text-paper transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] uppercase tracking-wider font-semibold group ${
                 isLoaded
                   ? "translate-y-0 opacity-100 blur-0"
                   : "translate-y-2 opacity-0 blur-sm"
@@ -55,7 +55,7 @@ export function SiteHeader() {
               }}
             >
               {item.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-paper transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </nav>
