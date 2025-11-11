@@ -1,72 +1,52 @@
 @import "tailwindcss";
 
 /* ===================================
-   Dark Monochrome Color System
-   Vercel/Linear inspired - 2026
+   Vercel-Inspired Minimal Design System
+   Pure black/white, high contrast, zero decoration
    =================================== */
 :root {
-  /* Base palette - Near-black monochrome with subtle blue undertone */
-  --color-ink: #0a0a0a;                          /* Near-black background */
-  --color-surface: #121212;                       /* Slightly elevated surfaces */
-  --color-paper: #f5f5f5;                        /* Off-white text */
-  --color-paper-muted: #a0a0a0;                  /* Muted text */
+  /* Pure monochrome - Vercel style */
+  --color-ink: #000000;                          /* Pure black background */
+  --color-paper: #ffffff;                        /* Pure white text */
+  --color-paper-muted: #888888;                  /* Gray secondary text */
+  --color-border: #333333;                       /* Subtle borders */
+  --color-border-emphasis: #555555;              /* Emphasized borders */
 
-  /* Accent - Multi-color system for warmth and variety */
-  --color-accent: #6b9eff;                       /* Warmer blue - primary */
-  --color-accent-dim: #5a8de8;                   /* Dimmed for hover states */
-  --accent-rgb: 107, 158, 255;                   /* RGB for glow effects */
+  /* Single accent - minimal use */
+  --color-accent: #ffffff;                       /* White accent (inverse on dark) */
+  --accent-rgb: 255, 255, 255;
 
-  --color-accent-warm: #ff9466;                  /* Coral orange - secondary */
-  --color-accent-warm-dim: #e8804d;              /* Dimmed warm */
-  --accent-warm-rgb: 255, 148, 102;              /* RGB for warm glows */
+  /* Typography scale */
+  --type-display-xl: clamp(2.5rem, 12vw, 12rem);
+  --type-display-lg: clamp(2rem, 8vw, 8rem);
+  --type-display-md: clamp(1.5rem, 5vw, 5rem);
+  --type-body-lg: clamp(1.125rem, 2vw, 1.5rem);
+  --type-body: 1rem;
+  --type-label: 0.75rem;
 
-  --color-accent-amber: #ffb84d;                 /* Amber yellow - tertiary */
-  --color-accent-amber-dim: #e8a744;             /* Dimmed amber */
-  --accent-amber-rgb: 255, 184, 77;              /* RGB for amber glows */
-
-  /* Neutrals - True monochrome grays */
-  --color-border: #1f1f1f;                       /* Subtle borders */
-  --color-border-emphasis: #2a2a2a;              /* Emphasized borders */
-
-  /* Typography scale - editorial rhythm, mobile-safe */
-  --type-display-xl: clamp(2.5rem, 12vw, 12rem);    /* Hero titles - intentional sizing */
-  --type-display-lg: clamp(2rem, 8vw, 8rem);      /* Section headers */
-  --type-display-md: clamp(1.5rem, 5vw, 5rem);    /* Sub-headers */
-  --type-body-lg: clamp(1.125rem, 2vw, 1.5rem);   /* Lead copy */
-  --type-body: 1rem;                               /* Body text */
-  --type-label: 0.75rem;                           /* Labels, meta */
-
-  /* Spacing - Swiss grid discipline with generous breathing room */
+  /* Spacing - generous but not excessive */
   --space-section: clamp(4rem, 15vw, 16rem);
   --space-block: clamp(2rem, 8vw, 8rem);
   --space-stack: clamp(1.5rem, 4vw, 4rem);
 
-  /* Grid - tighter on mobile */
+  /* Grid */
   --grid-gutter: clamp(1rem, 4vw, 3rem);
   --grid-margin: clamp(1rem, 6vw, 6rem);
 
-  /* Motion - minimal, purposeful */
+  /* Motion - subtle, fast */
   --duration-instant: 150ms;
   --duration-quick: 250ms;
-  --duration-smooth: 400ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 /* ===================================
-   Tailwind Theme Inline API
+   Tailwind Theme
    =================================== */
 @theme inline {
   --color-ink: var(--color-ink);
-  --color-surface: var(--color-surface);
   --color-paper: var(--color-paper);
   --color-paper-muted: var(--color-paper-muted);
   --color-accent: var(--color-accent);
-  --color-accent-dim: var(--color-accent-dim);
-  --color-accent-warm: var(--color-accent-warm);
-  --color-accent-warm-dim: var(--color-accent-warm-dim);
-  --color-accent-amber: var(--color-accent-amber);
-  --color-accent-amber-dim: var(--color-accent-amber-dim);
   --color-border: var(--color-border);
   --color-border-emphasis: var(--color-border-emphasis);
 
@@ -81,14 +61,12 @@
   box-sizing: border-box;
 }
 
-/* Reset margin/padding only on specific elements, not universally */
 body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote {
   margin: 0;
   padding: 0;
 }
 
 html {
-  /* Prevent horizontal scroll */
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -103,33 +81,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  position: relative;
 }
 
-/* Gradient mesh background - Apple/Linear style */
-body::after {
-  content: '';
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  opacity: 0.15;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(var(--accent-rgb), 0.2), transparent 40%),
-    radial-gradient(circle at 70% 20%, rgba(var(--accent-warm-rgb), 0.15), transparent 35%),
-    radial-gradient(circle at 80% 70%, rgba(var(--accent-amber-rgb), 0.12), transparent 40%),
-    radial-gradient(circle at 40% 80%, rgba(var(--accent-rgb), 0.1), transparent 50%),
-    radial-gradient(circle at 90% 50%, rgba(var(--accent-warm-rgb), 0.08), transparent 45%);
-  filter: blur(60px);
-}
-
-/* Film grain removed for cleaner, more modern aesthetic */
+/* No gradient backgrounds - pure black only */
 
 /* ===================================
-   Typography Styles
+   Typography
    =================================== */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
@@ -138,18 +95,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-geist-sans);
 }
 
-/* Display type - big, intentional */
 .type-display-xl {
-  /* use a fast system fallback first to avoid waiting on webfonts for the hero
-     (keeps visible text rendering immediately; webfont will swap in when ready) */
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, var(--font-geist-sans);
+  font-family: system-ui, -apple-system, var(--font-geist-sans);
   font-size: var(--type-display-xl);
   font-weight: 800;
   line-height: 0.85;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  word-break: break-word;
-  overflow-wrap: break-word;
 }
 
 .type-display-lg {
@@ -158,8 +110,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 0.9;
   letter-spacing: -0.03em;
   text-transform: uppercase;
-  word-break: break-word;
-  overflow-wrap: break-word;
 }
 
 .type-display-md {
@@ -167,14 +117,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.02em;
-  word-break: break-word;
-  overflow-wrap: break-word;
 }
 
-/* Body type - editorial rhythm */
 .type-body-lg {
-  /* a modest fallback stack for lead copy to remain visible while webfonts load */
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, var(--font-geist-sans);
+  font-family: system-ui, -apple-system, var(--font-geist-sans);
   font-size: var(--type-body-lg);
   line-height: 1.5;
   letter-spacing: -0.01em;
@@ -210,721 +156,100 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===================================
-   iOS 26 Liquid Glass System
-   Apple's physical material design
+   Minimal Cards - Border-based only
    =================================== */
-
-/* Shadow system - layered depth */
-:root {
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
-
-  /* Glass effect glow */
-  --glow-accent: 0 0 20px rgba(var(--accent-rgb), 0.15);
-
-  /* Material thickness variants */
-  --glass-thin: 12px;
-  --glass-regular: 20px;
-  --glass-thick: 32px;
-  --glass-ultra: 48px;
-
-  /* Vibrancy intensity */
-  --vibrancy-subtle: 0.03;
-  --vibrancy-regular: 0.06;
-  --vibrancy-strong: 0.12;
-
-  /* Material tints */
-  --glass-tint-neutral: rgba(255, 255, 255, 0.08);
-  --glass-tint-warm: rgba(255, 245, 235, 0.1);
-  --glass-tint-cool: rgba(235, 245, 255, 0.08);
-  --glass-tint-accent: oklch(78% 0.25 142 / 0.08);
-}
-
-/* Regular Material - Apple's primary glass (most versatile) */
-.liquid-glass-regular {
-  position: relative;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.09) 0%,
-    rgba(255, 255, 255, 0.05) 50%,
-    rgba(255, 255, 255, 0.07) 100%
-  );
-  backdrop-filter: blur(var(--glass-regular)) saturate(180%);
-  -webkit-backdrop-filter: blur(var(--glass-regular)) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px; /* macOS 26 Tahoe rounded corners */
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  transition: all var(--duration-smooth) var(--ease-out);
-}
-
-/* Shine effect - physical highlight */
-.liquid-glass-regular::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2) 50%,
-    transparent
-  );
-  pointer-events: none;
-}
-
-.liquid-glass-regular:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.12) 0%,
-    rgba(255, 255, 255, 0.07) 50%,
-    rgba(255, 255, 255, 0.09) 100%
-  );
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow:
-    0 12px 48px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-}
-
-/* Clear Material - Minimal variant for subtle hierarchy */
-.liquid-glass-clear {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(var(--glass-thin)) saturate(150%);
-  -webkit-backdrop-filter: blur(var(--glass-thin)) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px; /* macOS 26 Tahoe subtle rounded corners */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  transition: all var(--duration-smooth) var(--ease-out);
-}
-
-.liquid-glass-clear:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Thick Material - Navigation & modals */
-.liquid-glass-thick {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.12) 0%,
-    rgba(255, 255, 255, 0.06) 50%,
-    rgba(255, 255, 255, 0.09) 100%
-  );
-  backdrop-filter: blur(var(--glass-thick)) saturate(200%);
-  -webkit-backdrop-filter: blur(var(--glass-thick)) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px; /* macOS 26 Tahoe rounded corners */
-  box-shadow:
-    0 12px 48px rgba(0, 0, 0, 0.4),
-    inset 0 2px 0 rgba(255, 255, 255, 0.2),
-    inset 0 -2px 0 rgba(0, 0, 0, 0.15);
-}
-
-/* Vibrancy Layers - Apple's colored overlays integrated into materials */
-.vibrancy-accent {
-  position: relative;
-}
-
-.vibrancy-accent::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    var(--glass-tint-accent),
-    transparent 60%
-  );
-  mix-blend-mode: plus-lighter;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.vibrancy-warm {
-  position: relative;
-}
-
-.vibrancy-warm::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(var(--accent-warm-rgb), 0.08),
-    transparent 60%
-  );
-  mix-blend-mode: plus-lighter;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.vibrancy-amber {
-  position: relative;
-}
-
-.vibrancy-amber::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(var(--accent-amber-rgb), 0.08),
-    transparent 60%
-  );
-  mix-blend-mode: plus-lighter;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.vibrancy-neutral {
-  position: relative;
-}
-
-.vibrancy-neutral::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--glass-tint-neutral);
-  mix-blend-mode: overlay;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.vibrancy-warm {
-  position: relative;
-}
-
-.vibrancy-warm::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--glass-tint-warm);
-  mix-blend-mode: overlay;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Physical Refraction - Real-time lensing effect */
-.glass-refraction {
-  position: relative;
-  /* overflow removed to prevent clipping card content on hover transforms */
-}
-
-.glass-refraction::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 255, 255, 0.08) 0%,
-    transparent 40%
-  );
-  transform: translateZ(0);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity var(--duration-smooth) var(--ease-out);
-}
-
-.glass-refraction:hover::after {
-  opacity: 1;
-  animation: refraction-pulse 2s ease-in-out infinite;
-}
-
-@keyframes refraction-pulse {
-  0%, 100% { transform: scale(1) translateZ(0); }
-  50% { transform: scale(1.05) translateZ(0); }
-}
-
-/* Material thickness utilities */
-.material-thin {
-  backdrop-filter: blur(var(--glass-thin)) saturate(150%);
-  -webkit-backdrop-filter: blur(var(--glass-thin)) saturate(150%);
-}
-
-.material-regular {
-  backdrop-filter: blur(var(--glass-regular)) saturate(180%);
-  -webkit-backdrop-filter: blur(var(--glass-regular)) saturate(180%);
-}
-
-.material-thick {
-  backdrop-filter: blur(var(--glass-thick)) saturate(200%);
-  -webkit-backdrop-filter: blur(var(--glass-thick)) saturate(200%);
-}
-
-.material-ultra {
-  backdrop-filter: blur(var(--glass-ultra)) saturate(220%);
-  -webkit-backdrop-filter: blur(var(--glass-ultra)) saturate(220%);
-}
-
-/* Navigation Layer - Floats above content (iOS 26 hierarchy) */
-.navigation-layer {
-  position: relative;
-  z-index: 100;
-}
-
-/* Content Layer - Below navigation (never glass-on-glass) */
-.content-layer {
-  position: relative;
-  z-index: 10;
-  background: var(--color-ink);
-}
-
-/* Dynamic Contrast - Auto-adjusts for readability */
-.glass-dynamic-contrast {
-  border-color: rgba(255, 255, 255, 0.12);
-  transition: border-color var(--duration-smooth) var(--ease-out);
-}
-
-.glass-dynamic-contrast:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow:
-    0 12px 48px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
-}
-
-/* ===================================
-   macOS 26 Tahoe Design Elements
-   Desktop-optimized glass patterns
-   =================================== */
-
-/* Toolbar/Sidebar Glass - macOS signature rounded corners */
-.macos-toolbar {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(255, 255, 255, 0.04) 100%
-  );
-  backdrop-filter: blur(var(--glass-thick)) saturate(180%);
-  -webkit-backdrop-filter: blur(var(--glass-thick)) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px; /* macOS signature rounded corners */
-  box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
-}
-
-/* Tinted Mode - Better readability option (macOS preference) */
-.macos-tinted {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.15) 0%,
-    rgba(255, 255, 255, 0.08) 100%
-  );
-  backdrop-filter: blur(var(--glass-thick)) saturate(200%);
-  -webkit-backdrop-filter: blur(var(--glass-thick)) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-/* Window Chrome - Desktop frame inspiration */
-.macos-chrome {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-/* Top chrome highlight - subtle macOS window bar effect */
-.macos-chrome::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 32px;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.1) 0%,
-    transparent 100%
-  );
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Sidebar-inspired card variant - vertical emphasis */
-.macos-sidebar-card {
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.06) 0%,
-    rgba(255, 255, 255, 0.03) 100%
-  );
-  backdrop-filter: blur(var(--glass-regular)) saturate(170%);
-  -webkit-backdrop-filter: blur(var(--glass-regular)) saturate(170%);
-  border-left: 2px solid rgba(var(--accent-rgb), 0.3);
+.minimal-card {
+  background: transparent;
+  border: 1px solid var(--color-border);
   border-radius: 8px;
-  padding-left: 1rem;
-}
-
-/* Rounded corners utility - macOS default */
-.macos-rounded {
-  border-radius: 12px;
-}
-
-.macos-rounded-sm {
-  border-radius: 8px;
-}
-
-.macos-rounded-lg {
-  border-radius: 16px;
-}
-
-/* Legacy aliases - backward compatibility */
-.glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px; /* macOS 26 Tahoe rounded corners */
-  box-shadow: var(--shadow-md);
-  transition: all var(--duration-smooth) var(--ease-out);
-}
-
-.glass-card:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
-}
-
-.glass-card-subtle {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 8px; /* macOS 26 Tahoe rounded corners */
-  box-shadow: var(--shadow-sm);
-}
-
-.glass-card-emphasis {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px; /* macOS 26 Tahoe rounded corners */
-  box-shadow: var(--shadow-lg);
-}
-
-/* Glass button - refined CTA */
-.glass-button {
-  position: relative;
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px; /* macOS 26 Tahoe rounded corners */
-  padding: 1rem 2rem;
-  font-size: var(--type-label);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: all var(--duration-smooth) var(--ease-out);
-  overflow: hidden;
-}
-
-.glass-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transition: left var(--duration-smooth) var(--ease-out);
-}
-
-.glass-button:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--color-accent);
-  box-shadow: var(--shadow-md), var(--glow-accent);
-  transform: translateY(-2px);
-}
-
-.glass-button:hover::before {
-  left: 100%;
-}
-
-/* Glass chip - status indicators */
-.glass-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 6px; /* macOS 26 Tahoe rounded corners (subtle for chips) */
-  font-size: var(--type-label);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--duration-quick) var(--ease-out);
-}
-
-.glass-chip:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.12);
-  transform: translateY(-1px);
-}
-
-/* Depth elevation classes */
-.depth-1 {
-  box-shadow: var(--shadow-sm);
-}
-
-.depth-2 {
-  box-shadow: var(--shadow-md);
-}
-
-.depth-3 {
-  box-shadow: var(--shadow-lg);
-}
-
-.depth-4 {
-  box-shadow: var(--shadow-xl);
-}
-
-/* Hover depth enhancement */
-.hover-lift {
-  transition: transform var(--duration-smooth) var(--ease-out),
-              box-shadow var(--duration-smooth) var(--ease-out);
-}
-
-.hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-/* 3D Perspective card tilt */
-.card-3d {
-  transform-style: preserve-3d;
-  transition: transform var(--duration-smooth) cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.card-3d:hover {
-  transform: translateY(-8px) rotateX(2deg);
-}
-
-/* Gradient-tinted glass variants */
-.glass-accent {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.04),
-    oklch(78% 0.25 142 / 0.08)
-  );
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid oklch(78% 0.25 142 / 0.2);
-  border-radius: 12px; /* macOS 26 Tahoe rounded corners */
-  box-shadow: var(--shadow-md), inset 0 1px 0 oklch(78% 0.25 142 / 0.1);
-  transition: all var(--duration-smooth) var(--ease-out);
-}
-
-.glass-accent:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.06),
-    oklch(78% 0.25 142 / 0.12)
-  );
-  border-color: oklch(78% 0.25 142 / 0.3);
-  box-shadow: var(--shadow-lg), var(--glow-accent), inset 0 1px 0 oklch(78% 0.25 142 / 0.15);
-  transform: translateY(-2px);
-}
-
-.glass-dark {
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 8px; /* macOS 26 Tahoe rounded corners */
-  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-/* Premium hover effects with spring physics */
-.spring-hover {
-  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-              box-shadow var(--duration-smooth) var(--ease-out);
-}
-
-.spring-hover:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: var(--shadow-xl);
-}
-
-/* Legacy brutalist - keep for selective use */
-.brutalist-border {
-  border: 2px solid var(--color-border-emphasis);
+  padding: 1.5rem;
   transition: border-color var(--duration-quick) var(--ease-out);
 }
 
-.brutalist-border:hover {
-  border-color: var(--color-accent);
+.minimal-card:hover {
+  border-color: var(--color-border-emphasis);
+}
+
+.minimal-card-emphasis {
+  background: transparent;
+  border: 1px solid var(--color-border-emphasis);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: border-color var(--duration-quick) var(--ease-out);
+}
+
+.minimal-card-emphasis:hover {
+  border-color: var(--color-paper-muted);
 }
 
 /* ===================================
-   Bento Grid System - 2026 Layout
-   Asymmetric, Apple-inspired
+   Simple Button
    =================================== */
-.bento-grid {
-  display: grid;
-  gap: clamp(1rem, 3vw, 2rem);
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.minimal-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: var(--color-paper);
+  border: 1px solid var(--color-border-emphasis);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--duration-quick) var(--ease-out);
+  cursor: pointer;
 }
 
-/* Bento variants for different layouts */
-.bento-grid-2x2 {
-  display: grid;
-  gap: clamp(1rem, 3vw, 2rem);
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: minmax(200px, auto);
-}
-
-.bento-grid-asymmetric {
-  display: grid;
-  gap: clamp(1rem, 3vw, 2rem);
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(150px, auto);
-}
-
-/* Bento cell sizing */
-.bento-span-2 {
-  grid-column: span 2;
-}
-
-.bento-span-3 {
-  grid-column: span 3;
-}
-
-.bento-span-4 {
-  grid-column: span 4;
-}
-
-.bento-row-span-2 {
-  grid-row: span 2;
-}
-
-/* Responsive bento adjustments */
-@media (max-width: 768px) {
-  .bento-grid-2x2,
-  .bento-grid-asymmetric {
-    grid-template-columns: 1fr;
-  }
-
-  .bento-span-2,
-  .bento-span-3,
-  .bento-span-4 {
-    grid-column: span 1;
-  }
-
-  .bento-row-span-2 {
-    grid-row: span 1;
-  }
+.minimal-button:hover {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border-color: var(--color-paper);
 }
 
 /* ===================================
-   Minimal Motion - kinetic type
+   Status Badge
    =================================== */
-@keyframes reveal-up {
-  from {
-    opacity: 0;
-    transform: translateY(1rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-@keyframes reveal-fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes status-pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.1);
-  }
-}
-
-@keyframes status-glow {
-  0%, 100% {
-    box-shadow: 0 0 8px var(--color-accent), 0 0 16px var(--color-accent);
-  }
-  50% {
-    box-shadow: 0 0 12px var(--color-accent), 0 0 24px var(--color-accent);
-  }
-}
-
-/* Apply motion with respect for prefers-reduced-motion */
-@media (prefers-reduced-motion: no-preference) {
-  .animate-reveal {
-    animation: reveal-up var(--duration-smooth) var(--ease-out) forwards;
-  }
-
-  .animate-fade {
-    animation: reveal-fade var(--duration-smooth) var(--ease-out) forwards;
-  }
-
-  .status-indicator {
-    animation: status-pulse 2s ease-in-out infinite, status-glow 2s ease-in-out infinite;
-  }
-
-  body::after {
-    animation: mesh-shift 20s ease-in-out infinite;
-  }
-
-  body::before {
-    animation: grain-shift 8s steps(10) infinite;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+.status-indicator {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-paper);
 }
 
 /* ===================================
    Utility Classes
    =================================== */
-.accent-text {
+.text-paper {
+  color: var(--color-paper);
+}
+
+.text-paper-muted {
+  color: var(--color-paper-muted);
+}
+
+.text-accent {
   color: var(--color-accent);
 }
 
-.accent-border {
-  border-color: var(--color-accent);
+.border-subtle {
+  border-color: var(--color-border);
 }
 
-.accent-warm-text {
-  color: var(--color-accent-warm);
-}
-
-.accent-warm-border {
-  border-color: var(--color-accent-warm);
-}
-
-.accent-amber-text {
-  color: var(--color-accent-amber);
-}
-
-.accent-amber-border {
-  border-color: var(--color-accent-amber);
+.border-emphasis {
+  border-color: var(--color-border-emphasis);
 }
 
 .mono {
@@ -932,447 +257,45 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===================================
-   BLEEDING EDGE 2026 DESIGN SYSTEM
-   Next-gen patterns and interactions
+   Fade In Animation (Keep minimal)
    =================================== */
-
-/* ===================================
-   Kinetic Typography - Variable Font System
-   Text that morphs, stretches, and reacts
-   =================================== */
-:root {
-  /* Variable font animation ranges */
-  --font-weight-min: 300;
-  --font-weight-max: 900;
-  --font-stretch-min: 75%;
-  --font-stretch-max: 125%;
-
-  /* Kinetic animation speeds */
-  --kinetic-slow: 2s;
-  --kinetic-medium: 1s;
-  --kinetic-fast: 0.5s;
-}
-
-/* Scroll-reactive text weight */
-.kinetic-text {
-  font-variation-settings: 'wght' var(--font-weight-min);
-  transition: font-variation-settings var(--kinetic-medium) var(--ease-out);
-  will-change: font-variation-settings;
-}
-
-/* Weight morphing on hover */
-.kinetic-text:hover {
-  font-variation-settings: 'wght' var(--font-weight-max);
-}
-
-/* Scroll-activated kinetic headers */
-.scroll-morph {
-  font-variation-settings: 'wght' 400;
-  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-  will-change: transform, font-variation-settings;
-}
-
-.scroll-morph.in-view {
-  font-variation-settings: 'wght' 700;
-  transform: scale(1.02);
-}
-
-/* Text that stretches on interaction */
-.text-stretch {
-  display: inline-block;
-  transition: transform var(--kinetic-fast) var(--ease-out);
-}
-
-.text-stretch:hover {
-  transform: scaleX(1.08) scaleY(0.95);
-  letter-spacing: 0.05em;
-}
-
-/* Gradient text with animation */
-.gradient-text {
-  background: linear-gradient(
-    120deg,
-    var(--color-accent),
-    var(--color-paper),
-    var(--color-accent)
-  );
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient-shift 3s ease-in-out infinite;
-}
-
-@keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-/* ===================================
-   Liquid Glass 3.0 - Gesture Responsive
-   Next-gen glassmorphism with physics
-   =================================== */
-
-/* Specular highlights - visionOS spatial anchoring */
-.glass-specular {
-  position: relative;
-  overflow: visible;
-}
-
-.glass-specular::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.15) 0%,
-    transparent 100%
-  );
-  border-radius: inherit;
-  pointer-events: none;
-  opacity: 0.6;
-  mix-blend-mode: overlay;
-}
-
-/* Liquid blob that follows cursor */
-.liquid-blob {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(
-    circle at center,
-    oklch(78% 0.25 142 / 0.15) 0%,
-    oklch(78% 0.25 142 / 0.05) 40%,
-    transparent 70%
-  );
-  border-radius: 50%;
-  filter: blur(40px);
-  pointer-events: none;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
-}
-
-/* Context-aware transparency - AI-native pattern */
-.glass-adaptive {
-  backdrop-filter: blur(20px) saturate(180%);
-  background: rgba(255, 255, 255, 0.06);
-  transition: all 0.4s var(--ease-out);
-}
-
-.glass-adaptive:hover {
-  backdrop-filter: blur(32px) saturate(200%);
-  background: rgba(255, 255, 255, 0.09);
-}
-
-/* Multi-layer depth glass */
-.glass-layered {
-  position: relative;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.12) 0%,
-    rgba(255, 255, 255, 0.06) 100%
-  );
-  backdrop-filter: blur(24px) saturate(190%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    0 2px 8px rgba(0, 0, 0, 0.2),
-    inset 0 2px 0 rgba(255, 255, 255, 0.2),
-    inset 0 -2px 0 rgba(0, 0, 0, 0.15);
-}
-
-/* ===================================
-   visionOS Spatial Depth System
-   Material thickness with specular highlights
-   =================================== */
-
-/* Thin material - highlights and interactive elements */
-.material-depth-thin {
-  backdrop-filter: blur(12px) saturate(150%);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
-}
-
-/* Regular material - main content separation */
-.material-depth-regular {
-  backdrop-filter: blur(20px) saturate(180%);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.09) 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-}
-
-/* Thick material - appears recessed for input areas */
-.material-depth-thick {
-  backdrop-filter: blur(32px) saturate(200%);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.06) 0%,
-    rgba(255, 255, 255, 0.03) 100%
-  );
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow:
-    inset 0 2px 8px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(0, 0, 0, 0.15),
-    0 4px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Spatial anchoring shadow - makes content feel grounded */
-.spatial-shadow {
-  box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.35),
-    0 4px 12px rgba(0, 0, 0, 0.25),
-    0 1px 3px rgba(0, 0, 0, 0.15);
-}
-
-/* ===================================
-   Micro-Delight Interactions
-   Gaming UI influence + tactile feedback
-   =================================== */
-
-/* Tactile button with bounce */
-.tactile-button {
-  position: relative;
-  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-  will-change: transform;
-}
-
-.tactile-button:hover {
-  transform: translateY(-2px) scale(1.02);
-}
-
-.tactile-button:active {
-  transform: translateY(1px) scale(0.98);
-  transition-duration: 0.1s;
-}
-
-/* Gentle bounce on interaction */
-.bounce-gentle {
-  animation: bounce-gentle 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes bounce-gentle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-/* Gaming UI HUD-style indicator */
-.hud-indicator {
-  position: relative;
-  padding: 0.5rem 1rem;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(var(--accent-rgb), 0.3);
-  border-radius: 4px;
-  box-shadow:
-    0 0 20px rgba(var(--accent-rgb), 0.2),
-    inset 0 1px 0 rgba(var(--accent-rgb), 0.2);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.hud-indicator::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  right: -1px;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--color-accent) 50%,
-    transparent 100%
-  );
-  animation: hud-scan 2s ease-in-out infinite;
-}
-
-@keyframes hud-scan {
-  0%, 100% { opacity: 0.3; transform: translateX(-100%); }
-  50% { opacity: 1; transform: translateX(100%); }
-}
-
-/* Intricate microinteraction - form field reaction */
-.field-reactive {
-  transition: all 0.3s var(--ease-out);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.field-reactive:focus {
-  border-color: var(--color-accent);
-  box-shadow:
-    0 0 0 4px rgba(var(--accent-rgb), 0.1),
-    0 2px 8px rgba(var(--accent-rgb), 0.2);
-  transform: scale(1.01);
-}
-
-/* Pulse effect for attention */
-.pulse-subtle {
-  animation: pulse-subtle 2s ease-in-out infinite;
-}
-
-@keyframes pulse-subtle {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.02); opacity: 0.95; }
-}
-
-/* ===================================
-   Advanced Scroll Mechanics
-   Diagonal reveals and scroll storytelling
-   =================================== */
-
-/* Diagonal slide reveal */
-.diagonal-reveal {
-  opacity: 0;
-  transform: translate(-50px, 50px) rotate(-2deg);
-  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.diagonal-reveal.in-view {
-  opacity: 1;
-  transform: translate(0, 0) rotate(0deg);
-}
-
-/* Scroll-jacking (controlled) - for key moments */
-.scroll-anchor {
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
-}
-
-.scroll-container {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
-}
-
-/* Parallax depth layers */
-.parallax-layer-1 {
-  transform: translateZ(0);
-  will-change: transform;
-}
-
-.parallax-layer-2 {
-  transform: translateZ(-10px) scale(1.1);
-  will-change: transform;
-}
-
-.parallax-layer-3 {
-  transform: translateZ(-20px) scale(1.2);
-  will-change: transform;
-}
-
-/* ===================================
-   AI-Native & Machine Experience (MX)
-   Optimized for LLMs and AI agents
-   =================================== */
-
-/* Semantic emphasis for AI readers */
-[data-ai-context="important"] {
-  /* Visual emphasis for humans */
-  font-weight: 600;
-  /* Semantic marker for machines - no visual change */
-}
-
-[data-ai-intent="action"] {
-  /* Signals clickable intent to AI */
-  cursor: pointer;
-}
-
-/* Performance optimization for WebGPU */
-.gpu-accelerated {
-  transform: translateZ(0);
-  will-change: transform;
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-/* ===================================
-   Experimental Anti-Design Elements
-   Intentional grid breaking (when appropriate)
-   =================================== */
-
-/* Asymmetric offset */
-.break-grid {
-  margin-left: clamp(-2rem, -5vw, -4rem);
-}
-
-.break-grid-right {
-  margin-right: clamp(-2rem, -5vw, -4rem);
-}
-
-/* Intentional rotation for emphasis */
-.tilt-emphasis {
-  transform: rotate(-1deg);
-  transition: transform 0.4s var(--ease-out);
-}
-
-.tilt-emphasis:hover {
-  transform: rotate(0deg) scale(1.02);
-}
-
-/* ===================================
-   Performance & Accessibility
-   Respecting user preferences
-   =================================== */
-
-@media (prefers-reduced-motion: no-preference) {
-  /* Enable kinetic effects */
-  .kinetic-text,
-  .scroll-morph,
-  .text-stretch,
-  .gradient-text,
-  .diagonal-reveal,
-  .bounce-gentle,
-  .pulse-subtle {
-    /* Animations enabled */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+.fade-in {
+  animation: fade-in 0.6s var(--ease-out) forwards;
+}
+
+/* ===================================
+   Accessibility
+   =================================== */
 @media (prefers-reduced-motion: reduce) {
-  /* Disable kinetic effects */
-  .kinetic-text,
-  .scroll-morph,
-  .text-stretch,
-  .diagonal-reveal,
-  .bounce-gentle,
-  .pulse-subtle {
-    animation: none !important;
-    transition: none !important;
-  }
-
-  .gradient-text {
-    background-position: 0% 50% !important;
-    animation: none !important;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  .liquid-glass-regular,
-  .liquid-glass-clear,
-  .liquid-glass-thick,
-  .glass-adaptive,
-  .glass-layered {
-    border-width: 2px;
-    border-color: currentColor;
-  }
+/* Focus states */
+:focus-visible {
+  outline: 2px solid var(--color-paper);
+  outline-offset: 2px;
 }
 
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-paper);
+  outline-offset: 4px;
+}
