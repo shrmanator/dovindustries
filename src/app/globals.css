@@ -1,59 +1,52 @@
 @import "tailwindcss";
 
 /* ===================================
-   OKLCH Color System
-   2025 perceptual color model
+   Vercel-Inspired Minimal Design System
+   Pure black/white, high contrast, zero decoration
    =================================== */
 :root {
-  /* Base palette - OKLCH for perceptual consistency */
-  --color-ink: oklch(20% 0.01 0);           /* Deep charcoal, slight warmth */
-  --color-surface: oklch(18% 0.01 0);        /* Slightly darker for sections */
-  --color-paper: oklch(98% 0.005 90);        /* Off-white with warm tint */
-  --color-paper-muted: oklch(92% 0.005 90);  /* Subtle contrast */
+  /* Pure monochrome - Vercel style */
+  --color-ink: #000000;                          /* Pure black background */
+  --color-paper: #ffffff;                        /* Pure white text */
+  --color-paper-muted: #888888;                  /* Gray secondary text */
+  --color-border: #333333;                       /* Subtle borders */
+  --color-border-emphasis: #555555;              /* Emphasized borders */
 
-  /* Accent - electric green, perceptually tuned */
-  --color-accent: oklch(78% 0.25 142);       /* Neon green, OKLCH-balanced */
-  --color-accent-dim: oklch(65% 0.20 142);   /* Dimmed for hover states */
+  /* Single accent - minimal use */
+  --color-accent: #ffffff;                       /* White accent (inverse on dark) */
+  --accent-rgb: 255, 255, 255;
 
-  /* Neutrals */
-  --color-border: oklch(35% 0.01 0);         /* Visible but restrained */
-  --color-border-emphasis: oklch(50% 0.01 0); /* For punctuation */
+  /* Typography scale */
+  --type-display-xl: clamp(2.5rem, 12vw, 12rem);
+  --type-display-lg: clamp(2rem, 8vw, 8rem);
+  --type-display-md: clamp(1.5rem, 5vw, 5rem);
+  --type-body-lg: clamp(1.125rem, 2vw, 1.5rem);
+  --type-body: 1rem;
+  --type-label: 0.75rem;
 
-  /* Typography scale - editorial rhythm, mobile-safe */
-  --type-display-xl: clamp(2.5rem, 12vw, 12rem);    /* Hero titles - intentional sizing */
-  --type-display-lg: clamp(2rem, 8vw, 8rem);      /* Section headers */
-  --type-display-md: clamp(1.5rem, 5vw, 5rem);    /* Sub-headers */
-  --type-body-lg: clamp(1.125rem, 2vw, 1.5rem);   /* Lead copy */
-  --type-body: 1rem;                               /* Body text */
-  --type-label: 0.75rem;                           /* Labels, meta */
-
-  /* Spacing - Swiss grid discipline with generous breathing room */
+  /* Spacing - generous but not excessive */
   --space-section: clamp(4rem, 15vw, 16rem);
   --space-block: clamp(2rem, 8vw, 8rem);
   --space-stack: clamp(1.5rem, 4vw, 4rem);
 
-  /* Grid - tighter on mobile */
+  /* Grid */
   --grid-gutter: clamp(1rem, 4vw, 3rem);
   --grid-margin: clamp(1rem, 6vw, 6rem);
 
-  /* Motion - minimal, purposeful */
+  /* Motion - subtle, fast */
   --duration-instant: 150ms;
   --duration-quick: 250ms;
-  --duration-smooth: 400ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 /* ===================================
-   Tailwind Theme Inline API
+   Tailwind Theme
    =================================== */
 @theme inline {
   --color-ink: var(--color-ink);
-  --color-surface: var(--color-surface);
   --color-paper: var(--color-paper);
   --color-paper-muted: var(--color-paper-muted);
   --color-accent: var(--color-accent);
-  --color-accent-dim: var(--color-accent-dim);
   --color-border: var(--color-border);
   --color-border-emphasis: var(--color-border-emphasis);
 
@@ -68,15 +61,12 @@
   box-sizing: border-box;
 }
 
-/* Reset margin/padding only on specific elements, not universally */
 body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote {
   margin: 0;
   padding: 0;
 }
 
 html {
-  /* Prevent horizontal scroll */
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -89,27 +79,12 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  position: relative;
 }
 
-/* Subtle film grain texture overlay */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.03;
-  z-index: 9999;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
-}
+/* No gradient backgrounds - pure black only */
 
 /* ===================================
-   Typography Styles
+   Typography
    =================================== */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
@@ -118,18 +93,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-geist-sans);
 }
 
-/* Display type - big, intentional */
 .type-display-xl {
-  /* use a fast system fallback first to avoid waiting on webfonts for the hero
-     (keeps visible text rendering immediately; webfont will swap in when ready) */
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, var(--font-geist-sans);
+  font-family: system-ui, -apple-system, var(--font-geist-sans);
   font-size: var(--type-display-xl);
   font-weight: 800;
   line-height: 0.85;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  word-break: break-word;
-  overflow-wrap: break-word;
 }
 
 .type-display-lg {
@@ -138,8 +108,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 0.9;
   letter-spacing: -0.03em;
   text-transform: uppercase;
-  word-break: break-word;
-  overflow-wrap: break-word;
 }
 
 .type-display-md {
@@ -147,14 +115,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.02em;
-  word-break: break-word;
-  overflow-wrap: break-word;
 }
 
-/* Body type - editorial rhythm */
 .type-body-lg {
-  /* a modest fallback stack for lead copy to remain visible while webfonts load */
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, var(--font-geist-sans);
+  font-family: system-ui, -apple-system, var(--font-geist-sans);
   font-size: var(--type-body-lg);
   line-height: 1.5;
   letter-spacing: -0.01em;
@@ -190,35 +154,113 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===================================
-   Selective Neo-Brutalism
-   Used as punctuation, not everywhere
+   Minimal Cards - Border-based only
    =================================== */
-.brutalist-border {
-  border: 2px solid var(--color-border-emphasis);
+.minimal-card {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.5rem;
   transition: border-color var(--duration-quick) var(--ease-out);
 }
 
-.brutalist-border:hover {
-  border-color: var(--color-accent);
+.minimal-card:hover {
+  border-color: var(--color-border-emphasis);
 }
 
-.brutalist-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid var(--color-border-emphasis);
-  font-size: var(--type-label);
-  background: var(--color-ink);
+.minimal-card-emphasis {
+  background: transparent;
+  border: 1px solid var(--color-border-emphasis);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: border-color var(--duration-quick) var(--ease-out);
+}
+
+.minimal-card-emphasis:hover {
+  border-color: var(--color-paper-muted);
 }
 
 /* ===================================
-   Minimal Motion - kinetic type
+   Simple Button
    =================================== */
-@keyframes reveal-up {
+.minimal-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: var(--color-paper);
+  border: 1px solid var(--color-border-emphasis);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--duration-quick) var(--ease-out);
+  cursor: pointer;
+}
+
+.minimal-button:hover {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border-color: var(--color-paper);
+}
+
+/* ===================================
+   Status Badge
+   =================================== */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-paper);
+}
+
+/* ===================================
+   Utility Classes
+   =================================== */
+.text-paper {
+  color: var(--color-paper);
+}
+
+.text-paper-muted {
+  color: var(--color-paper-muted);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.border-subtle {
+  border-color: var(--color-border);
+}
+
+.border-emphasis {
+  border-color: var(--color-border-emphasis);
+}
+
+.mono {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+/* ===================================
+   Fade In Animation (Keep minimal)
+   =================================== */
+@keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(1rem);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -226,58 +268,32 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@keyframes reveal-fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes status-pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-/* Apply motion with respect for prefers-reduced-motion */
-@media (prefers-reduced-motion: no-preference) {
-  .animate-reveal {
-    animation: reveal-up var(--duration-smooth) var(--ease-out) forwards;
-  }
-
-  .animate-fade {
-    animation: reveal-fade var(--duration-smooth) var(--ease-out) forwards;
-  }
-
-  .status-indicator {
-    animation: status-pulse 2s ease-in-out infinite;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+.fade-in {
+  animation: fade-in 0.6s var(--ease-out) forwards;
 }
 
 /* ===================================
-   Utility Classes
+   Accessibility
    =================================== */
-.accent-text {
-  color: var(--color-accent);
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-.accent-border {
-  border-color: var(--color-accent);
+/* Focus states */
+:focus-visible {
+  outline: 2px solid var(--color-paper);
+  outline-offset: 2px;
 }
 
-.mono {
-  font-family: var(--font-geist-mono), monospace;
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-paper);
+  outline-offset: 4px;
 }
