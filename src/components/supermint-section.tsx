@@ -82,7 +82,7 @@ export function SuperMintSection() {
         {/* Evolution note */}
         <FadeIn delay={450}>
           <div className="minimal-card-emphasis beam-gray opacity-80 stack-block">
-            <p className="type-label text-paper mb-2">EVOLUTION</p>
+            <p className="type-label text-paper mb-4">EVOLUTION</p>
             <p className="text-paper-muted">
               SuperMint&#39;s crypto donation technology evolved into DigiDov, focusing on tax compliance
               and broader cryptocurrency acceptance for nonprofits.

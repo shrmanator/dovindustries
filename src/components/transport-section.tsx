@@ -27,7 +27,7 @@ export function TransportSection() {
         <FadeIn delay={200}>
           <div className="max-w-4xl stack-block">
             <div className="minimal-card-emphasis beam-green">
-              <div className="grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-2 gap-4 md:gap-6">
                 <div>
                   <p className="type-label text-paper-muted mb-2">ACCELERATION</p>
                   <div className="text-5xl md:text-6xl font-bold text-paper mono">
@@ -58,7 +58,7 @@ export function TransportSection() {
 
         {/* Specs grid */}
         <FadeIn delay={400}>
-          <div className="grid md:grid-cols-2 gap-6 stack-block">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6 stack-block">
             <div className="minimal-card">
               <p className="type-label text-paper mb-4">BATTERY SYSTEM</p>
               <p className="text-paper-muted leading-relaxed">
