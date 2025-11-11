@@ -8,9 +8,9 @@ export function HeroSection() {
           {/* Company name - pure typography */}
           <FadeIn delay={100}>
             <div className="stack-block">
-              <h1 className="text-[11vw] md:text-[12vw] lg:text-[clamp(8rem,12vw,12rem)] font-extrabold leading-[0.85] tracking-tighter uppercase flex items-baseline gap-[0.08em]">
-                <span className="text-paper">DOV</span>
-                <span className="text-paper" style={{ fontSize: '1.15em' }}>INDUSTRIES</span>
+              <h1 className="text-[11vw] md:text-[12vw] lg:text-[clamp(8rem,12vw,12rem)] font-extrabold leading-[0.85] tracking-tighter uppercase">
+                <div className="text-paper">DOV</div>
+                <div className="text-paper" style={{ fontSize: '1.15em' }}>INDUSTRIES</div>
               </h1>
             </div>
           </FadeIn>
