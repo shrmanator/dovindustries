@@ -48,7 +48,7 @@ export function VRSection() {
               </p>
             </article>
 
-            <article className="minimal-card-emphasis md:col-span-3 md:row-span-2 flex flex-col h-full">
+            <article className="minimal-card-emphasis beam-purple md:col-span-3 md:row-span-2 flex flex-col h-full">
               <h3 className="type-label mb-6 text-paper">SENSOR FUSION</h3>
               <p className="text-paper leading-relaxed text-lg mb-8 flex-grow">
                 Combines IMU data, head tracking, and custom algorithms to detect

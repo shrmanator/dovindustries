@@ -26,7 +26,7 @@ export function TransportSection() {
         {/* Spec reveal */}
         <FadeIn delay={200}>
           <div className="max-w-4xl stack-block">
-            <div className="minimal-card-emphasis">
+            <div className="minimal-card-emphasis beam-green">
               <div className="grid grid-cols-2 gap-8">
                 <div>
                   <p className="type-label text-paper-muted mb-2">ACCELERATION</p>

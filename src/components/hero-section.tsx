@@ -18,7 +18,7 @@ export function HeroSection() {
           {/* Company motto - minimal card */}
           <FadeIn delay={300}>
             <div className="max-w-3xl stack-block">
-              <div className="minimal-card-emphasis">
+              <div className="minimal-card-emphasis beam-orange">
                 <p className="text-2xl md:text-3xl font-bold text-paper mb-4 leading-tight">
                   Forward thinking,<br/>backwards compatible
                 </p>
@@ -35,10 +35,7 @@ export function HeroSection() {
           <FadeIn delay={500}>
             <div className="flex flex-wrap gap-4">
               <div className="status-badge">
-                <span className="type-label">EST. 2025</span>
-              </div>
-              <div className="status-badge">
-                <span className="type-label">TORONTO / REMOTE</span>
+                <span className="type-label">EST. 2023</span>
               </div>
               <div className="status-badge">
                 <span className="status-indicator"></span>

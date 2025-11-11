@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ===================================
-   Vercel-Inspired Minimal Design System
+   Minimal Design System
    Pure black/white, high contrast, zero decoration
    =================================== */
 :root {
@@ -12,14 +12,8 @@
   --color-border: #333333;                       /* Subtle borders */
   --color-border-emphasis: #555555;              /* Emphasized borders */
 
-  /* Single accent - minimal use */
-  --color-accent: #ffffff;                       /* White accent (inverse on dark) */
-  --accent-rgb: 255, 255, 255;
-
   /* Typography scale */
-  --type-display-xl: clamp(2.5rem, 12vw, 12rem);
   --type-display-lg: clamp(2rem, 8vw, 8rem);
-  --type-display-md: clamp(1.5rem, 5vw, 5rem);
   --type-body-lg: clamp(1.125rem, 2vw, 1.5rem);
   --type-body: 1rem;
   --type-label: 0.75rem;
@@ -30,11 +24,9 @@
   --space-stack: clamp(1.5rem, 4vw, 4rem);
 
   /* Grid */
-  --grid-gutter: clamp(1rem, 4vw, 3rem);
   --grid-margin: clamp(1rem, 6vw, 6rem);
 
   /* Motion - subtle, fast */
-  --duration-instant: 150ms;
   --duration-quick: 250ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -46,7 +38,6 @@
   --color-ink: var(--color-ink);
   --color-paper: var(--color-paper);
   --color-paper-muted: var(--color-paper-muted);
-  --color-accent: var(--color-accent);
   --color-border: var(--color-border);
   --color-border-emphasis: var(--color-border-emphasis);
 
@@ -83,8 +74,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* No gradient backgrounds - pure black only */
-
 /* ===================================
    Typography
    =================================== */
@@ -95,28 +84,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-geist-sans);
 }
 
-.type-display-xl {
-  font-family: system-ui, -apple-system, var(--font-geist-sans);
-  font-size: var(--type-display-xl);
-  font-weight: 800;
-  line-height: 0.85;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-}
-
 .type-display-lg {
   font-size: var(--type-display-lg);
   font-weight: 800;
   line-height: 0.9;
   letter-spacing: -0.03em;
   text-transform: uppercase;
-}
-
-.type-display-md {
-  font-size: var(--type-display-md);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.02em;
 }
 
 .type-body-lg {
@@ -156,6 +129,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===================================
+   Animated Border @property
+   =================================== */
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* ===================================
    Minimal Cards - Border-based only
    =================================== */
 .minimal-card {
@@ -171,15 +153,71 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .minimal-card-emphasis {
-  background: transparent;
-  border: 1px solid var(--color-border-emphasis);
-  border-radius: 8px;
+  --border-width: 1px;
+  --radius: 8px;
+  --beam-color-1: rgba(56, 189, 248, 0.4);
+  --beam-color-2: rgba(14, 165, 233, 0.8);
+  position: relative;
   padding: 2rem;
-  transition: border-color var(--duration-quick) var(--ease-out);
+  border-radius: var(--radius);
+  background: var(--color-ink);
+  isolation: isolate;
 }
 
-.minimal-card-emphasis:hover {
-  border-color: var(--color-paper-muted);
+.minimal-card-emphasis::before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--border-width) * -1);
+  z-index: -1;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--border-angle),
+    transparent 0%,
+    transparent 40%,
+    var(--beam-color-1) 50%,
+    var(--beam-color-2) 55%,
+    var(--beam-color-1) 60%,
+    transparent 70%,
+    transparent 100%
+  );
+  padding: var(--border-width);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: border-rotate 4s linear infinite;
+  pointer-events: none;
+}
+
+/* Color variants for different projects */
+.beam-purple {
+  --beam-color-1: rgba(168, 85, 247, 0.4);
+  --beam-color-2: rgba(124, 58, 237, 0.8);
+}
+
+.beam-green {
+  --beam-color-1: rgba(52, 211, 153, 0.4);
+  --beam-color-2: rgba(16, 185, 129, 0.8);
+}
+
+.beam-orange {
+  --beam-color-1: rgba(251, 146, 60, 0.4);
+  --beam-color-2: rgba(249, 115, 22, 0.8);
+}
+
+.beam-gray {
+  --beam-color-1: rgba(148, 163, 184, 0.3);
+  --beam-color-2: rgba(100, 116, 139, 0.6);
+}
+
+@keyframes border-rotate {
+  to {
+    --border-angle: 360deg;
+  }
 }
 
 /* ===================================
@@ -240,10 +278,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-paper-muted);
 }
 
-.text-accent {
-  color: var(--color-accent);
-}
-
 .border-subtle {
   border-color: var(--color-border);
 }
@@ -254,24 +288,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .mono {
   font-family: var(--font-geist-mono), monospace;
-}
-
-/* ===================================
-   Fade In Animation (Keep minimal)
-   =================================== */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in {
-  animation: fade-in 0.6s var(--ease-out) forwards;
 }
 
 /* ===================================
