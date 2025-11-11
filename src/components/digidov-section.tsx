@@ -81,9 +81,12 @@ export function DigiDovSection() {
             </article>
 
             <article className="minimal-card md:col-span-2 h-full">
-              <h3 className="type-label mb-4 text-paper">
-                DIGIDOV CASH
-              </h3>
+              <div className="flex items-center gap-2 mb-4">
+                <h3 className="type-label text-paper">
+                  DIGIDOV CASH
+                </h3>
+                <span className="px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide border border-yellow-500 text-yellow-500 rounded">NEW</span>
+              </div>
               <p className="text-paper-muted leading-relaxed">
                 New offramping feature allowing creators, nonprofits, and bloggers to
                 instantly receive U.S. dollars from crypto donations.
