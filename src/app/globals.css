@@ -68,6 +68,8 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote {
 
 html {
   scroll-behavior: smooth;
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
 
 body {
