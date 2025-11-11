@@ -67,7 +67,6 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote {
 }
 
 html {
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -80,7 +79,6 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
 }
 
 /* No gradient backgrounds - pure black only */
