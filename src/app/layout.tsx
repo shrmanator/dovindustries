@@ -235,7 +235,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="bg-slate-950 text-slate-50">
+    <html lang="en" className="bg-ink text-paper">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -287,7 +287,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 text-slate-50`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-ink text-paper`}
         suppressHydrationWarning
       >
         <Script
