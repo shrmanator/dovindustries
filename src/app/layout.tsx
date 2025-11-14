@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ConsoleMessage } from "@/components/console-message";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -292,7 +291,7 @@ export default function RootLayout({
       >
         <Script
           id="clarity-script"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,l,a,r,i,t,y){
@@ -303,24 +302,6 @@ export default function RootLayout({
             `,
           }}
         />
-        <Script
-          id="suppress-radix-warnings"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              if (typeof window !== 'undefined') {
-                const originalWarn = console.warn;
-                console.warn = (...args) => {
-                  if (args[0]?.includes?.('DialogContent') || args[0]?.includes?.('DialogTitle')) {
-                    return;
-                  }
-                  originalWarn.apply(console, args);
-                };
-              }
-            `,
-          }}
-        />
-        <ConsoleMessage />
         {children}
       </body>
     </html>

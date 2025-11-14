@@ -21,14 +21,38 @@ export function FadeIn({
   withDepth = false,
   withScale = false,
 }: FadeInProps) {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(() => {
+    if (typeof window !== "undefined") {
+      return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    }
+
+    return false;
+  });
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (isVisible) return;
+
     const element = ref.current;
     if (!element) return;
 
+    // Respect the user's reduced motion preference and skip all animations.
     let timeoutId: NodeJS.Timeout | null = null;
+
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      timeoutId = setTimeout(() => {
+        setIsVisible(true);
+      }, delay);
+
+      return () => {
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+      };
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -37,6 +61,7 @@ export function FadeIn({
             timeoutId = setTimeout(() => {
               setIsVisible(true);
             }, delay);
+            observer.unobserve(entry.target);
           }
         });
       },
@@ -49,12 +74,12 @@ export function FadeIn({
     observer.observe(element);
 
     return () => {
-      observer.unobserve(element);
+      observer.disconnect();
       if (timeoutId) {
         clearTimeout(timeoutId);
       }
     };
-  }, [delay]);
+  }, [delay, isVisible]);
 
   const getTransform = () => {
     const scale = withScale && !isVisible ? "scale-95" : "scale-100";
@@ -79,7 +104,8 @@ export function FadeIn({
   return (
     <div
       ref={ref}
-      className={`transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
+      style={{ willChange: isVisible ? undefined : "opacity, transform" }}
+      className={`transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none motion-reduce:transform-none motion-reduce:blur-0 motion-reduce:opacity-100 ${
         isVisible ? "opacity-100" : "opacity-0"
       } ${getTransform()} ${blur && !isVisible ? "blur-sm" : "blur-0"} ${depthStyle} ${className}`}
     >
