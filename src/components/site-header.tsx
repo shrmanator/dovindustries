@@ -12,7 +12,9 @@ const productNav = [
 ];
 
 export function SiteHeader() {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(() =>
+    typeof window === "undefined" ? true : false
+  );
 
   useEffect(() => {
     // Trigger animation after mount

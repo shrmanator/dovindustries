@@ -6,7 +6,7 @@ export function HeroSection() {
       <div className="w-full section-padding relative z-10">
         <div className="max-w-7xl">
           {/* Company name - pure typography */}
-          <FadeIn delay={100}>
+          <FadeIn delay={100} initiallyVisible>
             <div className="stack-block">
               <h1 className="text-[11vw] md:text-[12vw] lg:text-[clamp(8rem,12vw,12rem)] font-extrabold leading-[0.85] tracking-tighter uppercase">
                 <div className="text-paper">DOV</div>
@@ -16,7 +16,7 @@ export function HeroSection() {
           </FadeIn>
 
           {/* Company motto - minimal card */}
-          <FadeIn delay={300}>
+          <FadeIn delay={300} initiallyVisible>
             <div className="max-w-3xl stack-block">
               <div className="minimal-card-emphasis beam-orange">
                 <p className="text-2xl md:text-3xl font-bold text-paper mb-4 leading-tight">
@@ -32,7 +32,7 @@ export function HeroSection() {
           </FadeIn>
 
           {/* Meta badges */}
-          <FadeIn delay={500}>
+          <FadeIn delay={500} initiallyVisible>
             <div className="flex flex-wrap gap-4">
               <div className="status-badge">
                 <span className="type-label">EST. 2023</span>
