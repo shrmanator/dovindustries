@@ -10,6 +10,7 @@ interface FadeInProps {
   slideFrom?: "bottom" | "left" | "right";
   withDepth?: boolean;
   withScale?: boolean;
+  initiallyVisible?: boolean;
 }
 
 export function FadeIn({
@@ -20,8 +21,13 @@ export function FadeIn({
   slideFrom = "bottom",
   withDepth = false,
   withScale = false,
+  initiallyVisible = false,
 }: FadeInProps) {
   const [isVisible, setIsVisible] = useState(() => {
+    if (initiallyVisible) {
+      return true;
+    }
+
     if (typeof window !== "undefined") {
       return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     }
