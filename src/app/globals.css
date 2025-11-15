@@ -131,6 +131,11 @@ h1, h2, h3, h4, h5, h6 {
 /* ===================================
    Minimal Cards - Border-based only
    =================================== */
+@property --beam-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
 .minimal-card {
   background: transparent;
   border: 1px solid var(--color-border);
@@ -151,39 +156,23 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding: 2rem;
   border-radius: var(--radius);
-  background: var(--color-ink);
+  border: var(--border-width) solid transparent;
+  background:
+    linear-gradient(var(--color-ink), var(--color-ink)) padding-box,
+    conic-gradient(
+      from var(--beam-angle),
+      transparent 0%,
+      transparent 40%,
+      var(--beam-color-1) 50%,
+      var(--beam-color-2) 55%,
+      var(--beam-color-1) 60%,
+      transparent 70%,
+      transparent 100%
+    ) border-box;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  animation: border-rotate 5s linear infinite;
   isolation: isolate;
-}
-
-.minimal-card-emphasis::before {
-  content: "";
-  position: absolute;
-  inset: calc(var(--border-width) * -1);
-  z-index: -1;
-  border-radius: inherit;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0%,
-    transparent 40%,
-    var(--beam-color-1) 50%,
-    var(--beam-color-2) 55%,
-    var(--beam-color-1) 60%,
-    transparent 70%,
-    transparent 100%
-  );
-  padding: var(--border-width);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  animation: border-rotate 4s linear infinite;
-  will-change: transform;
-  transform-origin: center;
-  pointer-events: none;
 }
 
 /* Color variants for different projects */
@@ -208,11 +197,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes border-rotate {
-  from {
-    transform: rotate(0turn);
-  }
   to {
-    transform: rotate(1turn);
+    --beam-angle: 360deg;
   }
 }
 
