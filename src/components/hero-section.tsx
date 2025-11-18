@@ -18,7 +18,7 @@ export function HeroSection() {
           {/* Company motto - minimal card */}
           <FadeIn delay={300} initiallyVisible>
             <div className="max-w-3xl stack-block">
-              <div className="minimal-card-emphasis split-beam beam-orange">
+              <div className="minimal-card-emphasis prism-beam">
                 <p className="text-2xl md:text-3xl font-bold text-paper mb-4 leading-tight">
                   Forward thinking,<br/>backwards compatible
                 </p>
