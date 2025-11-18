@@ -161,13 +161,18 @@ h1, h2, h3, h4, h5, h6 {
     linear-gradient(var(--color-ink), var(--color-ink)) padding-box,
     conic-gradient(
       from var(--beam-angle),
-      transparent 0%,
-      transparent 40%,
-      var(--beam-color-1) 50%,
-      var(--beam-color-2) 55%,
-      var(--beam-color-1) 60%,
-      transparent 70%,
-      transparent 100%
+      /* First beam beginning at the top center */
+      var(--beam-color-1) 0deg,
+      var(--beam-color-2) 5deg,
+      var(--beam-color-1) 10deg,
+      transparent 15deg,
+      /* Space before the second beam begins on the opposite side */
+      transparent 170deg,
+      var(--beam-color-1) 175deg,
+      var(--beam-color-2) 180deg,
+      var(--beam-color-1) 185deg,
+      transparent 190deg,
+      transparent 360deg
     ) border-box;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
