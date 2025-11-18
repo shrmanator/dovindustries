@@ -136,6 +136,12 @@ h1, h2, h3, h4, h5, h6 {
   inherits: false;
   initial-value: 0deg;
 }
+
+@property --beam-angle-counter {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
 .minimal-card {
   background: transparent;
   border: 1px solid var(--color-border);
@@ -161,23 +167,42 @@ h1, h2, h3, h4, h5, h6 {
     linear-gradient(var(--color-ink), var(--color-ink)) padding-box,
     conic-gradient(
       from var(--beam-angle),
-      /* First beam beginning at the top center */
-      var(--beam-color-1) 0deg,
-      var(--beam-color-2) 5deg,
-      var(--beam-color-1) 10deg,
-      transparent 15deg,
-      /* Space before the second beam begins on the opposite side */
-      transparent 170deg,
-      var(--beam-color-1) 175deg,
-      var(--beam-color-2) 180deg,
-      var(--beam-color-1) 185deg,
-      transparent 190deg,
-      transparent 360deg
+      transparent 0%,
+      transparent 40%,
+      var(--beam-color-1) 50%,
+      var(--beam-color-2) 55%,
+      var(--beam-color-1) 60%,
+      transparent 70%,
+      transparent 100%
     ) border-box;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
   animation: border-rotate 5s linear infinite;
   isolation: isolate;
+}
+
+.minimal-card-emphasis.split-beam {
+  background:
+    linear-gradient(var(--color-ink), var(--color-ink)) padding-box,
+    conic-gradient(
+      from var(--beam-angle),
+      var(--beam-color-1) 0deg,
+      var(--beam-color-2) 6deg,
+      var(--beam-color-1) 12deg,
+      transparent 18deg,
+      transparent 360deg
+    ) border-box,
+    conic-gradient(
+      from var(--beam-angle-counter),
+      var(--beam-color-1) 0deg,
+      var(--beam-color-2) 6deg,
+      var(--beam-color-1) 12deg,
+      transparent 18deg,
+      transparent 360deg
+    ) border-box;
+  animation:
+    border-rotate-split 3s linear infinite,
+    border-rotate-split-counter 3s linear infinite;
 }
 
 /* Color variants for different projects */
@@ -204,6 +229,18 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes border-rotate {
   to {
     --beam-angle: 360deg;
+  }
+}
+
+@keyframes border-rotate-split {
+  to {
+    --beam-angle: 180deg;
+  }
+}
+
+@keyframes border-rotate-split-counter {
+  to {
+    --beam-angle-counter: -180deg;
   }
 }
 
