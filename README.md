@@ -1,39 +1,36 @@
-## Dovindustries Landing Experience
+# Dovindustries
 
-This repo powers the public-facing Dovindustries HQ - a server-first Next.js 16 application that showcases active projects, operating metrics, and collaboration lanes. The UI blends Tailwind CSS v4 tokens with Tremor data visualisations for a crisp, high-signal experience.
+Corporate landing page for Dovindustries — a Toronto-based technology company building products in crypto, VR, and electric transport.
+
+**Live:** [dovindustries.com](https://dovindustries.com)
 
 ## Stack
 
-- Next.js 16 (App Router, React Server Components by default)
-- React 19
-- Tailwind CSS v4 via `@tailwindcss/postcss` (inline theming lives in `src/app/globals.css`)
-- Tremor (`@tremor/react`) for KPI cards and charts
-- Geist fonts with `next/font`
+| Layer | Technology |
+|-------|------------|
+| Framework | Next.js 16 (App Router) |
+| UI | React 19, Tailwind CSS v4 |
+| Fonts | Geist (via next/font) |
+| Deploy | Vercel |
 
-## Development
+## Local Development
 
 ```bash
-# install deps
 pnpm install
-
-# run locally
 pnpm dev
-
-# lint
-pnpm lint
-
-# build preview
-pnpm build && pnpm start
 ```
 
-Open <http://localhost:3000> to explore the site. Content lives in `src/app/page.tsx` with supporting components under `src/components/`.
+Open [localhost:3000](http://localhost:3000)
 
-## Deployment Notes
+## Project Structure
 
-- Designed for Vercel / edge-friendly deployments.
-- Tremor currently lists React 18 as its peer dependency; React 19 works in practice but keep an eye on upstream releases.
-- Tailwind 4 configuration relies on the inline theme API - no `tailwind.config.ts` file is present.
+```text
+src/
+├── app/           # Pages, layouts, metadata
+├── components/    # UI components
+└── utils/         # Helper functions
+```
 
-## Contributions
+## License
 
-Pull requests are welcome for content updates, new sections, and performance tweaks. Keep components server-first, isolate any `"use client"` usage, and follow the patterns documented in `CLAUDE.md`.
+All rights reserved. See [LICENSE](./LICENSE).
