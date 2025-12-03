@@ -1,6 +1,6 @@
 # Dovindustries
 
-Corporate landing page for Dovindustries — a Toronto-based technology company building products in crypto, VR, and electric transport.
+Corporate landing page for Dovindustries — building at the intersection of crypto, VR, and electric transport.
 
 **Live:** [dovindustries.com](https://dovindustries.com)
 
