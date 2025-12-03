@@ -37,7 +37,7 @@ pnpm lint
 
 ## Code Patterns
 
-Embrace Modern Next.js (15+) & React (19+) Patterns.
+Embrace Modern Next.js (16+) & React (19+) Patterns.
 
   - **RSCs by Default:** Components are Server Components unless they require interactivity (state, effects, event handlers), at which point they must use `"use client"`.
   - **Keep Client Components Small:** Isolate interactivity. A `"use client"` directive makes the component and *all its children* client components. Push state and interactivity as deep into the component tree (to "leaf" components) as possible.
