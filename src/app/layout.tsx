@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dovindustries | Crypto Donations, VR Locomotion & Electric Transport | Toronto Tech",
+  title: "Dovindustries | Crypto Donations, VR Locomotion & Electric Transport",
   description:
-    "Toronto technology company building DigiDov (IRS-compliant crypto donation platform for nonprofits), headset-only VR locomotion systems, and compact electric transport. Innovation in Web3, virtual reality, and sustainable mobility.",
+    "Technology company building DigiDov (IRS-compliant crypto donation platform for nonprofits), headset-only VR locomotion systems, and compact electric transport. Innovation in Web3, virtual reality, and sustainable mobility.",
   metadataBase: new URL("https://dovindustries.com"),
   alternates: {
     canonical: "https://dovindustries.com",
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     "VR locomotion technology",
     "walk in place VR",
     "headset only VR movement",
-    "electric transport Toronto",
-    "technology company Toronto",
+    "electric transport",
+    "technology company",
     "product development",
     "DigiDov",
     "Web3 donations",
@@ -48,15 +48,15 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon1.png", sizes: "any", type: "image/png" },
+      { url: "/web-app-manifest-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/web-app-manifest-512x512.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: "/apple-icon.png",
+    apple: "/web-app-manifest-192x192.png",
   },
   openGraph: {
     title: "Dovindustries | Crypto Donations, VR Locomotion & Electric Transport",
     description:
-      "Toronto technology company building DigiDov (IRS-compliant crypto donation platform), headset-only VR locomotion systems, and compact electric transport. Innovation in Web3, VR, and sustainable mobility.",
+      "Technology company building DigiDov (IRS-compliant crypto donation platform), headset-only VR locomotion systems, and compact electric transport. Innovation in Web3, VR, and sustainable mobility.",
     url: "https://dovindustries.com",
     siteName: "Dovindustries",
     locale: "en_US",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
         url: "https://dovindustries.com/images/dovindustries-bear-white-transparent.png",
         width: 1200,
         height: 630,
-        alt: "Dovindustries - Toronto Technology Company - Crypto Donations, VR Research, Electric Transport",
+        alt: "Dovindustries - Technology Company - Crypto Donations, VR Research, Electric Transport",
       },
     ],
   },
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dovindustries | Crypto Donations, VR Locomotion & Electric Transport",
     description:
-      "Toronto tech company building DigiDov (crypto donation platform), VR locomotion systems, and electric transport.",
+      "Technology company building DigiDov (crypto donation platform), VR locomotion systems, and electric transport.",
     images: ["https://dovindustries.com/images/dovindustries-bear-white-transparent.png"],
   },
   // No Twitter metadata included (no Twitter account configured)
@@ -111,18 +111,13 @@ export default function RootLayout({
     },
     image: "https://www.dovindustries.com/images/dovindustries-bear-black-transparent.png",
     description:
-      "Technology company building DigiDov crypto donation platform, VR locomotion systems, and electric transport solutions. Based in Toronto, focused on innovation in Web3, virtual reality, and sustainable mobility.",
+      "Technology company building DigiDov crypto donation platform, VR locomotion systems, and electric transport solutions. Focused on innovation in Web3, virtual reality, and sustainable mobility.",
     email: "contact@dovindustries.com",
     sameAs: ["https://github.com/shrmanator"],
     foundingDate: "2024",
     foundingLocation: {
       "@type": "Place",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Toronto",
-        addressRegion: "ON",
-        addressCountry: "CA",
-      },
+      name: "Canada",
     },
     areaServed: {
       "@type": "Place",
@@ -221,7 +216,7 @@ export default function RootLayout({
     name: "Dovindustries",
     url: "https://dovindustries.com",
     description:
-      "Toronto technology company building innovative products in crypto donations, VR locomotion, and electric transport.",
+      "Technology company building innovative products in crypto donations, VR locomotion, and electric transport.",
     publisher: {
       "@type": "Organization",
       name: "Dovindustries",
@@ -241,7 +236,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
         <meta
           name="description"
-          content="Toronto technology company building DigiDov (IRS-compliant crypto donation platform for nonprofits), headset-only VR locomotion systems, and compact electric transport. Innovation in Web3, virtual reality, and sustainable mobility."
+          content="Technology company building DigiDov (IRS-compliant crypto donation platform for nonprofits), headset-only VR locomotion systems, and compact electric transport. Innovation in Web3, virtual reality, and sustainable mobility."
         />
         {/* Preconnect common font origins and preload the main social/OG image used in metadata */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

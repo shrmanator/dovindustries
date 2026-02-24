@@ -54,7 +54,6 @@ export function SiteFooter() {
             © {currentYear} DOVINDUSTRIES
           </p>
           <div className="flex gap-3">
-            <span className="status-badge">TORONTO</span>
             <span className="status-badge">REMOTE-FIRST</span>
           </div>
         </div>
