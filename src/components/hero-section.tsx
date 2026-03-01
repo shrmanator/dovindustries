@@ -39,7 +39,7 @@ export function HeroSection() {
               </div>
               <div className="status-badge">
                 <span className="status-indicator"></span>
-                <span>2 LIVE PROJECTS</span>
+                <span>3 LIVE PROJECTS</span>
               </div>
             </div>
           </FadeIn>

@@ -2,6 +2,7 @@ import { DigiDovSection } from "@/components/digidov-section";
 import { HeroSection } from "@/components/hero-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { SimplySeferSection } from "@/components/simplysefer-section";
 import { SuperMintSection } from "@/components/supermint-section";
 import { TransportSection } from "@/components/transport-section";
 import { VRSection } from "@/components/vr-section";
@@ -19,6 +20,7 @@ export default function Home() {
       <main className="flex flex-col">
         <HeroSection />
         <DigiDovSection />
+        <SimplySeferSection />
         <VRSection />
         <TransportSection />
         <SuperMintSection />

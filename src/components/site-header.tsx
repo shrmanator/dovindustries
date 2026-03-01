@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 const productNav = [
   { label: "DigiDov", href: "#digidov" },
+  { label: "SimplySefer", href: "#simplysefer" },
   { label: "VR", href: "#vr" },
   { label: "Transport", href: "#transport" },
   { label: "SuperMint", href: "#supermint" },
