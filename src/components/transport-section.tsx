@@ -91,7 +91,7 @@ export function TransportSection() {
           <div>
             <div className="minimal-card inline-flex">
               <p className="type-label text-paper">
-                COMING 2026
+                COMING 2027
               </p>
             </div>
           </div>
