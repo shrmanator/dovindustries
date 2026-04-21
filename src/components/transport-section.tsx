@@ -2,11 +2,14 @@ import { FadeIn } from "./fade-in";
 
 export function TransportSection() {
   return (
-    <section id="transport" className="section-padding grid-margin border-t border-subtle">
+    <section
+      id="transport"
+      className="portfolio-section"
+      aria-labelledby="transport-heading"
+    >
       <div className="max-w-7xl">
-        {/* Status */}
         <FadeIn>
-          <div className="flex items-center justify-between stack">
+          <div className="section-meta">
             <div className="status-badge">
               <span className="type-label text-paper-muted">R&D</span>
             </div>
@@ -14,20 +17,18 @@ export function TransportSection() {
           </div>
         </FadeIn>
 
-        {/* Product statement */}
         <FadeIn delay={100}>
-          <div className="stack-block">
-            <h2 className="type-display-lg max-w-4xl">
+          <div className="portfolio-stack-block">
+            <h2 id="transport-heading" className="type-display-lg max-w-4xl">
               URBAN TRANSPORTATION
             </h2>
           </div>
         </FadeIn>
 
-        {/* Spec reveal */}
         <FadeIn delay={200}>
-          <div className="max-w-4xl stack-block">
+          <div className="max-w-4xl portfolio-stack-block">
             <div className="minimal-card-emphasis beam-green">
-              <div className="grid grid-cols-2 gap-4 md:gap-6">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
                 <div>
                   <p className="type-label text-paper-muted mb-2">ACCELERATION</p>
                   <div className="text-5xl md:text-6xl font-bold text-paper mono">
@@ -47,18 +48,16 @@ export function TransportSection() {
           </div>
         </FadeIn>
 
-        {/* Lead description */}
         <FadeIn delay={300}>
-          <div className="max-w-3xl stack-block">
+          <div className="max-w-3xl portfolio-stack-block">
             <p className="type-body-lg text-paper-muted">
               Compact. Electric. Urban-optimized.
             </p>
           </div>
         </FadeIn>
 
-        {/* Specs grid */}
         <FadeIn delay={400}>
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6 stack-block">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-5 portfolio-stack-block">
             <div className="minimal-card">
               <p className="type-label text-paper mb-4">BATTERY SYSTEM</p>
               <p className="text-paper-muted leading-relaxed">
@@ -76,9 +75,8 @@ export function TransportSection() {
           </div>
         </FadeIn>
 
-        {/* Tech focus */}
         <FadeIn delay={450}>
-          <div className="border-l-2 border-emphasis p-6 stack-block">
+          <div className="border-l-2 border-emphasis p-6 portfolio-stack-block">
             <p className="type-label text-paper-muted mb-4">FOCUS AREAS</p>
             <div className="flex flex-wrap gap-3">
               <span className="status-badge">MOTOR CONTROL</span>
@@ -89,9 +87,8 @@ export function TransportSection() {
           </div>
         </FadeIn>
 
-        {/* Coming soon */}
         <FadeIn delay={500}>
-          <div className="stack-block">
+          <div>
             <div className="minimal-card inline-flex">
               <p className="type-label text-paper">
                 COMING 2026

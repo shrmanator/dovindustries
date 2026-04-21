@@ -4,13 +4,12 @@ export function VRSection() {
   return (
     <section
       id="vr"
-      className="section-padding grid-margin border-t border-subtle"
+      className="portfolio-section"
       aria-labelledby="vr-heading"
     >
       <div className="max-w-7xl">
-        {/* Status */}
         <FadeIn>
-          <div className="flex items-center justify-between stack">
+          <div className="section-meta">
             <div className="status-badge">
               <span className="type-label text-paper-muted">R&D</span>
             </div>
@@ -18,18 +17,11 @@ export function VRSection() {
           </div>
         </FadeIn>
 
-        {/* Product statement */}
         <FadeIn delay={100}>
-          <div className="stack-block">
+          <div className="max-w-4xl space-y-3 md:space-y-4 portfolio-stack-block">
             <h2 id="vr-heading" className="type-display-lg max-w-4xl">
               VR WALK-IN-PLACE LOCOMOTION
             </h2>
-          </div>
-        </FadeIn>
-
-        {/* Lead description */}
-        <FadeIn delay={200}>
-          <div className="max-w-3xl stack-block">
             <p className="type-body-lg text-paper-muted">
               Walk in place to move in VR. Natural movement without external
               trackers.
@@ -37,11 +29,10 @@ export function VRSection() {
           </div>
         </FadeIn>
 
-        {/* Feature grid - minimal */}
-        <FadeIn delay={300}>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 stack-block">
+        <FadeIn delay={200}>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-5 portfolio-stack-block">
             <article className="minimal-card md:col-span-2 h-full">
-              <h3 className="type-label mb-4 text-paper">HEADSET-ONLY</h3>
+              <h3 className="type-label mb-3 text-paper">HEADSET-ONLY</h3>
               <p className="text-paper-muted leading-relaxed">
                 No external hardware required. All sensors built into the VR
                 headset.
@@ -49,8 +40,8 @@ export function VRSection() {
             </article>
 
             <article className="minimal-card-emphasis beam-purple md:col-span-3 md:row-span-2 flex flex-col h-full">
-              <h3 className="type-label mb-6 text-paper">SENSOR FUSION</h3>
-              <p className="text-paper leading-relaxed text-lg mb-8 flex-grow">
+              <h3 className="type-label mb-4 text-paper">SENSOR FUSION</h3>
+              <p className="text-paper leading-relaxed text-lg mb-6 flex-grow">
                 Combines IMU data, head tracking, and custom algorithms to detect
                 walking motion. Real-time processing for natural locomotion.
               </p>
@@ -61,7 +52,7 @@ export function VRSection() {
             </article>
 
             <article className="minimal-card md:col-span-2 h-full">
-              <h3 className="type-label mb-4 text-paper">NATURAL MOVEMENT</h3>
+              <h3 className="type-label mb-3 text-paper">NATURAL MOVEMENT</h3>
               <p className="text-paper-muted leading-relaxed">
                 Intuitive locomotion that matches physical walking without
                 treadmills or external trackers.
@@ -70,9 +61,8 @@ export function VRSection() {
           </div>
         </FadeIn>
 
-        {/* Tech stack */}
-        <FadeIn delay={400}>
-          <div className="border-l-2 border-emphasis p-6 stack-block">
+        <FadeIn delay={300}>
+          <div className="border-l-2 border-emphasis p-6 portfolio-stack-block">
             <p className="type-label text-paper-muted mb-4">FOCUS AREAS</p>
             <div className="flex flex-wrap gap-3">
               <span className="status-badge">VR HEADSETS</span>

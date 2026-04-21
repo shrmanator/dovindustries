@@ -23,35 +23,28 @@ export function FadeIn({
   withScale = false,
   initiallyVisible = false,
 }: FadeInProps) {
-  const [isVisible, setIsVisible] = useState(() => {
-    if (initiallyVisible) {
-      return true;
-    }
-
-    if (typeof window !== "undefined") {
-      return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    }
-
-    return false;
-  });
+  const [isVisible, setIsVisible] = useState(initiallyVisible);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (isVisible) return;
+    if (initiallyVisible || isVisible) {
+      return;
+    }
 
     const element = ref.current;
-    if (!element) return;
+    if (!element) {
+      return;
+    }
 
-    // Respect the user's reduced motion preference and skip all animations.
-    let timeoutId: NodeJS.Timeout | null = null;
-
-    if (
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+    const scheduleVisibility = () => {
       timeoutId = setTimeout(() => {
         setIsVisible(true);
       }, delay);
+    };
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      scheduleVisibility();
 
       return () => {
         if (timeoutId) {
@@ -64,9 +57,7 @@ export function FadeIn({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            timeoutId = setTimeout(() => {
-              setIsVisible(true);
-            }, delay);
+            scheduleVisibility();
             observer.unobserve(entry.target);
           }
         });
@@ -85,7 +76,7 @@ export function FadeIn({
         clearTimeout(timeoutId);
       }
     };
-  }, [delay, isVisible]);
+  }, [delay, initiallyVisible, isVisible]);
 
   const getTransform = () => {
     const scale = withScale && !isVisible ? "scale-95" : "scale-100";
