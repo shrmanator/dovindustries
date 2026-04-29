@@ -21,9 +21,6 @@ export function SimplySeferSection() {
 
         <FadeIn delay={100}>
           <div className="portfolio-stack-block space-y-3">
-            <p className="type-label font-hebrew text-paper-muted" dir="rtl" lang="yi">
-              אלץ גייט פון האנט צו האנט
-            </p>
             <p className="type-label text-paper-muted">SIMPLY SEFER</p>
             <h2 id="simplysefer-heading" className="type-display-lg max-w-4xl">
               THE SEFORIM NETWORK
