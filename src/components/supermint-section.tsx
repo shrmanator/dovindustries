@@ -15,8 +15,9 @@ export function SuperMintSection() {
       <div className="max-w-7xl relative z-10">
         <FadeIn>
           <div className="section-meta">
-            <div className="status-badge opacity-60">
-              <span className="type-label text-paper-muted">ARCHIVED</span>
+            <div className="status-badge status-badge-archived">
+              <span className="status-indicator status-indicator-archived"></span>
+              <span>ARCHIVED</span>
             </div>
             <span className="type-label text-paper-muted opacity-60">WEB3 PLATFORM</span>
           </div>
@@ -24,26 +25,27 @@ export function SuperMintSection() {
 
         {/* Compact horizontal layout for archived project */}
         <FadeIn delay={100}>
-          <div className="minimal-card opacity-80 portfolio-stack-block">
+          <div className="minimal-card opacity-90 portfolio-stack-block">
             <div className="flex flex-col md:flex-row md:items-center gap-6">
               {/* Logo and title */}
               <div className="flex-shrink-0">
                 <Image
                   src="/images/supermint-logo-transparent-grey.png"
                   alt="SuperMint"
-                  width={120}
-                  height={60}
-                  className="h-12 w-auto object-contain brightness-0 invert opacity-60"
+                  width={140}
+                  height={70}
+                  className="h-14 w-auto object-contain opacity-70"
                 />
               </div>
               
               {/* Content */}
               <div className="flex-grow">
-                <h2 id="supermint-heading" className="text-2xl md:text-3xl font-bold text-paper opacity-70 mb-2">
-                  NFT Gifts for Donations
+                <h2 id="supermint-heading" className="text-2xl md:text-3xl font-bold text-paper opacity-80 mb-2">
+                  Web3 Donor Engagement
                 </h2>
                 <p className="text-paper-muted leading-relaxed">
-                  Charities gave NFTs as gifts when donors contributed. Platform evolved into DigiDov.
+                  NFT gifts for charitable donations. First product to validate the crypto-giving market, 
+                  paving the way for DigiDov.
                 </p>
               </div>
 
@@ -53,7 +55,7 @@ export function SuperMintSection() {
                   href="https://supermint.ca"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="minimal-button opacity-60 hover:opacity-80 text-sm"
+                  className="minimal-button opacity-70 hover:opacity-90 text-sm"
                 >
                   VIEW ARCHIVE
                 </Link>
@@ -64,11 +66,14 @@ export function SuperMintSection() {
 
         {/* Collapsed feature summary */}
         <FadeIn delay={150}>
-          <div className="flex flex-wrap gap-3 opacity-60">
+          <div className="flex flex-wrap items-center gap-3 opacity-70">
             <span className="status-badge">NFT REWARDS</span>
             <span className="status-badge">NO-CODE MINTING</span>
             <span className="status-badge">DONOR ENGAGEMENT</span>
-            <span className="text-paper-muted type-label flex items-center">
+            <span className="inline-flex items-center gap-2 text-paper-muted type-label">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
               EVOLVED INTO DIGIDOV
             </span>
           </div>

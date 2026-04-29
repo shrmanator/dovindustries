@@ -11,8 +11,9 @@ export function VRSection() {
       <div className="max-w-7xl">
         <FadeIn>
           <div className="section-meta">
-            <div className="status-badge">
-              <span className="type-label text-paper-muted">R&D</span>
+            <div className="status-badge status-badge-rnd">
+              <span className="status-indicator status-indicator-rnd"></span>
+              <span>R&D</span>
             </div>
             <span className="type-label text-paper-muted">VIRTUAL REALITY</span>
           </div>
@@ -51,27 +52,27 @@ export function VRSection() {
           </div>
         </FadeIn>
 
-        {/* Technical specs - horizontal cards */}
+        {/* Technical specs - horizontal cards with clearer labels */}
         <FadeIn delay={200}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 portfolio-stack-block">
             <article className="minimal-card-emphasis beam-purple text-center py-6">
               <p className="text-2xl md:text-3xl font-bold text-paper mono mb-1">IMU</p>
-              <p className="type-label text-paper-muted">SENSORS</p>
+              <p className="type-label text-paper-muted">SENSOR FUSION</p>
             </article>
 
             <article className="minimal-card text-center py-6">
               <p className="text-2xl md:text-3xl font-bold text-paper mono mb-1">ML</p>
-              <p className="type-label text-paper-muted">DETECTION</p>
+              <p className="type-label text-paper-muted">GAIT DETECTION</p>
             </article>
 
             <article className="minimal-card text-center py-6">
-              <p className="text-2xl md:text-3xl font-bold text-paper mono mb-1">0</p>
-              <p className="type-label text-paper-muted">EXTERNAL HW</p>
+              <p className="text-2xl md:text-3xl font-bold text-paper mono mb-1">ZERO</p>
+              <p className="type-label text-paper-muted">EXTERNAL TRACKERS</p>
             </article>
 
             <article className="minimal-card text-center py-6">
               <p className="text-2xl md:text-3xl font-bold text-paper mono mb-1">RT</p>
-              <p className="type-label text-paper-muted">PROCESSING</p>
+              <p className="type-label text-paper-muted">ON-DEVICE</p>
             </article>
           </div>
         </FadeIn>
@@ -88,13 +89,21 @@ export function VRSection() {
           </div>
         </FadeIn>
 
-        {/* Focus areas */}
+        {/* Focus areas and CTA */}
         <FadeIn delay={350}>
-          <div className="flex flex-wrap gap-3">
-            <span className="status-badge">VR HEADSETS</span>
-            <span className="status-badge">IMU SENSORS</span>
-            <span className="status-badge">MACHINE LEARNING</span>
-            <span className="status-badge">REAL-TIME</span>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div className="flex flex-wrap gap-3">
+              <span className="status-badge">VR HEADSETS</span>
+              <span className="status-badge">IMU SENSORS</span>
+              <span className="status-badge">MACHINE LEARNING</span>
+              <span className="status-badge">REAL-TIME</span>
+            </div>
+            <a
+              href="mailto:contact@dovindustries.com?subject=VR%20Locomotion%20Collaboration"
+              className="minimal-button w-fit"
+            >
+              CONTACT FOR COLLABORATION
+            </a>
           </div>
         </FadeIn>
       </div>

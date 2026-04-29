@@ -11,17 +11,21 @@ export function TransportSection() {
       <div className="max-w-7xl">
         <FadeIn>
           <div className="section-meta">
-            <div className="status-badge">
-              <span className="type-label text-paper-muted">R&D</span>
+            <div className="status-badge status-badge-rnd">
+              <span className="status-indicator status-indicator-rnd"></span>
+              <span>R&D</span>
             </div>
             <span className="type-label text-paper-muted">HARDWARE</span>
           </div>
         </FadeIn>
 
         <FadeIn delay={100}>
-          <h2 id="transport-heading" className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-paper leading-[0.9] tracking-tight uppercase mb-6 portfolio-stack-block">
-            Urban<br />Transportation
-          </h2>
+          <div className="portfolio-stack-block">
+            <p className="type-label text-emerald-400 mb-2">PROJECT STRIDE</p>
+            <h2 id="transport-heading" className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-paper leading-[0.9] tracking-tight uppercase">
+              Urban<br />Transportation
+            </h2>
+          </div>
         </FadeIn>
 
         {/* Bento grid layout */}
@@ -36,19 +40,19 @@ export function TransportSection() {
               <p className="type-label text-paper-muted mt-2">MPH IN 2.8 SECONDS</p>
             </article>
 
-            {/* Product image */}
-            <div className="col-span-2 row-span-2 relative rounded-xl overflow-hidden border border-border">
+            {/* Product image with green accent overlay */}
+            <div className="col-span-2 row-span-2 relative rounded-xl overflow-hidden border border-emerald-500/30">
               <Image
                 src="/images/transport-concept.jpg"
                 alt="Compact electric transport concept"
                 fill
                 className="object-cover"
               />
-              {/* Bottom gradient for text */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              {/* Green-tinted gradient to match beam-green accent */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-emerald-950/20 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
-                <p className="type-label text-paper-muted">CONCEPT</p>
-                <p className="text-lg font-bold text-paper">Compact. Foldable. Electric.</p>
+                <p className="type-label text-emerald-400 mb-1">CONCEPT RENDER</p>
+                <p className="text-xl font-bold text-paper">Compact. Foldable. Electric.</p>
               </div>
             </div>
 
