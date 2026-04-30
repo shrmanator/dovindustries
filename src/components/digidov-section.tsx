@@ -20,18 +20,18 @@ export function DigiDovSection() {
           </div>
         </FadeIn>
 
-        {/* Split layout - Content left, visual right */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 portfolio-stack-block">
-          {/* Content side */}
-          <div className="flex flex-col justify-center">
+        {/* Split layout - balanced visual weight */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 portfolio-stack-block">
+          {/* Content side - more breathing room */}
+          <div className="flex flex-col justify-center lg:py-8">
             <FadeIn delay={100}>
-              <div className="mb-8">
+              <div className="mb-10">
                 <Image
                   src="/images/digidov-logo-transparent-white.png"
-                  alt="DigiDov - Crypto Donation Platform Logo"
-                  width={220}
-                  height={110}
-                  className="h-16 w-auto object-contain brightness-0 invert md:h-20"
+                  alt="DigiDov"
+                  width={240}
+                  height={120}
+                  className="h-20 w-auto object-contain brightness-0 invert md:h-24"
                 />
               </div>
             </FadeIn>
@@ -50,10 +50,23 @@ export function DigiDovSection() {
             </FadeIn>
 
             <FadeIn delay={250}>
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="status-badge">USDC</span>
-                <span className="status-badge">ETH</span>
-                <span className="status-badge">IRS COMPLIANT</span>
+              {/* Separated badges - currencies vs compliance */}
+              <div className="flex flex-col gap-3 mb-8">
+                <div className="flex flex-wrap gap-2">
+                  <span className="status-badge">
+                    <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
+                    USDC
+                  </span>
+                  <span className="status-badge">
+                    <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+                    ETH
+                  </span>
+                  <span className="status-badge">
+                    <span className="w-2 h-2 rounded-full bg-amber-400"></span>
+                    BTC
+                  </span>
+                </div>
+                <p className="type-label text-paper-muted">IRS 8283 COMPLIANT</p>
               </div>
             </FadeIn>
 
@@ -63,16 +76,16 @@ export function DigiDovSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="minimal-button w-fit"
-                aria-label="Visit DigiDov crypto donation platform"
+                aria-label="Explore DigiDov platform"
               >
-                VISIT DIGIDOV
+                EXPLORE DIGIDOV
               </Link>
             </FadeIn>
           </div>
 
-          {/* Visual side */}
+          {/* Visual side - integrated floating card */}
           <FadeIn delay={200} slideFrom="right">
-            <div className="relative">
+            <div className="relative lg:py-4">
               <div className="aspect-[4/3] relative rounded-xl overflow-hidden border border-border">
                 <Image
                   src="/images/digidov-mockup.jpg"
@@ -81,50 +94,52 @@ export function DigiDovSection() {
                   className="object-cover"
                 />
               </div>
-              {/* Floating stat card */}
-              <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 bg-ink border border-border-emphasis rounded-lg p-4 md:p-5 shadow-2xl">
-                <p className="type-label text-paper-muted mb-1">TAX RECEIPTS</p>
-                <p className="text-2xl md:text-3xl font-bold text-paper mono">AUTO</p>
+              {/* Floating stat - overlaps image and extends below */}
+              <div className="absolute -bottom-6 left-4 md:left-8 bg-ink border border-cyan-500/30 rounded-lg p-5 shadow-2xl">
+                <p className="type-label text-cyan-400 mb-1">CONVERSION</p>
+                <p className="text-3xl font-bold text-paper mono">USD in 24h</p>
+                <p className="text-paper-muted text-sm mt-1">Crypto to bank account</p>
               </div>
             </div>
           </FadeIn>
         </div>
 
-        {/* Feature row - more visual differentiation */}
+        {/* Feature row - visually distinct cards */}
         <FadeIn delay={350}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 portfolio-stack-block">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-8">
             <article className="minimal-card flex flex-col">
-              <div className="w-10 h-10 rounded-lg bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center mb-4">
-                <svg className="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-4">
+                <svg className="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H5.25A2.25 2.25 0 003 12m18 0v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 9m18 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v3" />
                 </svg>
               </div>
-              <h3 className="type-label mb-2 text-paper">ACCEPTS CRYPTO</h3>
+              <h3 className="type-label mb-2 text-paper">NO WALLET NEEDED</h3>
               <p className="text-paper-muted leading-relaxed text-sm">
-                Accept donations without managing wallets or private keys.
+                Accept donations without managing wallets, keys, or exchanges.
               </p>
             </article>
 
             <article className="minimal-card flex flex-col">
-              <div className="w-10 h-10 rounded-lg bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center mb-4">
-                <svg className="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-4">
+                <svg className="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                 </svg>
               </div>
-              <h3 className="type-label mb-2 text-paper">IRS COMPLIANCE</h3>
+              <h3 className="type-label mb-2 text-paper">AUTO TAX RECEIPTS</h3>
               <p className="text-paper-muted leading-relaxed text-sm">
-                Automated 8283 forms and tax receipts generated instantly.
+                Donors receive receipts instantly. IRS 8283 forms generated automatically.
               </p>
             </article>
 
             <article className="minimal-card-emphasis beam-cyan flex flex-col">
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-3">
                 <h3 className="type-label text-paper">DIGIDOV CASH</h3>
                 <span className="accent-badge">NEW</span>
               </div>
-              <p className="text-2xl font-bold text-paper mb-2">USD Instantly</p>
-              <p className="text-paper-muted leading-relaxed text-sm">
-                Receive U.S. dollars directly from crypto donations.
+              <p className="text-paper-muted text-sm mb-2">Direct to your bank</p>
+              <p className="text-2xl font-bold text-paper">No Volatility</p>
+              <p className="text-paper-muted leading-relaxed text-sm mt-2">
+                Receive stable USD regardless of crypto market swings.
               </p>
             </article>
           </div>
