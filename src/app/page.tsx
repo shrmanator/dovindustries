@@ -6,12 +6,13 @@ import { SiteHeader } from "@/components/site-header";
 import { SimplySeferSection } from "@/components/simplysefer-section";
 import { SuperMintSection } from "@/components/supermint-section";
 import { TransportSection } from "@/components/transport-section";
+import { VibeDrawSection } from "@/components/vibe-draw-section";
 import { VRSection } from "@/components/vr-section";
 
 export const metadata: Metadata = {
-  title: "Dovindustries | Seforim Marketplace, Crypto Donations, VR Locomotion & Electric Transport",
+  title: "Dovindustries | AI Creative Tools, Seforim Marketplace, Crypto Donations, VR & Transport",
   description:
-    "Technology company building Simply Sefer (community marketplace for seforim and Judaica), DigiDov (IRS-compliant crypto donation platform for nonprofits), headset-only VR locomotion systems, and compact electric transport.",
+    "Technology company building Vibe Draw (AI-native structured visual editing), Simply Sefer (community marketplace for seforim and Judaica), DigiDov (crypto donation infrastructure), headset-only VR locomotion systems, and compact electric transport.",
 };
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <SiteHeader />
       <main className="flex flex-col">
         <HeroSection />
+        <VibeDrawSection />
         <SimplySeferSection />
         <DigiDovSection />
         <VRSection />
