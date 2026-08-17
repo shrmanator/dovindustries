@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const productNav = [
+  { label: "Vibe Draw", href: "#vibe-draw" },
   { label: "Simply Sefer", href: "#simplysefer" },
   { label: "DigiDov", href: "#digidov" },
   { label: "VR", href: "#vr" },
@@ -57,4 +58,3 @@ export function SiteHeader() {
     </header>
   );
 }
-
