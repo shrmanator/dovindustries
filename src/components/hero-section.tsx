@@ -10,7 +10,7 @@ export function HeroSection() {
             <div className="stack-block">
               <h1 className="text-[11vw] md:text-[12vw] lg:text-[clamp(8rem,12vw,12rem)] font-extrabold leading-[0.85] tracking-tighter uppercase">
                 <div className="text-paper">DOV</div>
-                <div className="text-paper" style={{ fontSize: '1.15em' }}>INDUSTRIES</div>
+                <div className="text-paper" style={{ fontSize: "1.15em" }}>INDUSTRIES</div>
               </h1>
             </div>
           </FadeIn>
@@ -20,12 +20,12 @@ export function HeroSection() {
             <div className="max-w-3xl stack-block">
               <div className="minimal-card-emphasis beam-orange">
                 <p className="text-2xl md:text-3xl font-bold text-paper mb-4 leading-tight">
-                  Forward thinking,<br/>backwards compatible
+                  Forward thinking,<br />backwards compatible
                 </p>
                 <p className="type-body-lg text-paper-muted">
-                  Crypto without blockchain knowledge. VR movement without
-                  external hardware. Compact electric transport. Some live, some
-                  in R&D.
+                  AI-native creative tools. Crypto without blockchain knowledge.
+                  VR movement without external hardware. Compact electric transport.
+                  Some live, some in R&D.
                 </p>
               </div>
             </div>
