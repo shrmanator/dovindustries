@@ -24,8 +24,9 @@ export function VibeDrawSection() {
               AI IS THE BRAIN. WE&apos;RE GIVING IT HANDS.
             </h2>
             <p className="type-body-lg text-paper-muted max-w-3xl">
-              Vibe Draw is a drawing system that gives AI direct control over artwork
-              while the model handles the visual reasoning.
+              Vibe Draw is a drawing system where AI works with the parts of the
+              artwork directly, not just the finished image. Move or change one part,
+              and it can adjust everything connected to it.
             </p>
           </div>
         </FadeIn>
@@ -33,18 +34,18 @@ export function VibeDrawSection() {
         <FadeIn delay={200}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 portfolio-stack-block">
             <article className="minimal-card h-full">
-              <h3 className="type-label mb-3 text-paper">PERSISTENT VISUAL WORLD</h3>
+              <h3 className="type-label mb-3 text-paper">EDITABLE PARTS</h3>
               <p className="text-paper-muted leading-relaxed">
-                Parts of the artwork remain identifiable and editable as the work
-                evolves, with explicit relationships to the things around them.
+                The AI works with individual parts of the drawing, so a character,
+                arm, object, or other element can be selected and changed directly.
               </p>
             </article>
 
             <article className="minimal-card-emphasis beam-orange h-full">
-              <h3 className="type-label mb-3 text-paper">DIRECT MANIPULATION</h3>
+              <h3 className="type-label mb-3 text-paper">CONNECTED CHANGES</h3>
               <p className="text-paper leading-relaxed text-lg">
-                The model can act on specific components through prompts or movement,
-                then determine which connected elements need to respond.
+                When one part moves or changes, the AI can update the parts that
+                depend on it, like joints, clothing, overlaps, and other details.
               </p>
             </article>
           </div>
