@@ -21,12 +21,11 @@ export function VibeDrawSection() {
           <div className="max-w-4xl space-y-3 md:space-y-4 portfolio-stack-block">
             <p className="type-label text-paper-muted">VIBE DRAW</p>
             <h2 id="vibe-draw-heading" className="type-display-lg max-w-4xl">
-              AI IS THE BRAIN. WE&apos;RE BUILDING THE HAND.
+              AI IS THE BRAIN. WE&apos;RE GIVING IT HANDS.
             </h2>
             <p className="type-body-lg text-paper-muted max-w-3xl">
-              Vibe Draw gives multimodal AI a way to directly work on a drawing —
-              creating and manipulating its parts, understanding how they relate, and
-              updating them as the artwork evolves.
+              Vibe Draw is a drawing system that gives AI direct control over artwork
+              while the model handles the visual reasoning.
             </p>
           </div>
         </FadeIn>
