@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { BEAR_SEQUENCE_DURATION, bearSequenceFrame } from "../utils/bear-sequence";
 import { BearStrokeCanvas } from "./bear-stroke-canvas";
-import { BearPromptComposer } from "./bear-prompt-composer";
+import { BearPromptCaption } from "./bear-prompt-caption";
 
 const stages = [{ label: "Sketch", value: 40 }, { label: "Paint", value: 73 },
   { label: "Edit paw", value: 100 }];
@@ -69,11 +69,6 @@ export function BearSequence() {
     }
     setPlaying(!playing);
   };
-  const sendPrompt = () => {
-    position.current = progress < 74 ? 12 : 86;
-    setProgress(position.current);
-    setPlaying(true);
-  };
 
   return <figure className="bear-sequence">
     <div className="bear-conversation" aria-label="Example sent prompt">
@@ -83,7 +78,7 @@ export function BearSequence() {
       aria-label="A bear develops from a charcoal sketch into a blue painting, then lifts its front paw.">
       <BearStrokeCanvas progress={progress} playing={playing} />
     </div>
-    <BearPromptComposer progress={progress} playing={playing} onSend={sendPrompt} />
+    <BearPromptCaption progress={progress} />
     <div className="bear-controls">
       <button type="button" className="bear-play" onClick={togglePlayback}>
         {playing ? "Pause" : progress >= 100 ? "Replay" : "Play"}

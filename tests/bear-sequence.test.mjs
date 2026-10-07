@@ -12,14 +12,14 @@ test("the paw edit never starts before the painting is complete", () => {
 });
 
 test("drawing and editing wait for their typed prompts to be sent", () => {
-  assert.equal(bearSequenceFrame(5).composerText, "Draw a ");
-  assert.equal(bearSequenceFrame(9).composerText, "Draw a bear.");
+  assert.equal(bearSequenceFrame(5).promptText, "Draw a ");
+  assert.equal(bearSequenceFrame(9).promptText, "Draw a bear.");
   assert.equal(bearSequenceFrame(9).sending, true);
   assert.equal(bearSequenceFrame(5).message, "");
   assert.equal(bearSequenceFrame(10).message, "Draw a bear.");
   assert.equal(bearSequenceFrame(11).sketchProgress, 0);
   assert.equal(bearSequenceFrame(13).sketchProgress > 0, true);
-  assert.equal(bearSequenceFrame(79).composerText, "Lift its fr");
+  assert.equal(bearSequenceFrame(79).promptText, "Lift its fr");
   assert.equal(bearSequenceFrame(85).message, "Lift its front paw.");
   assert.equal(bearSequenceFrame(85).editOpacity, 0);
   assert.equal(bearSequenceFrame(87).editOpacity > 0, true);

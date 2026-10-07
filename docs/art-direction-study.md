@@ -68,11 +68,11 @@ Leaving the browser tab pauses playback. No animation library is loaded.
 These generated frames illustrate the intended drawing-and-editing experience.
 They are not outputs from Vibe Draw or evidence of learned editing capability.
 The study labels this limitation directly below the controls.
-An example chat composer types "Draw a bear." and later "Lift its front paw."
-Each send produces a user message above the canvas and starts its corresponding action.
-The composer sits below the artwork. Sent messages appear above it on the right.
-The edit prompt repeats that interaction before the paw changes.
-The composer is a scripted example; it does not accept arbitrary prompts or contact a model.
+A plain caption marked "Animated example" types "Draw a bear." and later
+"Lift its front paw." Each prompt then appears above the canvas on the right and
+starts its corresponding action. There is no text field, placeholder, or Send button:
+the user found those controls misleading because they invited typing into a scripted demo.
+Replay and scrubbing remain interactive. The sequence does not contact a model.
 
 Validation: production build, lint, types, seven isolated tests, and source-size checks pass.
 Browser review confirms visible strokes, replay, keyboard scrubbing, stage selection,
