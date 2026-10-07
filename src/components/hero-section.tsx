@@ -1,5 +1,6 @@
 import Image from "next/image";
-export function HeroSection() {
+import type { ReactNode } from "react";
+export function HeroSection({ artwork }: { artwork?: ReactNode }) {
   return <section className="hero container" aria-labelledby="hero-title">
     <div className="hero-intro">
       <h1 id="hero-title">Software, hardware,<br className="desktop-break" /> and room to explore.</h1>
@@ -8,9 +9,9 @@ export function HeroSection() {
         <a className="pill-link" href="#work">Explore the work</a>
       </div>
     </div>
-    <div className="hero-art">
+    {artwork ?? <div className="hero-art">
       <Image src="/images/studio-sculpture.webp" alt="" width={1774} height={887}
         sizes="(max-width: 700px) 100vw, 90vw" preload fetchPriority="high" className="hero-image" />
-    </div>
+    </div>}
   </section>;
 }
