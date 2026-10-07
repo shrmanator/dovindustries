@@ -1,0 +1,10 @@
+import { createRequire } from "node:module";
+import { mkdir } from "node:fs/promises";
+import { dirname } from "node:path";
+const require = createRequire(import.meta.url);
+const nextRequire = createRequire(require.resolve("next/package.json"));
+const sharp = nextRequire("sharp");
+const [input, output, width = "1600"] = process.argv.slice(2);
+if (!input || !output) throw new Error("Usage: node scripts/optimize-image.mjs input output [width]");
+await mkdir(dirname(output), { recursive: true });
+await sharp(input).resize({ width: Number(width), withoutEnlargement: true }).webp({ quality: 84 }).toFile(output);

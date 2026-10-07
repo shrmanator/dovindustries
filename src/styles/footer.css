@@ -1,0 +1,13 @@
+.history { display: flex; align-items: center; justify-content: space-between; gap: 48px; padding-block: 52px; scroll-margin-top: calc(var(--header-height) + 32px); }
+.history h2 { font-size: 20px; font-weight: 500; letter-spacing: -.025em; margin-bottom: 10px; }
+.history p { font-size: 14px; color: var(--muted); max-width: 68ch; }
+.history .text-link { flex-shrink: 0; font-size: 14px; }
+.site-footer { background: #20242b; color: #f8f9fa; padding-block: 68px 24px; scroll-margin-top: calc(var(--header-height) + 24px); }
+.footer-intro { display: flex; justify-content: space-between; align-items: center; gap: 28px; padding-bottom: 64px; }
+.footer-intro h2 { font-size: clamp(30px, 4vw, 50px); letter-spacing: -.045em; font-weight: 400; line-height: 1.15; }
+.contact-link { font-size: clamp(16px, 2vw, 23px); letter-spacing: -.025em; overflow-wrap: anywhere; }
+.footer-bottom { border-top: 1px solid #42464c; padding-top: 20px; display: flex; align-items: center; gap: 20px; color: #c1c7ce; font-size: 13px; }
+.footer-brand { font-size: 20px; letter-spacing: -.06em; color: #fff; font-weight: 500; }
+.footer-bottom .text-link { margin-left: auto; font-size: 13px; }
+.site-footer :focus-visible { outline-color: #9bb2ff; }
+@media (max-width: 700px) { .history { flex-direction: column; gap: 18px; align-items: start; padding-block: 40px; } .footer-intro { flex-direction: column; align-items: start; padding-bottom: 40px; gap: 20px; } .site-footer { padding-block: 48px 20px; } .footer-bottom { gap: 12px; } }
