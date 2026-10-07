@@ -2,7 +2,6 @@
 .bear-conversation { display: flex; justify-content: flex-end; min-height: 58px; padding-bottom: 14px; }
 .bear-message { margin: 0; padding: 12px 18px; border-radius: 22px 22px 4px 22px; background: #e9ecef; font-size: 15px; animation: bear-message-in 0.35s ease-out; }
 .bear-prompt-caption { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 18px; min-height: 48px; padding-top: 18px; }
-.bear-example-label { color: var(--muted); font-size: 12px; }
 .bear-prompt-text { margin: 0; color: var(--ink); font-size: 16px; min-height: 24px; }
 @keyframes bear-message-in { from { opacity: 0; transform: translateY(10px); } }
 @media (prefers-reduced-motion: reduce) { .bear-message { animation: none; } }

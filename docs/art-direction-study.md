@@ -68,7 +68,7 @@ Leaving the browser tab pauses playback. No animation library is loaded.
 These generated frames illustrate the intended drawing-and-editing experience.
 They are not outputs from Vibe Draw or evidence of learned editing capability.
 The study labels this limitation directly below the controls.
-A plain caption marked "Animated example" types "Draw a bear." and later
+A plain animated caption types "Draw a bear." and later
 "Lift its front paw." Each prompt then appears above the canvas on the right and
 starts its corresponding action. There is no text field, placeholder, or Send button:
 the user found those controls misleading because they invited typing into a scripted demo.
