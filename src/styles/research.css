@@ -1,18 +1,6 @@
-.research-section { background: #eef1ee; }
-.research-entry { scroll-margin-top: calc(var(--header-height) + 32px); }
-.drawing-study { min-width: 0; }
-.study-canvas { background: #e4e9df; border-radius: 12px; overflow: hidden; }
-.study-canvas svg { width: 100%; height: auto; }
-.study-controls { display: grid; grid-template-columns: auto 1fr auto; gap: 18px; align-items: center; margin-top: 12px; font-size: 13px; }
-.study-controls input { min-width: 0; width: 100%; height: 44px; accent-color: #3556a9; cursor: pointer; }
-.study-controls button { min-height: 44px; min-width: 44px; border: 0; background: none; text-decoration: underline; text-underline-offset: 4px; }
-.drawing-study figcaption { font-size: 12px; color: #58624f; margin-top: 3px; }
-.research-list { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-.research-entry { display: grid; grid-template-columns: 82px 1fr; gap: 24px; align-items: start; }
-.research-symbol { width: 82px; height: 100px; color: #546b7b; }
-.research-symbol svg { width: 100%; height: 100%; }
-.transport-symbol { color: #747c5e; }
-.research-entry h3 { font-size: 23px; font-weight: 500; letter-spacing: -.035em; line-height: 1.2; margin-bottom: 14px; }
-.research-entry p { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; max-width: 43ch; }
-@media (max-width: 1000px) { .research-entry { grid-template-columns: 60px 1fr; gap: 16px; } .research-symbol { width: 60px; } .research-list { gap: 32px; } }
-@media (max-width: 700px) { .research-list { grid-template-columns: 1fr; gap: 36px; } .research-entry { grid-template-columns: 58px 1fr; gap: 18px; } .study-controls { gap: 10px; } }
+.research-section { background: #f0f2f3; }
+.research-list { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 88px); }
+.research-entry { min-width: 0; scroll-margin-top: calc(var(--header-height) + 32px); }
+.research-entry h3 { font-size: clamp(24px, 2.4vw, 32px); font-weight: 500; letter-spacing: -.035em; line-height: 1.15; margin-bottom: 18px; text-wrap: balance; }
+.research-entry p { font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 46ch; }
+@media (max-width: 700px) { .research-list { grid-template-columns: 1fr; gap: 36px; } }

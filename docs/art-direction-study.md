@@ -121,3 +121,18 @@ from this route. A quiet link leads to released projects. The ending no longer
 repeats the project name. Reduce the opening gaps, bring sent prompts closer to
 the canvas, and narrow the paper-edge feathering to avoid a blurred halo.
 The main homepage keeps its existing hero while this presentation is reviewed.
+
+## Released projects refinement
+
+Simply Sefer and DigiDov now occupy individual image-and-copy rows rather than
+matching cards. Simply Sefer uses its marketplace screenshot without a decorative
+browser frame. DigiDov uses a flat donation-to-receipt illustration instead of a
+floating coin. Research entries use specific names and concise descriptions;
+the footer closes with "Get in touch."
+
+Browser access is restored. This pass was reviewed in the integrated browser at
+1280 by 900 and 390 by 844 pixels. Images load, neither width overflows, and the
+mobile menu closes after research navigation. Build, lint, types, seven isolated
+tests, and the authored-source size check pass. Historical controls and public
+disclaimers described above are no longer present; the current sequence has only
+its passive prompts and replay/pause control. Artwork remains illustrative.
