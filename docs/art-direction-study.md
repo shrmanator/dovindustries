@@ -171,3 +171,6 @@ projects. Its description explains editable strokes, connected parts, and
 revision of the same drawing. The featured presentation remains the opening
 on the study route. Simply Sefer and DigiDov remain the released projects.
 Desktop and 390-pixel mobile browser review confirms the placement and copy.
+
+### Featured research hierarchy
+Vibe Draw remains the opening current research presentation, with its editable-strokes description alongside the title. Released projects follow; the later More research section contains VR locomotion and compact electric transport, without repeating Vibe Draw. Desktop and 390px mobile layouts reviewed locally. Build, lint, types, and source-size checks passed.

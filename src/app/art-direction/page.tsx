@@ -18,7 +18,7 @@ export default function ArtDirectionStudy() {
     <main id="main" tabIndex={-1}>
       <VibeDrawHero />
       <WorkSection />
-      <ResearchSection />
+      <ResearchSection includeVibeDraw={false} />
     </main>
     <SiteFooter />
   </>;
