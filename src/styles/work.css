@@ -4,8 +4,6 @@
 .vibe-project-copy { max-width: 52ch; min-width: 0; }
 .vibe-project-heading h2 { font-family: var(--font-instrument-serif), Georgia, serif; font-size: clamp(36px, 3.7vw, 56px); font-weight: 400; line-height: 1.08; letter-spacing: -.035em; margin-bottom: 16px; }
 .vibe-project-copy > p { font-size: clamp(20px, 2vw, 26px); line-height: 1.5; letter-spacing: -.02em; }
-.vibe-project-copy .project-note { margin-top: 18px; color: var(--muted); font-size: 16px; line-height: 1.65; letter-spacing: 0; }
-.vibe-project-copy .concept-note { font-size: 13px; }
 .project-history { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); scroll-margin-top: calc(var(--header-height) + 32px); }
 .project-history p { color: var(--muted); font-size: 14px; line-height: 1.65; max-width: 48ch; }
 .project-history .text-link { font-size: 13px; margin-top: 4px; }

@@ -6,7 +6,6 @@ export function VibeDrawProject({ showBearConcept = false }: { showBearConcept?:
     </div>
     <div className="vibe-project-copy">
       <p>We’re developing a drawing model to create illustrations and revise individual parts without changing the rest.</p>
-      {showBearConcept && <p className="project-note concept-note">The sequence above illustrates the idea; it isn’t output from our model.</p>}
     </div>
   </article>;
 }
