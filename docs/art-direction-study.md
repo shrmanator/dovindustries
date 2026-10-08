@@ -174,3 +174,6 @@ Desktop and 390-pixel mobile browser review confirms the placement and copy.
 
 ### Featured research hierarchy
 Vibe Draw remains the opening current research presentation, with its editable-strokes description alongside the title. Released projects follow; the later More research section contains VR locomotion and compact electric transport, without repeating Vibe Draw. Desktop and 390px mobile layouts reviewed locally. Build, lint, types, and source-size checks passed.
+
+### Drawing presentation iteration
+Replaced the broad reveal bands with overlapping short gestures, and replaced the mismatched cartoon outline with a direct charcoal study buildup. Colour develops over the same charcoal bear; paper texture settles gradually. Paw replacement remains clipped to the edited part, with a smooth finishing pass. Path geometry is prepared once, rounded for consistent hydration, and stable mask layers are memoized. This is still an authored illustrative sequence using artwork textures, not learned model output. Desktop and mobile reviewed; 12 tests, build, lint, types, and source-size checks passed.

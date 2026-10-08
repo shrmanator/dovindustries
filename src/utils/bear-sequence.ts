@@ -20,10 +20,12 @@ export function bearSequenceFrame(value: number) {
     promptText: typing ? typingPrompt.slice(0, Math.ceil(typedAmount * typingPrompt.length))
       : sending ? typingPrompt : "",
     message: progress >= 84 ? editPrompt : progress >= 10 ? firstPrompt : "",
-    sketchProgress: Math.min(1, Math.max(0, (progress - 12) / 28)),
+    sketchProgress: Math.min(1, Math.max(0, (progress - 12) / 10)),
+    charcoalProgress: Math.min(1, Math.max(0, (progress - 12) / 30)),
     paintOpacity: Math.min(1, Math.max(0, (progress - 42) / 30)),
     paperOpacity: smooth((progress - 64) / 12),
     editOpacity: smooth((progress - 86) / 12),
+    editFinish: smooth((progress - 96) / 2),
     stage: progress < 42 ? "Sketch" : progress < 86 ? "Paint" : "Edit paw",
   };
 }

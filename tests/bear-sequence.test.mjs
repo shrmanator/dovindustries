@@ -46,3 +46,16 @@ test("paper fades through the paint boundary and finishes before the paw edit", 
     previous = paper;
   }
 });
+
+test("charcoal follows the sent prompt and completes before colour starts", () => {
+  assert.equal(bearSequenceFrame(11).charcoalProgress, 0);
+  assert.ok(bearSequenceFrame(25).charcoalProgress > 0);
+  assert.equal(bearSequenceFrame(42).charcoalProgress, 1);
+  assert.equal(bearSequenceFrame(42).paintOpacity, 0);
+});
+
+test("the edit settles smoothly rather than replacing the whole paw at the end", () => {
+  assert.equal(bearSequenceFrame(96).editFinish, 0);
+  assert.equal(bearSequenceFrame(97).editFinish, 0.5);
+  assert.equal(bearSequenceFrame(98).editFinish, 1);
+});
