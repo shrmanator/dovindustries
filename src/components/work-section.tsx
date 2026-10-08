@@ -1,12 +1,14 @@
 import Image from "next/image";
 import { ExternalLink } from "./external-link";
 import { DonationIllustration } from "./donation-illustration";
-export function WorkSection() {
+import { VibeDrawProject } from "./vibe-draw-project";
+export function WorkSection({ showBearConcept = false }: { showBearConcept?: boolean }) {
   return <section id="work" className="section container" aria-labelledby="work-title">
     <div className="section-intro">
-      <h2 id="work-title" className="section-title">Live projects.</h2>
-      <p>A marketplace for seforim. A platform for crypto donations.</p>
+      <h2 id="work-title" className="section-title">Projects.</h2>
+      <p>AI drawing, a marketplace for seforim, and crypto donations.</p>
     </div>
+    <VibeDrawProject showBearConcept={showBearConcept} />
     <div className="work-grid">
       <article id="simplysefer" className="work-project">
         <a className="project-visual sefer-visual" href="https://simplysefer.com" target="_blank"

@@ -95,5 +95,11 @@ automation runtime currently cannot initialize its Windows sandbox.
 Remove the artwork comparison entirely, including its unused picker and styles.
 The generated studies remain as archived assets, but the page presents only the bear.
 After playback finishes, "Vibe Draw" writes on below the painting and links to its
-research section. Replay resets the title with the sequence. Reduced-motion visitors
+project entry. Replay resets the title with the sequence. Reduced-motion visitors
 receive the title immediately alongside the final still.
+
+## Project order
+
+Vibe Draw leads the Projects section with an explicit "In development" status.
+Simply Sefer and DigiDov follow with their "Live" statuses. Drawing research lives
+with its project rather than appearing a second time in Research in progress.

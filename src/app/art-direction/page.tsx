@@ -17,8 +17,8 @@ export default function ArtDirectionStudy() {
     <SiteHeader />
     <main id="main" tabIndex={-1}>
       <HeroSection artwork={<BearSequence />} />
-      <WorkSection />
-      <ResearchSection showBearConcept />
+      <WorkSection showBearConcept />
+      <ResearchSection />
     </main>
     <SiteFooter />
   </>;

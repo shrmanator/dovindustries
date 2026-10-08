@@ -1,21 +1,10 @@
-import { DrawingStudy } from "./drawing-study";
-export function ResearchSection({ showBearConcept = false }: { showBearConcept?: boolean }) {
+export function ResearchSection() {
   return <section id="research" className="research-section section" aria-labelledby="research-title">
     <div className="container">
       <div className="section-intro">
         <h2 id="research-title" className="section-title">Research in progress.</h2>
-        <p>Research in drawing, movement, and physical form.</p>
+        <p>Movement in VR and compact electric transport.</p>
       </div>
-      <article id="vibe-draw" className="research-feature">
-        <div className="research-copy">
-          <span className="status">Vibe Draw · Research</span>
-          <h3>What if AI could work<br />with the parts of a drawing?</h3>
-          <p>We’re exploring how AI can edit an individual element and keep the rest of a scene consistent—from connected joints to overlapping details.</p>
-          <p className="research-note">Current work: testing where models succeed, where they break, and how to verify an edit.</p>
-          {showBearConcept && <p className="research-note">The bear animation illustrates this idea. It is an artistic concept, not output from our drawing model.</p>}
-        </div>
-        <DrawingStudy />
-      </article>
       <div className="research-list">
         <article id="vr" className="research-entry">
           <div className="research-symbol vr-symbol" aria-hidden="true">
