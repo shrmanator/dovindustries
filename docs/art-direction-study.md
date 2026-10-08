@@ -103,3 +103,12 @@ receive the title immediately alongside the final still.
 Vibe Draw leads the Projects section with an explicit "In development" status.
 Simply Sefer and DigiDov follow with their "Live" statuses. Drawing research lives
 with its project rather than appearing a second time in Research in progress.
+
+## Continuous page flow
+
+The bear now leads directly into the Vibe Draw explanation and development status,
+without an intervening portfolio introduction or a second visible project title.
+Remove the bird slider from the page: it repeats the editing idea in a conflicting
+visual style. Released projects follow, then research, then contact. SuperMint's
+history belongs within DigiDov rather than interrupting the closing flow.
+The non-study homepage retains a visible Vibe Draw heading below its sculpture.

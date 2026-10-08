@@ -3,12 +3,11 @@ import { ExternalLink } from "./external-link";
 import { DonationIllustration } from "./donation-illustration";
 import { VibeDrawProject } from "./vibe-draw-project";
 export function WorkSection({ showBearConcept = false }: { showBearConcept?: boolean }) {
-  return <section id="work" className="section container" aria-labelledby="work-title">
-    <div className="section-intro">
-      <h2 id="work-title" className="section-title">Projects.</h2>
-      <p>AI drawing, a marketplace for seforim, and crypto donations.</p>
-    </div>
+  return <section id="work" className={`section container work-section${showBearConcept ? " work-continuation" : ""}`} aria-label="Projects">
     <VibeDrawProject showBearConcept={showBearConcept} />
+    <div className="section-intro">
+      <h2 className="section-title">Released projects.</h2>
+    </div>
     <div className="work-grid">
       <article id="simplysefer" className="work-project">
         <a className="project-visual sefer-visual" href="https://simplysefer.com" target="_blank"
@@ -31,6 +30,10 @@ export function WorkSection({ showBearConcept = false }: { showBearConcept?: boo
         <div className="project-heading"><h3>DigiDov</h3><span className="status"><i className="status-dot" />Live</span></div>
         <p className="project-description">Crypto donations, donor receipts, and documentation in one workflow. Built for organizations receiving digital contributions.</p>
         <ExternalLink href="https://digidov.com/login">Sign in to DigiDov</ExternalLink>
+        <aside id="supermint" className="project-history" aria-label="DigiDov origins">
+          <p>DigiDov grew out of SuperMint, our earlier project pairing donations with digital collectibles.</p>
+          <ExternalLink href="https://supermint.ca">Original SuperMint site</ExternalLink>
+        </aside>
       </article>
     </div>
   </section>;
