@@ -136,3 +136,18 @@ mobile menu closes after research navigation. Build, lint, types, seven isolated
 tests, and the authored-source size check pass. Historical controls and public
 disclaimers described above are no longer present; the current sequence has only
 its passive prompts and replay/pause control. Artwork remains illustrative.
+
+## Presentation closure
+
+After reviewing OpenAI's current product film, the sequence now has a closing
+frame inside the presentation. Hold the completed paw edit for 1.4 seconds, then
+dissolve over 1.2 seconds into Vibe Draw with its In development status. The sent
+prompt fades away on the same timing. Replay returns to the drawing sequence.
+The following explanation is centered beneath the presentation rather than
+split beside a redundant status label. A scroll link is not the closing device.
+
+Paper texture fades in independently over 2.4 seconds across the end of painting,
+replacing the abrupt full-canvas mask. An isolated test checks continuity through
+that boundary. Reduced-motion visitors retain the completed bear still without
+the closing dissolve. Desktop, mobile, replay, and reduced-motion browser checks
+passed locally, as did build, lint, types, eight tests, and the file-size check.

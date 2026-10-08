@@ -33,3 +33,16 @@ test("playback positions are bounded and resolve to a clean final edit", () => {
   assert.equal(bearSequenceFrame(100).editOpacity, 1);
   assert.equal(bearSequenceFrame(98).editOpacity, 1);
 });
+
+test("paper fades through the paint boundary and finishes before the paw edit", () => {
+  assert.equal(bearSequenceFrame(42).paperOpacity, 0);
+  assert.ok(bearSequenceFrame(72).paperOpacity < 1);
+  assert.equal(bearSequenceFrame(86).paperOpacity, 1);
+  let previous = 0;
+  for (let progress = 0; progress <= 100; progress += 0.1) {
+    const paper = bearSequenceFrame(progress).paperOpacity;
+    assert.ok(paper >= previous && paper <= 1);
+    assert.ok(paper - previous < 0.02, "paper must never pop in between frames");
+    previous = paper;
+  }
+});

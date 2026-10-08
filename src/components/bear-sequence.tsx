@@ -4,10 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import { BEAR_SEQUENCE_DURATION, bearSequenceFrame } from "../utils/bear-sequence";
 import { BearStrokeCanvas } from "./bear-stroke-canvas";
 import { BearPromptCaption } from "./bear-prompt-caption";
+import { BearFinale } from "./bear-finale";
 
 export function BearSequence() {
   const [progress, setProgress] = useState(0);
   const [playing, setPlaying] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
   const position = useRef(0);
   const canvas = useRef<HTMLDivElement>(null);
   const frame = bearSequenceFrame(progress);
@@ -16,6 +18,7 @@ export function BearSequence() {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const observer = new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) return;
+      setReduceMotion(reducedMotion.matches);
       if (reducedMotion.matches) {
         position.current = 100;
         setProgress(100);
@@ -24,7 +27,12 @@ export function BearSequence() {
     }, { threshold: 0.35 });
     if (canvas.current) observer.observe(canvas.current);
     const stopMotion = () => {
-      if (reducedMotion.matches) setPlaying(false);
+      setReduceMotion(reducedMotion.matches);
+      if (reducedMotion.matches) {
+        position.current = 100;
+        setProgress(100);
+        setPlaying(false);
+      }
     };
     const stopWhenHidden = () => {
       if (document.hidden) setPlaying(false);
@@ -63,12 +71,13 @@ export function BearSequence() {
   };
 
   return <figure className="bear-sequence">
-    <div className="bear-conversation" aria-label="Example sent prompt">
+    <div className={`bear-conversation${progress >= 100 ? " is-complete" : ""}`} aria-label="Example sent prompt">
       {frame.message && <p className="bear-message" key={frame.message} aria-live="polite">{frame.message}</p>}
     </div>
-    <div className="bear-canvas" ref={canvas} role="img"
-      aria-label="A bear develops from a charcoal sketch into a blue painting, then lifts its front paw.">
+    <div className="bear-canvas" ref={canvas} role={progress < 100 || reduceMotion ? "img" : undefined}
+      aria-label={progress < 100 || reduceMotion ? "A bear develops from a charcoal sketch into a blue painting, then lifts its front paw." : undefined}>
       <BearStrokeCanvas progress={progress} playing={playing} />
+      {progress >= 100 && !reduceMotion && <BearFinale />}
     </div>
     <div className="bear-controls">
       {progress < 100 && <BearPromptCaption progress={progress} />}

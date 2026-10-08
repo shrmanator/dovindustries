@@ -30,7 +30,7 @@ export function BearStrokeCanvas({ progress, playing }: { progress: number; play
     <defs>
       <mask id={`${id}-paint`} maskUnits="userSpaceOnUse" x="0" y="0" width="1774" height="887">
         <Strokes strokes={paintStrokes} progress={frame.paintOpacity} />
-        {frame.paintOpacity === 1 && <rect width="1774" height="887" fill="white" />}
+        <rect width="1774" height="887" fill="white" opacity={frame.paperOpacity} />
       </mask>
       <clipPath id={`${id}-paw`}><polygon points="1064,408 1242,435 1455,621 1455,790 1082,790 1029,621 1046,479" /></clipPath>
       <mask id={`${id}-edit`} maskUnits="userSpaceOnUse" x="0" y="0" width="1774" height="887">

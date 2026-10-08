@@ -1,10 +1,12 @@
 .released-projects { display: grid; gap: clamp(56px, 7vw, 96px); }
-.released-projects-title { scroll-margin-top: calc(var(--header-height) + 32px); }
+.released-projects-title { scroll-margin-top: 24px; }
 .work-continuation { padding-top: 24px; }
 .vibe-project { display: grid; grid-template-columns: 1fr 1.12fr; align-items: start; gap: 64px; padding-bottom: clamp(64px, 8vw, 112px); scroll-margin-top: calc(var(--header-height) + 32px); }
 .vibe-project-copy { max-width: 52ch; min-width: 0; }
 .vibe-project-heading h2 { font-family: var(--font-instrument-serif), Georgia, serif; font-size: clamp(36px, 3.7vw, 56px); font-weight: 400; line-height: 1.08; letter-spacing: -.035em; margin-bottom: 16px; }
 .vibe-project-copy > p { font-size: clamp(20px, 2vw, 26px); line-height: 1.5; letter-spacing: -.02em; }
+.vibe-project--presentation { display: block; padding-top: 12px; }
+.vibe-project--presentation .vibe-project-copy { max-width: 54ch; margin-inline: auto; text-align: center; }
 .work-project { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; min-width: 0; scroll-margin-top: calc(var(--header-height) + 32px); }
 .project-copy { min-width: 0; max-width: 42ch; }
 .project-visual { min-width: 0; overflow: hidden; border-radius: 4px; }
