@@ -25,10 +25,11 @@ test("drawing and editing wait for their typed prompts to be sent", () => {
   assert.equal(bearSequenceFrame(87).editOpacity > 0, true);
 });
 
-test("scrubbing is bounded and has stable beginning and ending frames", () => {
+test("playback positions are bounded and resolve to a clean final edit", () => {
   assert.deepEqual(bearSequenceFrame(-100), bearSequenceFrame(0));
   assert.deepEqual(bearSequenceFrame(1000), bearSequenceFrame(100));
   assert.deepEqual(bearSequenceFrame(NaN), bearSequenceFrame(0));
   assert.equal(bearSequenceFrame(0).paintOpacity, 0);
   assert.equal(bearSequenceFrame(100).editOpacity, 1);
+  assert.equal(bearSequenceFrame(98).editOpacity, 1);
 });

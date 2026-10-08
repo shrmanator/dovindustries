@@ -23,15 +23,18 @@ export function ArtDirectionPicker() {
         sizes="(max-width: 700px) 100vw, 90vw" loading="eager"
         fetchPriority="high" className="hero-image" style={{ objectPosition: direction.position }} />
     </div>}
-    <fieldset className="art-switcher">
+    <details className="art-comparisons">
+      <summary>Compare earlier artwork</summary>
+      <fieldset className="art-switcher">
       <legend>Compare artwork</legend>
       <div className="art-options">{current.map(renderOption)}</div>
       <details className="earlier-studies">
         <summary>Earlier studies</summary>
         <div className="art-options">{earlier.map(renderOption)}</div>
       </details>
-    </fieldset>
-    <p className="art-caption" aria-live="polite">{direction.note}</p>
+      </fieldset>
+      <p className="art-caption" aria-live="polite">{direction.note}</p>
+    </details>
     {direction.id !== "bear-study" && <p className="art-concept-note">Art direction study. These are imagined scenes and objects.</p>}
   </div>;
 }

@@ -57,7 +57,7 @@ Earlier scenes belong in a collapsed comparison group, not among current recomme
 
 The study plays once over twenty seconds: type and send a drawing prompt, draw the
 outline, add brush passes, type and send an edit prompt, then lift the front paw.
-Replay, pause, stage buttons, and a keyboard-accessible scrubber allow closer review.
+One quiet replay/pause control accompanies the animation.
 The outline uses authored SVG curves with progressive stroke lengths. Painting and
 paw revision use brush paths to reveal illustrative raster texture. This is a
 choreographed drawing concept, not a reconstruction of model-generated strokes.
@@ -67,14 +67,25 @@ Leaving the browser tab pauses playback. No animation library is loaded.
 
 These generated frames illustrate the intended drawing-and-editing experience.
 They are not outputs from Vibe Draw or evidence of learned editing capability.
-The study labels this limitation directly below the controls.
+The study explains this limitation alongside the Vibe Draw research copy.
 A plain animated caption types "Draw a bear." and later
 "Lift its front paw." Each prompt then appears above the canvas on the right and
 starts its corresponding action. There is no text field, placeholder, or Send button:
 the user found those controls misleading because they invited typing into a scripted demo.
-Replay and scrubbing remain interactive. The sequence does not contact a model.
+Replay remains interactive. The sequence does not contact a model.
 
 Validation: production build, lint, types, seven isolated tests, and source-size checks pass.
 Browser review confirms visible strokes, replay, keyboard scrubbing, stage selection,
 desktop layout, and no horizontal overflow at a measured 390 CSS-pixel mobile width.
 Reduced-motion emulation opens the study at its final frame with playback stopped.
+
+## Critique refinement
+
+Remove the timeline and stage buttons from the hero. Place prompt typing and the
+single replay/pause control in one compact row. Collapse artwork comparisons so
+the initial view reads as artwork, while previous studies remain available.
+Feather only the outer paper margin into the page; preserve the bear's silhouette.
+The paw revision clears the old ground contact before drawing the lifted leg,
+and resolves fully before playback stops. Raster frames remain unchanged.
+Browser verification of this refinement is pending because the local browser
+automation runtime currently cannot initialize its Windows sandbox.

@@ -29,8 +29,8 @@ export const sketchStrokes: BrushStroke[] = [
 ];
 
 export const pawStrokes: BrushStroke[] = [
-  { width: 180, points: [[1125,470],[1200,542],[1306,621],[1370,724]] },
   { width: 180, points: [[1120,716],[1190,757],[1300,752],[1412,742]] },
+  { width: 180, points: [[1380,704],[1306,621],[1200,542],[1125,470]] },
 ];
 
 export const paintStrokes: BrushStroke[] = [

@@ -5,9 +5,6 @@ import { BEAR_SEQUENCE_DURATION, bearSequenceFrame } from "../utils/bear-sequenc
 import { BearStrokeCanvas } from "./bear-stroke-canvas";
 import { BearPromptCaption } from "./bear-prompt-caption";
 
-const stages = [{ label: "Sketch", value: 40 }, { label: "Paint", value: 73 },
-  { label: "Edit paw", value: 100 }];
-
 export function BearSequence() {
   const [progress, setProgress] = useState(0);
   const [playing, setPlaying] = useState(false);
@@ -57,11 +54,6 @@ export function BearSequence() {
     return () => cancelAnimationFrame(request);
   }, [playing]);
 
-  const seek = (value: number) => {
-    setPlaying(false);
-    position.current = value;
-    setProgress(value);
-  };
   const togglePlayback = () => {
     if (progress >= 100) {
       position.current = 0;
@@ -78,23 +70,11 @@ export function BearSequence() {
       aria-label="A bear develops from a charcoal sketch into a blue painting, then lifts its front paw.">
       <BearStrokeCanvas progress={progress} playing={playing} />
     </div>
-    <BearPromptCaption progress={progress} />
     <div className="bear-controls">
+      <BearPromptCaption progress={progress} />
       <button type="button" className="bear-play" onClick={togglePlayback}>
         {playing ? "Pause" : progress >= 100 ? "Replay" : "Play"}
       </button>
-      <label className="bear-timeline">
-        <span className="sr-only">Drawing sequence</span>
-        <input type="range" min="0" max="100" step="1" value={progress}
-          aria-valuetext={frame.stage} onChange={(event) => seek(Number(event.target.value))} />
-      </label>
-      <div className="bear-stages" aria-label="Drawing stages">
-        {stages.map(({ label, value }) => <button type="button" key={label}
-          aria-pressed={frame.stage === label} onClick={() => seek(value)}>{label}</button>)}
-      </div>
     </div>
-    <figcaption className="art-concept-note">
-      Concept sequence. Illustrative frames, not a live model run.
-    </figcaption>
   </figure>;
 }

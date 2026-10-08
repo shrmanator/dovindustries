@@ -22,7 +22,7 @@ export function bearSequenceFrame(value: number) {
     message: progress >= 84 ? editPrompt : progress >= 10 ? firstPrompt : "",
     sketchProgress: Math.min(1, Math.max(0, (progress - 12) / 28)),
     paintOpacity: Math.min(1, Math.max(0, (progress - 42) / 30)),
-    editOpacity: smooth((progress - 86) / 14),
+    editOpacity: smooth((progress - 86) / 12),
     stage: progress < 42 ? "Sketch" : progress < 86 ? "Paint" : "Edit paw",
   };
 }

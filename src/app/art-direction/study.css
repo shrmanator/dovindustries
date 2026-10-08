@@ -1,5 +1,15 @@
 @import "./bear-sequence.css";
 
+.art-comparisons { margin-top: 12px; }
+.art-comparisons > summary {
+  width: fit-content;
+  min-height: 44px;
+  padding-block: 11px;
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+
 .art-switcher {
   border: 0;
   padding: 0;

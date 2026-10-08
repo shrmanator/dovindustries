@@ -1,8 +1,8 @@
 .bear-sequence { margin: 0; }
 .bear-conversation { display: flex; justify-content: flex-end; min-height: 58px; padding-bottom: 14px; }
 .bear-message { margin: 0; padding: 12px 18px; border-radius: 22px 22px 4px 22px; background: #e9ecef; font-size: 15px; animation: bear-message-in 0.35s ease-out; }
-.bear-prompt-caption { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 18px; min-height: 48px; padding-top: 18px; }
-.bear-prompt-text { margin: 0; color: var(--ink); font-size: 16px; min-height: 24px; }
+.bear-prompt-caption { flex: 1; min-width: 0; }
+.bear-prompt-text { margin: 0; color: var(--ink); font-size: 16px; }
 @keyframes bear-message-in { from { opacity: 0; transform: translateY(10px); } }
 @media (prefers-reduced-motion: reduce) { .bear-message { animation: none; } }
 .bear-canvas {
@@ -10,36 +10,33 @@
   aspect-ratio: 2;
   overflow: hidden;
   background: #eeeef0;
+  mask-image:
+    linear-gradient(to right, transparent, black 4%, black 96%, transparent),
+    linear-gradient(to bottom, transparent, black 7%, black 93%, transparent);
+  mask-composite: intersect;
 }
 .bear-stroke-canvas { display: block; width: 100%; height: 100%; }
 .bear-controls {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 12px;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 44px;
+  margin-top: 8px;
 }
 .bear-controls button {
   min-height: 44px;
-  padding: 8px 15px;
+  min-width: 76px;
+  flex-shrink: 0;
+  padding: 8px 12px;
   cursor: pointer;
-  border: 1px solid var(--line);
+  border: 0;
   background: transparent;
   font-size: 13px;
-  border-radius: 24px;
+  color: var(--muted);
 }
-.bear-controls button:hover { border-color: var(--ink); }
-.bear-controls button:focus-visible, .bear-timeline input:focus-visible {
+.bear-controls button:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+.bear-controls button:focus-visible {
   outline: 3px solid var(--blue);
   outline-offset: 3px;
-}
-.bear-play { min-width: 76px; }
-.bear-timeline { flex: 1; min-width: 100px; }
-.bear-timeline input { width: 100%; height: 44px; accent-color: var(--ink); cursor: pointer; }
-.bear-stages { display: flex; gap: 6px; }
-.bear-stages button { border-color: transparent; color: var(--muted); }
-.bear-stages button[aria-pressed="true"] { background: var(--ink); color: var(--white); }
-@media (max-width: 700px) {
-  .bear-stages { width: 100%; }
-  .bear-stages button { flex: 1; }
 }

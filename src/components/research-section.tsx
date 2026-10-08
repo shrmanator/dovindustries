@@ -1,5 +1,5 @@
 import { DrawingStudy } from "./drawing-study";
-export function ResearchSection() {
+export function ResearchSection({ showBearConcept = false }: { showBearConcept?: boolean }) {
   return <section id="research" className="research-section section" aria-labelledby="research-title">
     <div className="container">
       <div className="section-intro">
@@ -12,6 +12,7 @@ export function ResearchSection() {
           <h3>What if AI could work<br />with the parts of a drawing?</h3>
           <p>We’re exploring how AI can edit an individual element and keep the rest of a scene consistent—from connected joints to overlapping details.</p>
           <p className="research-note">Current work: testing where models succeed, where they break, and how to verify an edit.</p>
+          {showBearConcept && <p className="research-note">The bear animation illustrates this idea. It is an artistic concept, not output from our drawing model.</p>}
         </div>
         <DrawingStudy />
       </article>
