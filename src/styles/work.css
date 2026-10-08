@@ -1,15 +1,14 @@
 .released-projects { display: grid; gap: clamp(56px, 7vw, 96px); }
 .released-projects-title { scroll-margin-top: 24px; }
-.work-project { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; min-width: 0; scroll-margin-top: calc(var(--header-height) + 32px); }
+.work-project { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; min-width: 0; scroll-margin-top: calc(var(--header-height) + 32px); }
 .project-copy { min-width: 0; max-width: 42ch; }
 .project-visual { min-width: 0; overflow: hidden; border-radius: 4px; }
-.sefer-visual { display: block; background: #e9e5dc; padding: clamp(16px, 2vw, 28px); }
-.sefer-visual img { width: 100%; height: auto; border-radius: 3px; box-shadow: 0 8px 24px -12px rgba(32,36,43,.3); }
-.donation-visual { background: #edf0f6; }
-.donation-art svg { width: 100%; height: auto; }
+.sefer-visual, .digidov-visual { display: block; background: #10110e; }
+.project-visual img { display: block; width: 100%; height: auto; }
 .project-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 20px; }
 .project-heading h3 { font-size: clamp(28px, 3vw, 40px); font-weight: 500; line-height: 1.1; letter-spacing: -.045em; }
 .project-description { color: var(--muted); margin-bottom: 20px; font-size: 17px; line-height: 1.7; }
+.project-detail { color: var(--muted); margin: -8px 0 24px; font-size: 15px; line-height: 1.65; }
 .project-history { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); scroll-margin-top: calc(var(--header-height) + 32px); }
 .project-history p { color: var(--muted); font-size: 14px; line-height: 1.65; }
 .project-history .text-link { font-size: 13px; margin-top: 4px; }
