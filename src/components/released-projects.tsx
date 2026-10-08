@@ -17,7 +17,7 @@ export function ReleasedProjects() {
         <ExternalLink href="https://simplysefer.com">Explore the marketplace</ExternalLink>
       </div>
     </article>
-    <article id="digidov" className="work-project">
+    <article id="digidov" className="work-project work-project-reverse">
       <div className="project-heading"><h3>DigiDov</h3></div>
       <a className="project-visual digidov-visual" href="https://www.digidov.com/" target="_blank"
         rel="noopener noreferrer" aria-label="Explore DigiDov (opens in a new tab)">
@@ -28,8 +28,7 @@ export function ReleasedProjects() {
         <p className="project-description">Crypto donations for nonprofits, with automatic donor receipts.</p>
         <ExternalLink href="https://www.digidov.com/">Explore DigiDov</ExternalLink>
         <aside id="supermint" className="project-history" aria-label="DigiDov origins">
-          <p>Built on the donation technology behind our earlier project, SuperMint.</p>
-          <ExternalLink href="https://supermint.ca">Original SuperMint site</ExternalLink>
+          <ExternalLink href="https://supermint.ca">Previously SuperMint</ExternalLink>
         </aside>
       </div>
     </article>

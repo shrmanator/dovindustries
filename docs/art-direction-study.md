@@ -185,3 +185,10 @@ Simply Sefer now shows a close capture of two public marketplace listings, rathe
 
 ### Painterly project artwork
 Replaced both screenshot crops with project-specific illustrations generated using the bear study as a style reference. Simply Sefer depicts a worn sefer passing between readers; DigiDov depicts an Ethereum contribution on a receipt beside an accounting ledger. Both use charcoal drawing, worked blue paint, muted ochre, and textured paper. Prompts and asset paths are in project-art-prompts.md. Mobile order is project title, complete 4:3 artwork, description, then link. Desktop retains artwork beside title and copy. Old screenshot assets removed. Build, lint, types, and source-size checks passed.
+# Whole-page flow refinement
+
+The art-direction opening now establishes Dovindustries before introducing the current research. The bear sequence itself is unchanged. Released projects alternate sides on desktop and preserve title → full artwork → description → link on mobile. SuperMint is a subordinate history link rather than another block of copy.
+
+The additional research section uses two illustrative charcoal/oil studies with explicit research questions. These are not images of built hardware; see `research-art-prompts.md` for the exact prompts and provenance. The footer invites research collaboration and product enquiries.
+
+Reviewed the complete local page on desktop and at 312- and 390-pixel CSS widths. Both studies load, there is no horizontal overflow, and the footer follows the research without an intervening generic block. Build, lint, type check, source-size check, and diff check pass.
