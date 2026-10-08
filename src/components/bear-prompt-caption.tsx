@@ -3,7 +3,7 @@ import { bearSequenceFrame } from "../utils/bear-sequence";
 export function BearPromptCaption({ progress }: { progress: number }) {
   const frame = bearSequenceFrame(progress);
   const composing = frame.typing || frame.sending;
-  return <div className={`bear-prompt-caption${composing ? " is-composing" : " is-sent"}`}
+  return <div className={`bear-prompt-caption${composing ? " is-composing" : " is-sent"}${progress >= 100 ? " is-complete" : ""}`}
     aria-label="Animated prompt demonstration">
     <p className="bear-prompt-text" aria-hidden="true">
       {composing ? frame.promptText : frame.message}

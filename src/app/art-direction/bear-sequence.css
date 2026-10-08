@@ -9,6 +9,7 @@
 .bear-send { display: grid; place-items: center; width: 30px; height: 30px; flex-shrink: 0; border-radius: 50%; background: var(--ink); color: #fff; transition: background 300ms ease, color 300ms ease; }
 .bear-send svg { width: 20px; height: 20px; }
 .is-sent .bear-send { background: #e5e9ee; color: var(--muted); }
+.is-complete .bear-send { background: #e4efe8; color: #237044; }
 .bear-controls { display: flex; justify-content: flex-end; min-height: 44px; margin-top: 8px; }
 .bear-controls button { min-height: 44px; min-width: 76px; padding: 8px 12px; border: 0; background: transparent; font-size: 13px; color: var(--muted); }
 .bear-controls button:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
