@@ -6,7 +6,7 @@ export function WorkSection({ showBearConcept = false }: { showBearConcept?: boo
   return <section id="work" className={`section container work-section${showBearConcept ? " work-continuation" : ""}`} aria-label="Projects">
     <VibeDrawProject showBearConcept={showBearConcept} />
     <div className="section-intro">
-      <h2 className="section-title">Released projects.</h2>
+      <h2 id="released-projects" className="section-title released-projects-title">Released projects.</h2>
     </div>
     <div className="work-grid">
       <article id="simplysefer" className="work-project">

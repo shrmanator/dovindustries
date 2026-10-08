@@ -1,4 +1,5 @@
 .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.released-projects-title { scroll-margin-top: calc(var(--header-height) + 32px); }
 .work-continuation { padding-top: 24px; }
 .vibe-project { display: grid; grid-template-columns: 1fr 1.12fr; align-items: start; gap: 64px; padding-bottom: clamp(64px, 8vw, 112px); scroll-margin-top: calc(var(--header-height) + 32px); }
 .vibe-project-copy { max-width: 52ch; min-width: 0; }

@@ -112,3 +112,12 @@ Remove the bird slider from the page: it repeats the editing idea in a conflicti
 visual style. Released projects follow, then research, then contact. SuperMint's
 history belongs within DigiDov rather than interrupting the closing flow.
 The non-study homepage retains a visible Vibe Draw heading below its sculpture.
+
+## Vibe Draw presentation opening
+
+The study opens with "Introducing Vibe Draw" and goes directly into the sequence.
+Remove the generic portfolio headline, inventory paragraph, and large pill button
+from this route. A quiet link leads to released projects. The ending no longer
+repeats the project name. Reduce the opening gaps, bring sent prompts closer to
+the canvas, and narrow the paper-edge feathering to avoid a blurred halo.
+The main homepage keeps its existing hero while this presentation is reviewed.

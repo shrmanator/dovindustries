@@ -1,41 +1,25 @@
 .bear-sequence { margin: 0; }
-.bear-conversation { display: flex; justify-content: flex-end; min-height: 58px; padding-bottom: 14px; }
-.bear-message { margin: 0; padding: 12px 18px; border-radius: 22px 22px 4px 22px; background: #e9ecef; font-size: 15px; animation: bear-message-in 0.35s ease-out; }
+.bear-conversation { display: flex; justify-content: flex-end; min-height: 44px; padding-bottom: 6px; }
+.bear-message { margin: 0; padding: 8px 14px; border-radius: 18px 18px 4px 18px; background: #e9ecef; font-size: 14px; animation: bear-message-in 0.35s ease-out; }
 .bear-prompt-caption { flex: 1; min-width: 0; }
-.bear-ending { flex: 1; min-width: 0; }
-.bear-outro {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  font-family: var(--font-instrument-serif), Georgia, serif;
-  font-size: 32px;
-  line-height: 1.1;
-  letter-spacing: -.025em;
-  animation: bear-outro-write 0.8s steps(9, end) both;
-}
-.bear-outro:hover { text-decoration: underline; text-underline-offset: 5px; }
-@keyframes bear-outro-write {
-  from { clip-path: inset(0 100% 0 0); }
-  to { clip-path: inset(0); }
-}
 .bear-prompt-text { margin: 0; color: var(--ink); font-size: 16px; }
 @keyframes bear-message-in { from { opacity: 0; transform: translateY(10px); } }
-@media (prefers-reduced-motion: reduce) { .bear-message, .bear-outro { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .bear-message { animation: none; } }
 .bear-canvas {
   position: relative;
   aspect-ratio: 2;
   overflow: hidden;
   background: #eeeef0;
   mask-image:
-    linear-gradient(to right, transparent, black 4%, black 96%, transparent),
-    linear-gradient(to bottom, transparent, black 7%, black 93%, transparent);
+    linear-gradient(to right, transparent, black 1%, black 99%, transparent),
+    linear-gradient(to bottom, transparent, black 2%, black 98%, transparent);
   mask-composite: intersect;
 }
 .bear-stroke-canvas { display: block; width: 100%; height: 100%; }
 .bear-controls {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 16px;
   min-height: 44px;
   margin-top: 8px;

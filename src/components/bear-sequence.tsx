@@ -71,9 +71,7 @@ export function BearSequence() {
       <BearStrokeCanvas progress={progress} playing={playing} />
     </div>
     <div className="bear-controls">
-      {progress === 100 ? <div className="bear-ending" aria-live="polite">
-        <a className="bear-outro" href="#vibe-draw">Vibe Draw</a>
-      </div> : <BearPromptCaption progress={progress} />}
+      {progress < 100 && <BearPromptCaption progress={progress} />}
       <button type="button" className="bear-play" onClick={togglePlayback}>
         {playing ? "Pause" : progress >= 100 ? "Replay" : "Play"}
       </button>
