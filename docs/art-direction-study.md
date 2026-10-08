@@ -177,3 +177,5 @@ Vibe Draw remains the opening current research presentation, with its editable-s
 
 ### Drawing presentation iteration
 Replaced the broad reveal bands with overlapping short gestures, and replaced the mismatched cartoon outline with a direct charcoal study buildup. Colour develops over the same charcoal bear; paper texture settles gradually. Paw replacement remains clipped to the edited part, with a smooth finishing pass. Path geometry is prepared once, rounded for consistent hydration, and stable mask layers are memoized. This is still an authored illustrative sequence using artwork textures, not learned model output. Desktop and mobile reviewed; 12 tests, build, lint, types, and source-size checks passed.
+
+The final frame now retains the last sent instruction alongside the finished bear, with Replay below. Removed the repeated Vibe Draw closing signature and its unused component/styles.

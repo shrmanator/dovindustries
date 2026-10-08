@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { BEAR_SEQUENCE_DURATION } from "../utils/bear-sequence";
 import { BearStrokeCanvas } from "./bear-stroke-canvas";
 import { BearPromptCaption } from "./bear-prompt-caption";
-import { BearFinale } from "./bear-finale";
 
 export function BearSequence() {
   const [progress, setProgress] = useState(0);
@@ -73,7 +72,7 @@ export function BearSequence() {
         <BearStrokeCanvas progress={progress} playing={playing} />
       </div>
       <div className="bear-prompt-dock">
-        {progress < 100 ? <BearPromptCaption progress={progress} /> : <BearFinale />}
+        <BearPromptCaption progress={progress} />
       </div>
     </div>
     <div className="bear-controls">
