@@ -1,8 +1,8 @@
 # Painterly art direction experiment
 
 The user wants to explore SimplySefer's banner painting style as a shared
-Dovindustries visual language. Compare the bear sequence and earlier paintings with the original sculpture
-at /art-direction, inside the existing homepage layout.
+Dovindustries visual language. The /art-direction route now presents the bear sequence
+inside the existing homepage layout. Earlier paintings remain archived assets.
 
 ## Visual plan
 
@@ -89,3 +89,11 @@ The paw revision clears the old ground contact before drawing the lifted leg,
 and resolves fully before playback stops. Raster frames remain unchanged.
 Browser verification of this refinement is pending because the local browser
 automation runtime currently cannot initialize its Windows sandbox.
+
+## Project ending
+
+Remove the artwork comparison entirely, including its unused picker and styles.
+The generated studies remain as archived assets, but the page presents only the bear.
+After playback finishes, "Vibe Draw" writes on below the painting and links to its
+research section. Replay resets the title with the sequence. Reduced-motion visitors
+receive the title immediately alongside the final still.

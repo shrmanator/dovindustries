@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { ArtDirectionPicker } from "@/components/art-direction-picker";
+import { BearSequence } from "@/components/bear-sequence";
 import { HeroSection } from "@/components/hero-section";
 import { ResearchSection } from "@/components/research-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { WorkSection } from "@/components/work-section";
-import "./study.css";
+import "./bear-sequence.css";
 
 export const metadata: Metadata = {
   title: "Art direction study | Dovindustries",
@@ -16,7 +16,7 @@ export default function ArtDirectionStudy() {
   return <>
     <SiteHeader />
     <main id="main" tabIndex={-1}>
-      <HeroSection artwork={<ArtDirectionPicker />} />
+      <HeroSection artwork={<BearSequence />} />
       <WorkSection />
       <ResearchSection showBearConcept />
     </main>
