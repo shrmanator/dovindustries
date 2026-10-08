@@ -163,3 +163,11 @@ changes to a sent check before the drawing or paw edit starts. The composer is
 illustrative markup, not an editable field or a live model interface. Prompts
 no longer appear outside the artwork frame. The frame reserves space for the
 composer so neither typed text nor the ending signature covers the bear.
+
+## Research classification and product copy
+
+Vibe Draw now leads Research in progress, rather than preceding the released
+projects. Its description explains editable strokes, connected parts, and
+revision of the same drawing. The featured presentation remains the opening
+on the study route. Simply Sefer and DigiDov remain the released projects.
+Desktop and 390-pixel mobile browser review confirms the placement and copy.

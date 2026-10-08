@@ -17,7 +17,7 @@ export default function ArtDirectionStudy() {
     <SiteHeader />
     <main id="main" tabIndex={-1}>
       <VibeDrawHero />
-      <WorkSection showBearConcept />
+      <WorkSection />
       <ResearchSection />
     </main>
     <SiteFooter />
