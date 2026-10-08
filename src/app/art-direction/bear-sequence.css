@@ -1,49 +1,23 @@
 .bear-sequence { margin: 0; }
-.bear-conversation { display: flex; justify-content: flex-end; min-height: 44px; padding-bottom: 6px; }
-.bear-conversation.is-complete { opacity: 0; transition: opacity 800ms ease 1.4s; }
-.bear-message { margin: 0; padding: 8px 14px; border-radius: 18px 18px 4px 18px; background: #e9ecef; font-size: 14px; animation: bear-message-in 0.35s ease-out; }
-.bear-prompt-caption { flex: 1; min-width: 0; }
-.bear-prompt-text { margin: 0; color: var(--ink); font-size: 16px; }
-@keyframes bear-message-in { from { opacity: 0; transform: translateY(10px); } }
-@media (prefers-reduced-motion: reduce) { .bear-message { animation: none; } }
-.bear-canvas {
-  position: relative;
-  aspect-ratio: 2;
-  overflow: hidden;
-  background: #eeeef0;
-  mask-image:
-    linear-gradient(to right, transparent, black 1%, black 99%, transparent),
-    linear-gradient(to bottom, transparent, black 2%, black 98%, transparent);
-  mask-composite: intersect;
-}
+.bear-presentation { position: relative; padding-bottom: 88px; background: #eeeef0; overflow: hidden; border-radius: 4px; }
+.bear-canvas { position: relative; aspect-ratio: 2; overflow: hidden; }
 .bear-stroke-canvas { display: block; width: 100%; height: 100%; }
-.bear-finale { position: absolute; inset: 0; display: grid; place-items: center; background: #eeeef0; opacity: 0; animation: bear-finale-in 1.2s cubic-bezier(.22,1,.36,1) 1.4s forwards; }
-.bear-finale-copy { text-align: center; }
-.bear-finale-title { font-size: clamp(42px, 8vw, 116px); font-weight: 500; line-height: 1.1; letter-spacing: -.06em; }
-.bear-finale-status { margin-top: 16px; font-size: clamp(13px, 1.4vw, 18px); color: var(--muted); }
-@keyframes bear-finale-in { to { opacity: 1; } }
-@media (prefers-reduced-motion: reduce) { .bear-finale { opacity: 1; } }
-.bear-controls {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 16px;
-  min-height: 44px;
-  margin-top: 8px;
-}
-.bear-controls button {
-  min-height: 44px;
-  min-width: 76px;
-  flex-shrink: 0;
-  padding: 8px 12px;
-  cursor: pointer;
-  border: 0;
-  background: transparent;
-  font-size: 13px;
-  color: var(--muted);
-}
+.bear-prompt-dock { position: absolute; bottom: 20px; inset-inline: 20px; display: flex; justify-content: center; min-height: 48px; }
+.bear-prompt-caption { display: flex; align-items: center; gap: 24px; width: min(420px, 100%); min-height: 48px; padding: 8px 10px 8px 20px; border: 1px solid #d6dadf; border-radius: 24px; background: #f8f9fa; box-shadow: 0 4px 14px -10px #68737f; }
+.bear-prompt-text { flex: 1; margin: 0; color: var(--ink); font-size: 16px; line-height: 1.4; }
+.bear-caret { display: inline-block; width: 1px; height: 1em; margin-left: 2px; background: currentColor; vertical-align: -.1em; }
+.bear-send { display: grid; place-items: center; width: 30px; height: 30px; flex-shrink: 0; border-radius: 50%; background: var(--ink); color: #fff; transition: background 300ms ease, color 300ms ease; }
+.bear-send svg { width: 20px; height: 20px; }
+.is-sent .bear-send { background: #e5e9ee; color: var(--muted); }
+.bear-finale { display: flex; align-items: center; justify-content: center; animation: bear-signature-in 800ms ease-out; }
+.bear-finale-title { font-size: clamp(24px, 3vw, 36px); font-weight: 500; line-height: 1.2; letter-spacing: -.05em; }
+@keyframes bear-signature-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+.bear-controls { display: flex; justify-content: flex-end; min-height: 44px; margin-top: 8px; }
+.bear-controls button { min-height: 44px; min-width: 76px; padding: 8px 12px; border: 0; background: transparent; font-size: 13px; color: var(--muted); }
 .bear-controls button:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
-.bear-controls button:focus-visible {
-  outline: 3px solid var(--blue);
-  outline-offset: 3px;
+@media (max-width: 700px) {
+  .bear-presentation { padding-bottom: 74px; }
+  .bear-prompt-dock { bottom: 14px; inset-inline: 14px; }
+  .bear-prompt-caption { gap: 12px; padding-left: 16px; }
+  .bear-prompt-text { font-size: 14px; }
 }

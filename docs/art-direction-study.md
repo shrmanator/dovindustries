@@ -151,3 +151,15 @@ replacing the abrupt full-canvas mask. An isolated test checks continuity throug
 that boundary. Reduced-motion visitors retain the completed bear still without
 the closing dissolve. Desktop, mobile, replay, and reduced-motion browser checks
 passed locally, as did build, lint, types, eight tests, and the file-size check.
+
+## Embedded prompt presentation
+
+The user rejected the empty closing card and its In development caption. The
+finished bear now remains visible, with a small Vibe Draw signature in the lower
+part of the frame. There is no full-frame title overlay or development caption.
+
+Both prompts type into a passive composer inside the presentation. An arrow
+changes to a sent check before the drawing or paw edit starts. The composer is
+illustrative markup, not an editable field or a live model interface. Prompts
+no longer appear outside the artwork frame. The frame reserves space for the
+composer so neither typed text nor the ending signature covers the bear.
