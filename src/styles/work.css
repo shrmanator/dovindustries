@@ -1,11 +1,11 @@
 .released-projects { display: grid; gap: clamp(56px, 7vw, 96px); }
 .released-projects-title { scroll-margin-top: 24px; }
-.work-project { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; min-width: 0; scroll-margin-top: calc(var(--header-height) + 32px); }
-.project-copy { min-width: 0; max-width: 42ch; }
-.project-visual { min-width: 0; overflow: hidden; border-radius: 4px; }
-.sefer-visual, .digidov-visual { display: block; background: #10110e; }
+.work-project { display: grid; grid-template-columns: 1.15fr 1fr; column-gap: clamp(32px, 5vw, 72px); row-gap: 16px; min-width: 0; scroll-margin-top: calc(var(--header-height) + 32px); }
+.project-copy { grid-column: 2; align-self: start; min-width: 0; max-width: 42ch; }
+.project-visual { grid-column: 1; grid-row: 1 / 3; align-self: center; min-width: 0; overflow: hidden; border-radius: 4px; }
+.sefer-visual, .digidov-visual { display: block; background: #e6e5e1; }
 .project-visual img { display: block; width: 100%; height: auto; }
-.project-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 20px; }
+.project-heading { grid-column: 2; align-self: end; }
 .project-heading h3 { font-size: clamp(28px, 3vw, 40px); font-weight: 500; line-height: 1.1; letter-spacing: -.045em; }
 .project-description { color: var(--muted); margin-bottom: 20px; font-size: 17px; line-height: 1.7; }
 .project-detail { color: var(--muted); margin: -8px 0 24px; font-size: 15px; line-height: 1.65; }
@@ -13,8 +13,9 @@
 .project-history p { color: var(--muted); font-size: 14px; line-height: 1.65; }
 .project-history .text-link { font-size: 13px; margin-top: 4px; }
 @media (max-width: 800px) {
-  .work-project { grid-template-columns: 1fr; gap: 24px; }
-  .project-copy { max-width: 52ch; }
-  .project-heading { margin-bottom: 14px; }
+  .work-project { grid-template-columns: 1fr; gap: 20px; }
+  .project-copy { grid-column: 1; grid-row: 3; max-width: 52ch; }
+  .project-heading { grid-column: 1; grid-row: 1; align-self: auto; }
+  .project-visual { grid-column: 1; grid-row: 2; }
   .project-description { font-size: 16px; margin-bottom: 12px; }
 }

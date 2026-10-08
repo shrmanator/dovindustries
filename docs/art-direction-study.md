@@ -182,3 +182,6 @@ The final frame now retains the last sent instruction alongside the finished bea
 
 ### Released project refinement
 Simply Sefer now shows a close capture of two public marketplace listings, rather than a miniature homepage. Removed decorative framing and redundant Live badges. Its marketplace description and photo-identification detail are separate. DigiDov uses a cropped capture of its public introduction rather than a generic donation diagram; both links point to the public homepage, not login. This is a public site view, not an authenticated donation workflow. Captures exclude account controls. Assets total approximately 74 KB. Desktop and 390px mobile reviewed; build, lint, type and source-size checks passed.
+
+### Painterly project artwork
+Replaced both screenshot crops with project-specific illustrations generated using the bear study as a style reference. Simply Sefer depicts a worn sefer passing between readers; DigiDov depicts an Ethereum contribution on a receipt beside an accounting ledger. Both use charcoal drawing, worked blue paint, muted ochre, and textured paper. Prompts and asset paths are in project-art-prompts.md. Mobile order is project title, complete 4:3 artwork, description, then link. Desktop retains artwork beside title and copy. Old screenshot assets removed. Build, lint, types, and source-size checks passed.
