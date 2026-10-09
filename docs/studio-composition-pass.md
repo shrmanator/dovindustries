@@ -73,4 +73,21 @@ Mobile navigation opens and closes on selection; reduced motion shows the
 finished drawing and Replay without automatically animating it.
 
 These checks do not constitute a new Lighthouse or field-performance audit.
-Deployed confirmation will be added after the existing branch preview builds.
+
+## Deployed confirmation
+
+Source commit: `63e83c4b3437188cc4ccd45ebfe2ce96c02e2df5`.
+Vercel deployment: `76wEHVwgLRHnDfXN8K3NBwcTpfaW`, matched through GitHub's
+successful commit status and Vercel preview comment.
+
+Preview: https://dovindustries-git-codex-portfolio-redesign-dovindustries.vercel.app/art-direction
+
+Inspected the complete deployed desktop page and 390 CSS-pixel phone page in
+the integrated browser. A further 312 CSS-pixel deployed fit check also passed.
+No horizontal overflow was found. The project destinations and art-direction
+home/research links matched the implementation. Mobile Escape closes the menu
+and returns focus to its toggle. The demonstration reached its completed state.
+
+Saved screenshots under `.dist/screenshots`: `studio-pass-deployed-work.png`,
+`studio-pass-deployed-mobile.png`, and `studio-pass-deployed-digidov.png`.
+The branch preview is delivered for review; the public production site is unchanged.
