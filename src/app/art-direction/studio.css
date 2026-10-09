@@ -1,0 +1,18 @@
+.studio-site {
+  --content: 1240px;
+  --studio-plum: #342732;
+  --studio-chalk: #f5edef;
+  --studio-lilac: #c9b8dd;
+}
+.studio-site .site-header { background: rgba(248, 249, 250, .97); }
+.studio-site .header-inner { height: 80px; }
+.studio-site .section-title { font-size: clamp(23px, 2.4vw, 30px); line-height: 1.2; letter-spacing: -.035em; font-weight: 500; }
+.studio-site .site-footer { padding-block: clamp(48px, 6vw, 80px) 24px; }
+.studio-site .footer-intro { align-items: end; padding-bottom: 56px; }
+.studio-site .footer-intro h2 { font-size: clamp(36px, 4vw, 54px); line-height: 1.1; letter-spacing: -.05em; font-weight: 500; }
+.studio-site .footer-invitation p { max-width: 34ch; }
+.studio-site .contact-link { padding-bottom: 4px; }
+@media (max-width: 700px) {
+  .studio-site .header-inner { height: 72px; }
+  .studio-site .footer-intro { align-items: start; padding-bottom: 40px; }
+}

@@ -1,0 +1,16 @@
+.digidov-project { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 88px); background: #dbe6da; color: #183c30; padding: clamp(28px, 5vw, 64px); scroll-margin-top: calc(var(--header-height) + 24px); }
+.digidov-intro { display: flex; flex-direction: column; align-items: start; }
+.digidov-intro h3 { font-size: clamp(36px, 4.4vw, 60px); line-height: 1.1; letter-spacing: -.045em; font-weight: 500; }
+.digidov-intro > p { font-size: clamp(18px, 2vw, 24px); max-width: 20ch; line-height: 1.4; margin-top: 20px; }
+.digidov-capabilities { display: grid; gap: 24px; margin: 0; }
+.digidov-capabilities dt { margin: 0 0 8px; font-size: 14px; color: #355749; }
+.digidov-capabilities dd { margin: 0; font-size: clamp(18px, 1.8vw, 22px); line-height: 1.4; max-width: 32ch; letter-spacing: -.025em; text-wrap: pretty; }
+.digidov-links { margin-top: auto; padding-top: 32px; display: flex; flex-direction: column; align-items: start; }
+@media (max-width: 700px) {
+  .digidov-project { grid-template-columns: 1fr; gap: 32px; padding: 24px; }
+  .digidov-intro { display: contents; }
+  .digidov-intro > p { margin-top: -20px; max-width: 30ch; }
+  .digidov-capabilities { gap: 24px; }
+  .digidov-links { grid-row: 4; padding-top: 0; margin-top: -8px; }
+}
+
