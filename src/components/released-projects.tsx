@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ExternalLink } from "./external-link";
 import { DigiDovProject } from "./digidov-project";
 
-export function ReleasedProjects() {
+export function ReleasedProjects({ presentation = "standard" }: { presentation?: "standard" | "studio" }) {
   return <div className="released-projects">
     <article id="simplysefer" className="work-project">
       <div className="project-heading"><h3>Simply Sefer</h3></div>
@@ -10,14 +10,18 @@ export function ReleasedProjects() {
         rel="noopener noreferrer" aria-label="Explore simplysefer.com (opens in a new tab)">
         <Image src="/images/art-sefer-exchange-v3.webp"
           alt="Painterly study of a worn burgundy sefer being passed between two readers"
-          width={1448} height={1086} sizes="(max-width: 800px) 90vw, 50vw" />
+          width={1280} height={960} sizes="(max-width: 800px) 90vw, 54vw" />
       </a>
       <div className="project-copy">
         <p className="project-description">A marketplace for seforim and Judaica.</p>
-        <p className="project-detail">Identify a sefer from a photo, find a copy, or list one from your shelf.</p>
+        {presentation === "studio" ? <ul className="sefer-capabilities">
+          <li>Find a copy.</li>
+          <li>Identify a sefer from a photo.</li>
+          <li>List one from your shelf.</li>
+        </ul> : <p className="project-detail">Identify a sefer from a photo, find a copy, or list one from your shelf.</p>}
         <ExternalLink href="https://simplysefer.com">Explore the marketplace</ExternalLink>
       </div>
     </article>
-    <DigiDovProject />
+    <DigiDovProject presentation={presentation} />
   </div>;
 }

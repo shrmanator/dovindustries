@@ -1,0 +1,66 @@
+.studio-site {
+  --studio-display: var(--font-instrument-serif), Georgia, serif;
+  --studio-plum: #342732;
+  --studio-chalk: #f5edef;
+  --studio-lilac: #c9b8dd;
+}
+.studio-site .site-header { background: rgba(248, 249, 250, .97); }
+.studio-site .header-inner { height: 84px; }
+.studio-site .vibe-hero { padding-top: clamp(20px, 3vw, 40px); }
+.studio-site .studio-context {
+  max-width: 56ch;
+  margin-bottom: clamp(32px, 4vw, 56px);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.studio-site .vibe-hero-intro {
+  grid-template-columns: 1.15fr 1fr;
+  align-items: end;
+  gap: clamp(32px, 5vw, 72px);
+  margin-bottom: 40px;
+}
+.studio-site .vibe-hero h1 {
+  font-family: var(--studio-display);
+  font-size: clamp(72px, 10.8vw, 156px);
+  line-height: .93;
+  letter-spacing: -.04em;
+  font-weight: 400;
+}
+.studio-site .vibe-hero h1 > span {
+  font-family: var(--font-dm-sans), Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 0;
+  margin-bottom: 20px;
+}
+.studio-site .vibe-hero-description {
+  max-width: 36ch;
+  font-size: clamp(18px, 1.9vw, 25px);
+  line-height: 1.5;
+  padding-bottom: 4px;
+}
+.studio-site .section-title {
+  font-size: clamp(26px, 3vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -.04em;
+  font-weight: 500;
+}
+.studio-site .site-footer { padding-block: clamp(64px, 9vw, 128px) 24px; }
+.studio-site .footer-intro { align-items: end; padding-bottom: 88px; }
+.studio-site .footer-intro h2 {
+  font-family: var(--studio-display);
+  font-weight: 400;
+  font-size: clamp(64px, 8vw, 112px);
+  line-height: 1;
+  letter-spacing: -.025em;
+}
+.studio-site .footer-invitation p { max-width: 34ch; }
+.studio-site .contact-link { padding-bottom: 4px; }
+@media (max-width: 700px) {
+  .studio-site .header-inner { height: 72px; }
+  .studio-site .studio-context { margin-left: 0; margin-bottom: 40px; font-size: 13px; max-width: 44ch; }
+  .studio-site .vibe-hero-intro { grid-template-columns: 1fr; gap: 22px; margin-bottom: 28px; }
+  .studio-site .vibe-hero h1 { font-size: clamp(62px, 19vw, 118px); }
+  .studio-site .vibe-hero h1 > span { font-size: 14px; margin-bottom: 16px; }
+  .studio-site .vibe-hero-description { font-size: 17px; max-width: 38ch; }
+  .studio-site .footer-intro { align-items: start; padding-bottom: 56px; }
+}
