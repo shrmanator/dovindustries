@@ -12,3 +12,8 @@
 .mobile-menu { position: absolute; top: var(--header-height); inset-inline: 0; background: var(--paper); padding: 16px var(--gutter) 24px; border-bottom: 1px solid var(--line); box-shadow: 0 24px 30px -30px rgba(0,0,0,.25); }
 .mobile-menu a { display: flex; align-items: center; min-height: 56px; font-size: 23px; }
 @media (max-width: 700px) { .desktop-nav { display: none; } .mobile-nav { display: block; } .brand { font-size: 20px; } }
+@media (max-width: 360px) {
+  .brand { font-size: 18px; gap: 8px; }
+  .brand img { width: 26px; height: 26px; }
+  .menu-toggle { min-width: 70px; }
+}

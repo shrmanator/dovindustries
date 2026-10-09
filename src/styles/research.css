@@ -7,7 +7,7 @@
 .research-study-art img { width: 100%; height: auto; }
 .transport-study { align-self: center; padding-left: clamp(24px, 4vw, 56px); border-left: 2px solid #a5adb0; }
 .transport-study h3 { font-size: 18px; letter-spacing: -.02em; margin-bottom: 28px; }
-.transport-study p { color: var(--ink); font-size: clamp(30px, 3.2vw, 44px); line-height: 1.2; letter-spacing: -.04em; max-width: 20ch; text-wrap: balance; }
+.transport-study p { color: var(--ink); font-size: clamp(28px, 2.5vw, 36px); line-height: 1.25; letter-spacing: -.035em; max-width: 23ch; text-wrap: balance; }
 .research-feature { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1.12fr; gap: 48px; }
 .research-feature h3 { font-size: clamp(30px, 3.5vw, 44px); }
 .research-feature p { font-size: clamp(18px, 2vw, 24px); line-height: 1.55; max-width: 48ch; }
