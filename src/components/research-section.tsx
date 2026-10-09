@@ -15,8 +15,8 @@ export function ResearchSection({ includeVibeDraw = true }: { includeVibeDraw?: 
           alt="Charcoal and blue paint study of a person wearing a headset and stepping in place" />
         <ResearchStudy id="transport" title="Compact electric transport"
           question="How small can an electric vehicle fold while making room for its battery and motor?"
-          image="/images/art-folding-study.webp"
-          alt="Charcoal and blue paint study of a folding hinge, tubular frame, and wheel" />
+          image="/images/art-folded-scooter-v2.webp"
+          alt="Charcoal and rust-orange paint concept study of a compact electric scooter folded over its deck" />
       </div>
     </div>
   </section>;
