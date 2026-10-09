@@ -1,37 +1,28 @@
 .studio-site .digidov-project {
   background: var(--studio-plum);
   color: var(--studio-chalk);
-  grid-template-columns: .85fr 1.15fr;
-  padding: clamp(28px, 5.6vw, 80px);
-  gap: clamp(40px, 6vw, 88px);
+  grid-template-columns: 1fr 1.2fr;
+  padding: 0;
+  gap: 0;
 }
-.studio-site .digidov-intro { align-self: stretch; }
-.studio-site .digidov-intro h3 {
-  font-family: var(--studio-display);
-  font-size: clamp(64px, 7.5vw, 104px);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -.04em;
-}
-.studio-site .digidov-intro > p { font-size: clamp(20px, 2.3vw, 28px); line-height: 1.4; max-width: 18ch; margin-top: 24px; }
-.studio-site .digidov-links { padding-top: 48px; }
+.studio-site .digidov-intro { justify-content: center; padding: clamp(28px, 4vw, 56px); }
+.studio-site .digidov-intro h3 { font-size: clamp(34px, 3.8vw, 48px); font-weight: 500; line-height: 1.1; letter-spacing: -.05em; }
+.studio-site .digidov-intro > p { font-size: 19px; line-height: 1.5; max-width: 20ch; margin-top: 16px; }
+.studio-site .digidov-links { margin-top: 0; padding-top: 28px; }
 .studio-site .digidov-project :focus-visible { outline-color: var(--studio-lilac); }
-.donation-flow { align-self: center; min-width: 0; width: 100%; padding: 8px 0; text-align: center; }
-.donation-currencies { display: flex; align-items: center; justify-content: center; gap: 24px; font-family: var(--studio-display); font-size: clamp(46px, 5.5vw, 76px); line-height: 1; color: var(--studio-lilac); }
-.donation-currencies .donation-or { font-family: var(--font-dm-sans), Arial, sans-serif; font-size: 14px; color: #c7bdc6; }
-.donation-flow svg { width: 100%; height: auto; max-height: 76px; stroke: #a390aa; stroke-width: 1.5; stroke-linecap: round; }
-.donation-stem { margin-top: 12px; }
-.donation-link-label { font-size: clamp(16px, 1.8vw, 22px); line-height: 1.4; }
-.donation-receipt { color: #c7bdc6; font-size: 13px; margin-top: 10px; }
-.donation-branches { margin-block: 12px 14px; }
-.donation-outcomes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: clamp(15px, 1.5vw, 18px); line-height: 1.4; }
-.donation-outcomes span { display: block; color: #c7bdc6; font-size: 12px; margin-top: 6px; }
+.studio-digidov-facts { display: grid; gap: 14px; margin: 28px 0 0; font-size: 15px; line-height: 1.55; }
+.studio-digidov-facts > div { display: grid; grid-template-columns: 60px 1fr; gap: 16px; }
+.studio-digidov-facts dt { color: #b9a8bf; font-size: 13px; padding-top: 2px; }
+.studio-digidov-facts dd { margin: 0; max-width: 28ch; color: #e4dae4; }
+.donation-art { min-width: 0; align-self: stretch; overflow: hidden; background: #342732; }
+.donation-art img { width: 100%; height: 100%; object-fit: cover; }
 @media (max-width: 800px) {
-  .studio-site .digidov-project { grid-template-columns: 1fr; gap: 40px; padding: clamp(24px, 6vw, 48px); }
-  .studio-site .digidov-intro { display: contents; }
-  .studio-site .digidov-intro > p { margin-top: -24px; font-size: 23px; max-width: 24ch; }
-  .studio-site .digidov-links { grid-row: 4; margin-top: 0; padding-top: 0; }
-  .donation-flow { padding: 0; }
-  .donation-currencies { font-size: clamp(44px, 10vw, 68px); gap: 16px; }
-  .donation-link-label { font-size: 17px; }
+  .studio-site .digidov-project { grid-template-columns: 1fr; }
+  .studio-site .digidov-intro { display: flex; padding: 28px; }
+  .studio-site .digidov-intro > p { font-size: 18px; max-width: 28ch; }
+  .studio-site .digidov-links { margin-top: 0; padding-top: 20px; }
+  .studio-digidov-facts { font-size: 15px; margin-top: 24px; gap: 12px; }
+  .studio-digidov-facts > div { grid-template-columns: 52px 1fr; gap: 12px; }
+  .donation-art { grid-row: 1; }
+  .donation-art img { height: auto; }
 }

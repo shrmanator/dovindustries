@@ -1,18 +1,17 @@
-.studio-research { background: #e9eef0; padding-block: clamp(64px, 8vw, 112px); }
-.studio-research > .container > .section-title { margin-bottom: clamp(32px, 4vw, 56px); }
-.studio-research-collection { display: grid; gap: clamp(40px, 5vw, 64px); }
-.studio-vr { display: grid; grid-template-columns: 1.08fr 1fr; gap: clamp(32px, 6vw, 88px); align-items: center; }
+.studio-research { padding-block: clamp(48px, 6vw, 80px); background: #e9eef0; }
+.studio-research > .container > .section-title { margin-bottom: 32px; }
+.studio-research-collection { display: grid; gap: 36px; }
+.studio-vr { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: center; }
 .studio-movement-art { min-width: 0; background: #e6e5e1; }
-.studio-movement-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.studio-transport { display: grid; grid-template-columns: 1.08fr 1fr; gap: clamp(32px, 6vw, 88px); padding-top: clamp(32px, 4vw, 56px); border-top: 1px solid #c4ced3; }
-.studio-transport h3 { max-width: 19ch; margin-bottom: 0; }
-.studio-research h3 { font-size: clamp(25px, 2.5vw, 34px); letter-spacing: -.035em; line-height: 1.15; font-weight: 500; margin-bottom: 16px; }
-.studio-research p { max-width: 38ch; font-size: clamp(16px, 1.6vw, 20px); color: #4e5e66; line-height: 1.65; }
+.studio-movement-art img { display: block; width: 100%; height: auto; }
+.studio-transport { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(32px, 5vw, 64px); padding-top: 28px; border-top: 1px solid #bac8ce; }
+.studio-research h3 { font-size: clamp(24px, 2.3vw, 30px); letter-spacing: -.035em; line-height: 1.2; font-weight: 500; margin-bottom: 16px; }
+.studio-research p { max-width: 42ch; font-size: 16px; color: #4e5e66; line-height: 1.65; }
+.studio-transport h3 { max-width: 18ch; margin-bottom: 0; }
 @media (max-width: 700px) {
-  .studio-research-collection { gap: 36px; }
-  .studio-vr { display: flex; flex-direction: column; gap: 28px; }
-  .studio-movement-art img { height: auto; }
-  .studio-transport { grid-template-columns: 1fr; gap: 16px; padding-top: 32px; }
-  .studio-research h3 { font-size: 28px; max-width: 20ch; }
-  .studio-research p { font-size: 17px; }
+  .studio-research-collection { gap: 32px; }
+  .studio-vr { grid-template-columns: 1fr; gap: 24px; }
+  .studio-transport { grid-template-columns: 1fr; gap: 16px; padding-top: 28px; }
+  .studio-research h3 { font-size: 25px; }
+  .studio-research p { font-size: 15px; }
 }

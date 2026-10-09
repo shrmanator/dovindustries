@@ -14,11 +14,7 @@ export function ReleasedProjects({ presentation = "standard" }: { presentation?:
       </a>
       <div className="project-copy">
         <p className="project-description">A marketplace for seforim and Judaica.</p>
-        {presentation === "studio" ? <ul className="sefer-capabilities">
-          <li>Find a copy.</li>
-          <li>Identify a sefer from a photo.</li>
-          <li>List one from your shelf.</li>
-        </ul> : <p className="project-detail">Identify a sefer from a photo, find a copy, or list one from your shelf.</p>}
+        <p className="project-detail">Identify a sefer from a photo, find a copy, or list one from your shelf.</p>
         <ExternalLink href="https://simplysefer.com">Explore the marketplace</ExternalLink>
       </div>
     </article>
