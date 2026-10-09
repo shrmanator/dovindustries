@@ -34,3 +34,13 @@ Product facts were checked again against the live public DigiDov page in the int
 Local integrated-browser inspection covered the opening and completion state, Simply Sefer, DigiDov, secondary research, contact and mobile navigation at desktop, 390 and 320 CSS pixels. At 320 px, the title and research status remained on one row and document width did not exceed the viewport. Mobile menu navigation closed the menu and reached Vibe Draw.
 
 Lint, types, production build, all 12 existing tests and the source-size check passed. No authored source file exceeds 300 lines. No fresh Lighthouse score or field-performance claim is made.
+
+## Deployed review, October 9
+
+Verified source commit `3ddc8d7` after Vercel reported success (deployment `5tLzq7KveducdLD1Y7PVLp7UqKW8`). The branch preview shows the new heading, figure caption, receipt artwork and revised mobile ordering. Browser error logs were empty. Document width remained within the 390 px viewport. The donation image was requested at width 384 on mobile.
+
+The completion control was inspected at 48 px with background `rgb(21, 128, 61)`. Replay restarts the sequence; mobile Research navigation closes the menu and reaches Vibe Draw. The title and status fit on one row at 320 px, and the mobile caption uses the full available width. Those controls retain the already reviewed sequence behavior.
+
+Proof images in `.dist/screenshots/`: `art-first-desktop.png`, `art-first-mobile.png`, `art-first-opening.png` and `art-first-digidov-mobile.png`. The complete project-panel capture confirms the name and purpose precede the artwork, with facts and destination afterward.
+
+Design assessment: the opening no longer resembles a generic editorial hero assembled from several competing text treatments. The drawing is the defining subject. Released projects share its tactile medium and vary in colour, while category titles and supporting text stay restrained. Secondary research deliberately has less emphasis than the frontier presentation. This is a visual and implementation judgment, not a claim of measured superiority over other websites or evidence that the illustrative bear is model output.
