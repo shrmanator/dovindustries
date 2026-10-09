@@ -17,6 +17,7 @@ Review criteria: artwork visible in the first desktop screen; title/status fit 3
 - Rejected an asymmetric research layout that left an empty column beside the transport question. Restored an image-and-question VR entry, followed by a smaller transport entry.
 - The 320 px review exposed a caption squeezed by Replay. Mobile now gives the caption the full width, with Replay beneath it. The complete prompt still collapses to a 48 px green check.
 - Removed the unused Instrument Serif font. The new DigiDov artwork is a 234,644-byte WebP, 1280 x 960, served lazily through Next Image. The illustration adds no client JavaScript.
+- Deployed review prompted a final mobile adjustment: DigiDov's title and purpose now introduce the artwork, followed by the facts and destination. Removed duplicate sticky-header clearance from project anchor offsets and capped desktop image-size hints to the actual layout.
 
 ## Artwork
 

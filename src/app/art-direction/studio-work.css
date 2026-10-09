@@ -1,7 +1,7 @@
 .studio-site .work-section { padding-top: clamp(64px, 7vw, 96px); padding-bottom: clamp(64px, 8vw, 104px); }
 .studio-site .work-section > .section-intro { margin-bottom: 32px; }
 .studio-site .released-projects { gap: clamp(48px, 6vw, 80px); }
-.studio-site .work-project { grid-template-columns: 1.2fr 1fr; column-gap: clamp(32px, 5vw, 64px); row-gap: 16px; }
+.studio-site .work-project { grid-template-columns: 1.2fr 1fr; column-gap: clamp(32px, 5vw, 64px); row-gap: 16px; scroll-margin-top: 24px; }
 .studio-site .project-heading { align-self: end; }
 .studio-site .project-heading h3 { color: #583743; font-size: clamp(34px, 3.8vw, 48px); font-weight: 500; line-height: 1.1; letter-spacing: -.05em; }
 .studio-site .project-visual { border-radius: 0; align-self: stretch; }
