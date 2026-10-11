@@ -24,6 +24,7 @@ export default function ArtDirectionStudy() {
       <WorkSection presentation="studio" />
       <StudioResearch />
     </main>
-    <SiteFooter homeHref="/art-direction" />
+    <SiteFooter homeHref="/art-direction" invitation="Discuss the work."
+      description="For research collaboration, or questions about Simply Sefer and DigiDov." />
   </div>;
 }

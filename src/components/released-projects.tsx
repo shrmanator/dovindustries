@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { ExternalLink } from "./external-link";
 import { DigiDovProject } from "./digidov-project";
+import { StudioProjects } from "./studio-projects";
 
 export function ReleasedProjects({ presentation = "standard" }: { presentation?: "standard" | "studio" }) {
+  if (presentation === "studio") return <StudioProjects />;
   return <div className="released-projects">
     <article id="simplysefer" className="work-project">
       <div className="project-heading"><h3>Simply Sefer</h3></div>
@@ -10,9 +12,7 @@ export function ReleasedProjects({ presentation = "standard" }: { presentation?:
         rel="noopener noreferrer" aria-label="Explore simplysefer.com (opens in a new tab)">
         <Image src="/images/art-sefer-exchange-v3.webp"
           alt="Painterly study of a worn burgundy sefer being passed between two readers"
-          width={1280} height={960} sizes={presentation === "studio"
-            ? "(max-width: 800px) 90vw, (max-width: 1378px) 48vw, 642px"
-            : "(max-width: 800px) 90vw, 54vw"} />
+          width={1280} height={960} sizes="(max-width: 800px) 90vw, 54vw" />
       </a>
       <div className="project-copy">
         <p className="project-description">A marketplace for seforim and Judaica.</p>
@@ -20,6 +20,6 @@ export function ReleasedProjects({ presentation = "standard" }: { presentation?:
         <ExternalLink href="https://simplysefer.com">Explore the marketplace</ExternalLink>
       </div>
     </article>
-    <DigiDovProject presentation={presentation} />
+    <DigiDovProject />
   </div>;
 }
