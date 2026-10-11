@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { transportResearchDescription, vrResearchDescription } from "../content/research";
 
 export function StudioResearch() {
   return <section id="research" className="studio-research section" aria-labelledby="research-title">
@@ -8,7 +9,7 @@ export function StudioResearch() {
         <article id="vr" className="studio-vr" aria-labelledby="vr-title">
           <div className="studio-research-copy">
             <h3 id="vr-title">VR locomotion</h3>
-            <p>Can a headset turn steps in place into movement through a virtual world, without external trackers or a treadmill?</p>
+            <p>{vrResearchDescription}</p>
           </div>
           <figure className="studio-movement-art">
             <Image src="/images/art-vr-stepping.webp"
@@ -18,7 +19,7 @@ export function StudioResearch() {
         </article>
         <article id="transport" className="studio-transport" aria-labelledby="transport-title">
           <h3 id="transport-title">Compact electric transport</h3>
-          <p>How small can an electric vehicle fold while making room for its battery and motor?</p>
+          <p>{transportResearchDescription}</p>
         </article>
       </div>
     </div>
