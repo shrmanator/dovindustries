@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dovindustries — composition review</title>
+  <link rel="stylesheet" href="review.css">
+  <link rel="stylesheet" href="compositions.css">
+</head>
+<body>
+  <aside class="review-bar" aria-label="Design review controls">
+    <span class="review-label">Composition review</span>
+    <div role="group" aria-label="Composition">
+      <button data-direction="a" aria-pressed="true">A · Sequential</button>
+      <button data-direction="b" aria-pressed="false">B · Staggered</button>
+    </div>
+    <div role="group" aria-label="Preview width">
+      <button data-width="desktop" aria-pressed="true">Desktop</button>
+      <button data-width="mobile" aria-pressed="false">Mobile</button>
+    </div>
+    <select id="presentation-state" aria-label="Presentation state">
+      <option value="complete">Completed frame</option>
+      <option value="prompt">Prompt frame</option>
+      <option value="paused">Paused frame</option>
+    </select>
+    <button id="notes-toggle" aria-expanded="false" aria-controls="review-notes">Read critique</button>
+  </aside>
+  <section id="review-notes" class="review-notes" hidden></section>
+  <div id="composition" class="composition direction-a"></div>
+  <script type="module" src="review.mjs"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+@font-face { font-family: "DM Sans"; src: url("dm-sans.woff2") format("woff2"); font-weight: 100 1000; font-display: swap; }
+* { box-sizing: border-box; }
+html { scroll-behavior: auto; }
+body { margin: 0; font-family: "DM Sans", sans-serif; background: #dce0e4; color: #20242b; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; }
+button:focus-visible, a:focus-visible { outline: 3px solid #344cf4; outline-offset: 4px; }
+.review-bar { position: sticky; top: 0; z-index: 10; padding: 12px 24px; min-height: 60px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; color: #fff; background: #20242b; font-size: 13px; }
+.review-label { margin-right: auto; color: #d6d9dd; }
+.review-bar [role="group"] { display: flex; gap: 3px; }
+.review-bar button { min-height: 36px; border: 1px solid #606873; border-radius: 5px; padding: 6px 12px; background: transparent; color: #fff; cursor: pointer; }
+.review-bar button[aria-pressed="true"] { background: #fff; border-color: #fff; color: #20242b; }
+.review-bar select { min-height: 36px; border: 1px solid #606873; border-radius: 5px; padding: 6px 8px; background: #20242b; color: #fff; font: inherit; }
+.review-notes { max-width: 960px; margin: 24px auto; padding: 24px; background: #fff; font-size: 16px; line-height: 1.6; }
+.review-notes h2 { margin-top: 0; font-size: 24px; }
+.scope-note { color: #58616c; border-top: 1px solid #dce0e4; padding-top: 16px; }
+.composition { max-width: 1680px; margin-inline: auto; container-type: inline-size; }
+.composition.width-mobile { max-width: 390px; margin-block: 24px; }
+@media (max-width: 650px) {
+  .review-bar { position: relative; padding: 12px; gap: 8px; }
+  .review-label { flex-basis: 100%; }
+  .review-bar button { min-height: 44px; padding-inline: 9px; }
+  .composition.width-mobile { margin-block: 0; }
+}
