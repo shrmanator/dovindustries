@@ -3,10 +3,13 @@
 .bear-playback-control svg { width: 18px; height: 18px; }
 .bear-playback:hover .bear-playback-control { background: #fff; }
 .bear-playback:focus-visible { outline: 2px solid var(--ink); outline-offset: -4px; border-radius: 4px; }
-.bear-playback.is-paused .bear-playback-control { top: 50%; left: 50%; transform: translate(-50%, -50%); min-height: 56px; gap: 10px; padding: 0 22px; border-radius: 30px; font-size: 16px; }
-.bear-playback.is-paused svg { width: 22px; height: 22px; }
+.bear-playback:is(.is-paused, .is-ended) .bear-playback-control { top: 50%; left: 50%; transform: translate(-50%, -50%); min-height: 56px; gap: 10px; padding: 0 22px; border-radius: 30px; font-size: 16px; }
+.bear-playback:is(.is-paused, .is-ended) svg { width: 22px; height: 22px; }
+.bear-playback.is-ended .bear-playback-control { opacity: 0; }
+.bear-playback.is-ended:hover .bear-playback-control, .bear-playback.is-ended:focus-visible .bear-playback-control { opacity: 1; }
+@media (hover: none) { .bear-playback.is-ended .bear-playback-control { opacity: 1; } }
 @media (max-width: 700px) {
   .bear-playback-control { top: 8px; left: 8px; padding-inline: 12px; }
-  .bear-playback.is-paused .bear-playback-control { min-height: 48px; padding-inline: 18px; }
+  .bear-playback:is(.is-paused, .is-ended) .bear-playback-control { min-height: 48px; padding-inline: 18px; }
 }
 @media (prefers-reduced-motion: reduce) { .bear-playback-control { transition: none; } }
