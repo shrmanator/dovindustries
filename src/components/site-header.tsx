@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MobileNav } from "./mobile-nav";
-export function SiteHeader({ homeHref = "/", researchHref = "#research" }: { homeHref?: string; researchHref?: string }) {
+type SiteHeaderProps = { homeHref?: string; researchHref?: string; workHref?: string; markSrc?: string };
+
+export function SiteHeader({ homeHref = "/", researchHref = "#research", workHref = "#work", markSrc = "/images/bear-mark.webp" }: SiteHeaderProps) {
   const navigation = [
-    { label: "Work", href: "#work" },
+    { label: "Work", href: workHref },
     { label: "Research", href: researchHref },
     { label: "Contact", href: "#contact" },
   ];
@@ -12,7 +14,7 @@ export function SiteHeader({ homeHref = "/", researchHref = "#research" }: { hom
     <header className="site-header">
       <div className="container header-inner">
         <Link href={homeHref} className="brand" aria-label="Dovindustries home">
-          <Image src="/images/bear-mark.webp" alt="" width={38} height={38} priority />
+          <Image src={markSrc} alt="" width={38} height={38} priority />
           <span>dovindustries</span>
         </Link>
         <nav className="desktop-nav" aria-label="Primary">

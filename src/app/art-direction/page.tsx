@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function ArtDirectionStudy() {
   return <div className="studio-site">
-    <SiteHeader homeHref="/art-direction" researchHref="#vibe-draw" />
+    <SiteHeader homeHref="/art-direction" researchHref="#vibe-draw" markSrc="/images/bear-mark-clean.webp" />
     <main id="main" tabIndex={-1}>
       <VibeDrawHero />
       <WorkSection presentation="studio" />

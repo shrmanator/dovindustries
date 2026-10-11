@@ -9,11 +9,10 @@ type StudioProjectProps = {
   href: string;
   destination: string;
   art: ReactNode;
-  reverse?: boolean;
 };
 
-export function StudioProject({ id, name, purpose, detail, href, destination, art, reverse }: StudioProjectProps) {
-  return <article id={id} className={`studio-project studio-project-${id}${reverse ? " studio-project-reverse" : ""}`}
+export function StudioProject({ id, name, purpose, detail, href, destination, art }: StudioProjectProps) {
+  return <article id={id} className={`studio-project studio-project-${id}`}
     aria-labelledby={`${id}-title`}>
     <div className="studio-project-intro">
       <h3 id={`${id}-title`}>{name}</h3>

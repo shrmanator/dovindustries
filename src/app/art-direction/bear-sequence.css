@@ -15,6 +15,8 @@
 .is-complete .bear-send svg { width: 24px; height: 24px; }
 .bear-controls { display: flex; justify-content: space-between; align-items: start; gap: 24px; min-height: 44px; margin-top: 12px; }
 .bear-sequence-caption { max-width: 62ch; padding-top: 8px; font-size: 16px; line-height: 1.6; color: var(--muted); }
+.bear-research-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 4px; font-size: 14px; text-decoration: underline; text-underline-offset: 4px; }
+.bear-research-link:hover { color: #344cf4; }
 .bear-controls button { flex-shrink: 0; }
 .bear-controls button { min-height: 44px; min-width: 76px; padding: 8px 12px; border: 0; background: transparent; font-size: 13px; color: var(--muted); }
 .bear-controls button:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }

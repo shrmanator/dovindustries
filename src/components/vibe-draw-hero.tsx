@@ -7,6 +7,6 @@ export function VibeDrawHero() {
       <h1 id="hero-title">Vibe Draw</h1>
       <p className="vibe-research-status">Current research</p>
     </div>
-    <BearSequence caption={vibeDrawDescription} />
+    <BearSequence caption={vibeDrawDescription} researchHref="/art-direction/vibe-draw" />
   </section>;
 }

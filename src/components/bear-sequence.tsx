@@ -5,7 +5,9 @@ import { BEAR_SEQUENCE_DURATION } from "../utils/bear-sequence";
 import { BearStrokeCanvas } from "./bear-stroke-canvas";
 import { BearPromptCaption } from "./bear-prompt-caption";
 
-export function BearSequence({ caption }: { caption?: string }) {
+type BearSequenceProps = { caption?: string; researchHref?: string };
+
+export function BearSequence({ caption, researchHref }: BearSequenceProps) {
   const [progress, setProgress] = useState(0);
   const [playing, setPlaying] = useState(false);
   const position = useRef(0);
@@ -76,7 +78,10 @@ export function BearSequence({ caption }: { caption?: string }) {
       </div>
     </div>
     <figcaption className="bear-controls">
-      {caption && <p className="bear-sequence-caption">{caption}</p>}
+      {caption && <div className="bear-caption-copy">
+        <p className="bear-sequence-caption">{caption}</p>
+        {researchHref && <a className="bear-research-link" href={researchHref}>About the research</a>}
+      </div>}
       <button type="button" className="bear-play" onClick={togglePlayback}>
         {playing ? "Pause" : progress >= 100 ? "Replay" : "Play"}
       </button>
