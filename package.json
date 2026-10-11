@@ -2,11 +2,15 @@
   "name": "dovindustries",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint src scripts tests next.config.ts",
+    "type-check": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "check:size": "node scripts/check-source-size.mjs"
   },
   "dependencies": {
     "next": "16.0.10",

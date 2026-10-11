@@ -1,25 +1,8 @@
-import { MetadataRoute } from "next";
-
+import type { MetadataRoute } from "next";
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [
-      {
-        userAgent: "*",
-        allow: "/",
-        disallow: ["/api/", "/_next/", "/private/"],
-      },
-      {
-        userAgent: "Googlebot",
-        allow: "/",
-        disallow: ["/api/", "/_next/", "/private/"],
-      },
-      {
-        userAgent: "Bingbot",
-        allow: "/",
-        disallow: ["/api/", "/_next/", "/private/"],
-      },
-    ],
-    sitemap: "https://dovindustries.com/sitemap.xml",
-    host: "https://dovindustries.com",
+    rules: { userAgent: "*", allow: "/", disallow: ["/api/", "/private/"] },
+    sitemap: "https://www.dovindustries.com/sitemap.xml",
+    host: "https://www.dovindustries.com",
   };
 }

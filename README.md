@@ -1,6 +1,6 @@
 # Dovindustries
 
-Corporate landing page for Dovindustries — building at the intersection of crypto, VR, and electric transport.
+Portfolio for Dovindustries: live software projects and research in drawing, VR, and electric transport.
 
 **Live:** [dovindustries.com](https://dovindustries.com)
 
@@ -10,7 +10,7 @@ Corporate landing page for Dovindustries — building at the intersection of cry
 |-------|------------|
 | Framework | Next.js 16 (App Router) |
 | UI | React 19, Tailwind CSS v4 |
-| Fonts | Geist (via next/font) |
+| Fonts | DM Sans and Instrument Serif (via next/font) |
 | Deploy | Vercel |
 
 ## Local Development
@@ -28,8 +28,15 @@ Open [localhost:3000](http://localhost:3000)
 src/
 ├── app/           # Pages, layouts, metadata
 ├── components/    # UI components
+├── styles/        # Styles split by section
 └── utils/         # Helper functions
 ```
+
+## Validation
+
+Run `pnpm lint`, `pnpm type-check`, `pnpm test`, `pnpm check:size`, and `pnpm build`.
+The source-size check enforces the 300-line limit. Drawing geometry has isolated tests.
+See [design direction](docs/design-direction.md) and [verification](docs/verification.md).
 
 ## License
 
