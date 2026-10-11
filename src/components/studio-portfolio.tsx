@@ -4,6 +4,7 @@ import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
 import { WorkSection } from "./work-section";
 import "../app/art-direction/bear-sequence.css";
+import "../app/art-direction/bear-playback.css";
 import "../app/art-direction/vibe-hero.css";
 import "../app/art-direction/studio.css";
 import "../app/art-direction/studio-work.css";

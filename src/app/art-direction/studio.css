@@ -4,7 +4,7 @@
   --studio-chalk: #f5edef;
   --studio-lilac: #c9b8dd;
 }
-.studio-site .site-header { background: rgba(248, 249, 250, .97); }
+.studio-site .site-header { background: var(--paper); }
 .studio-site .header-inner { height: 80px; }
 .studio-site .section-title { font-size: clamp(23px, 2.4vw, 30px); line-height: 1.2; letter-spacing: -.035em; font-weight: 500; }
 .studio-site .site-footer { padding-block: clamp(48px, 6vw, 80px) 24px; }

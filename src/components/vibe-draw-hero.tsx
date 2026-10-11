@@ -5,7 +5,7 @@ export function VibeDrawHero({ researchHref = "/vibe-draw" }: { researchHref?: s
   return <section id="vibe-draw" className="vibe-hero container" aria-labelledby="hero-title">
     <div className="vibe-hero-intro">
       <h1 id="hero-title">Vibe Draw</h1>
-      <p className="vibe-research-status">Current research</p>
+      <p className="vibe-research-status">Current research at Dovindustries</p>
     </div>
     <BearSequence caption={vibeDrawDescription} researchHref={researchHref} />
   </section>;

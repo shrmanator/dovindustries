@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { BEAR_SEQUENCE_DURATION } from "../utils/bear-sequence";
 import { BearStrokeCanvas } from "./bear-stroke-canvas";
 import { BearPromptCaption } from "./bear-prompt-caption";
+import { BearPlaybackControl } from "./bear-playback-control";
 
 type BearSequenceProps = { caption?: string; researchHref?: string };
 
@@ -73,18 +74,14 @@ export function BearSequence({ caption, researchHref }: BearSequenceProps) {
         aria-label="A bear develops from a charcoal sketch into a blue painting, then lifts its front paw.">
         <BearStrokeCanvas progress={progress} playing={playing} />
       </div>
+      <BearPlaybackControl playing={playing} complete={progress >= 100} onToggle={togglePlayback} />
       <div className="bear-prompt-dock">
         <BearPromptCaption progress={progress} />
       </div>
     </div>
-    <figcaption className="bear-controls">
-      {caption && <div className="bear-caption-copy">
+    {caption && <figcaption className="bear-controls">
         <p className="bear-sequence-caption">{caption}</p>
         {researchHref && <a className="bear-research-link" href={researchHref}>About the research</a>}
-      </div>}
-      <button type="button" className="bear-play" onClick={togglePlayback}>
-        {playing ? "Pause" : progress >= 100 ? "Replay" : "Play"}
-      </button>
-    </figcaption>
+    </figcaption>}
   </figure>;
 }
