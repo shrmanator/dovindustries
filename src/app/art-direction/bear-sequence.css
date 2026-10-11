@@ -24,7 +24,7 @@
   .bear-controls { display: grid; gap: 0; margin-top: 16px; }
   .bear-controls button { justify-self: end; }
   .bear-sequence-caption { font-size: 15px; padding-top: 0; }
-  .bear-prompt-dock { top: 4px; bottom: auto; inset-inline: 8px; justify-content: flex-start; min-height: 30px; }
+  .bear-prompt-dock { bottom: 4px; inset-inline: 8px; min-height: 30px; }
   .bear-prompt-caption { width: min(174px, 100%); min-height: 30px; gap: 8px; padding: 3px 5px 3px 10px; }
   .bear-prompt-text { font-size: 12px; }
   .bear-send { width: 22px; height: 22px; }
