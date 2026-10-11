@@ -17,9 +17,9 @@ export const copy = {
 export const reviews = {
   a: {
     title: "A · Sequential presentations",
-    verdict: "Recommended foundation. Each released product gets its own scene, with a clear change of pace after Vibe Draw.",
-    strengths: "The bear remains the lead. Simply Sefer and DigiDov have different proportions and colors, while common typography holds the page together. Early research is quieter. Mobile preserves the same reading order.",
-    weakness: "The longer page needs genuinely useful product content. The artworks and amount selector alone do not justify elaborate presentations. Keep the wording concise; avoid adding feature grids to fill space.",
+    verdict: "Recommended foundation, now with a real marketplace detail and a research continuation you can explore.",
+    strengths: "The bear remains the lead. Simply Sefer includes a listing verified on its public site. DigiDov’s selector responds to amount choices. About the research opens a drawing study with connected strokes instead of repeating the painting. Early research is quieter.",
+    weakness: "The listing gives Simply Sefer more visual density; keep it subordinate to the project introduction. DigiDov’s selector explains one interaction, not the full donation workflow. The hand-authored drawing study explains the research goal; it is not model output. This still needs a final visual identity and performance review before implementation.",
   },
   b: {
     title: "B · Staggered collection",

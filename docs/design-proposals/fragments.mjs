@@ -3,9 +3,9 @@ import { artwork, copy } from "./content.mjs";
 export function header() {
   return `<header class="site-head"><a class="brand" href="#vibe-draw">${artwork("bear-mark-clean.webp", "")}
     <span>dovindustries</span></a><nav class="desktop-nav" aria-label="Primary"><a href="#work">Work</a>
-    <a href="#research">Research</a><a href="#contact">Contact</a></nav>
+    <a href="#vibe-draw">Research</a><a href="#contact">Contact</a></nav>
     <details class="mobile-nav"><summary>Menu <span aria-hidden="true">☰</span></summary>
-    <nav aria-label="Mobile"><a href="#work">Work</a><a href="#research">Research</a><a href="#contact">Contact</a></nav></details></header>`;
+    <nav aria-label="Mobile"><a href="#work">Work</a><a href="#vibe-draw">Research</a><a href="#contact">Contact</a></nav></details></header>`;
 }
 
 export function bear() {
@@ -23,9 +23,9 @@ export function donation() {
     </div></figure>`;
 }
 
-export function projectIntro(name, purpose, detail, href, destination) {
+export function projectIntro(name, purpose, detail, href, destination, study = "") {
   return `<div class="project-copy"><h3>${name}</h3><p class="purpose">${purpose}</p>
-    <p class="detail">${detail}</p><a class="project-link" href="${href}" target="_blank" rel="noopener noreferrer">${destination}<span aria-hidden="true">↗</span></a></div>`;
+    <p class="detail">${detail}</p>${study}<a class="project-link" href="${href}" target="_blank" rel="noopener noreferrer">${destination}<span aria-hidden="true">↗</span></a></div>`;
 }
 
 export function research() {
@@ -36,9 +36,9 @@ export function research() {
   </section>`;
 }
 
-export function footer() {
-  return `<footer id="contact"><div class="contact-intro"><h2>Discuss the work.</h2>
-    <p>For research collaboration, or questions about Simply Sefer and DigiDov.</p></div>
+export function footer({ invitation = "Discuss the work.", description = "For research collaboration, or questions about Simply Sefer and DigiDov." } = {}) {
+  return `<footer id="contact"><div class="contact-intro"><h2>${invitation}</h2>
+    <p>${description}</p></div>
     <a class="contact-email" href="mailto:contact@dovindustries.com">contact@dovindustries.com</a>
     <div class="footer-base"><span>dovindustries © 2026</span><a href="https://github.com/shrmanator/dovindustries">GitHub ↗</a></div></footer>`;
 }

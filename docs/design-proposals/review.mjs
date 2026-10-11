@@ -1,12 +1,14 @@
 import { sequential, staggered } from "./layouts.mjs";
 import { reviews } from "./content.mjs";
+import { bindProductStudies } from "./product-studies.mjs";
 
 const composition = document.querySelector("#composition");
 const notes = document.querySelector("#review-notes");
 const params = new URLSearchParams(location.search);
 let direction = params.get("direction") === "b" ? "b" : "a";
-let width = params.get("width") === "mobile" ? "mobile" : "desktop";
+let width = ["mobile", "narrow"].includes(params.get("width")) ? params.get("width") : "desktop";
 const statePicker = document.querySelector("#presentation-state");
+bindProductStudies(composition);
 
 function renderState() {
   composition.dataset.state = statePicker.value;
@@ -17,6 +19,7 @@ function renderState() {
 function render() {
   composition.className = `composition direction-${direction} width-${width}`;
   composition.innerHTML = direction === "a" ? sequential() : staggered();
+  if (direction === "a") composition.querySelector(".research-link").href = `research.html?width=${width}`;
   renderState();
   document.querySelectorAll("[data-direction]").forEach(button => {
     button.setAttribute("aria-pressed", String(button.dataset.direction === direction));

@@ -2,6 +2,7 @@
 .composition a { color: inherit; text-decoration: none; }
 .composition h1, .composition h2, .composition h3, .composition h4, .composition p, .composition figure { margin: 0; }
 .composition img { display: block; width: 100%; }
+.composition [id] { scroll-margin-top: 76px; }
 .composition h1 { font-size: clamp(44px, 4.5cqw, 64px); font-weight: 540; letter-spacing: -.055em; line-height: 1; }
 .composition h2 { font-size: clamp(28px, 3cqw, 44px); font-weight: 500; letter-spacing: -.045em; }
 .composition h3 { font-size: clamp(30px, 3.4cqw, 48px); font-weight: 500; letter-spacing: -.05em; line-height: 1.08; }

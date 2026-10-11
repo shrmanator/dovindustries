@@ -16,6 +16,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid #344cf4; outline-offs
 .scope-note { color: #58616c; border-top: 1px solid #dce0e4; padding-top: 16px; }
 .composition { max-width: 1680px; margin-inline: auto; container-type: inline-size; }
 .composition.width-mobile { max-width: 390px; margin-block: 24px; }
+.composition.width-narrow { max-width: 320px; margin-block: 24px; }
 @media (max-width: 650px) {
   .review-bar { position: relative; padding: 12px; gap: 8px; }
   .review-label { flex-basis: 100%; }

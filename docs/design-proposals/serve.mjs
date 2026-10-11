@@ -9,6 +9,8 @@ const allowedArt = new Set([
 ]);
 const allowedStudy = new Set([
   "index.html", "review.css", "compositions.css", "content.mjs", "fragments.mjs", "layouts.mjs", "review.mjs", "dm-sans.woff2",
+  "product-studies.mjs", "product-studies.css", "research.html", "research-page.mjs", "research-drawing.mjs", "research-study.css",
+  "sequential-projects.mjs", "sequential-projects.css",
 ]);
 const mime = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".mjs": "text/javascript", ".webp": "image/webp", ".woff2": "font/woff2" };
 
@@ -17,6 +19,7 @@ const server = http.createServer(async (request, response) => {
   const name = path.posix.basename(pathname);
   let file;
   if (name === "dm-sans.woff2") file = path.join(repo, ".next", "static", "media", "5c285b27cdda1fe8-s.p.a62025f2.woff2");
+  else if (pathname === "/docs/design-proposals/assets/torah-temimah.webp") file = path.join(study, "assets", "torah-temimah.webp");
   else if (pathname === "/") file = path.join(study, "index.html");
   else if (pathname.startsWith("/docs/design-proposals/") && allowedStudy.has(name)) file = path.join(study, name);
   else if (pathname.startsWith("/public/images/") && allowedArt.has(name)) file = path.join(repo, "public", "images", name);
