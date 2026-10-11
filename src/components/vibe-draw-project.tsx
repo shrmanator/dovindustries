@@ -1,4 +1,4 @@
-export const vibeDrawDescription = "We’re building AI that draws with individual strokes and can revise specific parts of a drawing through conversation.";
+export const vibeDrawDescription = "We’re building SI that draws with individual strokes and can revise specific parts of a drawing through conversation.";
 
 export function VibeDrawProject() {
   return <article id="vibe-draw" className="research-entry research-feature" aria-labelledby="vibe-title">

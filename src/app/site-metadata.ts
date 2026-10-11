@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 const SITE_URL = "https://www.dovindustries.com";
 const SITE_TITLE = "Dovindustries | Software, hardware & research";
-const SITE_DESCRIPTION = "Live projects in seforim and crypto donations. Research in AI drawing, movement in VR, and compact electric transport. Explore the work of Dovindustries.";
+const SITE_DESCRIPTION = "Live projects in seforim and crypto donations. Research in SI drawing, movement in VR, and compact electric transport. Explore the work of Dovindustries.";
 export const clarityScript = `
 (function(c,l,a,r,i,t,y){
   c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

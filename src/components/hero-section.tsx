@@ -5,7 +5,7 @@ export function HeroSection({ artwork }: { artwork?: ReactNode }) {
     <div className="hero-intro">
       <h1 id="hero-title">Software, hardware,<br className="desktop-break" /> and room to explore.</h1>
       <div className="hero-description">
-        <p>We build marketplaces and payment tools, and research AI drawing, movement in VR, and compact electric transport.</p>
+        <p>We build marketplaces and payment tools, and research SI drawing, movement in VR, and compact electric transport.</p>
         <a className="pill-link" href="#work">Explore the work</a>
       </div>
     </div>

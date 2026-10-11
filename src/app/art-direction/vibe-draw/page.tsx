@@ -26,7 +26,7 @@ export default function VibeDrawResearch() {
         <div className="research-brief-text">
           <section aria-labelledby="parts-title">
             <h2 id="parts-title">A drawing made of parts</h2>
-            <p>We’re researching AI that builds a drawing from strokes and keeps track of what they belong to: a paw, a leg, a character. The goal is a drawing you can keep working on.</p>
+            <p>We’re researching super intelligence (SI) that builds a drawing from strokes and keeps track of what they belong to: a paw, a leg, a character. The goal is a drawing you can keep working on.</p>
           </section>
           <section aria-labelledby="edit-title">
             <h2 id="edit-title">Editing what is already there</h2>
