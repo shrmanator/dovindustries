@@ -13,7 +13,7 @@ export function StudioProjects() {
         width={1280} height={960} sizes="(max-width: 700px) 90vw, (max-width: 1378px) 43vw, 592px" />} />
     <StudioProject id="digidov" name="DigiDov"
       purpose="Crypto donations for nonprofits."
-      detail="Accept ETH and USDC through a reusable donation link, with automatic donor receipts. Keep the crypto or receive dollars through DigiDov Cash."
+      detail="Accept ETH and USDC through a donation link, with receipts sent automatically."
       href="https://www.digidov.com/" destination="Explore DigiDov" art={<DonationArt />} />
   </div>;
 }
