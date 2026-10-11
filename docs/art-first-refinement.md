@@ -44,3 +44,9 @@ The completion control was inspected at 48 px with background `rgb(21, 128, 61)`
 Proof images in `.dist/screenshots/`: `art-first-desktop.png`, `art-first-mobile.png`, `art-first-opening.png` and `art-first-digidov-mobile.png`. The complete project-panel capture confirms the name and purpose precede the artwork, with facts and destination afterward.
 
 Design assessment: the opening no longer resembles a generic editorial hero assembled from several competing text treatments. The drawing is the defining subject. Released projects share its tactile medium and vary in colour, while category titles and supporting text stay restrained. Secondary research deliberately has less emphasis than the frontier presentation. This is a visual and implementation judgment, not a claim of measured superiority over other websites or evidence that the illustrative bear is model output.
+
+## Prompt inside the artwork, October 10
+
+Removed the separate padded strip beneath the bear. The typed prompts, sent state and green completion check now overlay the artwork. Desktop keeps the 48 px completion mark centered near the bottom. Mobile uses a 174 px prompt in the upper-left, collapsing to a 30 px mark; a wider trial covered the bear's head at 320 px and was rejected. The smaller overlay preserves the face and edited paw. Caption and playback control stay beneath the figure.
+
+Local browser review covered desktop, 390 px and 320 px, including replay, the paw-edit prompt and completion. The sequence timing and rendering logic are unchanged.

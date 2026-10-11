@@ -1,8 +1,8 @@
 .bear-sequence { margin: 0; }
-.bear-presentation { position: relative; padding-bottom: 88px; background: #eeeef0; overflow: hidden; border-radius: 4px; }
+.bear-presentation { position: relative; background: #eeeef0; overflow: hidden; border-radius: 4px; }
 .bear-canvas { position: relative; aspect-ratio: 2; overflow: hidden; }
 .bear-stroke-canvas { display: block; width: 100%; height: 100%; }
-.bear-prompt-dock { position: absolute; bottom: 20px; inset-inline: 20px; display: flex; justify-content: center; min-height: 48px; }
+.bear-prompt-dock { position: absolute; bottom: 16px; inset-inline: 20px; display: flex; justify-content: center; min-height: 48px; }
 .bear-prompt-caption { display: flex; align-items: center; gap: 24px; width: min(420px, 100%); min-height: 48px; padding: 8px 10px 8px 20px; border: 1px solid #d6dadf; border-radius: 24px; background: #f8f9fa; box-shadow: 0 4px 14px -10px #68737f; transition: width 650ms ease, padding 650ms ease, gap 650ms ease, background 300ms ease, border-color 300ms ease; }
 .bear-prompt-text { flex: 1; margin: 0; color: var(--ink); font-size: 16px; line-height: 1.4; }
 .bear-caret { display: inline-block; width: 1px; height: 1em; margin-left: 2px; background: currentColor; vertical-align: -.1em; }
@@ -22,9 +22,12 @@
   .bear-controls { display: grid; gap: 0; margin-top: 16px; }
   .bear-controls button { justify-self: end; }
   .bear-sequence-caption { font-size: 15px; padding-top: 0; }
-  .bear-presentation { padding-bottom: 74px; }
-  .bear-prompt-dock { bottom: 14px; inset-inline: 14px; }
-  .bear-prompt-caption { gap: 12px; padding-left: 16px; }
-  .bear-prompt-text { font-size: 14px; }
+  .bear-prompt-dock { top: 4px; bottom: auto; inset-inline: 8px; justify-content: flex-start; min-height: 30px; }
+  .bear-prompt-caption { width: min(174px, 100%); min-height: 30px; gap: 8px; padding: 3px 5px 3px 10px; }
+  .bear-prompt-text { font-size: 12px; }
+  .bear-send { width: 22px; height: 22px; }
+  .bear-send svg { width: 16px; height: 16px; }
+  .bear-prompt-caption.is-complete { width: 30px; }
+  .is-complete .bear-send svg { width: 18px; height: 18px; }
 }
 @media (prefers-reduced-motion: reduce) { .bear-prompt-caption, .bear-send { transition: none; } }
