@@ -1,15 +1,5 @@
 import type { Metadata } from "next";
-import { VibeDrawHero } from "@/components/vibe-draw-hero";
-import { StudioResearch } from "@/components/studio-research";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
-import { WorkSection } from "@/components/work-section";
-import "./bear-sequence.css";
-import "./vibe-hero.css";
-import "./studio.css";
-import "./studio-work.css";
-import "./studio-donation.css";
-import "./studio-research.css";
+import { StudioPortfolio } from "@/components/studio-portfolio";
 
 export const metadata: Metadata = {
   title: "Art direction study | Dovindustries",
@@ -17,14 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function ArtDirectionStudy() {
-  return <div className="studio-site">
-    <SiteHeader homeHref="/art-direction" researchHref="#vibe-draw" markSrc="/images/bear-mark-clean.webp" />
-    <main id="main" tabIndex={-1}>
-      <VibeDrawHero />
-      <WorkSection presentation="studio" />
-      <StudioResearch />
-    </main>
-    <SiteFooter homeHref="/art-direction" invitation="Discuss the work."
-      description="For research collaboration, or questions about Simply Sefer and DigiDov." />
-  </div>;
+  return <StudioPortfolio homeHref="/art-direction" />;
 }
