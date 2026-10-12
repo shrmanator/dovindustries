@@ -10,6 +10,7 @@ import "../app/art-direction/studio.css";
 import "../app/art-direction/studio-work.css";
 import "../app/art-direction/studio-donation.css";
 import "../app/art-direction/studio-research.css";
+import "../app/art-direction/studio-mindlab.css";
 
 export function StudioPortfolio({ homeHref = "/" }: { homeHref?: string }) {
   const researchHref = homeHref === "/" ? "/vibe-draw" : `${homeHref}/vibe-draw`;

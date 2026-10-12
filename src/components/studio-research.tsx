@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MindlabResearch } from "./mindlab-research";
 import { transportResearchDescription, vrResearchDescription } from "../content/research";
 
 export function StudioResearch() {
@@ -6,6 +7,7 @@ export function StudioResearch() {
     <div className="container">
       <h2 id="research-title" className="section-title">More research</h2>
       <div className="studio-research-collection">
+        <MindlabResearch />
         <article id="vr" className="studio-vr" aria-labelledby="vr-title">
           <div className="studio-research-copy">
             <h3 id="vr-title">VR locomotion</h3>

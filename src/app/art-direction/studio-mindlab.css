@@ -1,0 +1,42 @@
+.studio-mindlab { display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: clamp(32px, 5vw, 72px); scroll-margin-top: calc(var(--header-height) + 24px); }
+.studio-mindlab-copy { grid-column: 2; grid-row: 1; }
+.studio-research .studio-mindlab h3 { color: #414c34; font-size: clamp(36px, 4vw, 52px); }
+.studio-mindlab-copy p { margin-top: 20px; }
+.mindlab-study { grid-column: 1; grid-row: 1; border-radius: 12px; overflow: hidden; background: #ece9dc; color: #47513d; }
+.mindlab-study-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px 0; font-size: 13px; }
+.mindlab-perspective { display: flex; gap: 2px; padding: 3px; background: #dfddcf; border-radius: 30px; }
+.mindlab-perspective button { padding: 8px 13px; border-radius: 24px; cursor: pointer; transition: background-color 180ms, color 180ms; }
+.mindlab-perspective button[aria-pressed="true"] { background: #46523a; color: #fffdf4; }
+.mindlab-perspective button:focus-visible { outline: 2px solid #46523a; outline-offset: 4px; }
+.mindlab-room { display: block; width: 100%; height: auto; color: #47513d; }
+.mindlab-ground { fill: #ece9dc; }
+.mindlab-floor { fill: #e0dece; transition: fill 400ms; }
+.mindlab-sight { fill: #d7bc66; opacity: .8; }
+.mindlab-furniture { fill: #c7c9b3; opacity: .9; transition: opacity 400ms; }
+.mindlab-walls { fill: none; stroke: #656e54; stroke-width: 7; stroke-linecap: square; stroke-linejoin: round; }
+.mindlab-room-labels { font-size: 20px; text-anchor: middle; fill: #556044; opacity: .7; transition: opacity 400ms; }
+.mindlab-unseen { fill: #b2744f; transition: opacity 400ms; }
+.mindlab-unseen path { fill: none; stroke: #f5eadc; stroke-width: 3; stroke-linecap: round; }
+.mindlab-character circle { fill: #46523a; }
+.mindlab-character path { fill: none; stroke: #fff4bc; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.mindlab-character text { fill: #46523a; text-anchor: middle; font-size: 22px; }
+.mindlab-view-label { fill: #6b622e; font-size: 15px; }
+.mindlab-view-label path { stroke: #a48f48; stroke-width: 1; }
+.mindlab-study[data-perspective="character"] .mindlab-floor { fill: #e5e3d6; }
+.mindlab-study[data-perspective="character"] .mindlab-furniture { opacity: .2; }
+.mindlab-study[data-perspective="character"] .mindlab-room-labels { opacity: .2; }
+.mindlab-study[data-perspective="character"] .mindlab-unseen { opacity: 0; }
+.mindlab-study figcaption { min-height: 64px; padding: 0 24px 20px; font-size: 14px; line-height: 1.5; }
+@media (max-width: 700px) {
+  .studio-mindlab { grid-template-columns: 1fr; gap: 24px; }
+  .studio-mindlab-copy { grid-column: 1; grid-row: 1; }
+  .studio-research .studio-mindlab h3 { font-size: 34px; }
+  .studio-mindlab-copy p { margin-top: 16px; }
+  .mindlab-study { grid-column: 1; grid-row: 2; }
+  .mindlab-study-toolbar { padding: 16px 16px 0; gap: 8px; flex-wrap: wrap; }
+  .mindlab-perspective button { min-height: 44px; padding-inline: 12px; }
+  .mindlab-study figcaption { padding: 0 16px 16px; font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mindlab-study * { transition: none; }
+}

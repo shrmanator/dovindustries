@@ -2,6 +2,7 @@
 .studio-research > .container > .section-title { margin-bottom: 28px; }
 .studio-research-collection { display: grid; gap: 32px; }
 .studio-vr { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
+.studio-mindlab + .studio-vr { padding-top: 40px; margin-top: 8px; border-top: 1px solid #d6dadf; }
 .studio-movement-frame { grid-column: 2; grid-row: 1; min-width: 0; }
 .studio-movement-art { min-width: 0; grid-column: 2; grid-row: 1; overflow: hidden; border-radius: 12px; }
 .studio-movement-art img { display: block; width: 100%; height: auto; }
