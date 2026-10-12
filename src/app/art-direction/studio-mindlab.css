@@ -32,7 +32,7 @@
   .studio-research .studio-mindlab h3 { font-size: 34px; }
   .studio-mindlab-copy p { margin-top: 16px; }
   .mindlab-study { grid-column: 1; grid-row: 2; }
-  .mindlab-study-toolbar { padding: 16px 16px 0; gap: 8px; flex-wrap: wrap; }
+  .mindlab-study-toolbar { padding: 16px 16px 0; gap: 12px; flex-direction: column; align-items: start; }
   .mindlab-perspective button { min-height: 44px; padding-inline: 12px; }
   .mindlab-study figcaption { padding: 0 16px 16px; font-size: 13px; }
 }

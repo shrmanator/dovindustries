@@ -3,8 +3,8 @@ type MindlabRoomProps = { characterView: boolean };
 export function MindlabRoom({ characterView }: MindlabRoomProps) {
   return <svg className="mindlab-room" viewBox="60 30 780 550" role="img"
     aria-label={characterView
-      ? "The character’s limited view of the house. The player is out of sight behind a wall."
-      : "A house with an entry, kitchen, bedroom and living room. The character is in the living room; the player is in the kitchen."}>
+      ? "What the SI seeker sees during hide-and-seek. The human hider is out of sight behind a wall."
+      : "Hide-and-seek in a virtual house. A human hider is in the kitchen; the SI seeker is in the living room."}>
     <defs>
       <pattern id="mindlab-grid" width="30" height="30" patternUnits="userSpaceOnUse">
         <path d="M30 0H0V30" fill="none" stroke="currentColor" strokeWidth=".6" opacity=".12" />
@@ -35,12 +35,12 @@ export function MindlabRoom({ characterView }: MindlabRoomProps) {
     <g className="mindlab-unseen" aria-hidden={characterView}>
       <circle cx="516" cy="188" r="16" />
       <path d="M508 184L509 179L519 179L524 190" />
-      <text x="516" y="231">Player</text>
+      <text x="516" y="231">Hider</text>
     </g>
     <g className="mindlab-character">
       <circle cx="690" cy="424" r="21" />
       <path d="M688 418L699 424L688 430" />
-      <text x="684" y="473">Character</text>
+      <text x="684" y="473">Seeker</text>
     </g>
   </svg>;
 }
