@@ -21,9 +21,12 @@ Recorded events used:
 - 41.88: Couch arrival recorded. Positions independently show movement from
   Kitchen into Living, finishing at the couch's approach point.
 
-Both displayed model responses have matching remote acceptance records and
-no same-time deferral. The rejected/stale 26.06 response is not presented as
-an executed decision. The displayed interpretation is not asserted as world truth.
+Both curated model responses have matching remote acceptance records and
+no same-time deferral. The compact presentation quotes the 35.95 response;
+the earlier response supports the move to Pantry. The rejected/stale 26.06
+response is not presented as an executed decision. The displayed interpretation
+is not asserted as world truth. The ending identifies the Couch destination and
+states that this excerpt stops before the search is resolved.
 
 Forty original seeker position/facing samples are curated into
 `src/content/mindlab-recorded-run.ts`; position interpolation is used between
