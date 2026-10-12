@@ -10,7 +10,7 @@ export function StudioProjects() {
       href="https://simplysefer.com" destination="Explore the marketplace"
       art={<Image src="/images/art-sefer-exchange-v3.webp"
         alt="Painterly study of a worn burgundy sefer being passed between two readers"
-        width={1280} height={960} sizes="(max-width: 700px) 90vw, (max-width: 1378px) 43vw, 592px" />} />
+        width={1280} height={960} sizes="(max-width: 700px) 90vw, (max-width: 1378px) 55vw, 744px" />} />
     <StudioProject id="digidov" name="DigiDov"
       purpose="Crypto donations for nonprofits."
       detail="Accept ETH and USDC through a donation link, with receipts sent automatically."
