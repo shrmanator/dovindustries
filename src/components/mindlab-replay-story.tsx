@@ -6,15 +6,14 @@ export function MindlabReplayStory({ stage, time }: { stage: ReplayStage; time: 
   const pantryPlan = time >= 28.75;
   const arrived = time >= 41.88;
   return <div className="mindlab-replay-story" aria-live="polite">
-    <p className="mindlab-story-label">{stage === "observe" ? "Observed" : stage === "interpret" ? "SI interpretation" : "Executed action"}</p>
-    <h4>{stage === "observe" ? secondSearch ? "Two searches. No sighting." : pantryPlan ? "Check the next spot." : "Nobody at the counter."
-      : stage === "interpret" ? "An interpretation forms." : arrived ? "The next location reached." : "The decision becomes movement."}</h4>
+    <p className="mindlab-story-label">{stage === "observe" ? "Observed" : stage === "interpret" ? "SI interpretation" : "Movement"}</p>
+    <h4>{stage === "observe" ? secondSearch ? "Two searches. No sighting." : pantryPlan ? "Next, the pantry." : "Nobody at the counter."
+      : stage === "interpret" ? "Search the living room next." : arrived ? "At the couch. Hider still unseen." : "Heading to the couch."}</h4>
     {stage === "observe" ? <>
-      <p>{secondSearch ? "The counter and pantry were searched. Neither revealed the hider." : pantryPlan ? "With no sighting to go on, the seeker chooses the pantry." : "The seeker has searched the counter. Nothing was observed."}</p>
-      {pantryPlan && !secondSearch && <blockquote>“{mindlabRecordedRun.initialBelief}”</blockquote>}
+      <p>{secondSearch ? "Both the counter and pantry were empty." : pantryPlan ? "No sighting yet. It chooses another place to search." : "The seeker searches the counter and finds no one."}</p>
     </> : <>
-      <blockquote>“{mindlabRecordedRun.belief}”</blockquote>
-      <p>{stage === "interpret" ? "The model chooses the couch as its next location." : arrived ? "The movement record reaches the couch’s approach point. The hider is still unseen." : "The recorded positions trace the seeker leaving the kitchen for the couch in Living."}</p>
+      {stage === "interpret" && <blockquote>“{mindlabRecordedRun.belief}”</blockquote>}
+      <p>{stage === "interpret" ? "It chooses the couch." : arrived ? "This excerpt ends here, before the search is resolved." : "The seeker moves from the kitchen into the living room."}</p>
     </>}
   </div>;
 }
