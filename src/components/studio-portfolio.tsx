@@ -3,7 +3,6 @@ import { StudioResearch } from "./studio-research";
 import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
 import { WorkSection } from "./work-section";
-import { StudioMotion } from "./studio-motion";
 import "../app/art-direction/bear-sequence.css";
 import "../app/art-direction/bear-playback.css";
 import "../app/art-direction/vibe-hero.css";
@@ -11,11 +10,10 @@ import "../app/art-direction/studio.css";
 import "../app/art-direction/studio-work.css";
 import "../app/art-direction/studio-donation.css";
 import "../app/art-direction/studio-research.css";
-import "../app/art-direction/studio-flow.css";
 
 export function StudioPortfolio({ homeHref = "/" }: { homeHref?: string }) {
   const researchHref = homeHref === "/" ? "/vibe-draw" : `${homeHref}/vibe-draw`;
-  return <StudioMotion>
+  return <div className="studio-site">
     <SiteHeader homeHref={homeHref} researchHref="#vibe-draw" markSrc="/images/bear-mark-clean.webp" />
     <main id="main" tabIndex={-1}>
       <VibeDrawHero researchHref={researchHref} />
@@ -24,5 +22,5 @@ export function StudioPortfolio({ homeHref = "/" }: { homeHref?: string }) {
     </main>
     <SiteFooter homeHref={homeHref} invitation="Discuss the work."
       description="For research collaboration, or questions about Simply Sefer and DigiDov." />
-  </StudioMotion>;
+  </div>;
 }

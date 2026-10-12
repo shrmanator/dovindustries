@@ -69,7 +69,7 @@ export function BearSequence({ caption, researchHref }: BearSequenceProps) {
   };
 
   return <figure className="bear-sequence">
-    <div className="bear-frame-slot" data-flow-anchor>
+    <div className="bear-frame-slot">
       <div className="bear-presentation" ref={canvas}>
         <div className="bear-canvas" role="img"
           aria-label="A bear develops from a charcoal sketch into a blue painting, then lifts its front paw.">
