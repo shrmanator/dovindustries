@@ -4,7 +4,7 @@ type SiteFooterProps = { homeHref?: string; invitation?: string; description?: s
 
 export function SiteFooter({ homeHref = "/", invitation = "Work with us.",
   description = "For research collaboration or enquiries about our products." }: SiteFooterProps) {
-  return <footer id="contact" className="site-footer" data-flow-scene="contact">
+  return <footer id="contact" className="site-footer">
       <div className="container">
         <div className="footer-intro">
           <div className="footer-invitation"><h2>{invitation}</h2><p>{description}</p></div>

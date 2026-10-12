@@ -18,8 +18,10 @@ export function StudioProject({ id, name, purpose, detail, href, destination, ar
       <h3 id={`${id}-title`}>{name}</h3>
       <p>{purpose}</p>
     </div>
-    <a className="studio-project-art" href={href} target="_blank" rel="noopener noreferrer"
-      aria-label={`${destination} (opens in a new tab)`}>{art}</a>
+    <div className="studio-project-frame" data-flow-anchor>
+      <a className="studio-project-art" href={href} target="_blank" rel="noopener noreferrer"
+        aria-label={`${destination} (opens in a new tab)`}>{art}</a>
+    </div>
     <div className="studio-project-detail">
       <p>{detail}</p>
       <ExternalLink href={href}>{destination}</ExternalLink>

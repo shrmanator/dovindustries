@@ -20,6 +20,17 @@ test("invalid geometry keeps content in its static, visible state", () => {
   }
 });
 
+test("frames open visibly on entry, hold at center and close near the header", () => {
+  const entering = sceneProgress(900, 600, 0, 1000);
+  const centered = sceneProgress(400, 600, 0, 1000);
+  const leaving = sceneProgress(400, 600, 500, 1000);
+  assert.ok(entering.enter < 0.1);
+  assert.equal(centered.enter, 1);
+  assert.equal(centered.exit, 0);
+  assert.ok(leaving.exit > 0.25);
+  assert.ok(leaving.exit < 0.5);
+});
+
 test("smoothing converges without overshoot and can reverse before completion", () => {
   const start = { enter: 0, travel: 0, exit: 0 };
   const target = { enter: 1, travel: 0.8, exit: 0.4 };

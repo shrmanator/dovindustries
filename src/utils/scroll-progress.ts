@@ -6,9 +6,9 @@ const ease = (value: number) => { const t = clamp(value); return t * t * (3 - 2 
 export function sceneProgress(top: number, height: number, scroll: number, viewport: number): SceneProgress {
   if (![top, height, scroll, viewport].every(Number.isFinite) || height <= 0 || viewport <= 0) return { ...still };
   return {
-    enter: ease((scroll + viewport - top) / (viewport * 0.65)),
+    enter: ease((scroll + viewport * 0.92 - top) / (viewport * 0.5)),
     travel: clamp((scroll + viewport - top) / (height + viewport)),
-    exit: ease((scroll - top) / height),
+    exit: ease((scroll + viewport * 0.12 - top) / height),
   };
 }
 

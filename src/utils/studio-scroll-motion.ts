@@ -34,7 +34,8 @@ export function attachStudioMotion(root: HTMLElement) {
   function measure() {
     if (disposed) return;
     for (const scene of scenes) {
-      const rect = scene.getBoundingClientRect();
+      const frame = scene.querySelector<HTMLElement>("[data-flow-anchor]") || scene;
+      const rect = frame.getBoundingClientRect();
       bounds.set(scene, { top: rect.top + scrollY, height: rect.height });
     }
     schedule();

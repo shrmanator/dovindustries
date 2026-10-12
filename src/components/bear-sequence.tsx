@@ -69,14 +69,16 @@ export function BearSequence({ caption, researchHref }: BearSequenceProps) {
   };
 
   return <figure className="bear-sequence">
-    <div className="bear-presentation" ref={canvas}>
-      <div className="bear-canvas" role="img"
-        aria-label="A bear develops from a charcoal sketch into a blue painting, then lifts its front paw.">
-        <BearStrokeCanvas progress={progress} playing={playing} />
-      </div>
-      <BearPlaybackControl playing={playing} complete={progress >= 100} onToggle={togglePlayback} />
-      <div className="bear-prompt-dock">
-        <BearPromptCaption progress={progress} />
+    <div className="bear-frame-slot" data-flow-anchor>
+      <div className="bear-presentation" ref={canvas}>
+        <div className="bear-canvas" role="img"
+          aria-label="A bear develops from a charcoal sketch into a blue painting, then lifts its front paw.">
+          <BearStrokeCanvas progress={progress} playing={playing} />
+        </div>
+        <BearPlaybackControl playing={playing} complete={progress >= 100} onToggle={togglePlayback} />
+        <div className="bear-prompt-dock">
+          <BearPromptCaption progress={progress} />
+        </div>
       </div>
     </div>
     {caption && <figcaption className="bear-controls">
