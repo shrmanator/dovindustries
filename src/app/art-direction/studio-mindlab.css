@@ -41,10 +41,13 @@
   .mindlab-replay-playback { gap: 8px; }
   .mindlab-recorded-time { font-size: 11px; }
   .mindlab-replay-body { grid-template-columns: 1fr; gap: 0; }
-  .mindlab-replay-story { padding: 12px 20px 24px; min-height: 275px; }
+  .mindlab-replay-story { padding: 12px 20px 24px; min-height: 320px; }
   .mindlab-replay-story h4 { font-size: 26px; }
   .mindlab-replay-story blockquote { font-size: 23px; }
   .mindlab-replay-stages { margin-inline: 16px; }
   .mindlab-replay-stages button { font-size: 13px; gap: 6px; }
   .mindlab-replay figcaption { padding-inline: 16px; line-height: 1.5; }
+}
+@media (max-width: 380px) {
+  .mindlab-replay-story { min-height: 350px; }
 }
