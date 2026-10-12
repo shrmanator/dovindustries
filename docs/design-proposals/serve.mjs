@@ -1,6 +1,7 @@
 import http from "node:http";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { motionMarkup } from "./motion-markup.mjs";
 
 const repo = process.cwd();
 const study = path.join(repo, "docs", "design-proposals");
@@ -11,6 +12,8 @@ const allowedStudy = new Set([
   "index.html", "review.css", "compositions.css", "content.mjs", "fragments.mjs", "layouts.mjs", "review.mjs", "dm-sans.woff2",
   "product-studies.mjs", "product-studies.css", "research.html", "research-page.mjs", "research-drawing.mjs", "research-study.css",
   "sequential-projects.mjs", "sequential-projects.css",
+  "motion.html", "motion-study.mjs", "motion-driver.mjs", "motion-values.mjs",
+  "motion-layout.css", "motion-scenes.css", "motion-transitions.css",
 ]);
 const mime = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".mjs": "text/javascript", ".webp": "image/webp", ".woff2": "font/woff2" };
 
@@ -26,7 +29,8 @@ const server = http.createServer(async (request, response) => {
   else if (allowedStudy.has(name) && pathname === `/${name}`) file = path.join(study, name);
   if (!file) { response.writeHead(404).end("Not found"); return; }
   try {
-    const bytes = await readFile(file);
+    let bytes = await readFile(file);
+    if (name === "motion.html") bytes = Buffer.from(bytes.toString().replace('<div id="motion-study"></div>', `<div id="motion-study">${motionMarkup()}</div>`));
     response.writeHead(200, { "Content-Type": mime[path.extname(file)] || "application/octet-stream", "Cache-Control": "no-store" });
     response.end(bytes);
   } catch { response.writeHead(404).end("Not found"); }
