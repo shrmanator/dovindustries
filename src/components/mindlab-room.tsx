@@ -35,6 +35,7 @@ export function MindlabRoom({ characterView }: MindlabRoomProps) {
     <g className="mindlab-unseen" aria-hidden={characterView}>
       <circle cx="516" cy="188" r="16" />
       <path d="M508 184L509 179L519 179L524 190" />
+      <text x="516" y="231">Player</text>
     </g>
     <g className="mindlab-character">
       <circle cx="690" cy="424" r="21" />

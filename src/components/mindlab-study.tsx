@@ -4,7 +4,7 @@ import { useState } from "react";
 import { MindlabRoom } from "./mindlab-room";
 
 export function MindlabStudy() {
-  const [characterView, setCharacterView] = useState(true);
+  const [characterView, setCharacterView] = useState(false);
 
   return <figure className="mindlab-study" data-perspective={characterView ? "character" : "world"}>
     <div className="mindlab-study-toolbar">

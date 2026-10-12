@@ -14,12 +14,13 @@
 .mindlab-sight { fill: #d7bc66; opacity: .8; }
 .mindlab-furniture { fill: #c7c9b3; opacity: .9; transition: opacity 400ms; }
 .mindlab-walls { fill: none; stroke: #656e54; stroke-width: 7; stroke-linecap: square; stroke-linejoin: round; }
-.mindlab-room-labels { font-size: 20px; text-anchor: middle; fill: #556044; opacity: .7; transition: opacity 400ms; }
+.mindlab-room-labels { font-size: 27px; text-anchor: middle; fill: #556044; opacity: .7; transition: opacity 400ms; }
 .mindlab-unseen { fill: #b2744f; transition: opacity 400ms; }
 .mindlab-unseen path { fill: none; stroke: #f5eadc; stroke-width: 3; stroke-linecap: round; }
+.mindlab-unseen text { fill: #8d573b; text-anchor: middle; font-size: 25px; }
 .mindlab-character circle { fill: #46523a; }
 .mindlab-character path { fill: none; stroke: #fff4bc; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-.mindlab-character text { fill: #46523a; text-anchor: middle; font-size: 22px; }
+.mindlab-character text { fill: #46523a; text-anchor: middle; font-size: 27px; }
 .mindlab-view-label { fill: #6b622e; font-size: 15px; }
 .mindlab-view-label path { stroke: #a48f48; stroke-width: 1; }
 .mindlab-study[data-perspective="character"] .mindlab-floor { fill: #e5e3d6; }
