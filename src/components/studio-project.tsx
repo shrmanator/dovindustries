@@ -13,7 +13,7 @@ type StudioProjectProps = {
 
 export function StudioProject({ id, name, purpose, detail, href, destination, art }: StudioProjectProps) {
   return <article id={id} className={`studio-project studio-project-${id}`}
-    aria-labelledby={`${id}-title`}>
+    aria-labelledby={`${id}-title`} data-flow-scene={id}>
     <div className="studio-project-intro">
       <h3 id={`${id}-title`}>{name}</h3>
       <p>{purpose}</p>

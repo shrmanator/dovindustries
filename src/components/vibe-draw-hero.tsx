@@ -2,7 +2,7 @@ import { BearSequence } from "./bear-sequence";
 import { vibeDrawDescription } from "./vibe-draw-project";
 
 export function VibeDrawHero({ researchHref = "/vibe-draw" }: { researchHref?: string }) {
-  return <section id="vibe-draw" className="vibe-hero container" aria-labelledby="hero-title">
+  return <section id="vibe-draw" className="vibe-hero container" aria-labelledby="hero-title" data-flow-scene="hero">
     <div className="vibe-hero-intro">
       <h1 id="hero-title">Vibe Draw</h1>
       <p className="vibe-research-status">Current research at Dovindustries</p>

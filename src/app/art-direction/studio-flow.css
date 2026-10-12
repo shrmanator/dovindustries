@@ -1,0 +1,43 @@
+.studio-site [data-flow-scene] { --flow-enter: 1; --flow-travel: .5; --flow-exit: 0; }
+.studio-site .bear-presentation, .studio-site .studio-project-art { border-radius: 12px; }
+.studio-site.flow-enabled .bear-presentation {
+  transform: scale(calc(1 - var(--flow-exit) * .025));
+  transform-origin: center bottom;
+  border-radius: calc(12px + var(--flow-exit) * 16px);
+}
+.studio-site.flow-enabled .work-section > .section-intro h2 {
+  transform: translateX(calc((1 - var(--flow-enter)) * -18px));
+}
+.studio-site.flow-enabled .studio-project-simplysefer .studio-project-art {
+  clip-path: inset(0 calc((1 - var(--flow-enter)) * 5%) round 12px);
+}
+.studio-site.flow-enabled .studio-project-simplysefer .studio-project-art img {
+  transform: scale(calc(1.065 - var(--flow-enter) * .065));
+}
+.studio-site.flow-enabled .studio-project-digidov .studio-project-art {
+  transform: translateY(calc((1 - var(--flow-enter)) * 26px));
+}
+.studio-site.flow-enabled .studio-movement-art {
+  overflow: hidden;
+  border-radius: 12px;
+}
+.studio-site.flow-enabled .studio-movement-art img {
+  transform: scale(1.025) translateY(calc((.5 - var(--flow-travel)) * 14px));
+}
+.studio-site.flow-enabled .site-footer .footer-invitation {
+  transform: translateY(calc((1 - var(--flow-enter)) * 16px));
+}
+.studio-site.flow-enabled .studio-project-art:focus-visible { clip-path: none; }
+@media (max-width: 700px) {
+  .studio-site.flow-enabled .work-section > .section-intro h2 { transform: translateX(calc((1 - var(--flow-enter)) * -8px)); }
+  .studio-site.flow-enabled .studio-project-digidov .studio-project-art { transform: translateY(calc((1 - var(--flow-enter)) * 14px)); }
+  .studio-site.flow-enabled .studio-movement-art img { transform: scale(1.025) translateY(calc((.5 - var(--flow-travel)) * 8px)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .studio-site.flow-enabled .bear-presentation,
+  .studio-site.flow-enabled .work-section > .section-intro h2,
+  .studio-site.flow-enabled .studio-project-art,
+  .studio-site.flow-enabled .studio-project-art img,
+  .studio-site.flow-enabled .studio-movement-art img,
+  .studio-site.flow-enabled .site-footer .footer-invitation { transform: none; clip-path: none; }
+}

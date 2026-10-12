@@ -6,7 +6,7 @@ export function StudioResearch() {
     <div className="container">
       <h2 id="research-title" className="section-title">More research</h2>
       <div className="studio-research-collection">
-        <article id="vr" className="studio-vr" aria-labelledby="vr-title">
+        <article id="vr" className="studio-vr" aria-labelledby="vr-title" data-flow-scene="vr">
           <div className="studio-research-copy">
             <h3 id="vr-title">VR locomotion</h3>
             <p>{vrResearchDescription}</p>
