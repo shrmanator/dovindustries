@@ -21,8 +21,6 @@
 .mindlab-character circle { fill: #46523a; }
 .mindlab-character path { fill: none; stroke: #fff4bc; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .mindlab-character text { fill: #46523a; text-anchor: middle; font-size: 27px; }
-.mindlab-view-label { fill: #6b622e; font-size: 15px; }
-.mindlab-view-label path { stroke: #a48f48; stroke-width: 1; }
 .mindlab-study[data-perspective="character"] .mindlab-floor { fill: #e5e3d6; }
 .mindlab-study[data-perspective="character"] .mindlab-furniture { opacity: .2; }
 .mindlab-study[data-perspective="character"] .mindlab-room-labels { opacity: .2; }

@@ -1,7 +1,7 @@
 type MindlabRoomProps = { characterView: boolean };
 
 export function MindlabRoom({ characterView }: MindlabRoomProps) {
-  return <svg className="mindlab-room" viewBox="0 0 900 600" role="img"
+  return <svg className="mindlab-room" viewBox="60 30 780 550" role="img"
     aria-label={characterView
       ? "Marek’s limited view of the house. He can see the area ahead, while another character is out of sight behind a wall."
       : "A house with an entry, kitchen, bedroom and living room. Marek is in the living room; another character is in the kitchen."}>
@@ -28,7 +28,7 @@ export function MindlabRoom({ characterView }: MindlabRoomProps) {
     <path className="mindlab-walls" d="M90 64H810V544H90Z M390 64V268 M390 340V544 M390 304H540 M600 304H810 M600 64V169 M600 241V304" />
     <g className="mindlab-room-labels" aria-hidden="true">
       <text x="224" y="313">Entry</text>
-      <text x="495" y="256">Kitchen</text>
+      <text x="495" y="284">Kitchen</text>
       <text x="706" y="278">Bedroom</text>
       <text x="599" y="516">Living</text>
     </g>
@@ -41,10 +41,6 @@ export function MindlabRoom({ characterView }: MindlabRoomProps) {
       <circle cx="690" cy="424" r="21" />
       <path d="M688 418L699 424L688 430" />
       <text x="684" y="473">Marek</text>
-    </g>
-    <g className="mindlab-view-label" aria-hidden="true">
-      <path d="M752 424H847" />
-      <text x="853" y="419">Sees</text>
     </g>
   </svg>;
 }
