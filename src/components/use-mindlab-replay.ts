@@ -7,12 +7,14 @@ export function useMindlabReplay(frame: RefObject<HTMLElement | null>) {
   const [elapsed, setElapsed] = useState(0);
   const [playing, setPlaying] = useState(false);
   const position = useRef(0);
+  const manuallyControlled = useRef(false);
 
   useEffect(() => {
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
     const finish = () => { position.current = MINDLAB_REPLAY_DURATION; setElapsed(position.current); setPlaying(false); };
     const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return;
+      if (manuallyControlled.current) { observer.disconnect(); return; }
+      if (!entry.isIntersecting || entry.intersectionRatio < .35) return;
       if (reduced.matches) finish();
       else setPlaying(true);
       observer.disconnect();
@@ -41,9 +43,13 @@ export function useMindlabReplay(frame: RefObject<HTMLElement | null>) {
   }, [playing]);
 
   const toggle = () => {
+    manuallyControlled.current = true;
     if (position.current >= MINDLAB_REPLAY_DURATION) { position.current = 0; setElapsed(0); }
     setPlaying(!playing);
   };
-  const select = (stage: ReplayStage) => { position.current = stageStart[stage]; setElapsed(position.current); setPlaying(false); };
+  const select = (stage: ReplayStage) => {
+    manuallyControlled.current = true;
+    position.current = stageStart[stage]; setElapsed(position.current); setPlaying(false);
+  };
   return { elapsed, playing, toggle, select, complete: elapsed >= MINDLAB_REPLAY_DURATION };
 }
