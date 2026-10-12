@@ -1,5 +1,5 @@
 import { mindlabResearchDescription } from "../content/research";
-import { MindlabStudy } from "./mindlab-study";
+import { MindlabReplay } from "./mindlab-replay";
 
 export function MindlabResearch() {
   return <article id="mindlab" className="studio-mindlab" aria-labelledby="mindlab-title">
@@ -7,6 +7,6 @@ export function MindlabResearch() {
       <h3 id="mindlab-title">MindLab</h3>
       <p>{mindlabResearchDescription}</p>
     </div>
-    <MindlabStudy />
+    <MindlabReplay />
   </article>;
 }
