@@ -125,3 +125,25 @@ neither phone layout overflows horizontally. Playback reaches Found naturally,
 Replay returns to the person-first opening, and Space toggles playback. Opening
 the source pauses the sequence; Close and Escape dismiss it and return focus.
 Fresh screenshots are saved under `.dist/mindlab-discovery-review/`.
+
+## Product framing revision
+
+The user clarified the potential product: an ongoing runtime connecting a
+character's intelligence, body, senses, memories and available Unity actions.
+Developers describe a character and connect game capabilities, rather than
+script its psychology. The introduction now identifies this research direction
+and shows a nervous maintenance worker as an example description, without the
+internal character name.
+
+The recorded seeker example supports only perception, a model response and
+executed movement. Its narrative now names those steps, displays the accepted
+model's original belief during the response stage, and describes the game
+carrying out its order. The example does not claim to demonstrate the worker's
+personality, memory-driven behaviour or a complete character runtime.
+
+Hosted review covered the runtime introduction and visible model response on
+1280px desktop, 390px and 320px phones. The replay remains about 538px high at
+390px and 488px at 320px. The character description precedes the recording;
+the accepted model belief is visible within the sequence rather than requiring
+source inspection. The Unity action caption is kept short for narrow screens.
+Production build, lint, all seventeen tests and the 300-line check passed.
