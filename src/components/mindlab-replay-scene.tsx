@@ -2,14 +2,16 @@ import { mindlabRecordedRun, mindlabSeekerTrack } from "../content/mindlab-disco
 import { sampleRecordedPose, worldToDiagram } from "../utils/mindlab-replay";
 import { mindlabViewBox } from "../utils/mindlab-camera";
 
-export function MindlabReplayScene({ time, elapsed, reducedMotion }: { time: number; elapsed: number; reducedMotion: boolean }) {
+type SceneProps = { time: number; elapsed: number; reducedMotion: boolean; sceneRef: RefObject<SVGSVGElement | null> };
+
+export function MindlabReplayScene({ time, elapsed, reducedMotion, sceneRef }: SceneProps) {
   const pose = sampleRecordedPose(mindlabSeekerTrack, time);
   const seeker = worldToDiagram(pose.x, pose.z);
   const person = worldToDiagram(...mindlabRecordedRun.person);
   const subject = elapsed < 2000;
   const trail = mindlabSeekerTrack.filter(p => p[0] <= time).map(p => worldToDiagram(p[1], p[2]));
   trail.push(seeker);
-  return <svg className="mindlab-replay-scene" viewBox={mindlabViewBox(elapsed, reducedMotion)} role="img"
+  return <svg ref={sceneRef} className="mindlab-replay-scene" viewBox={mindlabViewBox(elapsed, reducedMotion)} role="img"
     aria-label={subject ? "The person to find is in Living, outside the seeker's current view." : pose.visible ? "The seeker has visual contact with the person in Living and approaches them." : "The seeker turns, looking for the person it has lost sight of."}>
     <rect width="900" height="600" className="mindlab-ground" />
     <g className="mindlab-floor">
@@ -46,3 +48,4 @@ export function MindlabReplayScene({ time, elapsed, reducedMotion }: { time: num
     </g>
   </svg>;
 }
+import type { RefObject } from "react";

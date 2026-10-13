@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
 import { MINDLAB_REPLAY_DURATION, stageStart, type ReplayStage } from "../utils/mindlab-replay";
 
-export function useMindlabReplay(frame: RefObject<HTMLElement | null>) {
+export function useMindlabReplay(scene: RefObject<SVGSVGElement | null>) {
   const [elapsed, setElapsed] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -16,18 +16,18 @@ export function useMindlabReplay(frame: RefObject<HTMLElement | null>) {
     const observer = new IntersectionObserver(([entry]) => {
       setReducedMotion(reduced.matches);
       if (manuallyControlled.current) { observer.disconnect(); return; }
-      if (!entry.isIntersecting || entry.intersectionRatio < .35) return;
+      if (!entry.isIntersecting || entry.intersectionRatio < .75) return;
       if (reduced.matches) finish();
       else setPlaying(true);
       observer.disconnect();
-    }, { threshold: .35 });
-    if (frame.current) observer.observe(frame.current);
+    }, { threshold: .75 });
+    if (scene.current) observer.observe(scene.current);
     const preference = () => { setReducedMotion(reduced.matches); if (reduced.matches) finish(); };
     const visibility = () => { if (document.hidden) setPlaying(false); };
     reduced.addEventListener("change", preference);
     document.addEventListener("visibilitychange", visibility);
     return () => { observer.disconnect(); reduced.removeEventListener("change", preference); document.removeEventListener("visibilitychange", visibility); };
-  }, [frame]);
+  }, [scene]);
 
   useEffect(() => {
     if (!playing) return;

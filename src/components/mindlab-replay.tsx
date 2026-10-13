@@ -12,13 +12,13 @@ const stages: { id: ReplayStage; label: string }[] = [
 ];
 
 export function MindlabReplay() {
-  const frame = useRef<HTMLElement>(null);
-  const replay = useMindlabReplay(frame);
+  const scene = useRef<SVGSVGElement>(null);
+  const replay = useMindlabReplay(scene);
   const stage = replayStage(replay.elapsed);
   const time = recordedTime(replay.elapsed);
   const selected = stage === "observe" ? "subject" : stage === "act" ? "interpret" : stage;
   const playbackLabel = replay.complete ? "Replay" : replay.playing ? "Pause" : "Play";
-  return <figure className="mindlab-replay" ref={frame}>
+  return <figure className="mindlab-replay">
     <div className="mindlab-replay-toolbar">
       <MindlabRecordedResponse onInspect={replay.pause} />
       <div className="mindlab-replay-playback">
@@ -26,7 +26,7 @@ export function MindlabReplay() {
       </div>
     </div>
     <div className="mindlab-replay-body">
-      <MindlabReplayScene time={time} elapsed={replay.elapsed} reducedMotion={replay.reducedMotion} />
+      <MindlabReplayScene sceneRef={scene} time={time} elapsed={replay.elapsed} reducedMotion={replay.reducedMotion} />
       <MindlabReplayStory stage={stage} time={time} />
     </div>
     <div className="mindlab-replay-stages" role="group" aria-label="Explore the recorded sequence">
