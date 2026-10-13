@@ -14,10 +14,15 @@ export function ResearchExplorations() {
     </article>
     <article id="transport" className="studio-transport" aria-labelledby="transport-title">
       <h3 id="transport-title">Compact electric transport</h3>
-      <blockquote className="studio-transport-question">
-        <p>How small can an electric vehicle fold?</p>
-      </blockquote>
-      <p>{transportResearchDescription}</p>
+      <figure className="studio-transport-art">
+        <Image src="/images/art-transport-packaging.webp"
+          alt="Charcoal and paint concept study of a folded frame, battery housing and wheel-hub motor"
+          width={1536} height={1024} sizes="(max-width: 700px) 90vw, (max-width: 1378px) 44vw, 596px" />
+      </figure>
+      <div className="studio-exploration-copy">
+        <p className="studio-transport-caption">How small can an electric vehicle fold?</p>
+        <p>{transportResearchDescription}</p>
+      </div>
     </article>
   </div>;
 }
