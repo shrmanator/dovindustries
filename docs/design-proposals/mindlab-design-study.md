@@ -1,7 +1,8 @@
 # MindLab presentation study — 13 October 2026
 
 Scope: MindLab's introduction, recorded example, mobile reading order, ending,
-and transition into VR research. This is a design study, not an application change.
+and transition into VR research. The approved Single scene study is now
+implemented on the feature branch; the alternatives remain reviewable locally.
 
 ## Current diagnosis
 
@@ -63,10 +64,10 @@ their endings did not deliver a discovery.
   consistent framing, compact navigation and connected scenes. Borrow continuity
   and pacing. Do not import fantasy decoration, scroll hijacking or page loaders.
 
-Current page content was rechecked through official web pages. Fresh visual or
-scroll-motion inspection is limited: integrated-browser screenshot capture still
-fails. The earlier Lusion observations are in motion-study.md, not a claim of a
-fresh visual review today.
+Current reference-page content was rechecked through official web pages. The
+earlier Lusion motion observations are in motion-study.md; its scroll effects
+were not re-reviewed today. Integrated-browser capture resumed on 13 October,
+allowing fresh desktop and mobile review of the implemented MindLab component.
 
 ## Two compositions
 
@@ -111,6 +112,16 @@ real mobile screens. The final implementation should keep narration and action
 simultaneously understandable, with large enough touch controls and no label
 collisions. Functional geometry checks cannot certify visual quality.
 
-Neither mockup is a finished exceptional design or gameplay footage. They make
-the composition and evidence concrete so the next critique can judge an actual
-direction. The application and production remain unchanged by this study.
+Neither mockup is gameplay footage or proof of exceptional quality across the
+whole site. The approved Single scene direction is implemented on the feature
+branch, with the recorded response moved into a toolbar disclosure so shorter
+stages do not reserve an empty area for it. Opening the source pauses playback;
+closing it restores keyboard focus. Production remains unchanged.
+
+Hosted review on 13 October covered desktop, 390px and 320px phones. The final
+390px frame is about 538px high, with narration above the map and identical
+heights for Person, Decision and Found. The 320px frame is about 488px high;
+neither phone layout overflows horizontally. Playback reaches Found naturally,
+Replay returns to the person-first opening, and Space toggles playback. Opening
+the source pauses the sequence; Close and Escape dismiss it and return focus.
+Fresh screenshots are saved under `.dist/mindlab-discovery-review/`.
