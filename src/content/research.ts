@@ -1,5 +1,8 @@
 export const mindlabResearchDescription =
-  "Can an SI game character find someone it has lost sight of?";
+  "Developers describe who a character is and connect what it can sense and do. MindLab is being designed to coordinate its perceptions, memories, decisions and actions as the world changes.";
+
+export const mindlabCharacterDescription =
+  "A nervous maintenance worker who dislikes strangers but wants to help people.";
 
 export const vrResearchDescription =
   "Early Unity experiments record headset acceleration to explore moving through VR by walking in place, without extra trackers.";
