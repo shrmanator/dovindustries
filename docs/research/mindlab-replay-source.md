@@ -1,38 +1,40 @@
-# MindLab replay source
+# MindLab discovery replay source
 
-The portfolio excerpt uses run `20261012-145119` from `shrmanator/MindLab`,
-revision `d989888f5e563784d29298cd37c43b4f71a53ed1` on the unmerged
-`review-issue14` branch. It is a schematic replay, not gameplay footage.
+The discovery excerpt is curated from run `20261012-085228` in
+`shrmanator/MindLab`, revision `d989888f5e563784d29298cd37c43b4f71a53ed1`
+on the unmerged `review-issue14` branch. It is a schematic reconstruction,
+not gameplay footage. Sources were checked on 13 October 2026.
 
-Sources: `Transcripts/events-20261012-145119.jsonl` and the corresponding
-`poses` file. The hidden player was staged in Bedroom at world X/Z `(8, 2)`.
-That position stays fixed throughout the excerpt; all seeker samples report
-no sighting. The floorplan is a simplified reference to the Unity fixture;
-it is not a captured wall/collider registry.
+Sources: `Transcripts/events-20261012-085228.jsonl` and the corresponding
+`poses` file. The person stays at world X/Z `(2.156817, -4.741591)` in Living
+throughout the excerpt. They are not using the engine's explicit hidden-spot
+state. The seeker starts without visual contact, turns, sees them and approaches.
+The room plan is simplified reference geometry, not a captured collider registry.
 
-Recorded events used:
+Recorded events:
 
-- 25.04: Counter search reports nothing observed.
-- 28.75: accepted remote response: “No cues yet, intruder could be anywhere.”
-  Its order moves to Pantry.
-- 30.69: Pantry arrival recorded; 32.29: Pantry search reports nothing observed.
-- 35.95: accepted remote response: “Kitchen clear, need systematic sweep outward.”
-  Its order moves to Couch; 36.01: motor onset recorded.
-- 41.88: Couch arrival recorded. Positions independently show movement from
-  Kitchen into Living, finishing at the couch's approach point.
+- 113.87: seeker positions report `sees=false`.
+- 114.68: accepted remote response orders a move to Couch; 114.75: motor onset.
+- 114.83: figure observed 3.8m away in Living after a long sight gap.
+- 116.90: accepted remote response: “Intruder visible in Living 3.8m away.”
+  Its order changes the movement target to `player`, with matching acceptance
+  and no same-time deferral. Movement is already underway at acceptance.
+- 117.69: sight briefly drops. The replay preserves this recorded change.
+- 118.29: figure observed 1.3m away; final positions independently give about
+  1.29m three-dimensional separation and `sees=true`.
 
-Both curated model responses have matching remote acceptance records and
-no same-time deferral. The compact presentation quotes the 35.95 response;
-the earlier response supports the move to Pantry. The rejected/stale 26.06
-response is not presented as an executed decision. The displayed interpretation
-is not asserted as world truth. The ending identifies the Couch destination and
-states that this excerpt stops before the search is resolved.
+Thirty-six original position, facing and visibility samples are curated into
+`src/content/mindlab-discovery-run.ts`. Position and facing interpolate between
+samples; visibility changes only at the actual recorded sample. The presentation
+holds the initial position to introduce the person, then holds the accepted model
+response for reading. Its camera framing is editorial; the positions are recorded.
 
-Forty original seeker position/facing samples are curated into
-`src/content/mindlab-recorded-run.ts`; position interpolation is used between
-samples. Source timestamps stay visible. The playback clock includes a hold
-at 35.95 seconds so the response can be read. The UI says it is paced for reading.
+The beginning highlights the person for the visitor before shifting attention
+to the seeker. That introductory emphasis is not the seeker's perception.
+The model quote reflects the earlier sighting supplied in its input, rather than
+a new range measurement at the instant the response was accepted.
 
-This excerpt demonstrates observed evidence, a model-authored interpretation,
-and actual physical movement. It does not establish novel generalization,
-successful learning, a complete SDK, or acceptance of the wider research branch.
+The ending means visual contact restored and approach executed. It is not a
+recorded capture, hiding-place clearance, game victory, successful learning,
+finished SDK or proof of the project's broader generalization hypothesis.
+No new model calls, Unity runs or MindLab repository changes were performed.

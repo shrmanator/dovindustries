@@ -81,12 +81,21 @@ type. More visually integrated, but expanded source text could cover geometry.
 
 Both show the same recorded positions and source-derived outcome. Their
 differences concern hierarchy and composition, not different performance claims.
-The study offers local Play/Pause/Replay and Lost sight/Decision/Found inspection.
+The study offers local Play/Pause/Replay and Person/Decision/Found inspection.
 Original model wording is an optional detail, not the main explanation.
 
 ## Motion and flow
 
-Keep the camera and page still. Character movement is the meaningful motion.
+Introduce the person first, with a close view of their recorded position in
+Living. The seeker is deliberately subordinate during this two-second opening.
+Then pull back once to the full plan and shift emphasis to the seeker. This
+explains who is being sought before asking the visitor to follow the search.
+The person is still outside the seeker's view at this point; the introductory
+highlight belongs to the presentation, not to the character's perception.
+
+Recorded positions stay fixed while the subject is introduced. The camera settles
+into the room plan before the sighting, then remains still for the actual action.
+Reduced motion snaps between camera compositions. The page never scrolls itself.
 Hold the interpretation briefly, then show the recorded approach and confirmed
 sighting. End on that result with Replay available; do not blank the map, invent
 a success screen or add an unrelated scroll CTA. Never autoplay on variant change.

@@ -1,0 +1,193 @@
+<div id="mindlab-design-study">
+  <style>
+    #mindlab-design-study .ml-page { --ml-bg:light-dark(#f7f8f9,#171b18); --ml-ink:light-dark(#20252b,#edf1e8); --ml-muted:light-dark(#556154,#bbc6b5); --ml-paper:light-dark(#ece9dc,#283025); --ml-floor:light-dark(#dedfce,#36402f); --ml-wall:light-dark(#667257,#aab999); --ml-green:light-dark(#425734,#c3dca8); --ml-trail:light-dark(#899b72,#789768); --ml-rust:light-dark(#99684b,#d8aa8b); --ml-line:light-dark(#d5dbd1,#3d473a); --ml-highlight:light-dark(#d3c185,#736637); background:var(--ml-bg); color:var(--ml-ink); font-family:"DM Sans",Arial,sans-serif; font-weight:400; width:100%; min-height:790px; padding:26px 34px 34px; box-sizing:border-box; container-type:inline-size; }
+    #mindlab-design-study .ml-page * { box-sizing:border-box; }
+    #mindlab-design-study .ml-page button { color:inherit; font:inherit; border:0; background:transparent; min-height:44px; }
+    #mindlab-design-study .ml-header { display:flex; justify-content:space-between; align-items:center; gap:24px; margin-bottom:52px; font-size:15px; }
+    #mindlab-design-study .ml-brand { font-size:19px; font-weight:500; letter-spacing:-.05em; }
+    #mindlab-design-study .ml-nav { display:flex; gap:22px; font-size:13px; }
+    #mindlab-design-study .ml-kicker { color:var(--ml-muted); font-size:12px; margin:0 0 14px; }
+    #mindlab-design-study .ml-intro { display:grid; grid-template-columns:1fr 1.1fr; align-items:baseline; gap:24px; margin-bottom:24px; }
+    #mindlab-design-study .ml-title { font-size:42px; letter-spacing:-.055em; line-height:1; font-weight:500; margin:0; }
+    #mindlab-design-study .ml-intro p { font-size:17px; line-height:1.5; color:var(--ml-muted); margin:0; max-width:36ch; }
+    #mindlab-design-study .ml-player { border-radius:12px; background:var(--ml-paper); color:var(--ml-green); overflow:hidden; }
+    #mindlab-design-study .ml-player-bar { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:8px 20px; font-size:12px; }
+    #mindlab-design-study .ml-player-bar button { text-decoration:underline; text-underline-offset:4px; padding:0 8px; min-width:64px; }
+    #mindlab-design-study .ml-body { display:grid; grid-template-columns:1.25fr 1fr; gap:24px; align-items:center; }
+    #mindlab-design-study .ml-caption { padding:16px 24px 16px 0; min-height:140px; }
+    #mindlab-design-study .ml-phase { margin:0 0 8px; color:var(--ml-muted); font-size:12px; }
+    #mindlab-design-study .ml-headline { margin:0 0 10px; font-size:24px; line-height:1.2; letter-spacing:-.035em; font-weight:500; }
+    #mindlab-design-study .ml-detail { margin:0; font-size:14px; line-height:1.5; max-width:34ch; }
+    #mindlab-design-study .ml-caption details { margin-top:10px; font-size:12px; line-height:1.5; }
+    #mindlab-design-study .ml-caption summary { text-decoration:underline; text-underline-offset:3px; }
+    #mindlab-design-study .ml-caption blockquote { margin:10px 0 0; font-size:14px; }
+    #mindlab-design-study .ml-map { display:block; width:100%; height:auto; }
+    #mindlab-design-study .ml-map .ml-floor { fill:var(--ml-floor); }
+    #mindlab-design-study .ml-map .ml-walls { fill:none; stroke:var(--ml-wall); stroke-width:4; stroke-linecap:round; }
+    #mindlab-design-study .ml-map .ml-furniture { fill:var(--ml-wall); opacity:.28; }
+    #mindlab-design-study .ml-map text { fill:var(--ml-muted); font:26px Arial,sans-serif; text-anchor:middle; }
+    #mindlab-design-study .ml-map .ml-destination { fill:var(--ml-green); }
+    #mindlab-design-study .ml-map .ml-hider { fill:var(--ml-rust); stroke:var(--ml-rust); stroke-dasharray:3 3; }
+    #mindlab-design-study .ml-map .ml-hider-label { fill:var(--ml-rust); }
+    #mindlab-design-study .ml-map .ml-person-seen { fill:var(--ml-green); stroke:var(--ml-green); }
+    #mindlab-design-study .ml-map .ml-sight { stroke:var(--ml-trail); stroke-width:2; }
+    #mindlab-design-study .ml-map .ml-bearing { fill:var(--ml-paper); }
+    #mindlab-design-study .ml-map .ml-seeker { fill:var(--ml-green); }
+    #mindlab-design-study .ml-map .ml-seeker-label { fill:var(--ml-green); }
+    #mindlab-design-study .ml-map .ml-path { fill:none; stroke:var(--ml-trail); stroke-width:4; stroke-linecap:round; }
+    #mindlab-design-study .ml-map .ml-target { fill:var(--ml-highlight); opacity:.65; }
+    #mindlab-design-study .ml-footer { display:flex; align-items:center; gap:6px; margin:0 20px; border-top:1px solid var(--ml-line); }
+    #mindlab-design-study .ml-footer button { flex:1; font-size:12px; color:var(--ml-muted); }
+    #mindlab-design-study .ml-footer button[aria-pressed="true"] { color:var(--ml-green); text-decoration:underline; text-underline-offset:5px; }
+    #mindlab-design-study .ml-progress { height:2px; background:var(--ml-line); }
+    #mindlab-design-study .ml-progress span { display:block; height:100%; background:var(--ml-green); transform-origin:left; }
+    #mindlab-design-study .ml-source { margin:10px 0 0; font-size:11px; line-height:1.4; color:var(--ml-muted); }
+    #mindlab-design-study .ml-next { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:center; margin-top:34px; padding-top:28px; border-top:1px solid var(--ml-line); }
+    #mindlab-design-study .ml-next h3 { font-size:23px; font-weight:500; letter-spacing:-.03em; margin:0 0 10px; }
+    #mindlab-design-study .ml-next p { font-size:14px; line-height:1.6; color:var(--ml-muted); margin:0; }
+    #mindlab-design-study .ml-next img { width:100%; display:block; border-radius:8px; }
+    #mindlab-design-study .ml-editorial .ml-player { background:var(--ml-bg); border-radius:0; }
+    #mindlab-design-study .ml-editorial .ml-player-bar { padding-inline:0; border-top:1px solid var(--ml-line); }
+    #mindlab-design-study .ml-editorial .ml-body { position:relative; display:block; background:var(--ml-paper); border-radius:12px; }
+    #mindlab-design-study .ml-editorial .ml-caption { position:absolute; z-index:1; top:24px; left:24px; width:30%; padding:0; }
+    #mindlab-design-study .ml-editorial .ml-caption .ml-headline { font-size:22px; }
+    #mindlab-design-study .ml-editorial .ml-map .ml-entry-label { display:none; }
+    #mindlab-design-study .ml-editorial .ml-footer { margin-inline:0; }
+    @container (max-width:540px) {
+      #mindlab-design-study .ml-header { margin-bottom:32px; }
+      #mindlab-design-study .ml-nav { gap:14px; }
+      #mindlab-design-study .ml-nav span:not(:last-child) { display:none; }
+      #mindlab-design-study .ml-intro { grid-template-columns:1fr; gap:14px; }
+      #mindlab-design-study .ml-title { font-size:32px; }
+      #mindlab-design-study .ml-intro p { font-size:15px; }
+      #mindlab-design-study .ml-body { display:flex; flex-direction:column; gap:0; }
+      #mindlab-design-study .ml-caption { order:-1; align-self:stretch; min-height:126px; padding:12px 18px 8px; }
+      #mindlab-design-study .ml-headline { font-size:19px; }
+      #mindlab-design-study .ml-detail { font-size:13px; }
+      #mindlab-design-study .ml-map text { font-size:36px; }
+      #mindlab-design-study .ml-editorial .ml-caption { position:static; width:auto; padding:18px 18px 8px; min-height:126px; }
+      #mindlab-design-study .ml-editorial .ml-caption .ml-headline { font-size:19px; }
+      #mindlab-design-study .ml-editorial .ml-body { display:flex; flex-direction:column; }
+      #mindlab-design-study .ml-next { grid-template-columns:1fr; gap:18px; }
+      #mindlab-design-study .ml-next h3 { font-size:22px; }
+    }
+    @media (max-width:480px) { #mindlab-design-study .ml-page { padding:20px; } }
+  </style>
+  <div class="viz-carousel" aria-label="MindLab presentation designs">
+    <section data-variant="Single scene" aria-label="Single scene research presentation">
+      <div class="ml-page" data-design="single">
+        <header class="ml-header"><span class="ml-brand">dovindustries</span><nav class="ml-nav" aria-label="Page context"><span>Work</span><span>Research</span><span>Contact</span></nav></header>
+        <p class="ml-kicker">More research</p>
+        <div class="ml-intro"><h2 class="ml-title">MindLab</h2><p>Can an SI game character find someone it has lost sight of?</p></div>
+        <figure class="ml-player" aria-label="Recorded MindLab research excerpt" style="margin:0">
+          <div class="ml-player-bar"><span>Recorded experiment · Unity</span><button type="button" class="ml-play cursor-interaction">Play</button></div>
+          <div class="ml-body"><div class="ml-canvas"></div><div class="ml-caption" aria-live="polite"><p class="ml-phase">SI decision</p><h3 class="ml-headline">Move closer to the person.</h3><p class="ml-detail">After the sighting, it changes its target to the person.</p><details><summary class="cursor-interaction">Recorded response</summary><blockquote>“Intruder visible in Living 3.8m away”</blockquote></details></div></div>
+          <div class="ml-footer" role="group" aria-label="Inspect the excerpt"><button type="button" class="cursor-interaction" data-elapsed="0" aria-pressed="true">Person</button><button type="button" class="cursor-interaction" data-elapsed="6000" aria-pressed="false">Decision</button><button type="button" class="cursor-interaction" data-elapsed="20000" aria-pressed="false">Found</button></div>
+          <div class="ml-progress" aria-hidden="true"><span style="transform:scaleX(.3)"></span></div>
+        </figure>
+        <p class="ml-source">Schematic from recorded positions and responses. Paced for reading.</p>
+        <section class="ml-next"><div><h3>VR locomotion</h3><p>Early Unity experiments explore moving through VR by walking in place, without extra trackers.</p></div><img src="../../../public/images/art-vr-stepping.webp" alt="Approved charcoal and blue paint study of a person stepping in a VR headset"></section>
+      </div>
+    </section>
+    <section data-variant="Annotated canvas" aria-label="Annotated canvas research presentation" hidden>
+      <div class="ml-page ml-editorial" data-design="editorial">
+        <header class="ml-header"><span class="ml-brand">dovindustries</span><nav class="ml-nav" aria-label="Page context"><span>Work</span><span>Research</span><span>Contact</span></nav></header>
+        <p class="ml-kicker">More research</p>
+        <div class="ml-intro"><h2 class="ml-title">MindLab</h2><p>Can an SI game character find someone it has lost sight of?</p></div>
+        <figure class="ml-player" aria-label="Recorded MindLab research excerpt" style="margin:0">
+          <div class="ml-player-bar"><span>Recorded experiment · Unity</span><button type="button" class="ml-play cursor-interaction">Play</button></div>
+          <div class="ml-body"><div class="ml-canvas"></div><div class="ml-caption" aria-live="polite"><p class="ml-phase">SI decision</p><h3 class="ml-headline">Move closer to the person.</h3><p class="ml-detail">After the sighting, it changes its target to the person.</p><details><summary class="cursor-interaction">Recorded response</summary><blockquote>“Intruder visible in Living 3.8m away”</blockquote></details></div></div>
+          <div class="ml-footer" role="group" aria-label="Inspect the excerpt"><button type="button" class="cursor-interaction" data-elapsed="0" aria-pressed="true">Person</button><button type="button" class="cursor-interaction" data-elapsed="6000" aria-pressed="false">Decision</button><button type="button" class="cursor-interaction" data-elapsed="20000" aria-pressed="false">Found</button></div>
+          <div class="ml-progress" aria-hidden="true"><span style="transform:scaleX(.3)"></span></div>
+        </figure>
+        <p class="ml-source">Schematic from recorded positions and responses. Paced for reading.</p>
+        <section class="ml-next"><div><h3>VR locomotion</h3><p>Early Unity experiments explore moving through VR by walking in place, without extra trackers.</p></div><img src="../../../public/images/art-vr-stepping.webp" alt="Approved charcoal and blue paint study of a person stepping in a VR headset"></section>
+      </div>
+    </section>
+  </div>
+  <template id="ml-study-scene">
+    <svg class="ml-map" viewBox="60 30 780 550" role="img" aria-label="Recorded seeker positions in a schematic house. The seeker regains sight of a person in Living and approaches them.">
+      <g class="ml-floor"><rect x="90" y="64" width="300" height="480"/><rect x="390" y="64" width="210" height="240"/><rect x="600" y="64" width="210" height="240"/><rect x="390" y="304" width="420" height="240"/></g>
+      <g class="ml-furniture"><path d="M426 99H510V131H458V191H426Z"/><rect x="538" y="82" width="37" height="63" rx="3"/><rect x="644" y="110" width="123" height="137" rx="5"/><rect x="466" y="458" width="88" height="45" rx="6"/><rect x="473" y="449" width="74" height="17" rx="4"/><rect x="462" y="460" width="15" height="47" rx="4"/><rect x="543" y="460" width="15" height="47" rx="4"/><path d="M752 475Q758 469 764 475Q770 469 776 475V526Q770 520 764 526Q758 520 752 526Z"/></g>
+      <path class="ml-walls" d="M90 64H810V544H90Z M390 64V268 M390 340V544 M390 304H540 M600 304H810 M600 64V169 M600 241V304"/>
+      <text class="ml-entry-label" x="224" y="313">Entry</text><text x="495" y="275">Kitchen</text><text x="706" y="293">Bedroom</text><text x="648" y="383">Living</text>
+      <circle class="ml-target" cx="514.7" cy="446.2" r="26"/><polyline class="ml-path" points="411,483.6"/><line class="ml-sight" x1="411" y1="483.6" x2="514.7" y2="446.2"/>
+      <circle class="ml-hider" cx="514.7" cy="446.2" r="11"/><text class="ml-hider-label" x="550" y="463" style="text-anchor:start">Person</text>
+      <g class="ml-actor" transform="translate(411 483.6)"><circle class="ml-seeker" r="14"/><path class="ml-bearing" d="M-5 5L0-6L5 5Z"/></g><text class="ml-seeker-label" x="456" y="473.6">Seeker</text>
+    </svg>
+  </template>
+  <script type="application/json" id="ml-study-data">{"run":"20261012-085228","revision":"d989888f5e563784d29298cd37c43b4f71a53ed1","person":[2.156817,-4.741591],"belief":"Intruder visible in Living 3.8m away","poses":[[113.37,-1.300001,-5.987759,269.9218,false],[113.87,-1.300001,-5.987759,269.9197,false],[114.38,-1.300001,-5.987759,320.8584,false],[114.75,-1.286985,-5.996867,29.45149,false],[114.83,-1.233723,-6.034136,49.48962,true],[114.9,-1.169813,-6.078919,57.90413,true],[115,-1.151303,-6.091889,69.98576,true],[115.1,-1.151303,-6.091889,69.41602,true],[115.2,-1.151303,-6.091889,68.99107,true],[115.3,-1.151303,-6.091889,68.68046,true],[115.4,-1.151303,-6.091889,68.45109,true],[115.5,-1.151303,-6.091889,68.28011,true],[115.6,-1.151303,-6.091889,68.1545,true],[115.7,-1.151303,-6.091889,68.06087,true],[115.8,-1.151303,-6.091889,67.99599,true],[115.9,-1.151303,-6.091889,67.94064,true],[116,-1.151303,-6.091889,67.90293,true],[116.1,-1.151303,-6.091889,67.87498,true],[116.2,-1.151303,-6.091889,67.85436,true],[116.3,-1.151303,-6.091889,67.8391,true],[116.4,-1.132712,-6.104875,72.52784,true],[116.5,-1.050554,-6.163038,79.65897,true],[116.6,-0.9117469,-6.261198,85.73329,true],[116.71,-0.7680002,-6.358303,88.33725,true],[116.81,-0.6237557,-6.452636,89.48731,true],[116.91,-0.5095574,-6.53238,88.17719,true],[117.01,-0.396374,-6.563487,83.0364,true],[117.11,-0.2823577,-6.513593,73.10879,true],[117.21,-0.1724854,-6.383693,61.80497,true],[117.31,-0.07199235,-6.17447,51.38463,true],[117.41,0.01549274,-5.896731,43.45638,true],[117.51,0.1013099,-5.608736,40.24645,true],[117.62,0.1875291,-5.320606,39.9349,true],[117.72,0.2746489,-5.032196,41.15638,false],[118.22,1.192047,-4.354012,78.41605,false],[118.29,1.38265,-4.406288,85.27,true]]}</script>
+  <script>
+    (() => {
+      const root = document.getElementById('mindlab-design-study');
+      const data = JSON.parse(root.querySelector('#ml-study-data').textContent);
+      const template = root.querySelector('#ml-study-scene');
+      const controllers = [];
+      const preference = matchMedia('(prefers-reduced-motion: reduce)');
+      const clock = [[0,113.87],[2,113.87],[3,114.75],[4,114.83],[6,116.9],[10,116.9],[16,118.29],[20,118.29]];
+      const sourceTime = elapsed => {
+        const seconds = Math.max(0,Math.min(20,elapsed/1000));
+        const i = clock.findIndex(p => p[0] >= seconds);
+        if (i <= 0) return clock[0][1];
+        const a = clock[i-1], b = clock[i];
+        return a[1]+(b[1]-a[1])*(seconds-a[0])/(b[0]-a[0]);
+      };
+      const sample = time => {
+        let i = data.poses.findIndex(p => p[0] >= time);
+        if (i < 0) i = data.poses.length-1;
+        const b = data.poses[i], a = data.poses[Math.max(0,i-1)];
+        const k = b[0] === a[0] ? 0 : Math.max(0,Math.min(1,(time-a[0])/(b[0]-a[0])));
+        const turn=((b[3]-a[3]+540)%360)-180;
+        return [450+30*(a[1]+(b[1]-a[1])*k),304-30*(a[2]+(b[2]-a[2])*k),a[3]+turn*k,time>=b[0]?b[4]:a[4]];
+      };
+      root.querySelectorAll('.ml-page').forEach(page => {
+        page.querySelector('.ml-canvas').append(template.content.cloneNode(true));
+        let elapsed = 0, playing = false, request = 0, previous = 0;
+        const render = () => {
+          const t = sourceTime(elapsed), [x,y,facing,visible] = sample(t);
+          const subject = elapsed < 2000;
+          const phase = subject ? 'The subject' : elapsed < 6000 ? 'Observation' : elapsed < 10000 ? 'SI decision' : elapsed < 16000 ? 'Movement' : 'Found';
+          const headline = subject ? 'The person to find.' : elapsed < 4000 ? 'Now follow the seeker.' : elapsed < 6000 ? 'A sighting in Living.' : elapsed < 10000 ? 'Move closer to the person.' : elapsed < 16000 ? 'Approaching the person.' : 'Found the person.';
+          const detail = subject ? 'They’re in Living, out of the seeker’s view.' : elapsed < 4000 ? 'The seeker turns and continues looking.' : elapsed < 6000 ? 'Turning brings the person into view.' : elapsed < 10000 ? 'After the sighting, it changes its target to the person.' : elapsed < 16000 ? 'Its new orders target the person directly.' : 'Sighting confirmed. The seeker closes to about 1.3 metres.';
+          page.querySelector('.ml-phase').textContent = phase;
+          page.querySelector('.ml-headline').textContent = headline;
+          page.querySelector('.ml-detail').textContent = detail;
+          page.querySelector('.ml-caption details').hidden = phase !== 'SI decision';
+          page.querySelector('.ml-actor').setAttribute('transform',`translate(${x} ${y})`);
+          page.querySelector('.ml-actor').style.opacity=subject?'.2':'1';
+          page.querySelector('.ml-bearing').setAttribute('transform',`rotate(${facing})`);
+          const label = page.querySelector('.ml-seeker-label');
+          label.setAttribute('x',x-35); label.setAttribute('y',y-10); label.style.textAnchor = 'end';
+          label.style.opacity=subject?'0':'1';
+          const focus=subject?1:preference.matches?0:Math.max(0,1-(elapsed-2000)/750);
+          const overview=[60,30,780,550], closeup=[315,305,400,282];
+          page.querySelector('.ml-map').setAttribute('viewBox',overview.map((v,i)=>v+(closeup[i]-v)*focus).join(' '));
+          const points = data.poses.filter(p => p[0]<=t).map(p => `${450+30*p[1]},${304-30*p[2]}`);
+          page.querySelector('.ml-path').setAttribute('points',[...points,`${x},${y}`].join(' '));
+          const target=page.querySelector('.ml-target'); target.style.opacity=subject?'.22':visible?'.65':'0';
+          target.style.fill=subject?'var(--ml-rust)':'var(--ml-highlight)'; target.setAttribute('r',subject?'38':'26');
+          page.querySelector('.ml-hider').classList.toggle('ml-person-seen',visible);
+          page.querySelector('.ml-hider').setAttribute('r',subject?'18':'11');
+          page.querySelector('.ml-hider').style.strokeDasharray = visible?'none':'3 3';
+          const sight=page.querySelector('.ml-sight'); sight.setAttribute('x1',x); sight.setAttribute('y1',y); sight.style.opacity=visible?'1':'0';
+          page.querySelector('.ml-play').textContent = playing ? 'Pause' : elapsed>=20000 ? 'Replay' : 'Play';
+          page.querySelector('.ml-progress span').style.transform = `scaleX(${elapsed/20000})`;
+          page.querySelectorAll('[data-elapsed]').forEach(b => b.setAttribute('aria-pressed',String(Number(b.dataset.elapsed)===0?elapsed<6000:Number(b.dataset.elapsed)===6000?elapsed>=6000&&elapsed<16000:elapsed>=16000)));
+        };
+        const stop = () => { const wasPlaying=playing; playing = false; cancelAnimationFrame(request); return wasPlaying; };
+        const tick = now => { elapsed = Math.min(20000,elapsed+now-previous); previous=now; if(elapsed===20000) playing=false; render(); if(playing) request=requestAnimationFrame(tick); };
+        page.querySelector('.ml-play').addEventListener('click',() => {
+          if(playing) stop(); else { if(elapsed>=20000) elapsed=0; playing=true; previous=performance.now(); request=requestAnimationFrame(tick); } render();
+        });
+        page.querySelectorAll('[data-elapsed]').forEach(button => button.addEventListener('click',() => { stop(); elapsed=Number(button.dataset.elapsed); render(); }));
+        controllers.push({page,stop,render}); render();
+      });
+      const size = { width:'Responsive' };
+      const applyWidth = () => root.querySelectorAll('.ml-page').forEach(page => { page.style.maxWidth = size.width==='Phone'?'390px':size.width==='Narrow phone'?'320px':'none'; page.style.marginInline='auto'; });
+      if(globalThis.Tweak) { const tweak=new Tweak({container:root,onChange:applyWidth}); tweak.addSelect(size,'width',{label:'Viewport',options:['Responsive','Phone','Narrow phone']}); }
+      document.addEventListener('visibilitychange',() => { if(document.hidden) controllers.forEach(c=>{c.stop();c.render();}); });
+      preference.addEventListener('change',() => { if(preference.matches) controllers.forEach(c=>{c.stop();c.render();}); });
+      new MutationObserver(() => controllers.forEach(c => { if(c.page.closest('[data-variant]').hidden && c.stop()) c.render(); })).observe(root,{attributes:true,subtree:true,attributeFilter:['hidden']});
+    })();
+  </script>
+</div>
