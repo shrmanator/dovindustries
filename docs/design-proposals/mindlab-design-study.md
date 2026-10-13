@@ -147,3 +147,35 @@ Hosted review covered the runtime introduction and visible model response on
 the accepted model belief is visible within the sequence rather than requiring
 source inspection. The Unity action caption is kept short for narrow screens.
 Production build, lint, all seventeen tests and the 300-line check passed.
+
+## Whole-page refinement pass
+
+The mobile audit found the replay running with 40% of its frame visible but only
+8.5% of the map visible. Autoplay now observes the actual SVG scene and waits
+for 75% visibility. The manual-control guard and reduced-motion handling remain
+in place. Reading the introduction should no longer consume the opening.
+
+The introduction now describes the runtime once, followed by a character
+description and what the developer connects. The redundant purpose line and
+second setup heading were removed. Shared title sizes distinguish the lead
+Vibe Draw presentation from project titles while retaining DM Sans and the
+separate palettes. Small replay captions and stage controls are darker and
+larger; room labels no longer use reduced opacity.
+
+VR and compact transport form a compact pair of early explorations. The approved
+VR painting remains as a supporting study rather than another large presentation.
+The drawing sequence has a quiet pause glyph while playing; the whole frame
+remains the control. The recorded events and artwork were not regenerated.
+
+Hosted review covered 1440px desktop, 768px tablet and 390px/320px phones.
+With 44% of the scene visible at 390px, playback stayed at Play and the initial
+close-up. Scrolling the scene into view started its person-first opening.
+Manual stage inspection, keyboard playback and source-inspection pause/focus
+were rechecked. Bear replay, pause and resume work with the new cue.
+
+Vibe Draw's title is 64px on desktop, with other project titles at 48px; mobile
+sizes are 40px and 32px. The 390px MindLab article is about 968px, down from
+1098px. Small captions and unselected controls now measure about 5.35:1 contrast.
+The final narrow-phone review caught and fixed VR's cramped title: the study
+stacks below its copy at 360px and below. No horizontal overflow was observed.
+Saved proof is in `.dist/refinement-pass/`. Production remains unchanged.
