@@ -7,7 +7,7 @@ import { MindlabReplayScene } from "./mindlab-replay-scene";
 import { MindlabReplayStory } from "./mindlab-replay-story";
 
 const stages: { id: ReplayStage; label: string }[] = [
-  { id: "observe", label: "Observe" }, { id: "interpret", label: "Interpret" }, { id: "act", label: "Act" },
+  { id: "subject", label: "Person" }, { id: "interpret", label: "Decision" }, { id: "result", label: "Found" },
 ];
 
 export function MindlabReplay() {
@@ -15,24 +15,24 @@ export function MindlabReplay() {
   const replay = useMindlabReplay(frame);
   const stage = replayStage(replay.elapsed);
   const time = recordedTime(replay.elapsed);
+  const selected = stage === "observe" ? "subject" : stage === "act" ? "interpret" : stage;
   const playbackLabel = replay.complete ? "Replay" : replay.playing ? "Pause" : "Play";
   return <figure className="mindlab-replay" ref={frame}>
     <div className="mindlab-replay-toolbar">
-      <span>Recorded prototype run</span>
+      <span>Recorded experiment · Unity</span>
       <div className="mindlab-replay-playback">
-        <span className="mindlab-recorded-time" aria-hidden="true">{time.toFixed(2)}s</span>
         <button type="button" onClick={replay.toggle} aria-label={`${playbackLabel} MindLab replay`}>{playbackLabel}</button>
       </div>
     </div>
     <div className="mindlab-replay-body">
-      <MindlabReplayScene time={time} />
-      <MindlabReplayStory stage={stage} time={time} />
+      <MindlabReplayScene time={time} elapsed={replay.elapsed} reducedMotion={replay.reducedMotion} />
+      <MindlabReplayStory stage={stage} time={time} onInspect={replay.pause} />
     </div>
     <div className="mindlab-replay-stages" role="group" aria-label="Explore the recorded sequence">
-      {stages.map((item, index) => <button key={item.id} type="button" aria-pressed={stage === item.id}
-        onClick={() => replay.select(item.id)}><span>{index + 1}</span>{item.label}</button>)}
+      {stages.map(item => <button key={item.id} type="button" aria-pressed={selected === item.id}
+        onClick={() => replay.select(item.id)}>{item.label}</button>)}
       <div className="mindlab-replay-progress" aria-hidden="true"><span style={{ transform: `scaleX(${replay.elapsed / MINDLAB_REPLAY_DURATION})` }} /></div>
     </div>
-    <figcaption>Recorded positions and model responses, paced for reading.</figcaption>
+    <figcaption>Schematic from recorded positions and responses. Paced for reading.</figcaption>
   </figure>;
 }

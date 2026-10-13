@@ -1,14 +1,16 @@
-import { mindlabRecordedRun, mindlabSeekerTrack } from "../content/mindlab-recorded-run";
+import { mindlabRecordedRun, mindlabSeekerTrack } from "../content/mindlab-discovery-run";
 import { sampleRecordedPose, worldToDiagram } from "../utils/mindlab-replay";
+import { mindlabViewBox } from "../utils/mindlab-camera";
 
-export function MindlabReplayScene({ time }: { time: number }) {
+export function MindlabReplayScene({ time, elapsed, reducedMotion }: { time: number; elapsed: number; reducedMotion: boolean }) {
   const pose = sampleRecordedPose(mindlabSeekerTrack, time);
   const seeker = worldToDiagram(pose.x, pose.z);
-  const hider = worldToDiagram(...mindlabRecordedRun.hider);
+  const person = worldToDiagram(...mindlabRecordedRun.person);
+  const subject = elapsed < 2000;
   const trail = mindlabSeekerTrack.filter(p => p[0] <= time).map(p => worldToDiagram(p[1], p[2]));
   trail.push(seeker);
-  return <svg className="mindlab-replay-scene" viewBox="60 30 780 550" role="img"
-    aria-label="Recorded movement: the SI seeker searches the kitchen and moves into the living room. The hider stays unseen in the bedroom.">
+  return <svg className="mindlab-replay-scene" viewBox={mindlabViewBox(elapsed, reducedMotion)} role="img"
+    aria-label={subject ? "The person to find is in Living, outside the seeker's current view." : pose.visible ? "The seeker has visual contact with the person in Living and approaches them." : "The seeker turns, looking for the person it has lost sight of."}>
     <rect width="900" height="600" className="mindlab-ground" />
     <g className="mindlab-floor">
       <rect x="90" y="64" width="300" height="480" />
@@ -28,19 +30,19 @@ export function MindlabReplayScene({ time }: { time: number }) {
     <path className="mindlab-walls" d="M90 64H810V544H90Z M390 64V268 M390 340V544 M390 304H540 M600 304H810 M600 64V169 M600 241V304" />
     <g className="mindlab-room-labels" aria-hidden="true">
       <text x="224" y="313">Entry</text><text x="495" y="275">Kitchen</text>
-      <text x="706" y="278">Bedroom</text><text x="690" y="516">Living</text>
+      <text x="706" y="293">Bedroom</text><text x="648" y="383">Living</text>
     </g>
-    <text className="mindlab-destination-label" x="510" y="433">{time >= 35.95 && time < 41.88 ? "Next: couch" : "Couch"}</text>
-    {time >= 35.95 && <circle className="mindlab-next-location" cx="510" cy="484" r="34" />}
+    <circle className={`mindlab-person-focus${subject ? " is-subject" : ""}`} cx={person.x} cy={person.y}
+      r={subject ? 38 : 26} opacity={subject ? .22 : pose.visible ? .6 : 0} />
     <polyline className="mindlab-recorded-trail" points={trail.map(p => `${p.x},${p.y}`).join(" ")} />
-    <g className="mindlab-recorded-hider" transform={`translate(${hider.x} ${hider.y})`}>
-      <circle r="16" /><text y="-32">Hider</text>
+    {pose.visible && <line className="mindlab-recorded-sight" x1={seeker.x} y1={seeker.y} x2={person.x} y2={person.y} />}
+    <g className={`mindlab-recorded-person${pose.visible ? " is-seen" : ""}`} transform={`translate(${person.x} ${person.y})`}>
+      <circle r={subject ? 18 : 11} /><text x="35" y="17">Person</text>
     </g>
-    <g className="mindlab-recorded-seeker" transform={`translate(${seeker.x} ${seeker.y})`}>
-      <circle r="20" />
-      <path transform={`rotate(${pose.facing})`} d="M-6 5L0-7L6 5" />
-      <text x={seeker.y > 475 ? 45 : 0} y={seeker.y > 475 ? -6 : 37}
-        style={{ textAnchor: seeker.y > 475 ? "start" : "middle" }}>Seeker</text>
+    <g className="mindlab-recorded-seeker" transform={`translate(${seeker.x} ${seeker.y})`} opacity={subject ? .2 : 1}>
+      <circle r="14" />
+      <path transform={`rotate(${pose.facing})`} d="M-5 5L0-6L5 5Z" />
+      <text x="-35" y="-10" opacity={subject ? 0 : 1}>Seeker</text>
     </g>
   </svg>;
 }

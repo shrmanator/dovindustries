@@ -6,6 +6,7 @@ import { MINDLAB_REPLAY_DURATION, stageStart, type ReplayStage } from "../utils/
 export function useMindlabReplay(frame: RefObject<HTMLElement | null>) {
   const [elapsed, setElapsed] = useState(0);
   const [playing, setPlaying] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
   const position = useRef(0);
   const manuallyControlled = useRef(false);
 
@@ -13,6 +14,7 @@ export function useMindlabReplay(frame: RefObject<HTMLElement | null>) {
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
     const finish = () => { position.current = MINDLAB_REPLAY_DURATION; setElapsed(position.current); setPlaying(false); };
     const observer = new IntersectionObserver(([entry]) => {
+      setReducedMotion(reduced.matches);
       if (manuallyControlled.current) { observer.disconnect(); return; }
       if (!entry.isIntersecting || entry.intersectionRatio < .35) return;
       if (reduced.matches) finish();
@@ -20,7 +22,7 @@ export function useMindlabReplay(frame: RefObject<HTMLElement | null>) {
       observer.disconnect();
     }, { threshold: .35 });
     if (frame.current) observer.observe(frame.current);
-    const preference = () => { if (reduced.matches) finish(); };
+    const preference = () => { setReducedMotion(reduced.matches); if (reduced.matches) finish(); };
     const visibility = () => { if (document.hidden) setPlaying(false); };
     reduced.addEventListener("change", preference);
     document.addEventListener("visibilitychange", visibility);
@@ -51,5 +53,6 @@ export function useMindlabReplay(frame: RefObject<HTMLElement | null>) {
     manuallyControlled.current = true;
     position.current = stageStart[stage]; setElapsed(position.current); setPlaying(false);
   };
-  return { elapsed, playing, toggle, select, complete: elapsed >= MINDLAB_REPLAY_DURATION };
+  const pause = () => { manuallyControlled.current = true; setPlaying(false); };
+  return { elapsed, playing, reducedMotion, toggle, select, pause, complete: elapsed >= MINDLAB_REPLAY_DURATION };
 }

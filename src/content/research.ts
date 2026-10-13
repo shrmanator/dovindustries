@@ -1,5 +1,5 @@
 export const mindlabResearchDescription =
-  "Can an SI game character make sense of a situation its developer never scripted? We’re exploring this in Unity, giving each character its own perceptions and memories.";
+  "Can an SI game character find someone it has lost sight of?";
 
 export const vrResearchDescription =
   "Early Unity experiments record headset acceleration to explore moving through VR by walking in place, without extra trackers.";
