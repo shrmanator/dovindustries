@@ -3,25 +3,20 @@
 .studio-research-collection { display: grid; gap: 40px; }
 .studio-research h3 { font-size: 26px; letter-spacing: -.025em; line-height: 1.2; font-weight: 500; }
 .studio-research p { max-width: 42ch; font-size: 16px; color: #4e5e66; line-height: 1.65; }
-.studio-explorations { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-top: 32px; border-top: 1px solid #d6dadf; }
-.studio-explorations article { scroll-margin-top: 24px; }
-.studio-explorations p { margin-top: 14px; font-size: 15px; }
-.studio-vr { display: grid; grid-template-columns: minmax(0, 1fr) 136px; gap: 24px; align-items: start; }
-.studio-movement-art { overflow: hidden; border-radius: 8px; }
-.studio-movement-art img { display: block; width: 100%; height: auto; }
-@media (min-width: 701px) and (max-width: 1000px) {
-  .studio-explorations { gap: 32px; }
-  .studio-vr { grid-template-columns: 1fr; gap: 16px; }
-  .studio-movement-art { width: 136px; }
-}
+.studio-explorations { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; row-gap: 20px; padding-top: 40px; border-top: 1px solid #d6dadf; }
+.studio-explorations article { display: grid; grid-template-rows: subgrid; grid-row: span 3; scroll-margin-top: 24px; }
+.studio-explorations h3 { font-size: clamp(26px, 2.4vw, 34px); }
+.studio-explorations article > p { max-width: 46ch; }
+.studio-movement-art { overflow: hidden; border-radius: 8px; aspect-ratio: 3 / 2; }
+.studio-movement-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.studio-transport-question { display: grid; align-items: center; aspect-ratio: 3 / 2; margin: 0; padding: clamp(24px, 3.5vw, 48px); background: #dee7eb; border-radius: 8px; }
+.studio-research .studio-transport-question p { max-width: 13ch; font-size: clamp(28px, 3vw, 44px); line-height: 1.12; letter-spacing: -.035em; color: #2c414c; }
 @media (max-width: 700px) {
-  .studio-explorations { grid-template-columns: 1fr; gap: 28px; padding-top: 28px; }
-  .studio-vr { grid-template-columns: minmax(0, 1fr) 92px; gap: 20px; }
-  .studio-transport { padding-top: 24px; border-top: 1px solid #d6dadf; }
-  .studio-research h3 { font-size: 24px; }
+  .studio-explorations { grid-template-columns: 1fr; gap: 44px; padding-top: 28px; }
+  .studio-explorations article { display: block; }
+  .studio-explorations h3 { font-size: 28px; margin-bottom: 18px; }
+  .studio-explorations article > p { margin-top: 18px; }
   .studio-research p { font-size: 15px; }
-}
-@media (max-width: 360px) {
-  .studio-vr { grid-template-columns: 1fr; gap: 14px; }
-  .studio-movement-art { width: 112px; }
+  .studio-transport-question { padding: 28px; }
+  .studio-research .studio-transport-question p { font-size: 32px; }
 }
