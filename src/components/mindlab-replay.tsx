@@ -5,6 +5,7 @@ import { recordedTime, replayStage, MINDLAB_REPLAY_DURATION, type ReplayStage } 
 import { useMindlabReplay } from "./use-mindlab-replay";
 import { MindlabReplayScene } from "./mindlab-replay-scene";
 import { MindlabReplayStory } from "./mindlab-replay-story";
+import { MindlabRecordedResponse } from "./mindlab-recorded-response";
 
 const stages: { id: ReplayStage; label: string }[] = [
   { id: "subject", label: "Person" }, { id: "interpret", label: "Decision" }, { id: "result", label: "Found" },
@@ -19,14 +20,14 @@ export function MindlabReplay() {
   const playbackLabel = replay.complete ? "Replay" : replay.playing ? "Pause" : "Play";
   return <figure className="mindlab-replay" ref={frame}>
     <div className="mindlab-replay-toolbar">
-      <span>Recorded experiment · Unity</span>
+      <MindlabRecordedResponse onInspect={replay.pause} />
       <div className="mindlab-replay-playback">
         <button type="button" onClick={replay.toggle} aria-label={`${playbackLabel} MindLab replay`}>{playbackLabel}</button>
       </div>
     </div>
     <div className="mindlab-replay-body">
       <MindlabReplayScene time={time} elapsed={replay.elapsed} reducedMotion={replay.reducedMotion} />
-      <MindlabReplayStory stage={stage} time={time} onInspect={replay.pause} />
+      <MindlabReplayStory stage={stage} time={time} />
     </div>
     <div className="mindlab-replay-stages" role="group" aria-label="Explore the recorded sequence">
       {stages.map(item => <button key={item.id} type="button" aria-pressed={selected === item.id}

@@ -3,7 +3,7 @@
 .studio-research .studio-mindlab h3 { color: #414c34; font-size: clamp(36px, 4vw, 52px); }
 .studio-mindlab-copy p { max-width: 49ch; }
 .mindlab-replay { overflow: hidden; border-radius: 12px; background: #ece9dc; color: #47513d; }
-.mindlab-replay-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 8px 20px; font-size: 12px; }
+.mindlab-replay-toolbar { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 8px 20px; font-size: 12px; }
 .mindlab-replay-playback { display: flex; align-items: center; gap: 16px; }
 .mindlab-replay-playback button { min-height: 44px; min-width: 64px; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
 .mindlab-replay button:focus-visible { outline: 2px solid #46523a; outline-offset: 3px; }
@@ -24,13 +24,16 @@
 .mindlab-recorded-seeker circle { fill: #46523a; }
 .mindlab-recorded-seeker path { fill: #ece9dc; }
 .mindlab-recorded-seeker text { fill: #46523a; text-anchor: end; font-size: 27px; }
-.mindlab-replay-story { padding: 16px 24px 16px 0; min-height: 200px; }
+.mindlab-replay-story { padding: 16px 24px 16px 0; min-height: 160px; }
 .studio-research .mindlab-story-label { margin-bottom: 8px; font-size: 12px; color: #667257; }
 .mindlab-replay-story h4 { font-size: 24px; line-height: 1.2; letter-spacing: -.035em; font-weight: 500; margin-bottom: 10px; }
 .studio-research .mindlab-replay-story > p:not(.mindlab-story-label) { font-size: 14px; line-height: 1.5; color: #57614e; }
-.mindlab-recorded-response { margin-top: 4px; font-size: 12px; line-height: 1.5; }
+.mindlab-recorded-response { flex: 1; min-width: 0; font-size: 12px; line-height: 1.5; }
 .mindlab-recorded-response summary { cursor: pointer; display: flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }
 .mindlab-recorded-response summary:focus-visible { outline: 2px solid #46523a; outline-offset: 3px; }
+.mindlab-response-content { position: absolute; z-index: 2; top: 56px; left: 16px; right: 16px; padding: 16px 20px; background: #f5f3e9; border: 1px solid #c3c8b7; border-radius: 8px; box-shadow: 0 8px 24px #34402a18; }
+.mindlab-response-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.mindlab-response-heading button { min-width: 44px; min-height: 44px; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
 .mindlab-recorded-response blockquote { margin-block: 8px; font-size: 14px; color: #34402a; }
 .mindlab-replay-stages { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); margin-inline: 24px; border-top: 1px solid #d0d1c0; }
 .mindlab-replay-stages button { display: flex; align-items: center; justify-content: center; min-height: 44px; font-size: 12px; color: #69725d; cursor: pointer; }
@@ -44,7 +47,7 @@
   .mindlab-replay-toolbar { padding: 8px 16px; gap: 12px; font-size: 12px; }
   .mindlab-replay-playback { gap: 8px; }
   .mindlab-replay-body { grid-template-columns: 1fr; gap: 0; }
-  .mindlab-replay-story { grid-row: 1; padding: 12px 18px 8px; min-height: 172px; }
+  .mindlab-replay-story { grid-row: 1; padding: 12px 18px 8px; min-height: 136px; }
   .studio-research .mindlab-story-label { margin-bottom: 8px; font-size: 11px; }
   .mindlab-replay-story h4 { font-size: 19px; margin-bottom: 8px; line-height: 1.2; }
   .studio-research .mindlab-replay-story > p:not(.mindlab-story-label) { font-size: 13px; line-height: 1.45; }
