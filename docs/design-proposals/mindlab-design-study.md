@@ -179,3 +179,20 @@ sizes are 40px and 32px. The 390px MindLab article is about 968px, down from
 The final narrow-phone review caught and fixed VR's cramped title: the study
 stacks below its copy at 360px and below. No horizontal overflow was observed.
 Saved proof is in `.dist/refinement-pass/`. Production remains unchanged.
+
+## Revised early-research composition
+
+The user rejected the compressed closing pair: the VR painting had become an
+icon-sized thumbnail and the transport column lacked visual presence. That
+quality judgment overrides the previous compact-layout assessment.
+
+The revised pair restores a substantial VR artwork and gives transport a
+typographic presentation of its folding question. The current packaging focus
+sits beneath it. Shared grid rows align titles, 3:2 presentations and captions
+on desktop and tablet; each study stacks naturally on phones. The source
+painting is unchanged and no vehicle prototype is implied by the question.
+
+Hosted review covered 1440px, 768px, 390px and 320px. Both desktop presentations
+are 600 by 400px; tablet presentations also align. The narrow-phone question
+fits within its frame with no horizontal overflow. Build, lint and source-size
+checks pass. Saved proof is in `.dist/research-studies-review/`.
