@@ -1,5 +1,5 @@
 export const mindlabResearchDescription =
-  "Developers describe who a character is and connect what it can sense and do. MindLab is being designed to coordinate its perceptions, memories, decisions and actions as the world changes.";
+  "We’re researching a runtime for embodied SI characters in Unity, connecting intelligence, body, senses, memories and available actions.";
 
 export const mindlabCharacterDescription =
   "A nervous maintenance worker who dislikes strangers but wants to help people.";
