@@ -13,7 +13,7 @@ export function MindlabRecordedResponse({ onInspect }: { onInspect: () => void }
   return <details className="mindlab-recorded-response" ref={disclosure}
     onToggle={event => { if (event.currentTarget.open) onInspect(); }}
     onKeyDown={event => { if (event.key === "Escape") { close(); event.stopPropagation(); } }}>
-    <summary>Recorded experiment · Unity</summary>
+    <summary>Recorded Unity example</summary>
     <div className="mindlab-response-content">
       <div className="mindlab-response-heading">
         <span>Recorded response</span>
