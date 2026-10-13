@@ -19,27 +19,34 @@ product studies: anonymous furniture, heavy room outlines, a source clock, long
 captions and repeated phase labels compete for attention. Extra animation will
 not solve that hierarchy or the missing narrative.
 
-## Content study: a complete action
+## Content study: a recorded discovery
 
-The same pinned recording contains a better bounded episode:
+An empty search is not a satisfying ending for a seeker-and-hider presentation.
+The revised study uses a different recorded episode with an actual sighting:
 
-- 55.95 and 70.08: Couch attempts time out, with reason unknown.
-- 72.53: accepted model response chooses Curtain instead of retrying Couch.
-- 72.60: motor onset; 75.28: Curtain arrival is recorded.
-- 78.88: Curtain search reports nothing observed.
+- 113.87: seeker positions report no visual contact with the person.
+- 114.75: a previously accepted move toward Couch starts.
+- 114.83: the person is observed 3.8m away in Living, after a long sight gap.
+- 116.90: an accepted model response switches the move target to the person.
+- 117.69: sight briefly drops; the replay retains this actual visibility change.
+- 118.29: sight returns, with the person reported 1.3m away.
 
-The recorded positions independently move from X/Z (2, -7.05) to roughly
-(10.17, -6.30). The same recording's map places Curtain at (10.5, -7).
-The unseen hider remains in Bedroom. The run does not demonstrate finding them.
+The recorded person stays at X/Z (2.156817, -4.741591). The seeker moves from
+roughly (-1.30, -5.99) to (1.38265, -4.406288), changing from sees=false to
+sees=true. Final three-dimensional positions independently give about 1.29m
+separation, consistent with the 1.3m observation.
 
-This episode has a beginning, change and result: failed action, different plan,
-completed search. Do not invent an obstacle, a found hider, successful learning,
-or a broader generalization result. The timeout's cause was not established.
+This is reacquiring a person after losing visual contact, not a recorded capture
+or game victory. The person is not using the engine's explicit hidden-spot state
+in this excerpt. Labels are Seeker and Person, and the ending says Found the
+person. Do not represent this as clearing a hiding spot or winning hide-and-seek.
 
 Source: shrmanator/MindLab, review-issue14, pinned revision
-d989888f5e563784d29298cd37c43b4f71a53ed1, run 20261012-145119.
-Events, poses and map were read on 13 October. Only accepted output and recorded
-positions are used in the study; no new model calls or Unity runs were performed.
+d989888f5e563784d29298cd37c43b4f71a53ed1, run 20261012-085228.
+Events and both characters' positions were read on 13 October. Only accepted
+output and recorded positions are used; no new model calls or Unity runs were
+performed. The earlier Kitchen/Couch and Curtain examples were rejected because
+their endings did not deliver a discovery.
 
 ## Reference study
 
@@ -64,7 +71,7 @@ fresh visual review today.
 ## Two compositions
 
 Single scene: one matte media frame, compact caption beside it on desktop and
-above it on phones, quiet playback controls and an explicit completed-search
+above it on phones, quiet playback controls and an explicit observed-discovery
 result. The same relationship works at every width. Recommended foundation.
 
 Annotated canvas: the explanation occupies the unused Entry area of the room
@@ -74,14 +81,14 @@ type. More visually integrated, but expanded source text could cover geometry.
 
 Both show the same recorded positions and source-derived outcome. Their
 differences concern hierarchy and composition, not different performance claims.
-The study offers local Play/Pause/Replay and Problem/Decision/Result inspection.
+The study offers local Play/Pause/Replay and Lost sight/Decision/Found inspection.
 Original model wording is an optional detail, not the main explanation.
 
 ## Motion and flow
 
 Keep the camera and page still. Character movement is the meaningful motion.
-Hold the interpretation briefly, then show the recorded move and completed
-search. End on that result with Replay available; do not blank the map, invent
+Hold the interpretation briefly, then show the recorded approach and confirmed
+sighting. End on that result with Replay available; do not blank the map, invent
 a success screen or add an unrelated scroll CTA. Never autoplay on variant change.
 
 The following VR study shares the page's margins and a quiet divider. It returns
