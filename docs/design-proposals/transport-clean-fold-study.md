@@ -14,6 +14,9 @@ Built-in image_gen edit of `public/images/art-transport-platform-fold.webp`.
 Export is WebP quality 88, with no crop, recolouring or compositing.
 The illustration is a visual concept; it is not a manufacturing specification
 or evidence of a built or tested mechanism.
+The next revision removes the confusing raised-column outline and undefined
+front linkage, and explores a slimmer body with close-fitting wheel covers.
+See `transport-streamlined-study.md`; this asset is now superseded.
 
 ## Edit prompt
 
