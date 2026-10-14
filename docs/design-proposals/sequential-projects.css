@@ -1,0 +1,22 @@
+.direction-a .project { grid-template-rows: 1fr 1fr; }
+.direction-a .project-intro { align-self: end; padding: 36px 5cqw 0; }
+.direction-a .project-detail { align-self: start; padding: 20px 5cqw 36px; }
+.direction-a .project-detail .detail { margin-top: 0 !important; }
+.direction-a .sefer-project .project-intro { grid-column: 2; grid-row: 1; }
+.direction-a .sefer-project .project-detail { grid-column: 2; grid-row: 2; }
+.direction-a .sefer-project .project-art { grid-column: 1; grid-row: 1 / 3; }
+.direction-a .sefer-project .project-art img { height: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.direction-a .digi-project .project-intro { grid-column: 1; grid-row: 1; padding-left: 0; }
+.direction-a .digi-project .project-detail { grid-column: 1; grid-row: 2; padding-left: 0; }
+.direction-a .digi-project .project-art { grid-column: 2; grid-row: 1 / 3; }
+.direction-a .digi-project .donation-scene { height: 100%; }
+@container (max-width: 700px) {
+  .direction-a .sefer-project, .direction-a .digi-project { display: grid; grid-template-columns: 1fr; grid-template-rows: auto; }
+  .direction-a .project .project-intro { grid-column: 1; grid-row: 1; padding: 26px 6cqw 22px; }
+  .direction-a .project .project-art { grid-column: 1; grid-row: 2; }
+  .direction-a .project .project-detail { grid-column: 1; grid-row: 3; padding: 24px 6cqw 28px; }
+  .direction-a .digi-project .project-intro { padding-top: 0; }
+  .direction-a .digi-project .project-detail { padding-bottom: 0; }
+  .direction-a .project .project-intro .purpose { margin-top: 12px !important; }
+  .direction-a .sefer-project .project-art img { height: auto; }
+}

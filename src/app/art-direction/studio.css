@@ -3,6 +3,8 @@
   --studio-plum: #342732;
   --studio-chalk: #f5edef;
   --studio-lilac: #c9b8dd;
+  --studio-title: clamp(32px, 3.4vw, 48px);
+  --studio-display: clamp(42px, 5vw, 64px);
 }
 .studio-site .site-header { background: var(--paper); }
 .studio-site .header-inner { height: 80px; }

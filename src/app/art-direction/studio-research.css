@@ -1,21 +1,20 @@
 .studio-research { padding-block: clamp(48px, 6vw, 80px); }
 .studio-research > .container > .section-title { margin-bottom: 28px; }
-.studio-research-collection { display: grid; gap: 32px; }
-.studio-vr { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
-.studio-movement-art { min-width: 0; grid-column: 2; grid-row: 1; }
-.studio-movement-art img { display: block; width: 100%; height: auto; }
-.studio-research-copy { grid-column: 1; grid-row: 1; }
-.studio-transport { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 56px); padding-top: 32px; border-top: 1px solid #d6dadf; align-items: baseline; }
-.studio-research h3 { font-size: clamp(24px, 2.3vw, 30px); letter-spacing: -.035em; line-height: 1.2; font-weight: 500; }
-.studio-research-copy p { margin-top: 16px; }
+.studio-research-collection { display: grid; gap: 40px; }
+.studio-research h3 { font-size: 26px; letter-spacing: -.025em; line-height: 1.2; font-weight: 500; }
 .studio-research p { max-width: 42ch; font-size: 16px; color: #4e5e66; line-height: 1.65; }
+.studio-explorations { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; row-gap: 20px; padding-top: 40px; border-top: 1px solid #d6dadf; }
+.studio-explorations article { display: grid; grid-template-rows: subgrid; grid-row: span 3; scroll-margin-top: 24px; }
+.studio-explorations h3 { font-size: clamp(26px, 2.4vw, 34px); }
+.studio-explorations article > p, .studio-exploration-copy { max-width: 46ch; }
+.studio-movement-art, .studio-transport-art { overflow: hidden; border-radius: 8px; aspect-ratio: 3 / 2; }
+.studio-movement-art img, .studio-transport-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.studio-research .studio-transport-caption { font-size: 18px; font-weight: 500; line-height: 1.4; color: var(--ink); }
+.studio-exploration-copy > p + p { margin-top: 8px; }
 @media (max-width: 700px) {
-  .studio-vr { grid-template-columns: 1fr; gap: 20px; }
-  .studio-research-copy { display: contents; }
-  .studio-research-copy h3 { grid-row: 1; }
-  .studio-movement-art { grid-column: 1; grid-row: 2; }
-  .studio-research-copy p { grid-row: 3; margin: 0; }
-  .studio-transport { grid-template-columns: 1fr; gap: 16px; padding-top: 28px; }
-  .studio-research h3 { font-size: 25px; }
+  .studio-explorations { grid-template-columns: 1fr; gap: 44px; padding-top: 28px; }
+  .studio-explorations article { display: block; }
+  .studio-explorations h3 { font-size: 28px; margin-bottom: 18px; }
+  .studio-explorations article > p, .studio-exploration-copy { margin-top: 18px; }
   .studio-research p { font-size: 15px; }
 }

@@ -1,0 +1,20 @@
+[data-scene]{--enter:1;--travel:.5;--exit:0}
+.motion-enabled .bear-window{transform:scale(calc(1 - var(--exit)*.045));border-radius:calc(14px + var(--exit)*20px);transform-origin:center bottom}
+.motion-enabled .bear-window img{transform:scale(calc(1.035 - var(--exit)*.025))}
+.motion-enabled .opening-title{transform:translateY(calc(var(--exit)*-24px))}
+.motion-enabled .chapter-title h2{transform:translateX(calc((1 - var(--enter))*-50px));opacity:calc(.3 + var(--enter)*.7)}
+.motion-enabled .sefer-window{clip-path:inset(0 calc((1 - var(--enter))*6%) round 14px)}
+.motion-enabled .sefer-window img{transform:scale(calc(1.09 - var(--enter)*.09)) translateY(calc((.5 - var(--travel))*22px))}
+.motion-enabled .project-follow{transform:translateY(calc((1 - var(--enter))*24px))}
+.motion-enabled .digi-window{transform:translateY(calc((1 - var(--enter))*55px)) rotate(calc((1 - var(--enter))*1.5deg))}
+.motion-enabled .donation-sheet{transform:translateY(calc((.5 - var(--travel))*25px))}
+.motion-enabled .amount:nth-child(1){transform:translateY(calc((1 - var(--enter))*18px))}
+.motion-enabled .amount:nth-child(2){transform:translateY(calc((1 - var(--enter))*28px))}
+.motion-enabled .amount:nth-child(3){transform:translateY(calc((1 - var(--enter))*38px))}
+.motion-enabled .vr-motion img{transform:scale(1.04) translateY(calc((.5 - var(--travel))*24px))}
+.motion-enabled footer{border-radius:calc((1 - var(--enter))*40px) calc((1 - var(--enter))*40px) 0 0}
+@media(max-width:700px){
+  .motion-enabled .chapter-title h2{transform:translateX(calc((1 - var(--enter))*-18px))}
+  .motion-enabled .digi-window{transform:translateY(calc((1 - var(--enter))*26px))}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}.motion-enabled [data-window],.motion-enabled [data-window] img,.motion-enabled .opening-title,.motion-enabled .chapter-title h2,.motion-enabled .project-follow,.motion-enabled .donation-sheet{transform:none;clip-path:none;opacity:1}}

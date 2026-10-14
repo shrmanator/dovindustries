@@ -10,14 +10,14 @@ export function BearPlaybackControl({ playing, complete, onToggle }: BearPlaybac
 
   return <button type="button" className={`bear-playback is-${state}`}
     aria-label={action} title={playing ? "Click to pause" : `${action} drawing`} onClick={onToggle}>
-    {!playing && <span className="bear-playback-control">
+    <span className="bear-playback-control" aria-hidden="true">
       <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"
         stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        {complete
+        {playing ? <path d="M9 5v14M15 5v14" /> : complete
           ? <><path d="M4 5v5h5M4.5 10a8 8 0 1 1 0 5" /></>
           : <path d="m9 5 10 7-10 7Z" fill="currentColor" stroke="none" />}
       </svg>
-      <span>{action}</span>
-    </span>}
+      {!playing && <span>{action}</span>}
+    </span>
   </button>;
 }
