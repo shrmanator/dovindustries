@@ -6,12 +6,16 @@ pivot. The user then clarified here: "Steering stem folds flat against one deck"
 This is the governing visual requirement; earlier generated scooter prompts are
 not engineering specifications.
 
-The replacement shows the complete two-wheel scooter, one uninterrupted deck,
+This revision showed the complete two-wheel scooter, one uninterrupted deck,
 a low base joint and the continuous steering stem lying against the footboard.
 The first redraw still had an elevated stem and was rejected during review.
 A targeted edit lowered the joint and stem, and tucked the attached T handlebar
 onto the back of the footboard. The illustration remains an editorial concept,
 not a record of built hardware, measured clearances or a tested folding mechanism.
+The user rejected this revision too: the column did not read as fully folded
+against the platform. They clarified that the whole column folds down at the
+platform, rather than folding in half at its midpoint. This asset is superseded;
+see `transport-platform-fold-study.md` for the next review candidate.
 
 Asset: `public/images/art-transport-fold-flat.webp`.
 Generation and refinement used the built-in image_gen tool. The approved VR
