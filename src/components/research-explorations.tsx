@@ -15,8 +15,8 @@ export function ResearchExplorations() {
     <article id="transport" className="studio-transport" aria-labelledby="transport-title">
       <h3 id="transport-title">Compact electric transport</h3>
       <figure className="studio-transport-art">
-        <Image src="/images/art-transport-fold-flat.webp"
-          alt="Charcoal and paint concept of a two-wheel electric scooter with its steering stem folded flat against one deck"
+        <Image src="/images/art-transport-platform-fold.webp"
+          alt="Painted scooter concept with the whole steering column closed onto the platform and a faint outline showing it raised from the same base joint"
           width={1536} height={1024} sizes="(max-width: 700px) 90vw, (max-width: 1378px) 44vw, 596px" />
       </figure>
       <div className="studio-exploration-copy">
