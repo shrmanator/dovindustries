@@ -6,7 +6,8 @@ The selected refinement is a charcoal-and-oil concept study of folding-frame, ba
 It is editorial concept artwork, not a photograph of a built or tested vehicle.
 
 The first image was rejected during visual review because its mechanism was bulky and cluttered.
-The selected refinement simplifies the assembly and keeps the folding arm visible in its folded position.
+The refinement simplified the assembly but still invented incoherent hardware.
+The user rejected it: "that drawing makes no sense". It is not an accepted design.
 The palette uses graphite, pewter and red-brown paint on pale grey paper, alongside the approved VR study.
 
 Output is 1536×1024, re-encoded as WebP at quality 88 (354,156 bytes).
@@ -14,10 +15,12 @@ No crop, recolouring or compositing was applied during export.
 The generated master is retained at `.dist/transport-art/transport-packaging-master.png`.
 Both original tool outputs remain in the Codex generated_images folder.
 
-The selected artwork replaces the transport text panel on the feature preview.
-The folding question is its caption. Hosted desktop, 390px and 320px phone review
-confirmed matching 3:2 frames, complete image loading and no horizontal overflow.
-Build, lint and authored-file size checks pass. Production remains unchanged.
+The artwork previously replaced the transport text panel on the feature preview.
+Browser checks confirmed frame sizing, image loading and no horizontal overflow;
+those checks did not establish coherent vehicle geometry or visual acceptance.
+The replacement follows the user's 14 October clarification: the whole steering
+stem folds flat against one deck; the deck itself does not fold in half.
+See `transport-fold-flat-study.md` for the corrected composition and prompts.
 
 ## Initial generation prompt
 
