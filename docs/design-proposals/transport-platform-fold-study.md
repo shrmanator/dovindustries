@@ -11,7 +11,8 @@ explains the motion. The initial new study put that outline at the wrong point,
 so a targeted edit moved it to the same platform-front joint as the closed stem.
 
 Asset: `public/images/art-transport-platform-fold.webp`.
-This is the next visual review candidate, not evidence of a manufactured or
+The user subsequently rejected its dirty, drab treatment. This asset is superseded
+by the brighter revision in `transport-clean-fold-study.md`. It is not evidence of a manufactured or
 mechanically validated design. The charcoal outline is an illustrative motion
 study, not a measured kinematic diagram or an extra physical column.
 
